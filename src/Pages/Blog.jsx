@@ -17,13 +17,15 @@ const Blog = () => {
 <div className="py-16">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { category: 'Strategy', title: 'The Fallacy of Quick Wins in B2B Marketing', date: 'Sept 20, 2026' },
-              { category: 'Branding', title: 'Why Your Brand Identity is Losing You Money', date: 'Sept 15, 2026' },
-              { category: 'Advertising', title: 'Mastering Paid Social in a Cookie-less World', date: 'Sept 02, 2026' },
-              { category: 'SEO', title: 'Technical SEO Checklist for 2027', date: 'Aug 28, 2026' }
+              { category: 'Strategy', title: 'The Fallacy of Quick Wins in B2B Marketing', date: 'Sept 20, 2026', image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop' },
+              { category: 'Branding', title: 'Why Your Brand Identity is Losing You Money', date: 'Sept 15, 2026', image: 'https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=800&auto=format&fit=crop' },
+              { category: 'Advertising', title: 'Mastering Paid Social in a Cookie-less World', date: 'Sept 02, 2026', image: 'https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?q=80&w=800&auto=format&fit=crop' },
+              { category: 'SEO', title: 'Technical SEO Checklist for 2027', date: 'Aug 28, 2026', image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=800&auto=format&fit=crop' }
             ].map((post, idx) => (
               <div key={idx} className="group cursor-pointer">
-                <div className="mb-4 aspect-[4/3] w-full bg-[#ebebeb] transition-all duration-500 group-hover:bg-[#d5d5d5]" />
+                <div className="mb-4 aspect-[4/3] w-full overflow-hidden bg-[#ebebeb]">
+                  <img src={post.image} alt={post.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                </div>
                 <span className="mb-2 inline-block font-sans text-[10px] font-semibold uppercase tracking-[2px] text-[#666]">
                   {post.category}
                 </span>

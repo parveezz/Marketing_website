@@ -29,6 +29,11 @@ const Advertising = () => {
                         meaningful opportunities.
                     </p>
                 </div>
+                
+                {/* Hero Image */}
+                <div className="mt-12 aspect-[21/9] w-full overflow-hidden bg-[#ebebeb]">
+                   <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Advertising" className="h-full w-full object-cover" />
+                </div>
 
                 {/* Overview */}
                 <div className="mx-auto grid w-full max-w-[1250px] grid-cols-1 gap-12 py-8 md:py-12 lg:grid-cols-2 lg:gap-24">

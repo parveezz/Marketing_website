@@ -31,6 +31,11 @@ const StrategicMarketing = () => {
                         opportunities for sustainable growth.
                     </p>
                 </div>
+                
+                {/* Hero Image */}
+                <div className="mt-12 aspect-[21/9] w-full overflow-hidden bg-[#ebebeb]">
+                   <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" alt="StrategicMarketing" className="h-full w-full object-cover" />
+                </div>
 
                 {/* Overview */}
                 <div className="mx-auto grid w-full max-w-[1250px] grid-cols-1 gap-12 py-8 md:py-12 lg:grid-cols-2 lg:gap-24">

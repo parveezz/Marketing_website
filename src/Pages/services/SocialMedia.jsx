@@ -29,6 +29,11 @@ const SocialMedia = () => {
                         and stay relevant to their audience.
                     </p>
                 </div>
+                
+                {/* Hero Image */}
+                <div className="mt-12 aspect-[21/9] w-full overflow-hidden bg-[#ebebeb]">
+                   <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=2000&auto=format&fit=crop" alt="SocialMedia" className="h-full w-full object-cover" />
+                </div>
 
                 {/* Overview */}
                 <div className="mx-auto grid w-full max-w-[1250px] grid-cols-1 gap-12 py-8 md:py-12 lg:grid-cols-2 lg:gap-24">

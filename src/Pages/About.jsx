@@ -93,6 +93,11 @@ const About = () => {
             </p>
 
           </div>
+          
+          {/* Hero Image */}
+          <div className="mt-16 aspect-[21/9] w-full overflow-hidden bg-[#ebebeb]">
+             <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2000&auto=format&fit=crop" alt="About ZIH" className="h-full w-full object-cover" />
+          </div>
         </div>
       </section>
 

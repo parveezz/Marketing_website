@@ -28,6 +28,11 @@ const Branding = () => {
                         are, what you stand for, and why your audience should choose you.
                     </p>
                 </div>
+                
+                {/* Hero Image */}
+                <div className="mt-12 aspect-[21/9] w-full overflow-hidden bg-[#ebebeb]">
+                   <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2000&auto=format&fit=crop" alt="Branding" className="h-full w-full object-cover" />
+                </div>
 
                 {/* Overview */}
                 <div className="mx-auto grid w-full max-w-[1250px] grid-cols-1 gap-12 py-8 md:py-12 lg:grid-cols-2 lg:gap-24">

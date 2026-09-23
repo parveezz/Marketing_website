@@ -164,7 +164,30 @@ const Home = () => {
             </div>
 
           </div>
+          
+          {/* Hero Image */}
+          <div className="mt-16 aspect-[21/9] w-full overflow-hidden bg-[#ebebeb]">
+             <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop" alt="Marketing with purpose" className="h-full w-full object-cover" />
+          </div>
 
+        </div>
+      </section>
+
+      {/* =====================================================
+          TRUSTED BY (NEW)
+      ====================================================== */}
+      <section className="w-full border-t border-[#bdbdbd] bg-[#fdfdfd] px-5 py-8 md:px-8 lg:px-10 lg:py-12">
+        <div className="mx-auto flex w-full max-w-[1250px] flex-col items-center justify-center gap-6 md:flex-row md:justify-between lg:gap-12">
+          <p className="font-sans text-[10px] font-semibold uppercase tracking-[2px] text-[#888] text-center md:w-auto md:text-left">
+            Trusted by modern teams
+          </p>
+          <div className="flex w-full flex-wrap items-center justify-center gap-8 md:w-auto md:gap-12 lg:gap-16">
+            <span className="font-sans text-[20px] font-bold tracking-widest text-[#bbb] transition-colors hover:text-[#888] cursor-pointer">ACME</span>
+            <span className="font-sans text-[22px] font-black tracking-tight text-[#bbb] transition-colors hover:text-[#888] cursor-pointer">Globex.</span>
+            <span className="font-sans text-[18px] font-medium tracking-[3px] text-[#bbb] transition-colors hover:text-[#888] cursor-pointer">SOYUZ</span>
+            <span className="font-sans text-[24px] font-light tracking-wide text-[#bbb] transition-colors hover:text-[#888] cursor-pointer">initech</span>
+            <span className="font-sans text-[20px] font-extrabold italic tracking-tighter text-[#bbb] transition-colors hover:text-[#888] cursor-pointer">MASSIVE</span>
+          </div>
         </div>
       </section>
 

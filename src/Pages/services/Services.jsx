@@ -6,25 +6,29 @@ const Services = () => {
       title: "Strategic Marketing",
       description: "We build clear marketing strategies that connect your business goals with the right audience, positioning, channels, and opportunities for sustainable growth.",
       features: ["Market Research", "Marketing Strategy", "Audience Analysis", "Competitor Analysis", "Growth Planning"],
-      path: "/services/strategic-marketing"
+      path: "/services/strategic-marketing",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000&auto=format&fit=crop"
     },
     {
       title: "Branding",
       description: "We create distinctive brand identities that communicate who you are, what you stand for, and why your audience should choose you.",
       features: ["Brand Strategy", "Brand Identity", "Visual Direction", "Brand Positioning", "Brand Guidelines"],
-      path: "/services/branding"
+      path: "/services/branding",
+      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1000&auto=format&fit=crop"
     },
     {
       title: "Advertising",
       description: "We create targeted advertising campaigns designed to put your business in front of the right people and turn attention into meaningful opportunities.",
       features: ["Campaign Strategy", "Paid Search", "Paid Social", "Campaign Management", "Performance Analysis"],
-      path: "/services/advertising"
+      path: "/services/advertising",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop"
     },
     {
       title: "Social Media",
       description: "We build thoughtful social media strategies and content that help businesses communicate consistently, build relationships, and stay relevant to their audience.",
       features: ["Social Media Strategy", "Content Planning", "Content Creation", "Community Management", "Performance Analysis"],
-      path: "/services/social-media"
+      path: "/services/social-media",
+      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1000&auto=format&fit=crop"
     }
   ];
 
@@ -93,7 +97,7 @@ const Services = () => {
                 <p className="mb-6 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
                   Deliverables
                 </p>
-                <ul className="flex flex-col gap-4">
+                <ul className="mb-12 flex flex-col gap-4">
                   {service.features.map((feature, i) => (
                     <li key={i} className="flex items-center gap-4 font-sans text-[16px] text-[#202020]">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#202020]"></span>
@@ -101,6 +105,9 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
+                <div className="aspect-[4/3] w-full overflow-hidden bg-[#ebebeb]">
+                   <img src={service.image} alt={service.title} className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
+                </div>
               </div>
 
             </div>
