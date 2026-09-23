@@ -94,14 +94,14 @@ const Contact = () => {
           <div className="w-full pt-2">
 
             {/* Heading */}
-            <h1 className="font-serif text-[52px] font-medium leading-[0.95] tracking-[-2px] text-[#202020] sm:text-[58px] md:text-[64px]">
+            <h1 className="font-sans text-[52px] font-medium leading-[0.95] tracking-[-2px] text-[#202020] sm:text-[58px] md:text-[64px]">
               Let's Talk
               <br />
               Growth
             </h1>
 
             {/* Description */}
-            <p className="mt-8 w-full max-w-[430px] font-serif text-[14px] leading-6 text-[#333]">
+            <p className="mt-8 w-full max-w-[430px] font-sans text-[14px] leading-6 text-[#333]">
               Whether you're looking to boost conversions, cut CAC, or launch
               something new—were here to help.
             </p>
@@ -111,44 +111,44 @@ const Contact = () => {
 
               {/* Phone */}
               <div className="border-t border-[#bdbdbd] py-4">
-                <p className="font-serif text-[12px] font-semibold uppercase tracking-[1px]">
+                <p className="font-sans text-[12px] font-semibold uppercase tracking-[1px]">
                   Phone
                 </p>
 
-                <p className="mt-1 font-serif text-[12px] text-[#444]">
+                <p className="mt-1 font-sans text-[12px] text-[#444]">
                   +1 (555) 123-4567
                 </p>
               </div>
 
               {/* Email */}
               <div className="border-t border-[#bdbdbd] py-4">
-                <p className="font-serif text-[12px] font-semibold uppercase tracking-[1px]">
+                <p className="font-sans text-[12px] font-semibold uppercase tracking-[1px]">
                   Email
                 </p>
 
-                <p className="mt-1 font-serif text-[12px] text-[#444]">
+                <p className="mt-1 font-sans text-[12px] text-[#444]">
                   hello@growth.com
                 </p>
               </div>
 
               {/* Office Hours */}
               <div className="border-t border-[#bdbdbd] py-4">
-                <p className="font-serif text-[12px] font-semibold uppercase tracking-[1px]">
+                <p className="font-sans text-[12px] font-semibold uppercase tracking-[1px]">
                   Office Hours
                 </p>
 
-                <p className="mt-1 font-serif text-[12px] text-[#444]">
+                <p className="mt-1 font-sans text-[12px] text-[#444]">
                   Monday - Friday, 9:00 AM - 6:00 PM
                 </p>
               </div>
 
               {/* Visit Us */}
               <div className="border-t border-[#bdbdbd] py-4">
-                <p className="font-serif text-[12px] font-semibold uppercase tracking-[1px]">
+                <p className="font-sans text-[12px] font-semibold uppercase tracking-[1px]">
                   Visit Us
                 </p>
 
-                <p className="mt-1 w-full max-w-[280px] font-serif text-[12px] leading-5 text-[#444]">
+                <p className="mt-1 w-full max-w-[280px] font-sans text-[12px] leading-5 text-[#444]">
                   123 Growth Marketing Services
                   <br />
                   123 Growth Avenue, Suite 400
@@ -159,28 +159,28 @@ const Contact = () => {
 
               {/* Social */}
               <div className="border-y border-[#bdbdbd] py-4">
-                <p className="font-serif text-[12px] font-semibold uppercase tracking-[1px]">
+                <p className="font-sans text-[12px] font-semibold uppercase tracking-[1px]">
                   Connect With Us
                 </p>
 
                 <div className="mt-3 flex gap-3">
                   <a
                     href="#"
-                    className="flex h-7 w-7 items-center justify-center rounded-full border border-[#333] font-serif text-[11px] transition hover:bg-[#202020] hover:text-white"
+                    className="flex h-7 w-7 items-center justify-center rounded-full border border-[#333] font-sans text-[11px] transition hover:bg-[#202020] hover:text-white"
                   >
                     f
                   </a>
 
                   <a
                     href="#"
-                    className="flex h-7 w-7 items-center justify-center rounded-full border border-[#333] font-serif text-[11px] transition hover:bg-[#202020] hover:text-white"
+                    className="flex h-7 w-7 items-center justify-center rounded-full border border-[#333] font-sans text-[11px] transition hover:bg-[#202020] hover:text-white"
                   >
                     ◎
                   </a>
 
                   <a
                     href="#"
-                    className="flex h-7 w-7 items-center justify-center rounded-full border border-[#333] font-serif text-[11px] transition hover:bg-[#202020] hover:text-white"
+                    className="flex h-7 w-7 items-center justify-center rounded-full border border-[#333] font-sans text-[11px] transition hover:bg-[#202020] hover:text-white"
                   >
                     in
                   </a>
@@ -194,11 +194,11 @@ const Contact = () => {
           ========================== */}
           <div className="w-full border border-[#222] bg-white p-6 sm:p-8 lg:p-10">
 
-            <h2 className="font-serif text-[34px] font-medium leading-tight tracking-[-1px] text-[#202020] sm:text-[38px] md:text-[42px]">
+            <h2 className="font-sans text-[34px] font-medium leading-tight tracking-[-1px] text-[#202020] sm:text-[38px] md:text-[42px]">
               Send Us a Message
             </h2>
 
-            <p className="mt-4 w-full max-w-[430px] font-serif text-[13px] leading-5 text-[#444]">
+            <p className="mt-4 w-full max-w-[430px] font-sans text-[13px] leading-5 text-[#444]">
               Have a question or need more information? Fill out the form
               below, and we'll get back to you as soon as possible.
             </p>
@@ -207,7 +207,7 @@ const Contact = () => {
 
               {/* Name */}
               <div className="mb-5 w-full">
-                <label className="mb-2 block font-serif text-[12px] font-semibold uppercase tracking-[1px]">
+                <label className="mb-2 block font-sans text-[12px] font-semibold uppercase tracking-[1px]">
                   Name
                 </label>
 
@@ -218,13 +218,13 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   placeholder="Your Name"
-                  className="w-full border-b border-[#777] bg-transparent px-0 py-3 font-serif text-[14px] text-[#111] outline-none placeholder:text-[#888] focus:border-[#111]"
+                  className="w-full border-b border-[#777] bg-transparent px-0 py-3 font-sans text-[14px] text-[#111] outline-none placeholder:text-[#888] focus:border-[#111]"
                 />
               </div>
 
               {/* Email */}
               <div className="mb-5 w-full">
-                <label className="mb-2 block font-serif text-[12px] font-semibold uppercase tracking-[1px]">
+                <label className="mb-2 block font-sans text-[12px] font-semibold uppercase tracking-[1px]">
                   Email Address
                 </label>
 
@@ -235,13 +235,13 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   placeholder="Your Email Address"
-                  className="w-full border-b border-[#777] bg-transparent px-0 py-3 font-serif text-[14px] text-[#111] outline-none placeholder:text-[#888] focus:border-[#111]"
+                  className="w-full border-b border-[#777] bg-transparent px-0 py-3 font-sans text-[14px] text-[#111] outline-none placeholder:text-[#888] focus:border-[#111]"
                 />
               </div>
 
               {/* Message */}
               <div className="mb-7 w-full">
-                <label className="mb-2 block font-serif text-[12px] font-semibold uppercase tracking-[1px]">
+                <label className="mb-2 block font-sans text-[12px] font-semibold uppercase tracking-[1px]">
                   Message
                 </label>
 
@@ -252,12 +252,12 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   placeholder="Tell us about your project..."
-                  className="w-full resize-none border-b border-[#777] bg-transparent px-0 py-3 font-serif text-[14px] text-[#111] outline-none placeholder:text-[#888] focus:border-[#111]"
+                  className="w-full resize-none border-b border-[#777] bg-transparent px-0 py-3 font-sans text-[14px] text-[#111] outline-none placeholder:text-[#888] focus:border-[#111]"
                 />
               </div>
 
               {statusMessage && (
-                <p className={`mb-4 font-serif text-[13px] ${statusMessage.type === 'error' ? 'text-red-500' : 'text-green-600'}`}>
+                <p className={`mb-4 font-sans text-[13px] ${statusMessage.type === 'error' ? 'text-red-500' : 'text-green-600'}`}>
                   {statusMessage.text}
                 </p>
               )}
@@ -266,7 +266,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full border border-[#202020] bg-[#202020] py-3.5 font-serif text-[13px] font-semibold uppercase tracking-[1px] text-white transition-all duration-300 hover:bg-white hover:text-[#202020] disabled:opacity-50"
+                className="w-full border border-[#202020] bg-[#202020] py-3.5 font-sans text-[13px] font-semibold uppercase tracking-[1px] text-white transition-all duration-300 hover:bg-white hover:text-[#202020] disabled:opacity-50"
               >
                 {isSubmitting ? "Submitting..." : "Submit"}
               </button>
@@ -281,11 +281,11 @@ const Contact = () => {
         <div className="mt-24 w-full">
 
           {/* FAQ Heading */}
-          <h2 className="text-center font-serif text-[32px] font-medium tracking-[-1px] text-[#202020] sm:text-[48px] md:text-[42px]">
+          <h2 className="text-center font-sans text-[32px] font-medium tracking-[-1px] text-[#202020] sm:text-[48px] md:text-[42px]">
             FAQs
           </h2>
 
-          <p className="mx-auto mt-3 w-full max-w-[550px] text-center font-serif text-[12px] leading-5 text-[#444]">
+          <p className="mx-auto mt-3 w-full max-w-[550px] text-center font-sans text-[12px] leading-5 text-[#444]">
             How We Helped a Local Home Service Brand Double Their Bookings in
             60 Days
           </p>
@@ -303,18 +303,18 @@ const Contact = () => {
                   onClick={() => toggleFaq(index)}
                   className="flex w-full items-center justify-between gap-5 py-5 text-left"
                 >
-                  <span className="font-serif text-[14px] font-semibold text-[#202020]">
+                  <span className="font-sans text-[14px] font-semibold text-[#202020]">
                     {faq.question}
                   </span>
 
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center font-serif text-[18px] font-normal">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center font-sans text-[18px] font-normal">
                     {openFaq === index ? "−" : "+"}
                   </span>
                 </button>
 
                 {openFaq === index && (
                   <div className="w-full pb-5 pr-10">
-                    <p className="font-serif text-[13px] leading-6 text-[#555]">
+                    <p className="font-sans text-[13px] leading-6 text-[#555]">
                       {faq.answer}
                     </p>
                   </div>

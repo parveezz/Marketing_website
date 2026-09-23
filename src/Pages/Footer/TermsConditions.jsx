@@ -54,15 +54,15 @@ const TermsConditions = () => {
             <div className="mx-auto w-full max-w-[1250px]">
                 {/* Header */}
                 <div className="border-b border-[#bdbdbd] pb-10 md:pb-12">
-                    <p className="mb-4 font-serif text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
+                    <p className="mb-4 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
                         ZIH Marketing Consultancy
                     </p>
 
-                    <h1 className="font-serif text-[42px] font-medium leading-tight md:text-[58px] lg:text-[64px]">
+                    <h1 className="font-sans text-[42px] font-medium leading-tight md:text-[58px] lg:text-[64px]">
                         Terms & Conditions
                     </h1>
 
-                    <p className="mt-5 font-serif text-[13px] text-[#666]">
+                    <p className="mt-5 font-sans text-[13px] text-[#666]">
                         Last updated: September 2026
                     </p>
                 </div>
@@ -75,11 +75,11 @@ const TermsConditions = () => {
                             className={`py-8 ${index !== 0 ? "border-t border-[#d0d0d0]" : ""
                                 }`}
                         >
-                            <h2 className="mb-4 font-serif text-[20px] font-semibold md:text-[24px]">
+                            <h2 className="mb-4 font-sans text-[20px] font-semibold md:text-[24px]">
                                 {section.title}
                             </h2>
 
-                            <p className="font-serif text-[14px] leading-7 text-[#555] md:text-[15px] md:leading-8">
+                            <p className="font-sans text-[14px] leading-7 text-[#555] md:text-[15px] md:leading-8">
                                 {section.content}
                             </p>
                         </div>

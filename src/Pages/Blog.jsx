@@ -3,13 +3,13 @@ const Blog = () => {
     <section className="w-full min-h-[70vh] bg-[#fafafa] px-5 py-16 text-[#202020] md:px-8 lg:px-10 lg:py-24">
       <div className="mx-auto w-full max-w-[1250px]">
         <div className="border-b border-[#bdbdbd] pb-12">
-          <p className="mb-4 font-serif text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
+          <p className="mb-4 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
             Blog
           </p>
-          <h1 className="font-serif text-[42px] font-medium leading-tight tracking-[-1px] sm:text-[52px] md:text-[64px]">
+          <h1 className="font-sans text-[42px] font-medium leading-tight tracking-[-1px] sm:text-[52px] md:text-[64px]">
             Journal
           </h1>
-          <p className="mt-6 w-full max-w-[500px] font-serif text-[14px] leading-6 text-[#555]">
+          <p className="mt-6 w-full max-w-[500px] font-sans text-[14px] leading-6 text-[#555]">
             Thoughts, insights, and strategies for growth.
           </p>
         </div>
@@ -24,13 +24,13 @@ const Blog = () => {
             ].map((post, idx) => (
               <div key={idx} className="group cursor-pointer">
                 <div className="mb-4 aspect-[4/3] w-full bg-[#ebebeb] transition-all duration-500 group-hover:bg-[#d5d5d5]" />
-                <span className="mb-2 inline-block font-serif text-[10px] font-semibold uppercase tracking-[2px] text-[#666]">
+                <span className="mb-2 inline-block font-sans text-[10px] font-semibold uppercase tracking-[2px] text-[#666]">
                   {post.category}
                 </span>
-                <h3 className="mb-2 font-serif text-[20px] font-medium leading-tight text-[#202020] transition-colors group-hover:text-[#555]">
+                <h3 className="mb-2 font-sans text-[20px] font-medium leading-tight text-[#202020] transition-colors group-hover:text-[#555]">
                   {post.title}
                 </h3>
-                <p className="font-serif text-[12px] text-[#888]">{post.date}</p>
+                <p className="font-sans text-[12px] text-[#888]">{post.date}</p>
               </div>
             ))}
           </div>

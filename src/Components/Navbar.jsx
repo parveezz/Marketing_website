@@ -10,13 +10,13 @@ const Navbar = () => {
 
   const linkClass = ({ isActive }) =>
     isActive
-      ? "relative cursor-pointer px-1 py-2 font-serif text-sm font-medium tracking-wide text-[#202020] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-[#202020] after:content-['']"
-      : "relative cursor-pointer px-1 py-2 font-serif text-sm font-medium tracking-wide text-[#555] transition-colors duration-300 hover:text-[#202020] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-[#202020] after:content-[''] after:transition-all after:duration-300 hover:after:w-full";
+      ? "relative cursor-pointer px-1 py-2 font-sans text-sm font-medium tracking-wide text-[#202020] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-[#202020] after:content-['']"
+      : "relative cursor-pointer px-1 py-2 font-sans text-sm font-medium tracking-wide text-[#555] transition-colors duration-300 hover:text-[#202020] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-[#202020] after:content-[''] after:transition-all after:duration-300 hover:after:w-full";
 
   const mobileLinkClass = ({ isActive }) =>
     isActive
-      ? "block w-full py-3 font-serif text-lg font-medium text-[#202020] border-b border-[#d5d5d5]"
-      : "block w-full py-3 font-serif text-lg font-medium text-[#555] border-b border-[#d5d5d5] transition-colors hover:text-[#202020]";
+      ? "block w-full py-3 font-sans text-lg font-medium text-[#202020] border-b border-[#d5d5d5]"
+      : "block w-full py-3 font-sans text-lg font-medium text-[#555] border-b border-[#d5d5d5] transition-colors hover:text-[#202020]";
 
   return (
     <nav className="sticky top-0 z-50 border-b border-[#d5d5d5] bg-[#fafafa]/95 backdrop-blur-sm">
@@ -32,10 +32,10 @@ const Navbar = () => {
               onClick={() => setMobileMenuOpen(false)}
               className="flex cursor-pointer flex-col items-center leading-none text-[#202020]"
             >
-              <span className="font-serif text-[34px] font-normal tracking-[8px]">
+              <span className="font-sans text-[34px] font-normal tracking-[8px]">
                 ZIH
               </span>
-              <span className="mt-1 hidden font-serif text-[8px] font-semibold tracking-[5px] md:block">
+              <span className="mt-1 hidden font-sans text-[8px] font-semibold tracking-[5px] md:block">
                 MARKETING CONSULTANCY
               </span>
             </Link>
@@ -62,8 +62,8 @@ const Navbar = () => {
                 to="/services"
                 className={({ isActive }) =>
                   isActive || servicesOpen
-                    ? "relative cursor-pointer flex items-center gap-1.5 px-1 py-2 font-serif text-sm font-medium tracking-wide text-[#202020] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-[#202020] after:content-['']"
-                    : "relative cursor-pointer flex items-center gap-1.5 px-1 py-2 font-serif text-sm font-medium tracking-wide text-[#555] transition-colors duration-300 hover:text-[#202020] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-[#202020] after:content-[''] after:transition-all after:duration-300 hover:after:w-full"
+                    ? "relative cursor-pointer flex items-center gap-1.5 px-1 py-2 font-sans text-sm font-medium tracking-wide text-[#202020] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-[#202020] after:content-['']"
+                    : "relative cursor-pointer flex items-center gap-1.5 px-1 py-2 font-sans text-sm font-medium tracking-wide text-[#555] transition-colors duration-300 hover:text-[#202020] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-[#202020] after:content-[''] after:transition-all after:duration-300 hover:after:w-full"
                 }
               >
                 Services
@@ -88,7 +88,7 @@ const Navbar = () => {
           <div className="hidden items-center md:flex">
             <Link
               to="/contact"
-              className="border border-[#202020] bg-[#202020] px-6 py-2.5 font-serif text-xs font-semibold uppercase tracking-[1px] text-white transition-all duration-300 hover:bg-transparent hover:text-[#202020]"
+              className="border border-[#202020] bg-[#202020] px-6 py-2.5 font-sans text-xs font-semibold uppercase tracking-[1px] text-white transition-all duration-300 hover:bg-transparent hover:text-[#202020]"
             >
               Get Started
             </Link>
@@ -131,7 +131,7 @@ const Navbar = () => {
           <div className="w-full border-b border-[#d5d5d5] py-3">
             <button 
               onClick={() => setServicesOpen(!servicesOpen)}
-              className="flex w-full items-center justify-between font-serif text-lg font-medium text-[#555]"
+              className="flex w-full items-center justify-between font-sans text-lg font-medium text-[#555]"
             >
               Services
               <span className={`text-[12px] transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`}>▼</span>
@@ -139,11 +139,11 @@ const Navbar = () => {
             
             {/* MOBILE SERVICES SUB-MENU */}
             <div className={`flex flex-col gap-3 overflow-hidden pl-4 transition-all duration-300 ${servicesOpen ? "mt-4 max-h-[500px]" : "max-h-0"}`}>
-              <Link to="/services" onClick={() => setMobileMenuOpen(false)} className="font-serif text-[15px] text-[#444]">All Services</Link>
-              <Link to="/services/strategic-marketing" onClick={() => setMobileMenuOpen(false)} className="font-serif text-[15px] text-[#444]">Strategic Marketing</Link>
-              <Link to="/services/branding" onClick={() => setMobileMenuOpen(false)} className="font-serif text-[15px] text-[#444]">Branding</Link>
-              <Link to="/services/advertising" onClick={() => setMobileMenuOpen(false)} className="font-serif text-[15px] text-[#444]">Advertising</Link>
-              <Link to="/services/social-media" onClick={() => setMobileMenuOpen(false)} className="font-serif text-[15px] text-[#444]">Social Media</Link>
+              <Link to="/services" onClick={() => setMobileMenuOpen(false)} className="font-sans text-[15px] text-[#444]">All Services</Link>
+              <Link to="/services/strategic-marketing" onClick={() => setMobileMenuOpen(false)} className="font-sans text-[15px] text-[#444]">Strategic Marketing</Link>
+              <Link to="/services/branding" onClick={() => setMobileMenuOpen(false)} className="font-sans text-[15px] text-[#444]">Branding</Link>
+              <Link to="/services/advertising" onClick={() => setMobileMenuOpen(false)} className="font-sans text-[15px] text-[#444]">Advertising</Link>
+              <Link to="/services/social-media" onClick={() => setMobileMenuOpen(false)} className="font-sans text-[15px] text-[#444]">Social Media</Link>
             </div>
           </div>
 
@@ -152,7 +152,7 @@ const Navbar = () => {
           <Link
             to="/contact"
             onClick={() => setMobileMenuOpen(false)}
-            className="mt-8 block w-full border border-[#202020] bg-[#202020] py-4 text-center font-serif text-xs font-semibold uppercase tracking-[1px] text-white"
+            className="mt-8 block w-full border border-[#202020] bg-[#202020] py-4 text-center font-sans text-xs font-semibold uppercase tracking-[1px] text-white"
           >
             Get Started
           </Link>

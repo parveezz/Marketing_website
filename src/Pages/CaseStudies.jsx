@@ -3,13 +3,13 @@ const CaseStudies = () => {
     <section className="w-full min-h-[70vh] bg-[#fafafa] px-5 py-16 text-[#202020] md:px-8 lg:px-10 lg:py-24">
       <div className="mx-auto w-full max-w-[1250px]">
         <div className="border-b border-[#bdbdbd] pb-12">
-          <p className="mb-4 font-serif text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
+          <p className="mb-4 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
             CaseStudies
           </p>
-          <h1 className="font-serif text-[42px] font-medium leading-tight tracking-[-1px] sm:text-[52px] md:text-[64px]">
+          <h1 className="font-sans text-[42px] font-medium leading-tight tracking-[-1px] sm:text-[52px] md:text-[64px]">
             Case Studies
           </h1>
-          <p className="mt-6 w-full max-w-[500px] font-serif text-[14px] leading-6 text-[#555]">
+          <p className="mt-6 w-full max-w-[500px] font-sans text-[14px] leading-6 text-[#555]">
             Deep dives into the results we've delivered.
           </p>
         </div>
@@ -23,16 +23,16 @@ const CaseStudies = () => {
               { client: 'Local Services Co', result: '#1 Local Search Ranking', desc: 'Dominating local SEO and driving organic inbound phone calls.' }
             ].map((study, idx) => (
               <div key={idx} className="border border-[#d5d5d5] bg-white p-8 sm:p-10">
-                <span className="mb-2 block font-serif text-[12px] font-semibold uppercase tracking-[1px] text-[#666]">
+                <span className="mb-2 block font-sans text-[12px] font-semibold uppercase tracking-[1px] text-[#666]">
                   {study.client}
                 </span>
-                <h3 className="mb-4 font-serif text-[32px] font-medium leading-tight text-[#202020]">
+                <h3 className="mb-4 font-sans text-[32px] font-medium leading-tight text-[#202020]">
                   {study.result}
                 </h3>
-                <p className="mb-8 font-serif text-[14px] leading-6 text-[#555]">
+                <p className="mb-8 font-sans text-[14px] leading-6 text-[#555]">
                   {study.desc}
                 </p>
-                <button className="border-b border-[#202020] pb-1 font-serif text-[12px] font-semibold uppercase tracking-[1px] text-[#202020] transition-all hover:text-[#666] hover:border-[#666]">
+                <button className="border-b border-[#202020] pb-1 font-sans text-[12px] font-semibold uppercase tracking-[1px] text-[#202020] transition-all hover:text-[#666] hover:border-[#666]">
                   View Case Study
                 </button>
               </div>

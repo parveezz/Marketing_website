@@ -106,11 +106,11 @@ const Home = () => {
             {/* Hero Heading */}
             <div>
 
-              <p className="mb-7 font-serif text-[10px] font-semibold uppercase tracking-[4px] text-[#666]">
+              <p className="mb-7 font-sans text-[10px] font-semibold uppercase tracking-[4px] text-[#666]">
                 ZIH Marketing Consultancy
               </p>
 
-              <h1 className="font-serif text-[52px] font-medium leading-[0.98] tracking-tight sm:text-[64px] md:text-[82px] lg:text-[100px] xl:text-[112px]">
+              <h1 className="font-sans text-[52px] font-medium leading-[0.98] tracking-tight sm:text-[64px] md:text-[82px] lg:text-[100px] xl:text-[112px]">
                 Marketing
                 <br />
                 <span className="text-[#666]">
@@ -118,7 +118,7 @@ const Home = () => {
                 </span>
               </h1>
 
-              <p className="mt-9 max-w-[620px] font-serif text-[14px] leading-8 text-[#555] md:text-[16px]">
+              <p className="mt-9 max-w-[620px] font-sans text-[14px] leading-8 text-[#555] md:text-[16px]">
                 We help businesses build meaningful brands, reach the right
                 audiences, and create marketing strategies designed for
                 sustainable growth.
@@ -128,14 +128,14 @@ const Home = () => {
 
                 <Link
                   to="/contact"
-                  className="border border-[#202020] bg-[#202020] px-7 py-3 font-serif text-xs font-semibold uppercase tracking-[1px] text-white transition-all duration-300 hover:bg-transparent hover:text-[#202020]"
+                  className="border border-[#202020] bg-[#202020] px-7 py-3 font-sans text-xs font-semibold uppercase tracking-[1px] text-white transition-all duration-300 hover:bg-transparent hover:text-[#202020]"
                 >
                   Start a Conversation
                 </Link>
 
                 <Link
                   to="/services"
-                  className="border border-[#bdbdbd] px-7 py-3 font-serif text-xs font-semibold uppercase tracking-[1px] text-[#202020] transition-all duration-300 hover:border-[#202020]"
+                  className="border border-[#bdbdbd] px-7 py-3 font-sans text-xs font-semibold uppercase tracking-[1px] text-[#202020] transition-all duration-300 hover:border-[#202020]"
                 >
                   Explore Services
                 </Link>
@@ -149,11 +149,11 @@ const Home = () => {
 
               <div className="w-[260px] border-l border-[#bdbdbd] pl-7">
 
-                <p className="font-serif text-[11px] font-semibold uppercase tracking-[3px] text-[#666]">
+                <p className="font-sans text-[11px] font-semibold uppercase tracking-[3px] text-[#666]">
                   Our Philosophy
                 </p>
 
-                <p className="mt-5 font-serif text-[18px] leading-8">
+                <p className="mt-5 font-sans text-[18px] leading-8">
                   Good marketing isn't about saying more.
                   <br />
                   It's about saying what matters.
@@ -175,8 +175,8 @@ const Home = () => {
         <div className="mx-auto flex w-full max-w-[1250px] flex-col gap-10 md:flex-row md:items-center md:justify-between">
           {stats.map((stat, index) => (
             <div key={index} className="flex flex-col items-center justify-center md:items-start">
-              <h3 className="font-serif text-[32px] font-medium text-[#202020] md:text-[42px]">{stat.value}</h3>
-              <p className="mt-2 font-serif text-[12px] font-semibold uppercase tracking-[2px] text-[#666]">{stat.label}</p>
+              <h3 className="font-sans text-[32px] font-medium text-[#202020] md:text-[42px]">{stat.value}</h3>
+              <p className="mt-2 font-sans text-[12px] font-semibold uppercase tracking-[2px] text-[#666]">{stat.label}</p>
             </div>
           ))}
         </div>
@@ -191,11 +191,11 @@ const Home = () => {
 
           <div>
 
-            <p className="mb-5 font-serif text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
+            <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
               What We Believe
             </p>
 
-            <h2 className="max-w-[650px] font-serif text-[28px] font-medium leading-tight md:text-[42px]">
+            <h2 className="max-w-[650px] font-sans text-[28px] font-medium leading-tight md:text-[42px]">
               Clarity creates better marketing.
             </h2>
 
@@ -203,13 +203,13 @@ const Home = () => {
 
           <div className="space-y-6">
 
-            <p className="font-serif text-[15px] leading-8 text-[#555] md:text-[16px]">
+            <p className="font-sans text-[15px] leading-8 text-[#555] md:text-[16px]">
               The best marketing doesn't begin with a campaign. It begins
               with understanding your business, your audience, and what
               makes you different.
             </p>
 
-            <p className="font-serif text-[15px] leading-8 text-[#555] md:text-[16px]">
+            <p className="font-sans text-[15px] leading-8 text-[#555] md:text-[16px]">
               ZIH brings strategy and creativity together to create
               marketing that feels intentional, communicates clearly, and
               supports real business objectives.
@@ -217,7 +217,7 @@ const Home = () => {
 
             <Link
               to="/about"
-              className="inline-block border-b border-[#202020] pb-1 font-serif text-[13px] font-semibold text-[#202020]"
+              className="inline-block border-b border-[#202020] pb-1 font-sans text-[13px] font-semibold text-[#202020]"
             >
               More about ZIH
             </Link>
@@ -238,15 +238,15 @@ const Home = () => {
           {/* Left */}
           <div className="py-8 lg:border-r lg:border-[#bdbdbd] lg:py-20 lg:pr-20">
 
-            <p className="mb-5 font-serif text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
+            <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
               What We Do
             </p>
 
-            <h2 className="max-w-[550px] font-serif text-[28px] font-medium leading-tight md:text-[42px]">
+            <h2 className="max-w-[550px] font-sans text-[28px] font-medium leading-tight md:text-[42px]">
               Everything starts with a clear direction.
             </h2>
 
-            <p className="mt-7 max-w-[500px] font-serif text-[15px] leading-8 text-[#555]">
+            <p className="mt-7 max-w-[500px] font-sans text-[15px] leading-8 text-[#555]">
               From strategy to execution, we create focused marketing
               solutions around what your business actually needs.
             </p>
@@ -267,21 +267,21 @@ const Home = () => {
 
                   <div>
 
-                    <p className="mb-3 font-serif text-[11px] text-[#777]">
+                    <p className="mb-3 font-sans text-[11px] text-[#777]">
                       {service.number}
                     </p>
 
-                    <h3 className="font-serif text-[20px] font-medium md:text-[24px]">
+                    <h3 className="font-sans text-[20px] font-medium md:text-[24px]">
                       {service.title}
                     </h3>
 
-                    <p className="mt-3 max-w-[500px] font-serif text-[14px] leading-7 text-[#666]">
+                    <p className="mt-3 max-w-[500px] font-sans text-[14px] leading-7 text-[#666]">
                       {service.description}
                     </p>
 
                   </div>
 
-                  <span className="mt-1 font-serif text-[18px] md:text-[20px] text-[#777] transition-transform duration-300 group-hover:translate-x-1">
+                  <span className="mt-1 font-sans text-[18px] md:text-[20px] text-[#777] transition-transform duration-300 group-hover:translate-x-1">
                     →
                   </span>
 
@@ -303,14 +303,14 @@ const Home = () => {
         <div className="mx-auto w-full max-w-[1250px]">
           <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="mb-5 font-serif text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
+              <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
                 Featured Work
               </p>
-              <h2 className="font-serif text-[28px] font-medium leading-tight md:text-[42px]">
+              <h2 className="font-sans text-[28px] font-medium leading-tight md:text-[42px]">
                 Proven Impact.
               </h2>
             </div>
-            <Link to="/services" className="border-b border-[#202020] pb-1 font-serif text-[13px] font-semibold text-[#202020] transition-colors hover:text-[#666]">
+            <Link to="/services" className="border-b border-[#202020] pb-1 font-sans text-[13px] font-semibold text-[#202020] transition-colors hover:text-[#666]">
               View all capabilities
             </Link>
           </div>
@@ -318,10 +318,10 @@ const Home = () => {
           <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2">
             {caseStudies.map((study, i) => (
               <div key={i} className="group cursor-pointer border border-[#bdbdbd] bg-white p-8 transition-all hover:border-[#202020]">
-                <p className="font-serif text-[11px] font-semibold uppercase tracking-[2px] text-[#666]">{study.category}</p>
-                <h3 className="mt-4 font-serif text-[20px] font-medium leading-tight text-[#202020] md:text-[24px]">{study.title}</h3>
-                <p className="mt-4 font-serif text-[14px] leading-7 text-[#555]">{study.description}</p>
-                <div className="mt-8 flex items-center gap-2 font-serif text-[12px] font-semibold uppercase tracking-[1px] text-[#202020] transition-transform group-hover:translate-x-2">
+                <p className="font-sans text-[11px] font-semibold uppercase tracking-[2px] text-[#666]">{study.category}</p>
+                <h3 className="mt-4 font-sans text-[20px] font-medium leading-tight text-[#202020] md:text-[24px]">{study.title}</h3>
+                <p className="mt-4 font-sans text-[14px] leading-7 text-[#555]">{study.description}</p>
+                <div className="mt-8 flex items-center gap-2 font-sans text-[12px] font-semibold uppercase tracking-[1px] text-[#202020] transition-transform group-hover:translate-x-2">
                   Read Study <span>→</span>
                 </div>
               </div>
@@ -337,11 +337,11 @@ const Home = () => {
 
         <div className="mx-auto w-full max-w-[1250px]">
 
-          <p className="mb-8 font-serif text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
+          <p className="mb-8 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
             Our Perspective
           </p>
 
-          <h2 className="max-w-[1200px] font-serif text-[32px] font-medium leading-[1.08] tracking-tight md:text-[48px] lg:text-[60px]">
+          <h2 className="max-w-[1200px] font-sans text-[32px] font-medium leading-[1.08] tracking-tight md:text-[48px] lg:text-[60px]">
             Your brand is more than what you sell.
             <span className="text-[#777]">
               {" "}
@@ -359,22 +359,22 @@ const Home = () => {
       <section className="w-full border-y border-[#bdbdbd] bg-[#fdfdfd] px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
         <div className="mx-auto grid w-full max-w-[1250px] grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
           <div>
-             <p className="mb-5 font-serif text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
+             <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
               Client Voices
             </p>
-            <h2 className="font-serif text-[28px] font-medium leading-tight md:text-[42px]">
+            <h2 className="font-sans text-[28px] font-medium leading-tight md:text-[42px]">
               Trusted by ambitious leaders.
             </h2>
           </div>
           <div className="flex flex-col gap-12">
             {testimonials.map((test, index) => (
               <div key={index} className="border-l border-[#202020] pl-6 md:pl-10">
-                <p className="font-serif text-[18px] leading-8 text-[#202020] md:text-[18px] md:text-[20px] md:leading-10">
+                <p className="font-sans text-[18px] leading-8 text-[#202020] md:text-[18px] md:text-[20px] md:leading-10">
                   "{test.quote}"
                 </p>
                 <div className="mt-6">
-                  <p className="font-serif text-[14px] font-bold text-[#202020]">{test.author}</p>
-                  <p className="font-serif text-[12px] text-[#666]">{test.role}</p>
+                  <p className="font-sans text-[14px] font-bold text-[#202020]">{test.author}</p>
+                  <p className="font-sans text-[12px] text-[#666]">{test.role}</p>
                 </div>
               </div>
             ))}
@@ -391,11 +391,11 @@ const Home = () => {
 
           <div>
 
-            <p className="mb-5 font-serif text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
+            <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
               How We Work
             </p>
 
-            <h2 className="font-serif text-[28px] font-medium leading-tight md:text-[42px]">
+            <h2 className="font-sans text-[28px] font-medium leading-tight md:text-[42px]">
               A simple process.
             </h2>
 
@@ -403,7 +403,7 @@ const Home = () => {
 
           <div className="flex items-end">
 
-            <p className="max-w-[600px] font-serif text-[15px] leading-8 text-[#555]">
+            <p className="max-w-[600px] font-sans text-[15px] leading-8 text-[#555]">
               We keep the process focused and collaborative, moving from
               understanding to strategy and from strategy to meaningful
               execution.
@@ -421,15 +421,15 @@ const Home = () => {
               className="grid w-full grid-cols-1 gap-5 border-b border-[#bdbdbd] py-6 md:grid-cols-[100px_1fr_1.5fr] md:items-start md:gap-10"
             >
 
-              <span className="font-serif text-[11px] text-[#777]">
+              <span className="font-sans text-[11px] text-[#777]">
                 {item.number}
               </span>
 
-              <h3 className="font-serif text-[24px] font-medium">
+              <h3 className="font-sans text-[24px] font-medium">
                 {item.title}
               </h3>
 
-              <p className="max-w-[600px] font-serif text-[14px] leading-7 text-[#666]">
+              <p className="max-w-[600px] font-sans text-[14px] leading-7 text-[#666]">
                 {item.description}
               </p>
 
@@ -449,11 +449,11 @@ const Home = () => {
 
           <div>
 
-            <p className="mb-5 font-serif text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
+            <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
               Start Something Meaningful
             </p>
 
-            <h2 className="max-w-[800px] font-serif text-[40px] font-medium leading-tight md:text-[60px]">
+            <h2 className="max-w-[800px] font-sans text-[40px] font-medium leading-tight md:text-[60px]">
               Let's build something worth remembering.
             </h2>
 
@@ -461,7 +461,7 @@ const Home = () => {
 
           <Link
             to="/contact"
-            className="w-fit shrink-0 border border-[#202020] bg-[#202020] px-7 py-3 font-serif text-xs font-semibold uppercase tracking-[1px] text-white transition-all duration-300 hover:bg-transparent hover:text-[#202020]"
+            className="w-fit shrink-0 border border-[#202020] bg-[#202020] px-7 py-3 font-sans text-xs font-semibold uppercase tracking-[1px] text-white transition-all duration-300 hover:bg-transparent hover:text-[#202020]"
           >
             Let's Talk
           </Link>

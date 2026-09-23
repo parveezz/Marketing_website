@@ -3,13 +3,13 @@ const Faq = () => {
     <section className="w-full min-h-[70vh] bg-[#fafafa] px-5 py-16 text-[#202020] md:px-8 lg:px-10 lg:py-24">
       <div className="mx-auto w-full max-w-[1250px]">
         <div className="border-b border-[#bdbdbd] pb-12">
-          <p className="mb-4 font-serif text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
+          <p className="mb-4 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
             Faq
           </p>
-          <h1 className="font-serif text-[42px] font-medium leading-tight tracking-[-1px] sm:text-[52px] md:text-[64px]">
+          <h1 className="font-sans text-[42px] font-medium leading-tight tracking-[-1px] sm:text-[52px] md:text-[64px]">
             FAQ
           </h1>
-          <p className="mt-6 w-full max-w-[500px] font-serif text-[14px] leading-6 text-[#555]">
+          <p className="mt-6 w-full max-w-[500px] font-sans text-[14px] leading-6 text-[#555]">
             Answers to common questions about our services and process.
           </p>
         </div>
@@ -23,8 +23,8 @@ const Faq = () => {
               { q: 'What is the typical onboarding process?', a: 'We start with a comprehensive discovery phase, followed by an audit of your current assets. Within the first two weeks, we present a tailored 90-day execution plan.' }
             ].map((faq, idx) => (
               <div key={idx} className="border-t border-[#d5d5d5] py-6 last:border-b">
-                <h3 className="font-serif text-[18px] font-medium text-[#202020]">{faq.q}</h3>
-                <p className="mt-3 font-serif text-[14px] leading-6 text-[#555]">{faq.a}</p>
+                <h3 className="font-sans text-[18px] font-medium text-[#202020]">{faq.q}</h3>
+                <p className="mt-3 font-sans text-[14px] leading-6 text-[#555]">{faq.a}</p>
               </div>
             ))}
           </div>
