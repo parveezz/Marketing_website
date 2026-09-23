@@ -40,8 +40,8 @@ const CookiePolicy = () => {
     ];
 
     return (
-        <section className="w-full min-h-screen bg-[#fafafa] px-5 py-12 text-[#202020] sm:px-8 md:px-10 lg:px-14 xl:px-20">
-            <div className="w-full">
+        <section className="w-full min-h-screen bg-[#fafafa] px-5 py-12 text-[#202020] md:px-8 lg:px-10">
+            <div className="mx-auto w-full max-w-[1250px]">
                 {/* Header */}
                 <div className="border-b border-[#bdbdbd] pb-10 md:pb-12">
                     <p className="mb-4 font-serif text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
@@ -58,7 +58,7 @@ const CookiePolicy = () => {
                 </div>
 
                 {/* Content */}
-                <div className="w-full max-w-[900px] py-10 md:py-14">
+                <div className="mx-auto w-full max-w-[900px] py-10 md:py-14">
                     {sections.map((section, index) => (
                         <div
                             key={section.title}

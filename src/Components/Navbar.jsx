@@ -6,10 +6,17 @@ import ServicesDropdown from "./ServicesDropdown";
 const Navbar = () => {
   const [servicesOpen, setServicesOpen] = useState(false);
 
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const linkClass = ({ isActive }) =>
     isActive
-      ? "relative px-1 py-2 font-serif text-sm font-semibold tracking-wide text-[#202020] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-[#202020] after:content-['']"
-      : "relative px-1 py-2 font-serif text-sm font-medium tracking-wide text-[#555] transition-colors duration-300 hover:text-[#202020] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-[#202020] after:content-[''] after:transition-all after:duration-300 hover:after:w-full";
+      ? "relative cursor-pointer px-1 py-2 font-serif text-sm font-medium tracking-wide text-[#202020] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-[#202020] after:content-['']"
+      : "relative cursor-pointer px-1 py-2 font-serif text-sm font-medium tracking-wide text-[#555] transition-colors duration-300 hover:text-[#202020] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-[#202020] after:content-[''] after:transition-all after:duration-300 hover:after:w-full";
+
+  const mobileLinkClass = ({ isActive }) =>
+    isActive
+      ? "block w-full py-3 font-serif text-lg font-medium text-[#202020] border-b border-[#d5d5d5]"
+      : "block w-full py-3 font-serif text-lg font-medium text-[#555] border-b border-[#d5d5d5] transition-colors hover:text-[#202020]";
 
   return (
     <nav className="sticky top-0 z-50 border-b border-[#d5d5d5] bg-[#fafafa]/95 backdrop-blur-sm">
@@ -19,15 +26,15 @@ const Navbar = () => {
           {/* =========================
               LOGO
           ========================== */}
-          <div className="flex shrink-0 items-center">
+          <div className="flex shrink-0 items-center z-[60]">
             <Link
               to="/"
-              className="flex flex-col items-center leading-none text-[#202020]"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex cursor-pointer flex-col items-center leading-none text-[#202020]"
             >
               <span className="font-serif text-[34px] font-normal tracking-[8px]">
                 ZIH
               </span>
-
               <span className="mt-1 hidden font-serif text-[8px] font-semibold tracking-[5px] md:block">
                 MARKETING CONSULTANCY
               </span>
@@ -35,59 +42,44 @@ const Navbar = () => {
           </div>
 
           {/* =========================
-              NAVIGATION LINKS
+              DESKTOP NAVIGATION LINKS
           ========================== */}
           <div className="hidden items-center gap-9 md:flex">
-
-            {/* HOME */}
-            <NavLink
-              to="/"
-              className={linkClass}
-              end
-            >
+            <NavLink to="/" className={linkClass} end>
               Home
             </NavLink>
-
-            {/* ABOUT */}
-            <NavLink
-              to="/about"
-              className={linkClass}
-            >
+            <NavLink to="/about" className={linkClass}>
               About
             </NavLink>
 
             {/* SERVICES */}
-            <div className="relative">
-
-              <button
-                type="button"
-                onClick={() => setServicesOpen((prev) => !prev)}
-                className="relative px-1 py-2 font-serif text-sm font-medium tracking-wide text-[#555] transition-colors duration-300 hover:text-[#202020]"
+            <div 
+              className="relative flex items-center"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <NavLink
+                to="/services"
+                className={({ isActive }) =>
+                  isActive || servicesOpen
+                    ? "relative cursor-pointer flex items-center gap-1.5 px-1 py-2 font-serif text-sm font-medium tracking-wide text-[#202020] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-[#202020] after:content-['']"
+                    : "relative cursor-pointer flex items-center gap-1.5 px-1 py-2 font-serif text-sm font-medium tracking-wide text-[#555] transition-colors duration-300 hover:text-[#202020] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-[#202020] after:content-[''] after:transition-all after:duration-300 hover:after:w-full"
+                }
               >
                 Services
-
-                <span
-                  className={`absolute bottom-0 left-0 h-[1px] bg-[#202020] transition-all duration-300 ${servicesOpen ? "w-full" : "w-0"
-                    }`}
-                />
-              </button>
-
-              {/* DROPDOWN */}
+                <span className={`text-[9px] transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`}>▼</span>
+              </NavLink>
+              
+              {/* DESKTOP DROPDOWN */}
               <ServicesDropdown
                 servicesOpen={servicesOpen}
                 setServicesOpen={setServicesOpen}
               />
-
             </div>
 
-            {/* CONTACT */}
-            <NavLink
-              to="/contact"
-              className={linkClass}
-            >
+            <NavLink to="/contact" className={linkClass}>
               Contact
             </NavLink>
-
           </div>
 
           {/* =========================
@@ -105,28 +97,65 @@ const Navbar = () => {
           {/* =========================
               MOBILE MENU BUTTON
           ========================== */}
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center md:hidden z-[60]">
             <button
               type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 text-[#202020] transition-colors duration-300 hover:text-[#666]"
-              aria-label="Open menu"
+              aria-label="Toggle menu"
             >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="1.5"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
+              {mobileMenuOpen ? (
+                <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
             </button>
           </div>
+        </div>
+      </div>
 
+      {/* =========================
+          MOBILE MENU OVERLAY
+      ========================== */}
+      <div 
+        className={`fixed inset-0 z-50 bg-[#fafafa] transition-transform duration-300 ease-in-out md:hidden ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+      >
+        <div className="flex h-full flex-col overflow-y-auto px-6 pb-20 pt-[100px]">
+          <NavLink to="/" onClick={() => setMobileMenuOpen(false)} className={mobileLinkClass} end>Home</NavLink>
+          <NavLink to="/about" onClick={() => setMobileMenuOpen(false)} className={mobileLinkClass}>About</NavLink>
+          
+          <div className="w-full border-b border-[#d5d5d5] py-3">
+            <button 
+              onClick={() => setServicesOpen(!servicesOpen)}
+              className="flex w-full items-center justify-between font-serif text-lg font-medium text-[#555]"
+            >
+              Services
+              <span className={`text-[12px] transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`}>▼</span>
+            </button>
+            
+            {/* MOBILE SERVICES SUB-MENU */}
+            <div className={`flex flex-col gap-3 overflow-hidden pl-4 transition-all duration-300 ${servicesOpen ? "mt-4 max-h-[500px]" : "max-h-0"}`}>
+              <Link to="/services" onClick={() => setMobileMenuOpen(false)} className="font-serif text-[15px] text-[#444]">All Services</Link>
+              <Link to="/services/strategic-marketing" onClick={() => setMobileMenuOpen(false)} className="font-serif text-[15px] text-[#444]">Strategic Marketing</Link>
+              <Link to="/services/branding" onClick={() => setMobileMenuOpen(false)} className="font-serif text-[15px] text-[#444]">Branding</Link>
+              <Link to="/services/advertising" onClick={() => setMobileMenuOpen(false)} className="font-serif text-[15px] text-[#444]">Advertising</Link>
+              <Link to="/services/social-media" onClick={() => setMobileMenuOpen(false)} className="font-serif text-[15px] text-[#444]">Social Media</Link>
+            </div>
+          </div>
+
+          <NavLink to="/contact" onClick={() => setMobileMenuOpen(false)} className={mobileLinkClass}>Contact</NavLink>
+          
+          <Link
+            to="/contact"
+            onClick={() => setMobileMenuOpen(false)}
+            className="mt-8 block w-full border border-[#202020] bg-[#202020] py-4 text-center font-serif text-xs font-semibold uppercase tracking-[1px] text-white"
+          >
+            Get Started
+          </Link>
         </div>
       </div>
     </nav>

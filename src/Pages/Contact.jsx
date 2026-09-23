@@ -2,6 +2,9 @@ import { useState } from "react";
 
 const Contact = () => {
   const [openFaq, setOpenFaq] = useState(null);
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState(null);
 
   const faqs = [
     {
@@ -45,10 +48,40 @@ const Contact = () => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  return (
-    <section className="w-full min-h-screen bg-[#fafafa] px-5 py-10 text-[#202020] sm:px-8 md:px-10 lg:px-14 xl:px-20">
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-      <div className="w-full">
+  const handleContactSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setStatusMessage(null);
+
+    try {
+      const response = await fetch('/api/contact.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const result = await response.json();
+      
+      if (response.ok) {
+        setStatusMessage({ type: 'success', text: result.message || 'Message sent successfully!' });
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatusMessage({ type: 'error', text: result.message || 'Something went wrong. Please try again.' });
+      }
+    } catch (error) {
+      setStatusMessage({ type: 'error', text: 'Network error. Please try again later.' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <section className="w-full min-h-screen bg-[#fafafa] px-5 py-10 text-[#202020] md:px-8 lg:px-10">
+
+      <div className="mx-auto w-full max-w-[1250px]">
 
         {/* =========================
             CONTACT SECTION
@@ -170,7 +203,7 @@ const Contact = () => {
               below, and we'll get back to you as soon as possible.
             </p>
 
-            <form className="mt-8 w-full">
+            <form className="mt-8 w-full" onSubmit={handleContactSubmit}>
 
               {/* Name */}
               <div className="mb-5 w-full">
@@ -180,6 +213,10 @@ const Contact = () => {
 
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
                   placeholder="Your Name"
                   className="w-full border-b border-[#777] bg-transparent px-0 py-3 font-serif text-[14px] text-[#111] outline-none placeholder:text-[#888] focus:border-[#111]"
                 />
@@ -193,6 +230,10 @@ const Contact = () => {
 
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
                   placeholder="Your Email Address"
                   className="w-full border-b border-[#777] bg-transparent px-0 py-3 font-serif text-[14px] text-[#111] outline-none placeholder:text-[#888] focus:border-[#111]"
                 />
@@ -206,17 +247,28 @@ const Contact = () => {
 
                 <textarea
                   rows="5"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
                   placeholder="Tell us about your project..."
                   className="w-full resize-none border-b border-[#777] bg-transparent px-0 py-3 font-serif text-[14px] text-[#111] outline-none placeholder:text-[#888] focus:border-[#111]"
                 />
               </div>
 
+              {statusMessage && (
+                <p className={`mb-4 font-serif text-[13px] ${statusMessage.type === 'error' ? 'text-red-500' : 'text-green-600'}`}>
+                  {statusMessage.text}
+                </p>
+              )}
+
               {/* Submit */}
               <button
                 type="submit"
-                className="w-full border border-[#202020] bg-[#202020] py-3.5 font-serif text-[13px] font-semibold uppercase tracking-[1px] text-white transition-all duration-300 hover:bg-white hover:text-[#202020]"
+                disabled={isSubmitting}
+                className="w-full border border-[#202020] bg-[#202020] py-3.5 font-serif text-[13px] font-semibold uppercase tracking-[1px] text-white transition-all duration-300 hover:bg-white hover:text-[#202020] disabled:opacity-50"
               >
-                Submit
+                {isSubmitting ? "Submitting..." : "Submit"}
               </button>
 
             </form>
@@ -229,7 +281,7 @@ const Contact = () => {
         <div className="mt-24 w-full">
 
           {/* FAQ Heading */}
-          <h2 className="text-center font-serif text-[42px] font-medium tracking-[-1px] text-[#202020] sm:text-[48px] md:text-[52px]">
+          <h2 className="text-center font-serif text-[32px] font-medium tracking-[-1px] text-[#202020] sm:text-[48px] md:text-[42px]">
             FAQs
           </h2>
 

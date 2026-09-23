@@ -26,8 +26,8 @@ const ServicesDropdown = ({
     return (
         <div
             className={`absolute left-1/2 top-full z-50 w-[230px] -translate-x-1/2 border border-[#d5d5d5] bg-[#fafafa] px-5 py-6 transition-all duration-300 ${servicesOpen
-                    ? "visible translate-y-0 scale-100 opacity-100"
-                    : "invisible -translate-y-2 scale-95 opacity-0"
+                    ? "visible translate-y-0 opacity-100"
+                    : "invisible -translate-y-2 opacity-0"
                 }`}
         >
             {/* Heading */}

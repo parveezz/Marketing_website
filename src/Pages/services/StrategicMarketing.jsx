@@ -10,11 +10,11 @@ const StrategicMarketing = () => {
     ];
 
     return (
-        <section className="w-full min-h-screen bg-[#fafafa] px-5 py-12 text-[#202020] sm:px-8 md:px-10 lg:px-14 xl:px-20">
-            <div className="w-full">
+        <section className="w-full min-h-screen bg-[#fafafa] px-5 py-12 text-[#202020] md:px-8 lg:px-10">
+            <div className="mx-auto w-full max-w-[1250px]">
 
                 {/* Hero */}
-                <div className="border-b border-[#bdbdbd] pb-12 md:pb-16">
+                <div className="border-b border-[#bdbdbd] pb-8 md:pb-12">
                     <p className="mb-5 font-serif text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
                         Our Services
                     </p>
@@ -25,7 +25,7 @@ const StrategicMarketing = () => {
                         Marketing
                     </h1>
 
-                    <p className="mt-8 max-w-[700px] font-serif text-[15px] leading-7 text-[#555] md:text-[17px] md:leading-8">
+                    <p className="mt-8 max-w-[700px] font-serif text-[14px] leading-7 text-[#555] md:text-[16px] md:leading-8">
                         We build clear marketing strategies that connect your business
                         goals with the right audience, positioning, channels, and
                         opportunities for sustainable growth.
@@ -33,7 +33,7 @@ const StrategicMarketing = () => {
                 </div>
 
                 {/* Overview */}
-                <div className="grid w-full grid-cols-1 gap-12 py-14 md:py-20 lg:grid-cols-2 lg:gap-24">
+                <div className="mx-auto grid w-full max-w-[1250px] grid-cols-1 gap-12 py-8 md:py-12 lg:grid-cols-2 lg:gap-24">
 
                     <div>
                         <p className="mb-4 font-serif text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
@@ -58,7 +58,7 @@ const StrategicMarketing = () => {
 
                 {/* Services */}
                 <div className="border-t border-[#bdbdbd]">
-                    <div className="grid w-full grid-cols-1 lg:grid-cols-2">
+                    <div className="mx-auto grid w-full max-w-[1250px] grid-cols-1 lg:grid-cols-2">
 
                         <div className="border-b border-[#bdbdbd] py-10 lg:border-b-0 lg:border-r lg:pr-16">
                             <p className="font-serif text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
@@ -89,8 +89,8 @@ const StrategicMarketing = () => {
                 </div>
 
                 {/* CTA */}
-                <div className="flex w-full flex-col gap-8 py-16 md:flex-row md:items-end md:justify-between md:py-24">
-                    <h2 className="max-w-[650px] font-serif text-[34px] font-medium leading-tight md:text-[48px]">
+                <div className="mx-auto flex w-full max-w-[1250px] flex-col gap-8 py-10 md:flex-row md:items-end md:justify-between md:py-16">
+                    <h2 className="max-w-[650px] font-serif text-[26px] font-medium leading-tight md:text-[40px]">
                         Build a strategy that moves your business forward.
                     </h2>
 
