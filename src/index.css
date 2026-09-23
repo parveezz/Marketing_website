@@ -1,1 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&display=swap');
+
 @import "tailwindcss";
+
+@theme {
+      --font-bodoni: "Bodoni Moda", serif;
+      --font-sans-custom: Arial, Helvetica, sans-serif;
+      --font-serif-custom: "Times New Roman", Times, serif;
+}
+
+/* Hide scrollbar globally across all browsers while keeping scroll functionality */
+html, body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
