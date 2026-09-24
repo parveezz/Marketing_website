@@ -25,13 +25,13 @@ const ServicesDropdown = ({
 
     return (
         <div
-            className={`absolute left-1/2 top-full z-50 w-[230px] -translate-x-1/2 border border-[#d5d5d5] bg-[#fafafa] px-5 py-6 transition-all duration-300 ${servicesOpen
+            className={`absolute left-1/2 top-full z-50 w-[230px] -translate-x-1/2 border border-border bg-surface-muted px-5 py-6 transition-all duration-300 ${servicesOpen
                     ? "visible translate-y-0 opacity-100"
                     : "invisible -translate-y-2 opacity-0"
                 }`}
         >
             {/* Heading */}
-            <p className="mb-6 font-sans text-[12px] font-semibold uppercase tracking-[2px] text-[#202020]">
+            <p className="mb-6 font-sans text-[12px] font-semibold uppercase tracking-[2px] text-text-main">
                 Services
             </p>
 
@@ -42,7 +42,7 @@ const ServicesDropdown = ({
                         key={service.name}
                         to={service.path}
                         onClick={() => setServicesOpen(false)}
-                        className="w-fit font-sans text-[15px] text-[#202020] transition-colors duration-300 hover:text-[#666]"
+                        className="w-fit font-sans text-[15px] text-text-main transition-colors duration-300 hover:text-text-muted"
                     >
                         {service.name}
                     </Link>

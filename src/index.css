@@ -3,15 +3,54 @@
 @import "tailwindcss";
 
 @theme {
-      --font-sans: "Inter", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --color-surface-muted: #030712;  /* gray-950 */
+  --color-surface: #111827;        /* gray-900 */
+  --color-glass: rgba(255, 255, 255, 0.03);
+  --color-glass-hover: rgba(255, 255, 255, 0.06);
+  --color-text-main: #ffffff;
+  --color-text-muted: #9ca3af;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-hover: rgba(255, 255, 255, 0.2);
+  --color-brand: #8b5cf6;
+  --color-brand-hover: #7c3aed;
 }
 
-/* Hide scrollbar globally across all browsers while keeping scroll functionality */
 html, body {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  overflow-x: hidden;
 }
 
-html::-webkit-scrollbar, body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari and Opera */
+body {
+  background-color: var(--color-surface-muted);
+  color: var(--color-text-main);
+}
+
+/* Custom Scrollbar for Deep Dark Theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-muted); 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #3f3f46; 
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand); 
+}
+
+/* Floating Orb Animation */
+@keyframes orbFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+.animate-orb {
+  animation: orbFloat 20s infinite ease-in-out;
 }

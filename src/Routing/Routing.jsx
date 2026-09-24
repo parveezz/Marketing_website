@@ -15,10 +15,10 @@ import StrategicMarketing from "../Pages/services/StrategicMarketing";
 import Branding from "../Pages/services/Branding";
 import Advertising from "../Pages/services/Advertising";
 import SocialMedia from "../Pages/services/SocialMedia";
-import Careers from "../Pages/Careers";
-import Press from "../Pages/Press";
 import Blog from "../Pages/Blog";
+import BlogDetail from "../Pages/BlogDetail";
 import CaseStudies from "../Pages/CaseStudies";
+import CaseStudyDetail from "../Pages/CaseStudyDetail";
 import Whitepapers from "../Pages/Whitepapers";
 import Faq from "../Pages/Faq";
 
@@ -36,13 +36,11 @@ const Routing = () => {
 
         <Route path="contact" element={<Contact />} />
 
-        <Route path="careers" element={<Careers />} />
-
-        <Route path="press" element={<Press />} />
-
         <Route path="blog" element={<Blog />} />
+        <Route path="blog/:id" element={<BlogDetail />} />
 
         <Route path="case-studies" element={<CaseStudies />} />
+        <Route path="case-studies/:id" element={<CaseStudyDetail />} />
 
         <Route path="whitepapers" element={<Whitepapers />} />
 

@@ -1,3 +1,4 @@
+import SEO from "../Components/SEO";
 import { Link } from "react-router-dom";
 
 const About = () => {
@@ -62,29 +63,31 @@ const About = () => {
   ];
 
   return (
-    <main className="w-full bg-[#fafafa] text-[#202020]">
+    <main className="w-full bg-surface-muted text-text-main">
+      <SEO title="About Us" description="Learn more about Invertio Marketing." />
+
 
       {/* =====================================================
           HERO
       ====================================================== */}
       <section className="w-full px-5 pb-10 pt-8 sm:px-8 md:px-10 md:pb-16 md:pt-10 lg:px-10">
-        <div className="mx-auto w-full max-w-[1250px] border-b border-[#bdbdbd] pb-8 md:pb-12">
+        <div className="mx-auto w-full max-w-[1250px] border-b border-border pb-8 md:pb-12">
 
-          <p className="mb-6 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
+          <p className="mb-6 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
             About ZIH
           </p>
 
           <h1 className="max-w-[1100px] font-sans text-[46px] font-medium leading-[1.02] tracking-tight sm:text-[56px] md:text-[72px] lg:text-[88px]">
             Marketing with
             <br />
-            <span className="text-[#666]">meaning.</span>
+            <span className="text-text-muted">meaning.</span>
           </h1>
 
           <div className="mt-10 grid w-full grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-20">
 
             <div />
 
-            <p className="max-w-[650px] font-sans text-[14px] leading-8 text-[#555] md:text-[16px] md:leading-8">
+            <p className="max-w-[650px] font-sans text-[14px] leading-8 text-text-muted md:text-[16px] md:leading-8">
               ZIH is a marketing consultancy built around a simple idea:
               effective marketing starts with understanding. We combine
               strategy, creativity, and purposeful execution to help
@@ -95,8 +98,8 @@ const About = () => {
           </div>
           
           {/* Hero Image */}
-          <div className="mt-16 aspect-[21/9] w-full overflow-hidden bg-[#ebebeb]">
-             <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2000&auto=format&fit=crop" alt="About ZIH" className="h-full w-full object-cover" />
+          <div className="mt-16 aspect-[4/3] md:aspect-[21/9] w-full overflow-hidden bg-surface-muted">
+             <img src="/images/about-team.jpg" alt="About ZIH" className="h-full w-full object-cover" />
           </div>
         </div>
       </section>
@@ -108,7 +111,7 @@ const About = () => {
         <div className="mx-auto grid w-full max-w-[1250px] grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
 
           <div>
-            <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
+            <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
               Who We Are
             </p>
 
@@ -119,19 +122,19 @@ const About = () => {
           </div>
 
           <div className="space-y-6">
-            <p className="font-sans text-[15px] leading-8 text-[#555] md:text-[16px]">
+            <p className="font-sans text-[15px] leading-8 text-text-muted md:text-[16px]">
               Businesses don't need more noise. They need clarity. They need
               to understand who they are speaking to, what makes them
               different, and how to communicate that difference effectively.
             </p>
 
-            <p className="font-sans text-[15px] leading-8 text-[#555] md:text-[16px]">
+            <p className="font-sans text-[15px] leading-8 text-text-muted md:text-[16px]">
               At ZIH, we work across strategy, branding, advertising, and
               social media to create marketing that is intentional,
               consistent, and connected to real business objectives.
             </p>
 
-            <p className="font-sans text-[15px] leading-8 text-[#555] md:text-[16px]">
+            <p className="font-sans text-[15px] leading-8 text-text-muted md:text-[16px]">
               Our approach is collaborative. We work closely with our
               clients, understand their challenges, and build solutions
               around where they want to go.
@@ -144,10 +147,10 @@ const About = () => {
       {/* =====================================================
           OUR STORY / TIMELINE (NEW)
       ====================================================== */}
-      <section className="w-full border-t border-[#bdbdbd] bg-[#fdfdfd] px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
+      <section className="w-full border-t border-border bg-surface px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
         <div className="mx-auto w-full max-w-[1250px]">
           <div className="mb-12">
-            <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
+            <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
               Our Story
             </p>
             <h2 className="max-w-[600px] font-sans text-[26px] font-medium leading-tight md:text-[40px]">
@@ -156,21 +159,21 @@ const About = () => {
           </div>
           
           <div className="grid w-full grid-cols-1 gap-12 md:grid-cols-3">
-            <div className="border-t border-[#202020] pt-6">
+            <div className="border-t border-brand pt-6">
               <h3 className="font-sans text-[20px] font-medium">The Beginning</h3>
-              <p className="mt-4 font-sans text-[14px] leading-7 text-[#555]">
+              <p className="mt-4 font-sans text-[14px] leading-7 text-text-muted">
                 Founded by Syed Zubair Hafeez, ZIH started with a singular vision: to strip away the vanity metrics and jargon from the marketing industry and replace it with genuine strategy.
               </p>
             </div>
-            <div className="border-t border-[#202020] pt-6">
+            <div className="border-t border-brand pt-6">
               <h3 className="font-sans text-[20px] font-medium">Our Evolution</h3>
-              <p className="mt-4 font-sans text-[14px] leading-7 text-[#555]">
+              <p className="mt-4 font-sans text-[14px] leading-7 text-text-muted">
                 Over the years, we expanded our capabilities across digital, branding, and traditional advertising, maintaining our commitment to strategy-first execution for a growing roster of global clients.
               </p>
             </div>
-            <div className="border-t border-[#202020] pt-6">
+            <div className="border-t border-brand pt-6">
               <h3 className="font-sans text-[20px] font-medium">Looking Ahead</h3>
-              <p className="mt-4 font-sans text-[14px] leading-7 text-[#555]">
+              <p className="mt-4 font-sans text-[14px] leading-7 text-text-muted">
                 Today, ZIH acts as a growth partner for ambitious brands, continuously adapting to new technologies while staying true to the timeless principles of human psychology and clear communication.
               </p>
             </div>
@@ -181,14 +184,14 @@ const About = () => {
       {/* =====================================================
           VALUES
       ====================================================== */}
-      <section className="w-full border-t border-[#bdbdbd] px-5 md:px-8 lg:px-10">
+      <section className="w-full border-t border-border px-5 md:px-8 lg:px-10">
 
         <div className="mx-auto grid w-full max-w-[1250px] grid-cols-1 lg:grid-cols-2">
 
           {/* Left */}
-          <div className="py-12 lg:border-r lg:border-[#bdbdbd] lg:py-10 lg:pr-20">
+          <div className="py-12 lg:border-r lg:border-border lg:py-10 lg:pr-20">
 
-            <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
+            <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
               What Guides Us
             </p>
 
@@ -203,19 +206,19 @@ const About = () => {
             {values.map((value) => (
               <div
                 key={value.number}
-                className="border-b border-[#bdbdbd] py-8 lg:pl-16"
+                className="border-b border-border py-8 lg:pl-16"
               >
                 <div className="mb-4 flex items-center justify-between">
                   <h3 className="font-sans text-[18px] md:text-[20px] font-medium">
                     {value.title}
                   </h3>
 
-                  <span className="font-sans text-[11px] text-[#777]">
+                  <span className="font-sans text-[11px] text-text-muted">
                     {value.number}
                   </span>
                 </div>
 
-                <p className="max-w-[600px] font-sans text-[14px] leading-7 text-[#666]">
+                <p className="max-w-[600px] font-sans text-[14px] leading-7 text-text-muted">
                   {value.description}
                 </p>
               </div>
@@ -229,10 +232,10 @@ const About = () => {
       {/* =====================================================
           TEAM (NEW)
       ====================================================== */}
-      <section className="w-full border-t border-[#bdbdbd] px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
+      <section className="w-full border-t border-border px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
         <div className="mx-auto w-full max-w-[1250px]">
           <div className="mb-12">
-            <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
+            <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
               Leadership
             </p>
             <h2 className="max-w-[600px] font-sans text-[26px] font-medium leading-tight md:text-[40px]">
@@ -252,7 +255,7 @@ const About = () => {
                 </div>
                 <div className="mt-5">
                   <h3 className="font-sans text-[18px] md:text-[20px] font-medium">{member.name}</h3>
-                  <p className="mt-1 font-sans text-[13px] font-semibold uppercase tracking-[1px] text-[#666]">{member.role}</p>
+                  <p className="mt-1 font-sans text-[13px] font-semibold uppercase tracking-[1px] text-text-muted">{member.role}</p>
                 </div>
               </div>
             ))}
@@ -263,29 +266,29 @@ const About = () => {
       {/* =====================================================
           GLOBAL REACH (NEW)
       ====================================================== */}
-      <section className="w-full border-t border-[#bdbdbd] bg-[#f0f0f0] px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
+      <section className="w-full border-t border-border bg-surface-muted px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
         <div className="mx-auto flex w-full max-w-[1250px] flex-col gap-10 md:flex-row md:items-center md:justify-between">
           <div className="max-w-[500px]">
-             <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
+             <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
               Global Reach
             </p>
             <h2 className="font-sans text-[26px] font-medium leading-tight md:text-[40px]">
               Local expertise. Global perspective.
             </h2>
-            <p className="mt-6 font-sans text-[15px] leading-8 text-[#555]">
+            <p className="mt-6 font-sans text-[15px] leading-8 text-text-muted">
               While our roots are deep, our reach extends across borders. We have successfully partnered with clients in North America, Europe, and Asia, adapting our strategies to nuanced cultural and market dynamics.
             </p>
           </div>
           <div className="flex gap-16 md:gap-24">
             <div className="flex flex-col gap-6">
               <p className="font-sans text-[18px] font-medium">New York</p>
-              <p className="font-sans text-[18px] font-medium text-[#777]">London</p>
-              <p className="font-sans text-[18px] font-medium text-[#777]">Dubai</p>
+              <p className="font-sans text-[18px] font-medium text-text-muted">London</p>
+              <p className="font-sans text-[18px] font-medium text-text-muted">Dubai</p>
             </div>
             <div className="flex flex-col gap-6">
-              <p className="font-sans text-[18px] font-medium text-[#777]">Singapore</p>
-              <p className="font-sans text-[18px] font-medium text-[#777]">Hyderabad</p>
-              <p className="font-sans text-[18px] font-medium text-[#777]">Toronto</p>
+              <p className="font-sans text-[18px] font-medium text-text-muted">Singapore</p>
+              <p className="font-sans text-[18px] font-medium text-text-muted">Hyderabad</p>
+              <p className="font-sans text-[18px] font-medium text-text-muted">Toronto</p>
             </div>
           </div>
         </div>
@@ -294,12 +297,12 @@ const About = () => {
       {/* =====================================================
           APPROACH
       ====================================================== */}
-      <section className="w-full border-t border-[#bdbdbd] px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
+      <section className="w-full border-t border-border px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
 
         <div className="mx-auto mb-12 grid w-full max-w-[1250px] grid-cols-1 gap-10 md:mb-16 lg:grid-cols-2">
 
           <div>
-            <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
+            <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
               Our Approach
             </p>
 
@@ -311,7 +314,7 @@ const About = () => {
           </div>
 
           <div className="flex items-end">
-            <p className="max-w-[600px] font-sans text-[15px] leading-8 text-[#555]">
+            <p className="max-w-[600px] font-sans text-[15px] leading-8 text-text-muted">
               We don't believe in one-size-fits-all marketing. Every
               business has a different audience, challenge, opportunity,
               and ambition. Our process is designed to uncover those
@@ -322,14 +325,14 @@ const About = () => {
         </div>
 
         {/* Process */}
-        <div className="mx-auto max-w-[1250px] border-t border-[#bdbdbd]">
+        <div className="mx-auto max-w-[1250px] border-t border-border">
           <div className="grid w-full grid-cols-1 gap-5">
           {process.map((item) => (
             <div
               key={item.number}
-              className="grid w-full grid-cols-1 gap-5 border-b border-[#bdbdbd] py-6 md:grid-cols-[100px_1fr_1.5fr] md:items-start md:gap-10"
+              className="grid w-full grid-cols-1 gap-5 border-b border-border py-6 md:grid-cols-[100px_1fr_1.5fr] md:items-start md:gap-10"
             >
-              <span className="font-sans text-[11px] text-[#777]">
+              <span className="font-sans text-[11px] text-text-muted">
                 {item.number}
               </span>
 
@@ -337,7 +340,7 @@ const About = () => {
                 {item.title}
               </h3>
 
-              <p className="max-w-[600px] font-sans text-[14px] leading-7 text-[#666]">
+              <p className="max-w-[600px] font-sans text-[14px] leading-7 text-text-muted">
                 {item.description}
               </p>
             </div>
@@ -351,12 +354,12 @@ const About = () => {
       {/* =====================================================
           CTA
       ====================================================== */}
-      <section className="w-full border-t border-[#bdbdbd] px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
+      <section className="w-full border-t border-border px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
 
         <div className="mx-auto flex w-full max-w-[1250px] flex-col gap-8 md:flex-row md:items-end md:justify-between">
 
           <div>
-            <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
+            <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
               Let's Work Together
             </p>
 
@@ -367,7 +370,7 @@ const About = () => {
 
           <Link
             to="/contact"
-            className="w-fit shrink-0 border border-[#202020] bg-[#202020] px-7 py-3 font-sans text-xs font-semibold uppercase tracking-[1px] text-white transition-all duration-300 hover:bg-transparent hover:text-[#202020]"
+            className="w-fit shrink-0 border border-brand bg-brand px-7 py-3 font-sans text-xs font-semibold uppercase tracking-[1px] text-surface transition-all duration-300 hover:bg-transparent hover:text-text-main"
           >
             Let's Talk
           </Link>

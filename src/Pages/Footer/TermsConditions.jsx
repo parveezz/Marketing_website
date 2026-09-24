@@ -50,11 +50,11 @@ const TermsConditions = () => {
     ];
 
     return (
-        <section className="w-full min-h-screen bg-[#fafafa] px-5 py-12 text-[#202020] md:px-8 lg:px-10">
+        <section className="w-full min-h-screen bg-surface-muted px-5 py-12 text-text-main md:px-8 lg:px-10">
             <div className="mx-auto w-full max-w-[1250px]">
                 {/* Header */}
-                <div className="border-b border-[#bdbdbd] pb-10 md:pb-12">
-                    <p className="mb-4 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-[#666]">
+                <div className="border-b border-border pb-10 md:pb-12">
+                    <p className="mb-4 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
                         ZIH Marketing Consultancy
                     </p>
 
@@ -62,7 +62,7 @@ const TermsConditions = () => {
                         Terms & Conditions
                     </h1>
 
-                    <p className="mt-5 font-sans text-[13px] text-[#666]">
+                    <p className="mt-5 font-sans text-[13px] text-text-muted">
                         Last updated: September 2026
                     </p>
                 </div>
@@ -79,7 +79,7 @@ const TermsConditions = () => {
                                 {section.title}
                             </h2>
 
-                            <p className="font-sans text-[14px] leading-7 text-[#555] md:text-[15px] md:leading-8">
+                            <p className="font-sans text-[14px] leading-7 text-text-muted md:text-[15px] md:leading-8">
                                 {section.content}
                             </p>
                         </div>

@@ -1,4 +1,6 @@
+import SEO from "../Components/SEO";
 import { useState } from "react";
+import { FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa6";
 
 const Contact = () => {
   const [openFaq, setOpenFaq] = useState(null);
@@ -64,7 +66,7 @@ const Contact = () => {
         body: JSON.stringify(formData),
       });
       const result = await response.json();
-      
+
       if (response.ok) {
         setStatusMessage({ type: 'success', text: result.message || 'Message sent successfully!' });
         setFormData({ name: '', email: '', message: '' });
@@ -79,7 +81,9 @@ const Contact = () => {
   };
 
   return (
-    <section className="w-full min-h-screen bg-[#fafafa] px-5 py-10 text-[#202020] md:px-8 lg:px-10">
+    <section className="w-full min-h-screen bg-surface-muted px-5 py-10 text-text-main md:px-8 lg:px-10">
+      <SEO title="Contact" description="Get in touch with us." />
+
 
       <div className="mx-auto w-full max-w-[1250px]">
 
@@ -94,14 +98,14 @@ const Contact = () => {
           <div className="w-full pt-2">
 
             {/* Heading */}
-            <h1 className="font-sans text-[52px] font-medium leading-[0.95] tracking-[-2px] text-[#202020] sm:text-[58px] md:text-[64px]">
+            <h1 className="font-sans text-[52px] font-medium leading-[0.95] tracking-[-2px] text-text-main sm:text-[58px] md:text-[64px]">
               Let's Talk
               <br />
               Growth
             </h1>
 
             {/* Description */}
-            <p className="mt-8 w-full max-w-[430px] font-sans text-[14px] leading-6 text-[#333]">
+            <p className="mt-8 w-full max-w-[430px] font-sans text-[14px] leading-6 text-text-main">
               Whether you're looking to boost conversions, cut CAC, or launch
               something new—were here to help.
             </p>
@@ -110,7 +114,7 @@ const Contact = () => {
             <div className="mt-9 w-full max-w-[450px]">
 
               {/* Phone */}
-              <div className="border-t border-[#bdbdbd] py-4">
+              <div className="border-t border-border py-4">
                 <p className="font-sans text-[12px] font-semibold uppercase tracking-[1px]">
                   Phone
                 </p>
@@ -121,7 +125,7 @@ const Contact = () => {
               </div>
 
               {/* Email */}
-              <div className="border-t border-[#bdbdbd] py-4">
+              <div className="border-t border-border py-4">
                 <p className="font-sans text-[12px] font-semibold uppercase tracking-[1px]">
                   Email
                 </p>
@@ -132,7 +136,7 @@ const Contact = () => {
               </div>
 
               {/* Office Hours */}
-              <div className="border-t border-[#bdbdbd] py-4">
+              <div className="border-t border-border py-4">
                 <p className="font-sans text-[12px] font-semibold uppercase tracking-[1px]">
                   Office Hours
                 </p>
@@ -143,7 +147,7 @@ const Contact = () => {
               </div>
 
               {/* Visit Us */}
-              <div className="border-t border-[#bdbdbd] py-4">
+              <div className="border-t border-border py-4">
                 <p className="font-sans text-[12px] font-semibold uppercase tracking-[1px]">
                   Visit Us
                 </p>
@@ -158,29 +162,29 @@ const Contact = () => {
               </div>
 
               {/* Social */}
-              <div className="border-y border-[#bdbdbd] py-4">
+              <div className="border-y border-border py-4">
                 <p className="font-sans text-[12px] font-semibold uppercase tracking-[1px]">
                   Connect With Us
                 </p>
 
                 <div className="mt-3 flex gap-3">
                   <a
-                    href="#"
-                    className="flex h-7 w-7 items-center justify-center rounded-full border border-[#333] font-sans text-[11px] transition hover:bg-[#202020] hover:text-white"
+                    href="#" onClick={(e) => { e.preventDefault(); alert("Redirecting to social profile!"); }}
+                    className="flex h-8 w-8 items-center justify-center rounded-full border border-brand font-sans text-[15px] transition hover:bg-brand hover:text-surface"
                   >
                     f
                   </a>
 
                   <a
-                    href="#"
-                    className="flex h-7 w-7 items-center justify-center rounded-full border border-[#333] font-sans text-[11px] transition hover:bg-[#202020] hover:text-white"
+                    href="#" onClick={(e) => { e.preventDefault(); alert("Redirecting to social profile!"); }}
+                    className="flex h-8 w-8 items-center justify-center rounded-full border border-brand font-sans text-[15px] transition hover:bg-brand hover:text-surface"
                   >
                     ◎
                   </a>
 
                   <a
-                    href="#"
-                    className="flex h-7 w-7 items-center justify-center rounded-full border border-[#333] font-sans text-[11px] transition hover:bg-[#202020] hover:text-white"
+                    href="#" onClick={(e) => { e.preventDefault(); alert("Redirecting to social profile!"); }}
+                    className="flex h-8 w-8 items-center justify-center rounded-full border border-brand font-sans text-[15px] transition hover:bg-brand hover:text-surface"
                   >
                     in
                   </a>
@@ -192,9 +196,9 @@ const Contact = () => {
           {/* =========================
               CONTACT FORM
           ========================== */}
-          <div className="w-full border border-[#222] bg-white p-6 sm:p-8 lg:p-10">
+          <div className="w-full border border-brand bg-surface p-6 sm:p-8 lg:p-10">
 
-            <h2 className="font-sans text-[34px] font-medium leading-tight tracking-[-1px] text-[#202020] sm:text-[38px] md:text-[42px]">
+            <h2 className="font-sans text-[34px] font-medium leading-tight tracking-[-1px] text-text-main sm:text-[38px] md:text-[42px]">
               Send Us a Message
             </h2>
 
@@ -266,7 +270,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full border border-[#202020] bg-[#202020] py-3.5 font-sans text-[13px] font-semibold uppercase tracking-[1px] text-white transition-all duration-300 hover:bg-white hover:text-[#202020] disabled:opacity-50"
+                className="w-full cursor-pointer border border-brand bg-brand py-3.5 font-sans text-[13px] font-semibold uppercase tracking-[1px] text-surface transition-all duration-300 hover:bg-surface hover:text-text-main disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {isSubmitting ? "Submitting..." : "Submit"}
               </button>
@@ -281,7 +285,7 @@ const Contact = () => {
         <div className="mt-24 w-full">
 
           {/* FAQ Heading */}
-          <h2 className="text-center font-sans text-[32px] font-medium tracking-[-1px] text-[#202020] sm:text-[48px] md:text-[42px]">
+          <h2 className="text-center font-sans text-[32px] font-medium tracking-[-1px] text-text-main sm:text-[48px] md:text-[42px]">
             FAQs
           </h2>
 
@@ -296,14 +300,14 @@ const Contact = () => {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="border-t border-[#bdbdbd] last:border-b"
+                className="border-t border-border last:border-b"
               >
                 <button
                   type="button"
                   onClick={() => toggleFaq(index)}
-                  className="flex w-full items-center justify-between gap-5 py-5 text-left"
+                  className="flex w-full cursor-pointer items-center justify-between gap-5 py-5 text-left"
                 >
-                  <span className="font-sans text-[14px] font-semibold text-[#202020]">
+                  <span className="font-sans text-[14px] font-semibold text-text-main">
                     {faq.question}
                   </span>
 
@@ -314,7 +318,7 @@ const Contact = () => {
 
                 {openFaq === index && (
                   <div className="w-full pb-5 pr-10">
-                    <p className="font-sans text-[13px] leading-6 text-[#555]">
+                    <p className="font-sans text-[13px] leading-6 text-text-muted">
                       {faq.answer}
                     </p>
                   </div>

@@ -27,17 +27,17 @@ const Navbar = () => {
 
   const linkClass = ({ isActive }) =>
     isActive
-      ? "relative cursor-pointer px-1 py-2 font-sans text-sm font-medium tracking-wide text-[#202020] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-[#202020] after:content-['']"
-      : "relative cursor-pointer px-1 py-2 font-sans text-sm font-medium tracking-wide text-[#555] transition-colors duration-300 hover:text-[#202020] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-[#202020] after:content-[''] after:transition-all after:duration-300 hover:after:w-full";
+      ? "relative cursor-pointer px-1 py-2 font-sans text-sm font-medium tracking-wide text-text-main after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-brand after:content-['']"
+      : "relative cursor-pointer px-1 py-2 font-sans text-sm font-medium tracking-wide text-text-muted transition-colors duration-300 hover:text-text-main after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-brand after:content-[''] after:transition-all after:duration-300 hover:after:w-full";
 
   const mobileLinkClass = ({ isActive }) =>
     isActive
-      ? "block w-full py-3 font-sans text-lg font-medium text-[#202020] border-b border-[#d5d5d5]"
-      : "block w-full py-3 font-sans text-lg font-medium text-[#555] border-b border-[#d5d5d5] transition-colors hover:text-[#202020]";
+      ? "block w-full py-3 font-sans text-lg font-medium text-text-main border-b border-border"
+      : "block w-full py-3 font-sans text-lg font-medium text-text-muted border-b border-border transition-colors hover:text-text-main";
 
   return (
     <>
-      <nav className={`sticky top-0 z-50 border-b border-[#d5d5d5] transition-colors duration-300 ${mobileMenuOpen ? "bg-[#fafafa]" : "bg-[#fafafa]/95 backdrop-blur-sm"}`}>
+      <nav className={`sticky top-0 z-50 border-b border-border transition-colors duration-300 ${mobileMenuOpen ? "bg-surface-muted" : "bg-surface-muted/95 backdrop-blur-sm"}`}>
         <div className="mx-auto max-w-[1250px] px-5 md:px-8 lg:px-10">
           <div className="flex h-[82px] items-center justify-between">
 
@@ -48,7 +48,7 @@ const Navbar = () => {
               <Link
                 to="/"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex cursor-pointer flex-col items-center leading-none text-[#202020]"
+                className="flex cursor-pointer flex-col items-center leading-none text-text-main"
               >
                 <span className="font-sans text-[34px] font-normal tracking-[8px]">
                   ZIH
@@ -80,8 +80,8 @@ const Navbar = () => {
                   to="/services"
                   className={({ isActive }) =>
                     isActive || servicesOpen
-                      ? "relative flex cursor-pointer items-center gap-1.5 px-1 py-2 font-sans text-sm font-medium tracking-wide text-[#202020] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-[#202020] after:content-['']"
-                      : "relative flex cursor-pointer items-center gap-1.5 px-1 py-2 font-sans text-sm font-medium tracking-wide text-[#555] transition-colors duration-300 hover:text-[#202020] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-[#202020] after:content-[''] after:transition-all after:duration-300 hover:after:w-full"
+                      ? "relative flex cursor-pointer items-center gap-1.5 px-1 py-2 font-sans text-sm font-medium tracking-wide text-text-main after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-brand after:content-['']"
+                      : "relative flex cursor-pointer items-center gap-1.5 px-1 py-2 font-sans text-sm font-medium tracking-wide text-text-muted transition-colors duration-300 hover:text-text-main after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-brand after:content-[''] after:transition-all after:duration-300 hover:after:w-full"
                   }
                 >
                   Services
@@ -106,7 +106,7 @@ const Navbar = () => {
             <div className="hidden items-center md:flex">
               <Link
                 to="/contact"
-                className="border border-[#202020] bg-[#202020] px-6 py-2.5 font-sans text-xs font-semibold uppercase tracking-[1px] text-white transition-all duration-300 hover:bg-transparent hover:text-[#202020]"
+                className="rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 px-7 py-3 font-sans text-xs font-bold uppercase tracking-[1.5px] text-white shadow-[0_0_15px_rgba(139,92,246,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(139,92,246,0.5)]"
               >
                 Get Started
               </Link>
@@ -119,7 +119,7 @@ const Navbar = () => {
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 text-[#202020] transition-colors duration-300 hover:text-[#666]"
+                className="p-2 text-text-main transition-colors duration-300 hover:text-text-muted"
                 aria-label="Toggle menu"
               >
                 {mobileMenuOpen ? (
@@ -141,16 +141,16 @@ const Navbar = () => {
           MOBILE MENU OVERLAY
       ========================== */}
       <div 
-        className={`fixed inset-0 z-[40] bg-[#fafafa] transition-transform duration-300 ease-in-out md:hidden ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed inset-0 z-[40] bg-surface-muted transition-transform duration-300 ease-in-out md:hidden ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <div className="flex h-full flex-col overflow-y-auto px-6 pb-20 pt-[100px]">
           <NavLink to="/" onClick={() => setMobileMenuOpen(false)} className={mobileLinkClass} end>Home</NavLink>
           <NavLink to="/about" onClick={() => setMobileMenuOpen(false)} className={mobileLinkClass}>About</NavLink>
           
-          <div className="w-full border-b border-[#d5d5d5] py-3">
+          <div className="w-full border-b border-border py-3">
             <button 
               onClick={() => setServicesOpen(!servicesOpen)}
-              className="flex w-full items-center justify-between font-sans text-lg font-medium text-[#555]"
+              className="flex w-full items-center justify-between font-sans text-lg font-medium text-text-muted"
             >
               Services
               <span className={`text-[12px] transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`}>▼</span>
@@ -171,7 +171,7 @@ const Navbar = () => {
           <Link
             to="/contact"
             onClick={() => setMobileMenuOpen(false)}
-            className="mt-8 block w-full border border-[#202020] bg-[#202020] py-4 text-center font-sans text-xs font-semibold uppercase tracking-[1px] text-white"
+            className="mt-8 block w-full border border-brand bg-brand py-4 text-center font-sans text-xs font-semibold uppercase tracking-[1px] text-surface"
           >
             Get Started
           </Link>
