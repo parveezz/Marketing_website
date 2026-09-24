@@ -106,7 +106,7 @@ const Home = () => {
       {/* =====================================================
           HERO
       ====================================================== */}
-      <section className="w-full pb-16 pt-10 md:pb-24 md:pt-16">
+      <section className="w-full pb-16 pt-2 md:pb-24 md:pt-16">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -178,16 +178,16 @@ const Home = () => {
 
           </div>
           
-          {/* Hero Image */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="mt-16 aspect-[4/3] md:aspect-[21/9] w-[100vw] relative left-[50%] right-[50%] -ml-[50vw] -mr-[50vw] overflow-hidden bg-surface-muted shadow-[0_0_50px_rgba(139,92,246,0.1)]"
-          >
+        </motion.div>
+          
+        {/* Hero Image */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="mt-16 aspect-[4/3] md:aspect-[21/9] w-full overflow-hidden bg-surface-muted shadow-[0_0_50px_rgba(139,92,246,0.1)]"
+        >
              <img src="/images/homeimage.avif" alt="Marketing with purpose" className="h-full w-full object-cover" />
-          </motion.div>
-
         </motion.div>
       </section>
 

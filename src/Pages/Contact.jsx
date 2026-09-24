@@ -119,7 +119,7 @@ const Contact = () => {
                   Phone
                 </p>
 
-                <p className="mt-1 font-sans text-[12px] text-[#444]">
+                <p className="mt-1 font-sans text-[12px] text-text-muted">
                   +1 (555) 123-4567
                 </p>
               </div>
@@ -130,7 +130,7 @@ const Contact = () => {
                   Email
                 </p>
 
-                <p className="mt-1 font-sans text-[12px] text-[#444]">
+                <p className="mt-1 font-sans text-[12px] text-text-muted">
                   hello@growth.com
                 </p>
               </div>
@@ -141,7 +141,7 @@ const Contact = () => {
                   Office Hours
                 </p>
 
-                <p className="mt-1 font-sans text-[12px] text-[#444]">
+                <p className="mt-1 font-sans text-[12px] text-text-muted">
                   Monday - Friday, 9:00 AM - 6:00 PM
                 </p>
               </div>
@@ -152,12 +152,12 @@ const Contact = () => {
                   Visit Us
                 </p>
 
-                <p className="mt-1 w-full max-w-[280px] font-sans text-[12px] leading-5 text-[#444]">
+                <p className="mt-1 w-full max-w-[280px] font-sans text-[12px] leading-5 text-text-muted">
                   123 Growth Marketing Services
                   <br />
                   123 Growth Avenue, Suite 400
                   <br />
-                  New York, NY 10001
+                  Hyderabad, Telangana 500001
                 </p>
               </div>
 
@@ -202,7 +202,7 @@ const Contact = () => {
               Send Us a Message
             </h2>
 
-            <p className="mt-4 w-full max-w-[430px] font-sans text-[13px] leading-5 text-[#444]">
+            <p className="mt-4 w-full max-w-[430px] font-sans text-[13px] leading-5 text-text-muted">
               Have a question or need more information? Fill out the form
               below, and we'll get back to you as soon as possible.
             </p>
@@ -222,7 +222,7 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   placeholder="Your Name"
-                  className="w-full border-b border-[#777] bg-transparent px-0 py-3 font-sans text-[14px] text-[#111] outline-none placeholder:text-[#888] focus:border-[#111]"
+                  className="w-full border-b border-border bg-transparent px-0 py-3 font-sans text-[14px] text-text-main outline-none placeholder:text-text-muted focus:border-brand"
                 />
               </div>
 
@@ -239,7 +239,7 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   placeholder="Your Email Address"
-                  className="w-full border-b border-[#777] bg-transparent px-0 py-3 font-sans text-[14px] text-[#111] outline-none placeholder:text-[#888] focus:border-[#111]"
+                  className="w-full border-b border-border bg-transparent px-0 py-3 font-sans text-[14px] text-text-main outline-none placeholder:text-text-muted focus:border-brand"
                 />
               </div>
 
@@ -256,7 +256,7 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   placeholder="Tell us about your project..."
-                  className="w-full resize-none border-b border-[#777] bg-transparent px-0 py-3 font-sans text-[14px] text-[#111] outline-none placeholder:text-[#888] focus:border-[#111]"
+                  className="w-full resize-none border-b border-border bg-transparent px-0 py-3 font-sans text-[14px] text-text-main outline-none placeholder:text-text-muted focus:border-brand"
                 />
               </div>
 
@@ -289,7 +289,7 @@ const Contact = () => {
             FAQs
           </h2>
 
-          <p className="mx-auto mt-3 w-full max-w-[550px] text-center font-sans text-[12px] leading-5 text-[#444]">
+          <p className="mx-auto mt-3 w-full max-w-[550px] text-center font-sans text-[12px] leading-5 text-text-muted">
             How We Helped a Local Home Service Brand Double Their Bookings in
             60 Days
           </p>

@@ -158,11 +158,11 @@ const Navbar = () => {
             
             {/* MOBILE SERVICES SUB-MENU */}
             <div className={`flex flex-col gap-3 overflow-hidden pl-4 transition-all duration-300 ${servicesOpen ? "mt-4 max-h-[500px]" : "max-h-0"}`}>
-              <Link to="/services" onClick={() => setMobileMenuOpen(false)} className="font-sans text-[15px] text-[#444]">All Services</Link>
-              <Link to="/services/strategic-marketing" onClick={() => setMobileMenuOpen(false)} className="font-sans text-[15px] text-[#444]">Strategic Marketing</Link>
-              <Link to="/services/branding" onClick={() => setMobileMenuOpen(false)} className="font-sans text-[15px] text-[#444]">Branding</Link>
-              <Link to="/services/advertising" onClick={() => setMobileMenuOpen(false)} className="font-sans text-[15px] text-[#444]">Advertising</Link>
-              <Link to="/services/social-media" onClick={() => setMobileMenuOpen(false)} className="font-sans text-[15px] text-[#444]">Social Media</Link>
+              <NavLink to="/services" end onClick={() => setMobileMenuOpen(false)} className={({ isActive }) => `font-sans text-[15px] ${isActive ? "text-text-main" : "text-text-muted hover:text-text-main"}`}>All Services</NavLink>
+              <NavLink to="/services/strategic-marketing" onClick={() => setMobileMenuOpen(false)} className={({ isActive }) => `font-sans text-[15px] ${isActive ? "text-text-main" : "text-text-muted hover:text-text-main"}`}>Strategic Marketing</NavLink>
+              <NavLink to="/services/branding" onClick={() => setMobileMenuOpen(false)} className={({ isActive }) => `font-sans text-[15px] ${isActive ? "text-text-main" : "text-text-muted hover:text-text-main"}`}>Branding</NavLink>
+              <NavLink to="/services/advertising" onClick={() => setMobileMenuOpen(false)} className={({ isActive }) => `font-sans text-[15px] ${isActive ? "text-text-main" : "text-text-muted hover:text-text-main"}`}>Advertising</NavLink>
+              <NavLink to="/services/social-media" onClick={() => setMobileMenuOpen(false)} className={({ isActive }) => `font-sans text-[15px] ${isActive ? "text-text-main" : "text-text-muted hover:text-text-main"}`}>Social Media</NavLink>
             </div>
           </div>
 

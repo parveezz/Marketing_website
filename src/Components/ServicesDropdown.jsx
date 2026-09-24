@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const ServicesDropdown = ({
     servicesOpen,
@@ -38,14 +38,18 @@ const ServicesDropdown = ({
             {/* Links */}
             <div className="flex flex-col gap-5">
                 {services.map((service) => (
-                    <Link
+                    <NavLink
                         key={service.name}
                         to={service.path}
                         onClick={() => setServicesOpen(false)}
-                        className="w-fit font-sans text-[15px] text-text-main transition-colors duration-300 hover:text-text-muted"
+                        className={({ isActive }) => 
+                            `w-fit font-sans text-[15px] transition-colors duration-300 ${
+                                isActive ? "text-text-main" : "text-text-muted hover:text-text-main"
+                            }`
+                        }
                     >
                         {service.name}
-                    </Link>
+                    </NavLink>
                 ))}
             </div>
         </div>

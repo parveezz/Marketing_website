@@ -281,14 +281,7 @@ const About = () => {
           </div>
           <div className="flex gap-16 md:gap-24">
             <div className="flex flex-col gap-6">
-              <p className="font-sans text-[18px] font-medium">New York</p>
-              <p className="font-sans text-[18px] font-medium text-text-muted">London</p>
-              <p className="font-sans text-[18px] font-medium text-text-muted">Dubai</p>
-            </div>
-            <div className="flex flex-col gap-6">
-              <p className="font-sans text-[18px] font-medium text-text-muted">Singapore</p>
-              <p className="font-sans text-[18px] font-medium text-text-muted">Hyderabad</p>
-              <p className="font-sans text-[18px] font-medium text-text-muted">Toronto</p>
+              <p className="font-sans text-[18px] font-medium">Hyderabad</p>
             </div>
           </div>
         </div>
