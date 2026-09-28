@@ -111,7 +111,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mx-auto w-full max-w-[1250px] px-5 sm:px-8 md:px-10 lg:px-10"
+          className="mx-auto w-full max-w-full px-4 md:px-8 lg:px-12 xl:px-16"
         >
 
           <div className="grid min-h-[calc(100vh-120px)] w-full grid-cols-1 items-center gap-12 lg:grid-cols-[1.4fr_0.6fr]">
@@ -200,7 +200,7 @@ const Home = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mx-auto flex w-full max-w-[1250px] flex-col items-center justify-center gap-6 md:flex-row md:justify-between lg:gap-12 relative z-10"
+          className="mx-auto flex w-full max-w-full flex-col items-center justify-center gap-6 md:flex-row md:justify-between lg:gap-12 relative z-10"
         >
           <p className="font-sans text-[10px] font-semibold uppercase tracking-[2px] text-[#888] text-center md:w-auto md:text-left">
             Trusted by modern teams
@@ -221,7 +221,7 @@ const Home = () => {
       <section className="w-full border-t border-white/10 bg-[#030712] px-5 py-12 md:px-8 lg:px-10 relative overflow-hidden">
         {/* Subtle mesh for stats */}
         <div className="absolute top-0 right-[20%] w-[30%] h-[100%] rounded-full bg-violet-600/5 blur-[100px] pointer-events-none"></div>
-        <div className="mx-auto flex w-full max-w-[1250px] flex-col gap-10 md:flex-row md:items-center md:justify-between relative z-10">
+        <div className="mx-auto flex w-full max-w-full flex-col gap-10 md:flex-row md:items-center md:justify-between relative z-10">
           {stats.map((stat, index) => (
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -243,7 +243,7 @@ const Home = () => {
       ====================================================== */}
       <section className="w-full border-t border-border px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
 
-        <div className="mx-auto grid w-full max-w-[1250px] grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
+        <div className="mx-auto grid w-full max-w-full grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
 
           <div>
 
@@ -287,9 +287,9 @@ const Home = () => {
       {/* =====================================================
           SERVICES
       ====================================================== */}
-      <section className="w-full border-t border-border px-5 md:px-8 lg:px-10">
+      <section className="w-full border-t border-border px-4 md:px-8 lg:px-12 xl:px-16">
 
-        <div className="mx-auto grid w-full max-w-[1250px] grid-cols-1 lg:grid-cols-2">
+        <div className="mx-auto grid w-full max-w-full grid-cols-1 lg:grid-cols-2">
 
           {/* Left */}
           <div className="py-8 lg:border-r lg:border-border lg:py-20 lg:pr-20">
@@ -363,7 +363,7 @@ const Home = () => {
           CASE STUDIES (NEW)
       ====================================================== */}
       <section className="w-full border-t border-border px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
-        <div className="mx-auto w-full max-w-[1250px]">
+        <div className="mx-auto w-full max-w-full">
           <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
@@ -405,7 +405,7 @@ const Home = () => {
       ====================================================== */}
       <section className="w-full px-5 py-8 sm:px-8 md:px-10 md:py-20 lg:px-10">
 
-        <div className="mx-auto w-full max-w-[1250px]">
+        <div className="mx-auto w-full max-w-full">
 
           <p className="mb-8 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
             Our Perspective
@@ -429,7 +429,7 @@ const Home = () => {
       <section className="w-full border-y border-white/10 bg-[#030712] px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10 relative overflow-hidden">
         {/* Glow */}
         <div className="absolute bottom-[-20%] left-[10%] w-[30%] h-[50%] rounded-full bg-violet-600/10 blur-[100px] pointer-events-none"></div>
-        <div className="mx-auto grid w-full max-w-[1250px] grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24 relative z-10">
+        <div className="mx-auto grid w-full max-w-full grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24 relative z-10">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -471,7 +471,7 @@ const Home = () => {
       ====================================================== */}
       <section className="w-full border-t border-border px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
 
-        <div className="mx-auto mb-12 grid w-full max-w-[1250px] grid-cols-1 gap-10 md:mb-16 lg:grid-cols-2">
+        <div className="mx-auto mb-12 grid w-full max-w-full grid-cols-1 gap-10 md:mb-16 lg:grid-cols-2">
 
           <div>
 
@@ -497,7 +497,7 @@ const Home = () => {
 
         </div>
 
-        <div className="mx-auto max-w-[1250px] border-t border-border">
+        <div className="mx-auto max-w-full border-t border-border">
 
           {process.map((item) => (
             <div
@@ -529,7 +529,7 @@ const Home = () => {
       ====================================================== */}
       <section className="w-full border-t border-border px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
 
-        <div className="mx-auto flex w-full max-w-[1250px] flex-col gap-10 md:flex-row md:items-end md:justify-between">
+        <div className="mx-auto flex w-full max-w-full flex-col gap-10 md:flex-row md:items-end md:justify-between">
 
           <div>
 

@@ -36,15 +36,15 @@ const Footer = () => {
     return (
         <footer className="w-full bg-surface-muted text-text-main border-t border-border">
 
-            <div className="mx-auto w-full max-w-[1250px] px-5 md:px-8 lg:px-10">
+            <div className="mx-auto w-full max-w-full px-4 md:px-8 lg:px-12 xl:px-16">
 
                 {/* =========================
                     MAIN FOOTER LINKS
                 ========================== */}
-                <div className="grid w-full grid-cols-2 gap-x-6 gap-y-10 py-10 md:grid-cols-4 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr] lg:gap-12">
+                <div className="grid w-full grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-10 py-10 md:grid-cols-4 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr] lg:gap-12">
 
                     {/* Logo & Intro */}
-                    <div className="col-span-2 w-full md:col-span-4 lg:col-span-1 lg:pr-10">
+                    <div className="col-span-1 sm:col-span-2 w-full md:col-span-4 lg:col-span-1 lg:pr-10">
                         <Link
                             to="/"
                             className="inline-flex flex-col items-start text-text-main"
@@ -60,16 +60,6 @@ const Footer = () => {
                             We are a strategic marketing consultancy focused on helping ambitious businesses build stronger brands, reach the right audiences, and achieve sustainable, measurable growth.
                         </p>
                         
-                        {/* Global Locations */}
-                        <div className="mt-8 flex gap-6 font-sans text-[12px] font-medium text-text-main">
-                            <span>NY</span>
-                            <span className="text-[#bdbdbd]">/</span>
-                            <span>LDN</span>
-                            <span className="text-[#bdbdbd]">/</span>
-                            <span>DXB</span>
-                            <span className="text-[#bdbdbd]">/</span>
-                            <span>HYD</span>
-                        </div>
                     </div>
 
                     {/* Company */}

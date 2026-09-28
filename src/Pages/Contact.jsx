@@ -85,7 +85,7 @@ const Contact = () => {
       <SEO title="Contact" description="Get in touch with us." />
 
 
-      <div className="mx-auto w-full max-w-[1250px]">
+      <div className="mx-auto w-full max-w-full">
 
         {/* =========================
             CONTACT SECTION
@@ -305,24 +305,28 @@ const Contact = () => {
                 <button
                   type="button"
                   onClick={() => toggleFaq(index)}
-                  className="flex w-full cursor-pointer items-center justify-between gap-5 py-5 text-left"
+                  className="flex w-full cursor-pointer items-center justify-between gap-4 sm:gap-5 py-4 sm:py-5 text-left"
                 >
-                  <span className="font-sans text-[14px] font-semibold text-text-main">
+                  <span className={`font-sans text-[13px] sm:text-[14px] font-semibold transition-colors duration-300 ${openFaq === index ? 'text-brand' : 'text-text-main'}`}>
                     {faq.question}
                   </span>
 
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center font-sans text-[18px] font-normal">
+                  <span className={`flex h-6 w-6 shrink-0 items-center justify-center font-sans text-[18px] sm:text-[20px] font-normal transition-transform duration-300 ${openFaq === index ? 'rotate-180 text-brand' : 'text-text-muted'}`}>
                     {openFaq === index ? "−" : "+"}
                   </span>
                 </button>
 
-                {openFaq === index && (
-                  <div className="w-full pb-5 pr-10">
-                    <p className="font-sans text-[13px] leading-6 text-text-muted">
-                      {faq.answer}
-                    </p>
+                <div 
+                  className={`grid transition-all duration-300 ease-in-out ${openFaq === index ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                >
+                  <div className="overflow-hidden">
+                    <div className="w-full pb-4 sm:pb-5 pr-4 sm:pr-10">
+                      <p className="font-sans text-[12px] sm:text-[13px] leading-relaxed text-text-muted">
+                        {faq.answer}
+                      </p>
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             ))}
 

@@ -54,3 +54,12 @@ body {
 .animate-orb {
   animation: orbFloat 20s infinite ease-in-out;
 }
+/* Hiding scrollbar globally for a sleeker look */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

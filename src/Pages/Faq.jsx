@@ -4,7 +4,7 @@ const Faq = () => {
     <section className="w-full min-h-[70vh] bg-surface-muted px-5 py-16 text-text-main md:px-8 lg:px-10 lg:py-24">
       <SEO title="FAQ" description="Frequently asked questions." />
 
-      <div className="mx-auto w-full max-w-[1250px]">
+      <div className="mx-auto w-full max-w-full">
         <div className="border-b border-border pb-12">
           <p className="mb-4 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
             Faq

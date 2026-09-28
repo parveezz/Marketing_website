@@ -69,7 +69,7 @@ const Blog = () => {
     <section className="w-full min-h-[70vh] bg-surface-muted px-5 py-4 text-text-main md:px-8 lg:px-10 lg:py-6">
       <SEO title="Blog" description="Read our latest insights." />
 
-      <div className="mx-auto w-full max-w-[1250px]">
+      <div className="mx-auto w-full max-w-full">
         <div className="border-b border-border pb-4">
           <p className="mb-2 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
             Blog

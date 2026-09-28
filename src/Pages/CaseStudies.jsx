@@ -12,7 +12,7 @@ export const studies = [
     impact: 'Within 90 days, the new funnel and targeted traffic resulted in a 210% surge in qualified user acquisition. More importantly, we slashed their blended CAC by 40%, making their growth model sustainable and ready for their Series B funding round.',
     stats: [{ label: 'User Growth', value: '+210%' }, { label: 'CAC Reduction', value: '-40%' }, { label: 'Timeframe', value: '90 Days' }],
     services: ['Conversion Rate Optimization', 'Paid Social Media', 'Search Engine Marketing'],
-    testimonial: "Invertio didn't just run ads; they fixed our entire funnel. Our acquisition costs plummeted, and we finally have a scalable growth engine.",
+    testimonial: "The agency didn't just run ads; they fixed our entire funnel. Our acquisition costs plummeted, and we finally have a scalable growth engine.",
     image: '/images/service-advertising.jpg' 
   },
   { 
@@ -64,7 +64,7 @@ export const studies = [
     impact: 'Organic traffic grew by 600% in 8 months. More importantly, the content drove a 400% ROI, generating over 120 inbound demo requests from highly qualified hospital administrators.',
     stats: [{ label: 'Organic Traffic', value: '+600%' }, { label: 'Inbound Leads', value: '120+' }, { label: 'Content ROI', value: '400%' }],
     services: ['Content Marketing', 'SEO Strategy', 'Copywriting'],
-    testimonial: "Invertio took us from being entirely dependent on outbound to having a predictable, scalable inbound lead machine.",
+    testimonial: "The agency took us from being entirely dependent on outbound to having a predictable, scalable inbound lead machine.",
     image: '/images/service-planning.jpg' 
   },
   { 
@@ -87,7 +87,7 @@ const CaseStudies = () => {
     <section className="w-full min-h-[70vh] bg-surface-muted px-5 py-10 text-text-main md:px-8 lg:px-10 lg:py-16">
       <SEO title="Case Studies" description="See our proven impact." />
 
-      <div className="mx-auto w-full max-w-[1250px]">
+      <div className="mx-auto w-full max-w-full">
         <div className="border-b border-border pb-12">
           <p className="mb-4 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
             CaseStudies

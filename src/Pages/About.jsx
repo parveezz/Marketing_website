@@ -64,14 +64,14 @@ const About = () => {
 
   return (
     <main className="w-full bg-surface-muted text-text-main">
-      <SEO title="About Us" description="Learn more about Invertio Marketing." />
+      <SEO title="About Us" description="Learn more about our Marketing Agency." />
 
 
       {/* =====================================================
           HERO
       ====================================================== */}
       <section className="w-full px-5 pb-10 pt-8 sm:px-8 md:px-10 md:pb-16 md:pt-10 lg:px-10">
-        <div className="mx-auto w-full max-w-[1250px] border-b border-border pb-8 md:pb-12">
+        <div className="mx-auto w-full max-w-full border-b border-border pb-8 md:pb-12">
 
           <p className="mb-6 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
             About ZIH
@@ -108,7 +108,7 @@ const About = () => {
           INTRODUCTION
       ====================================================== */}
       <section className="w-full px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
-        <div className="mx-auto grid w-full max-w-[1250px] grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
+        <div className="mx-auto grid w-full max-w-full grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
 
           <div>
             <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
@@ -148,7 +148,7 @@ const About = () => {
           OUR STORY / TIMELINE (NEW)
       ====================================================== */}
       <section className="w-full border-t border-border bg-surface px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
-        <div className="mx-auto w-full max-w-[1250px]">
+        <div className="mx-auto w-full max-w-full">
           <div className="mb-12">
             <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
               Our Story
@@ -184,9 +184,9 @@ const About = () => {
       {/* =====================================================
           VALUES
       ====================================================== */}
-      <section className="w-full border-t border-border px-5 md:px-8 lg:px-10">
+      <section className="w-full border-t border-border px-4 md:px-8 lg:px-12 xl:px-16">
 
-        <div className="mx-auto grid w-full max-w-[1250px] grid-cols-1 lg:grid-cols-2">
+        <div className="mx-auto grid w-full max-w-full grid-cols-1 lg:grid-cols-2">
 
           {/* Left */}
           <div className="py-12 lg:border-r lg:border-border lg:py-10 lg:pr-20">
@@ -233,7 +233,7 @@ const About = () => {
           TEAM (NEW)
       ====================================================== */}
       <section className="w-full border-t border-border px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
-        <div className="mx-auto w-full max-w-[1250px]">
+        <div className="mx-auto w-full max-w-full">
           <div className="mb-12">
             <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
               Leadership
@@ -267,7 +267,7 @@ const About = () => {
           GLOBAL REACH (NEW)
       ====================================================== */}
       <section className="w-full border-t border-border bg-surface-muted px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
-        <div className="mx-auto flex w-full max-w-[1250px] flex-col gap-10 md:flex-row md:items-center md:justify-between">
+        <div className="mx-auto flex w-full max-w-full flex-col gap-10 md:flex-row md:items-center md:justify-between">
           <div className="max-w-[500px]">
              <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
               Global Reach
@@ -292,7 +292,7 @@ const About = () => {
       ====================================================== */}
       <section className="w-full border-t border-border px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
 
-        <div className="mx-auto mb-12 grid w-full max-w-[1250px] grid-cols-1 gap-10 md:mb-16 lg:grid-cols-2">
+        <div className="mx-auto mb-12 grid w-full max-w-full grid-cols-1 gap-10 md:mb-16 lg:grid-cols-2">
 
           <div>
             <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
@@ -318,7 +318,7 @@ const About = () => {
         </div>
 
         {/* Process */}
-        <div className="mx-auto max-w-[1250px] border-t border-border">
+        <div className="mx-auto max-w-full border-t border-border">
           <div className="grid w-full grid-cols-1 gap-5">
           {process.map((item) => (
             <div
@@ -349,7 +349,7 @@ const About = () => {
       ====================================================== */}
       <section className="w-full border-t border-border px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
 
-        <div className="mx-auto flex w-full max-w-[1250px] flex-col gap-8 md:flex-row md:items-end md:justify-between">
+        <div className="mx-auto flex w-full max-w-full flex-col gap-8 md:flex-row md:items-end md:justify-between">
 
           <div>
             <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">

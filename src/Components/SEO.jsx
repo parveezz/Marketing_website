@@ -1,9 +1,9 @@
 import { Helmet } from 'react-helmet-async';
 
 const SEO = ({ title, description, url = 'https://yourwebsite.com' }) => {
-  const siteTitle = 'Invertio Marketing';
+  const siteTitle = 'Marketing Agency';
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
-  const metaDescription = description || 'Invertio Marketing provides world-class strategic marketing, branding, and advertising solutions.';
+  const metaDescription = description || 'Our Marketing Agency provides world-class strategic marketing, branding, and advertising solutions.';
 
   return (
     <Helmet>

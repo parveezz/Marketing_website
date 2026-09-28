@@ -28,7 +28,7 @@ const Branding = () => {
         <section className="w-full min-h-screen bg-surface-muted px-5 py-12 text-text-main md:px-8 lg:px-10">
             <SEO title="Branding Services" description="Distinctive brand identities that build trust and long-term value." />
 
-            <div className="mx-auto w-full max-w-[1250px]">
+            <div className="mx-auto w-full max-w-full">
 
                 {/* Hero */}
                 <div className="border-b border-border pb-8 md:pb-12">
@@ -51,7 +51,7 @@ const Branding = () => {
                 </div>
 
                 {/* Overview */}
-                <div className="mx-auto grid w-full max-w-[1250px] grid-cols-1 gap-12 py-8 md:py-12 lg:grid-cols-2 lg:gap-24">
+                <div className="mx-auto grid w-full max-w-full grid-cols-1 gap-12 py-8 md:py-12 lg:grid-cols-2 lg:gap-24">
 
                     <div>
                         <p className="mb-4 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
@@ -73,7 +73,7 @@ const Branding = () => {
 
                 {/* Services */}
                 <div className="border-t border-border">
-                    <div className="mx-auto grid w-full max-w-[1250px] grid-cols-1 lg:grid-cols-2">
+                    <div className="mx-auto grid w-full max-w-full grid-cols-1 lg:grid-cols-2">
 
                         <div className="border-b border-border py-10 lg:border-b-0 lg:border-r lg:pr-16">
                             <p className="font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
@@ -109,7 +109,7 @@ const Branding = () => {
                 </div>
 
                 {/* CTA */}
-                <div className="mx-auto flex w-full max-w-[1250px] flex-col gap-8 py-10 md:flex-row md:items-end md:justify-between md:py-16">
+                <div className="mx-auto flex w-full max-w-full flex-col gap-8 py-10 md:flex-row md:items-end md:justify-between md:py-16">
 
                     <h2 className="max-w-[650px] font-sans text-[26px] font-medium leading-tight md:text-[40px]">
                         Give your business a brand people remember.

@@ -46,7 +46,7 @@ const PrivacyPolicy = () => {
 
     return (
         <section className="w-full min-h-screen bg-surface-muted px-5 py-12 text-text-main md:px-8 lg:px-10">
-            <div className="mx-auto w-full max-w-[1250px]">
+            <div className="mx-auto w-full max-w-full">
                 {/* Header */}
                 <div className="border-b border-border pb-10 md:pb-12">
                     <p className="mb-4 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">

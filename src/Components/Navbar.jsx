@@ -38,7 +38,7 @@ const Navbar = () => {
   return (
     <>
       <nav className={`sticky top-0 z-50 border-b border-border transition-colors duration-300 ${mobileMenuOpen ? "bg-surface-muted" : "bg-surface-muted/95 backdrop-blur-sm"}`}>
-        <div className="mx-auto max-w-[1250px] px-5 md:px-8 lg:px-10">
+        <div className="mx-auto max-w-full px-4 md:px-8 lg:px-12 xl:px-16">
           <div className="flex h-[82px] items-center justify-between">
 
             {/* =========================
@@ -71,7 +71,7 @@ const Navbar = () => {
               </NavLink>
 
               {/* SERVICES */}
-              <div 
+              <div
                 className="relative flex items-center"
                 onMouseEnter={() => setServicesOpen(true)}
                 onMouseLeave={() => setServicesOpen(false)}
@@ -87,7 +87,7 @@ const Navbar = () => {
                   Services
                   <span className={`text-[9px] transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`}>▼</span>
                 </NavLink>
-                
+
                 {/* DESKTOP DROPDOWN */}
                 <ServicesDropdown
                   servicesOpen={servicesOpen}
@@ -95,22 +95,19 @@ const Navbar = () => {
                 />
               </div>
 
+              <NavLink to="/our-work" className={linkClass}>
+                Our Work
+              </NavLink>
+
               <NavLink to="/contact" className={linkClass}>
                 Contact
               </NavLink>
+
             </div>
 
-            {/* =========================
-                CTA BUTTON
-            ========================== */}
-            <div className="hidden items-center md:flex">
-              <Link
-                to="/contact"
-                className="rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 px-7 py-3 font-sans text-xs font-bold uppercase tracking-[1.5px] text-white shadow-[0_0_15px_rgba(139,92,246,0.3)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(139,92,246,0.5)]"
-              >
-                Get Started
-              </Link>
-            </div>
+
+
+
 
             {/* =========================
                 MOBILE MENU BUTTON
@@ -140,22 +137,22 @@ const Navbar = () => {
       {/* =========================
           MOBILE MENU OVERLAY
       ========================== */}
-      <div 
+      <div
         className={`fixed inset-0 z-[40] bg-surface-muted transition-transform duration-300 ease-in-out md:hidden ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <div className="flex h-full flex-col overflow-y-auto px-6 pb-20 pt-[100px]">
           <NavLink to="/" onClick={() => setMobileMenuOpen(false)} className={mobileLinkClass} end>Home</NavLink>
           <NavLink to="/about" onClick={() => setMobileMenuOpen(false)} className={mobileLinkClass}>About</NavLink>
-          
+
           <div className="w-full border-b border-border py-3">
-            <button 
+            <button
               onClick={() => setServicesOpen(!servicesOpen)}
               className="flex w-full items-center justify-between font-sans text-lg font-medium text-text-muted"
             >
               Services
               <span className={`text-[12px] transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`}>▼</span>
             </button>
-            
+
             {/* MOBILE SERVICES SUB-MENU */}
             <div className={`flex flex-col gap-3 overflow-hidden pl-4 transition-all duration-300 ${servicesOpen ? "mt-4 max-h-[500px]" : "max-h-0"}`}>
               <NavLink to="/services" end onClick={() => setMobileMenuOpen(false)} className={({ isActive }) => `font-sans text-[15px] ${isActive ? "text-text-main" : "text-text-muted hover:text-text-main"}`}>All Services</NavLink>
@@ -167,7 +164,7 @@ const Navbar = () => {
           </div>
 
           <NavLink to="/contact" onClick={() => setMobileMenuOpen(false)} className={mobileLinkClass}>Contact</NavLink>
-          
+
           <Link
             to="/contact"
             onClick={() => setMobileMenuOpen(false)}

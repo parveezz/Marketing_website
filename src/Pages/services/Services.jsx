@@ -7,7 +7,7 @@ const Services = () => {
       description: "We build clear marketing strategies that connect your business goals with the right audience, positioning, channels, and opportunities for sustainable growth.",
       features: ["Market Research", "Marketing Strategy", "Audience Analysis", "Competitor Analysis", "Growth Planning"],
       path: "/services/strategic-marketing",
-      image: "/images/service-planning.jpg"
+      image: "/images/service-strategic.jpg"
     },
     {
       title: "Branding",
@@ -39,7 +39,7 @@ const Services = () => {
           HERO
       ====================================================== */}
       <section className="w-full px-5 pb-10 pt-8 sm:px-8 md:px-10 md:pb-16 md:pt-10 lg:px-10">
-        <div className="mx-auto w-full max-w-[1250px] border-b border-border pb-8 md:pb-12">
+        <div className="mx-auto w-full max-w-full border-b border-border pb-8 md:pb-12">
 
           <p className="mb-6 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
             Expertise
@@ -63,7 +63,7 @@ const Services = () => {
           SERVICES LISTING
       ====================================================== */}
       <section className="w-full px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
-        <div className="mx-auto flex w-full max-w-[1250px] flex-col gap-20 md:gap-32">
+        <div className="mx-auto flex w-full max-w-full flex-col gap-20 md:gap-32">
           
           {allServices.map((service, index) => {
             const isEven = index % 2 === 0;
@@ -111,7 +111,7 @@ const Services = () => {
           THE ZIH STANDARD (METHODOLOGY)
       ====================================================== */}
       <section className="w-full border-t border-border bg-surface-muted px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
-        <div className="mx-auto grid w-full max-w-[1250px] grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
+        <div className="mx-auto grid w-full max-w-full grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
           <div>
              <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
               Methodology
@@ -142,7 +142,7 @@ const Services = () => {
       ====================================================== */}
       <section className="w-full border-t border-border px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
 
-        <div className="mx-auto flex w-full max-w-[1250px] flex-col gap-8 md:flex-row md:items-end md:justify-between">
+        <div className="mx-auto flex w-full max-w-full flex-col gap-8 md:flex-row md:items-end md:justify-between">
 
           <div>
             <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">

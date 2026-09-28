@@ -21,6 +21,8 @@ import CaseStudies from "../Pages/CaseStudies";
 import CaseStudyDetail from "../Pages/CaseStudyDetail";
 import Whitepapers from "../Pages/Whitepapers";
 import Faq from "../Pages/Faq";
+import OurWork from "../Pages/Ourwork/ourWork";
+import ProjectDetail from "../Pages/Ourwork/ProjectDetail";
 
 const Routing = () => {
   return (
@@ -33,6 +35,9 @@ const Routing = () => {
         <Route path="about" element={<About />} />
 
         <Route path="services" element={<Services />} />
+
+        <Route path="our-work" element={<OurWork />} />
+        <Route path="our-work/:id" element={<ProjectDetail />} />
 
         <Route path="contact" element={<Contact />} />
 
