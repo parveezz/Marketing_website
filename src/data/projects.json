@@ -33,17 +33,17 @@
         "description": "Keeping students, parents, and sponsors engaged through live digital updates."
       }
     ],
-    "mainImage": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1200&auto=format&fit=crop&q=60",
+    "mainImage": "/videos/isso-games/img3.jpg",
     "carouselImages": [
-      "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1200&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1526676037777-05a232554f77?w=1200&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=1200&auto=format&fit=crop&q=60"
+      "/videos/isso-games/img1.jpg",
+      "/videos/isso-games/img2.jpg",
+      "/videos/isso-games/img3.jpg",
+      "/videos/isso-games/img4.jpg"
     ],
     "carouselVideos": [
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+      "/videos/isso-games/video1.mp4",
+      "/videos/isso-games/video2.mp4",
+      "/videos/isso-games/video3.mp4"
     ],
     "aboutTitle": "About the Project",
     "videoHighlightsTitle": "Video Highlights",
@@ -52,54 +52,6 @@
       "quote": "The visual coverage of the ISSO Games was phenomenal. The team captured the true spirit and energy of the athletes flawlessly.",
       "author": "Sports Director",
       "position": "Indus International School"
-    }
-  },
-  {
-    "id": "advertisements-promotions",
-    "title": "ADVERTISEMENTS & PROMOTIONS",
-    "cardDescription": "We offer the best deals in print and digital advertisements on famous platforms that will reach the right target audience within a reasonable budget.",
-    "imagePosition": "right",
-    "buttonStyle": "blue",
-    "subtitle": "ADVERTISEMENTS & PROMOTIONS",
-    "category": "Promotions",
-    "headline": "Maximizing Reach Through Premium Advertising",
-    "topSectionParagraphs": [
-      "We provide the best deals in print and digital advertisements across highly visible platforms.",
-      "Our strategic placements ensure you reach your target audience efficiently and within budget."
-    ],
-    "aboutParagraphs": [
-      "Our team focused on identifying the most impactful media channels for our clients.",
-      "By negotiating premium spots and optimizing digital ad spends, we delivered exceptional ROI."
-    ],
-    "challengesSubtitle": "Services",
-    "challengesTitle": "Targeting the Right Audience",
-    "challengesDescription": "Ensuring high visibility while maintaining a reasonable budget required precise targeting and negotiation.",
-    "challenges": [
-      {
-        "title": "Budget Optimization",
-        "description": "Maximizing ad spend across expensive platforms."
-      },
-      {
-        "title": "Cross-Channel Strategy",
-        "description": "Balancing print and digital for maximum reach."
-      }
-    ],
-    "mainImage": "https://images.unsplash.com/photo-1557838923-2985c318be48?w=1200&auto=format&fit=crop&q=60",
-    "carouselImages": [
-      "https://images.unsplash.com/photo-1557838923-2985c318be48?w=1200&auto=format&fit=crop&q=60"
-    ],
-    "aboutTitle": "About the Campaign",
-    "videoHighlightsTitle": "Video Highlights",
-    "videoHighlightsDescription": "Watch some of the key moments and final deliverables from our engagement.",
-    "carouselVideos": [
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-    ],
-    "testimonial": {
-      "quote": "Our ROI skyrocketed after deploying their targeted multi-channel ad strategy. They truly understand our audience.",
-      "author": "Marketing Head",
-      "position": "Global Retail Brand"
     }
   },
   {
@@ -132,9 +84,12 @@
         "description": "Capturing fleeting moments of pride without disrupting the ceremony."
       }
     ],
-    "mainImage": "https://images.unsplash.com/photo-1511629091441-ee46146481b6?w=1200&auto=format&fit=crop&q=60",
+    "mainImage": "/videos/investiture/mainimage.png",
     "carouselImages": [
-      "https://images.unsplash.com/photo-1511629091441-ee46146481b6?w=1200&auto=format&fit=crop&q=60"
+      "/videos/investiture/img1.jpg",
+      "/videos/investiture/img2.jpg",
+      "/videos/investiture/img3.jpg",
+      "/videos/investiture/img4.jpg"
     ],
     "aboutTitle": "About the Coverage",
     "videoHighlightsTitle": "Video Highlights",
@@ -180,9 +135,12 @@
         "description": "Capturing quality media while navigating a packed opening day crowd."
       }
     ],
-    "mainImage": "https://images.unsplash.com/photo-1544148103-0773bf10d330?w=1200&auto=format&fit=crop&q=60",
+    "mainImage": "/videos/hyderabadChai/mainImage.webp",
     "carouselImages": [
-      "https://images.unsplash.com/photo-1544148103-0773bf10d330?w=1200&auto=format&fit=crop&q=60"
+      "/videos/hyderabadChai/img1.JPG",
+      "/videos/hyderabadChai/img2.JPG",
+      "/videos/hyderabadChai/img3.JPG",
+      "/videos/hyderabadChai/img4.JPG"
     ],
     "aboutTitle": "About the Launch",
     "videoHighlightsTitle": "Video Highlights",
@@ -228,19 +186,21 @@
         "description": "Ensuring marketing materials reflected a highly secure and nurturing environment."
       }
     ],
-    "mainImage": "https://images.unsplash.com/photo-1587691592099-24045742c181?w=1200&auto=format&fit=crop&q=60",
+    "mainImage": "/videos/Aaksah/mainimage.png",
     "carouselImages": [
-      "https://images.unsplash.com/photo-1587691592099-24045742c181?w=1200&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?w=1200&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=1200&auto=format&fit=crop&q=60"
+      "/videos/Aaksah/img1.jpg",
+      "/videos/Aaksah/img2.jpg",
+      "/videos/Aaksah/img3.jpg",
+      "/videos/Aaksah/img4.jpg",
+      "/videos/Aaksah/img5.jpg"
     ],
     "aboutTitle": "About the Project",
     "videoHighlightsTitle": "Video Highlights",
     "videoHighlightsDescription": "Watch some of the key moments and final deliverables from our engagement.",
     "carouselVideos": [
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+      "/videos/Aaksah/video1.mp4",
+      "/videos/Aaksah/video2.mp4",
+      "/videos/Aaksah/video3.mp4"
     ],
     "testimonial": {
       "quote": "The branding and digital presence they created for our preschool perfectly captures the warmth and trust we want to convey to parents.",
@@ -280,15 +240,20 @@
     ],
     "mainImage": "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=1200&auto=format&fit=crop&q=60",
     "carouselImages": [
-      "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=1200&auto=format&fit=crop&q=60"
+      "/videos/Chess/img1.jpg",
+      "/videos/Chess/img2.jpg",
+      "/videos/Chess/img3.jpg",
+      "/videos/Chess/img4.jpg"
     ],
     "aboutTitle": "About the Tournament",
     "videoHighlightsTitle": "Video Highlights",
     "videoHighlightsDescription": "Watch some of the key moments and final deliverables from our engagement.",
     "carouselVideos": [
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+      "/videos/Chess/vid1.mp4",
+      "/videos/Chess/vid2.mp4",
+      "/videos/Chess/vid3.mp4",
+      "/videos/Chess/vid4.mp4",
+      "/videos/Chess/vid5.mp4"
     ],
     "testimonial": {
       "quote": "An absolute pleasure to work with. The team brought unmatched creativity and professionalism to our project, delivering outstanding results.",
@@ -328,15 +293,20 @@
     ],
     "mainImage": "https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200&auto=format&fit=crop&q=60",
     "carouselImages": [
-      "https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200&auto=format&fit=crop&q=60"
+      "/videos/conclave/img1.jpg",
+      "/videos/conclave/img2.jpg",
+      "/videos/conclave/img3.jpg",
+      "/videos/conclave/img4.jpg",
+      "/videos/conclave/img5.jpg"
     ],
     "aboutTitle": "About the Conclave",
     "videoHighlightsTitle": "Video Highlights",
     "videoHighlightsDescription": "Watch some of the key moments and final deliverables from our engagement.",
     "carouselVideos": [
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+      "/videos/conclave/vid1.mp4",
+      "/videos/conclave/vid2.mp4",
+      "/videos/conclave/vid3.mp4",
+      "/videos/conclave/vid4.mp4"
     ],
     "testimonial": {
       "quote": "An absolute pleasure to work with. The team brought unmatched creativity and professionalism to our project, delivering outstanding results.",
@@ -376,15 +346,19 @@
     ],
     "mainImage": "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=1200&auto=format&fit=crop&q=60",
     "carouselImages": [
-      "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=1200&auto=format&fit=crop&q=60"
+      "/videos/pocharam-palavi/img1.jpg",
+      "/videos/pocharam-palavi/img2.jpg",
+      "/videos/pocharam-palavi/img3.jpg",
+      "/videos/pocharam-palavi/img4.jpg",
+      "/videos/pocharam-palavi/img5.jpg"
     ],
     "aboutTitle": "About the Ceremony",
     "videoHighlightsTitle": "Video Highlights",
     "videoHighlightsDescription": "Watch some of the key moments and final deliverables from our engagement.",
     "carouselVideos": [
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+      "/videos/pocharam-palavi/vid1.mp4",
+      "/videos/pocharam-palavi/vid2.mp4",
+      "/videos/pocharam-palavi/vid3.mp4"
     ],
     "testimonial": {
       "quote": "An absolute pleasure to work with. The team brought unmatched creativity and professionalism to our project, delivering outstanding results.",
@@ -424,7 +398,9 @@
     ],
     "mainImage": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&auto=format&fit=crop&q=60",
     "carouselImages": [
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&auto=format&fit=crop&q=60"
+      "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=800&auto=format&fit=crop&q=60"
     ],
     "aboutTitle": "About the Event",
     "videoHighlightsTitle": "Video Highlights",
@@ -472,7 +448,9 @@
     ],
     "mainImage": "https://images.unsplash.com/photo-1472162072942-cd5147eb3902?w=1200&auto=format&fit=crop&q=60",
     "carouselImages": [
-      "https://images.unsplash.com/photo-1472162072942-cd5147eb3902?w=1200&auto=format&fit=crop&q=60"
+      "https://images.unsplash.com/photo-1472162072942-cd5147eb3902?w=1200&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=800&auto=format&fit=crop&q=60"
     ],
     "aboutTitle": "About the Trip",
     "videoHighlightsTitle": "Video Highlights",
@@ -486,6 +464,56 @@
       "quote": "An absolute pleasure to work with. The team brought unmatched creativity and professionalism to our project, delivering outstanding results.",
       "author": "Satisfied Client",
       "position": "Partner"
+    }
+  },
+  {
+    "id": "advertisements-promotions",
+    "title": "ADVERTISEMENTS & PROMOTIONS",
+    "cardDescription": "We offer the best deals in print and digital advertisements on famous platforms that will reach the right target audience within a reasonable budget.",
+    "imagePosition": "right",
+    "buttonStyle": "blue",
+    "subtitle": "ADVERTISEMENTS & PROMOTIONS",
+    "category": "Promotions",
+    "headline": "Maximizing Reach Through Premium Advertising",
+    "topSectionParagraphs": [
+      "We provide the best deals in print and digital advertisements across highly visible platforms.",
+      "Our strategic placements ensure you reach your target audience efficiently and within budget."
+    ],
+    "aboutParagraphs": [
+      "Our team focused on identifying the most impactful media channels for our clients.",
+      "By negotiating premium spots and optimizing digital ad spends, we delivered exceptional ROI."
+    ],
+    "challengesSubtitle": "Services",
+    "challengesTitle": "Targeting the Right Audience",
+    "challengesDescription": "Ensuring high visibility while maintaining a reasonable budget required precise targeting and negotiation.",
+    "challenges": [
+      {
+        "title": "Budget Optimization",
+        "description": "Maximizing ad spend across expensive platforms."
+      },
+      {
+        "title": "Cross-Channel Strategy",
+        "description": "Balancing print and digital for maximum reach."
+      }
+    ],
+    "mainImage": "https://images.unsplash.com/photo-1557838923-2985c318be48?w=1200&auto=format&fit=crop&q=60",
+    "carouselImages": [
+      "https://images.unsplash.com/photo-1557838923-2985c318be48?w=1200&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=800&auto=format&fit=crop&q=60"
+    ],
+    "aboutTitle": "About the Campaign",
+    "videoHighlightsTitle": "Video Highlights",
+    "videoHighlightsDescription": "Watch some of the key moments and final deliverables from our engagement.",
+    "carouselVideos": [
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+    ],
+    "testimonial": {
+      "quote": "Our ROI skyrocketed after deploying their targeted multi-channel ad strategy. They truly understand our audience.",
+      "author": "Marketing Head",
+      "position": "Global Retail Brand"
     }
   }
 ]

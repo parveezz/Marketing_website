@@ -1,4 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
 
-Sitemap: https://yourwebsite.com/sitemap.xml
+# Block backend scripts and mailers from indexing
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://www.zhmktg.com/sitemap.xml

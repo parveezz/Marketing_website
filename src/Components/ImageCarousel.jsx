@@ -1,32 +1,54 @@
+
 import { useState, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import MediaModal from './MediaModal';
 
-const ImageCarousel = ({ items = [], heightClass = "h-auto max-h-[600px]" }) => {
+const ImageCarousel = ({
+    items = [],
+    heightClass = 'h-auto max-h-[600px]',
+}) => {
     const [selectedMedia, setSelectedMedia] = useState(null);
-    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-        Autoplay({ delay: 5000, stopOnInteraction: true })
-    ]);
+
+    const [emblaRef, emblaApi] = useEmblaCarousel(
+        {
+            loop: true,
+        },
+        [
+            Autoplay({
+                delay: 5000,
+                stopOnInteraction: true,
+            }),
+        ]
+    );
 
     const scrollPrev = useCallback(() => {
-        if (emblaApi) emblaApi.scrollPrev();
+        if (emblaApi) {
+            emblaApi.scrollPrev();
+        }
     }, [emblaApi]);
 
     const scrollNext = useCallback(() => {
-        if (emblaApi) emblaApi.scrollNext();
+        if (emblaApi) {
+            emblaApi.scrollNext();
+        }
     }, [emblaApi]);
 
-    if (!items || items.length === 0) return null;
+    if (!items || items.length === 0) {
+        return null;
+    }
 
     const renderSingleMedia = (src) => {
         return (
-            <div className="relative group cursor-pointer w-full h-full" onClick={() => setSelectedMedia(src)}>
+            <div
+                className="relative w-full cursor-pointer"
+                onClick={() => setSelectedMedia(src)}
+            >
                 <img
                     src={src}
                     alt="Project media"
-                    className={`w-full ${heightClass} shadow-xl object-cover rounded-xl transition-transform duration-500`}
+                    className={`w-full ${heightClass} object-cover rounded-xl shadow-xl`}
                 />
             </div>
         );
@@ -37,11 +59,20 @@ const ImageCarousel = ({ items = [], heightClass = "h-auto max-h-[600px]" }) => 
             {items.length === 1 ? (
                 renderSingleMedia(items[0])
             ) : (
-                <div className="relative group w-full">
-                    <div className="overflow-hidden w-full shadow-xl rounded-xl cursor-pointer" ref={emblaRef}>
+                <div className="relative w-full">
+
+                    {/* Carousel */}
+                    <div
+                        ref={emblaRef}
+                        className="overflow-hidden w-full rounded-xl shadow-xl"
+                    >
                         <div className="flex">
                             {items.map((src, index) => (
-                                <div className="flex-[0_0_100%] min-w-0 relative" key={index} onClick={() => setSelectedMedia(src)}>
+                                <div
+                                    key={index}
+                                    className="flex-[0_0_100%] min-w-0 relative"
+                                    onClick={() => setSelectedMedia(src)}
+                                >
                                     <img
                                         src={src}
                                         alt={`Slide ${index + 1}`}
@@ -52,26 +83,67 @@ const ImageCarousel = ({ items = [], heightClass = "h-auto max-h-[600px]" }) => 
                         </div>
                     </div>
 
+                    {/* LEFT ARROW */}
                     <button
+                        type="button"
                         onClick={scrollPrev}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white text-black rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10"
                         aria-label="Previous image"
+                        className="
+                            absolute
+                            left-3
+                            top-1/2
+                            -translate-y-1/2
+                            z-20
+                            flex
+                            items-center
+                            justify-center
+                            w-11
+                            h-11
+                            rounded-full
+                            bg-white/90
+                            text-black
+                            shadow-lg
+                            hover:bg-white
+                            transition
+                        "
                     >
-                        <FiChevronLeft className="text-xl" />
+                        <FiChevronLeft className="w-6 h-6" />
                     </button>
+
+                    {/* RIGHT ARROW */}
                     <button
+                        type="button"
                         onClick={scrollNext}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white text-black rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity z-10"
                         aria-label="Next image"
+                        className="
+                            absolute
+                            right-3
+                            top-1/2
+                            -translate-y-1/2
+                            z-20
+                            flex
+                            items-center
+                            justify-center
+                            w-11
+                            h-11
+                            rounded-full
+                            bg-white/90
+                            text-black
+                            shadow-lg
+                            hover:bg-white
+                            transition
+                        "
                     >
-                        <FiChevronRight className="text-xl" />
+                        <FiChevronRight className="w-6 h-6" />
                     </button>
+
                 </div>
             )}
 
-            <MediaModal 
-                selectedMedia={selectedMedia} 
-                onClose={() => setSelectedMedia(null)} 
+            {/* Media Modal */}
+            <MediaModal
+                selectedMedia={selectedMedia}
+                onClose={() => setSelectedMedia(null)}
             />
         </>
     );

@@ -81,7 +81,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="w-full min-h-screen bg-surface-muted px-5 py-10 text-text-main md:px-8 lg:px-10">
+    <section className="w-full min-h-screen bg-surface-muted px-4 py-10 text-text-main md:px-8 lg:px-12 xl:px-16">
       <SEO title="Contact" description="Get in touch with us." />
 
 
@@ -285,13 +285,12 @@ const Contact = () => {
         <div className="mt-24 w-full">
 
           {/* FAQ Heading */}
-          <h2 className="text-center font-sans text-[32px] font-medium tracking-[-1px] text-text-main sm:text-[48px] md:text-[42px]">
+          <h2 className="text-center font-sans text-[32px] font-medium tracking-[-1px] text-text-main sm:text-[42px] md:text-[48px]">
             FAQs
           </h2>
 
           <p className="mx-auto mt-3 w-full max-w-[550px] text-center font-sans text-[12px] leading-5 text-text-muted">
-            How We Helped a Local Home Service Brand Double Their Bookings in
-            60 Days
+            Frequently asked questions about our services, processes, and pricing.
           </p>
 
           {/* FAQ Items */}

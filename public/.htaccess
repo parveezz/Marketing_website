@@ -1,9 +1,63 @@
+# ========================================================
+# Production .htaccess for ZIH Marketing Consultancy
+# Domain: www.zhmktg.com (GoDaddy cPanel / Apache)
+# ========================================================
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # 1. Force HTTPS (supports direct SSL and GoDaddy reverse proxy)
+  RewriteCond %{HTTPS} !on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # 2. Canonical Domain: Redirect naked domain (zhmktg.com) to www.zhmktg.com
+  RewriteCond %{HTTP_HOST} ^zhmktg\.com$ [NC]
+  RewriteRule ^(.*)$ https://www.zhmktg.com/$1 [L,R=301]
+
+  # 3. Allow backend PHP scripts in /api/ to execute directly
+  RewriteCond %{REQUEST_URI} ^/api/ [NC]
+  RewriteRule ^ - [L]
+
+  # 4. React Single Page App (SPA) Routing
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-l
   RewriteRule . /index.html [L]
 </IfModule>
+
+# 5. Security Headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# 6. GZIP Compression for Fast Page Speed
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css text/javascript application/javascript application/x-javascript application/json application/xml image/svg+xml
+</IfModule>
+
+# 7. Browser Caching for Fast Performance
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType application/pdf "access plus 1 month"
+</IfModule>
+
+# 8. Block sensitive files (.env, .git, configuration)
+<FilesMatch "^\.(env|git|config)">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
