@@ -4,16 +4,18 @@
 
 @theme {
   --font-sans: "Inter", sans-serif;
-  --color-surface-muted: #030712;  /* gray-950 */
-  --color-surface: #111827;        /* gray-900 */
+  --color-surface-muted: #0a0a0a;  /* deep luxury dark */
+  --color-surface: #141215;        /* card surface */
+  --color-surface-elevated: #161618;
   --color-glass: rgba(255, 255, 255, 0.03);
   --color-glass-hover: rgba(255, 255, 255, 0.06);
-  --color-text-main: #ffffff;
-  --color-text-muted: #9ca3af;
+  --color-text-main: #fafafa;
+  --color-text-muted: #a1a1aa;
   --color-border: rgba(255, 255, 255, 0.1);
   --color-border-hover: rgba(255, 255, 255, 0.2);
-  --color-brand: #8b5cf6;
-  --color-brand-hover: #7c3aed;
+  --color-brand: #c4f82a;          /* ZIH signature electric lime */
+  --color-brand-hover: #b0f516;    /* ZIH lime hover */
+  --color-brand-muted: rgba(196, 248, 42, 0.15);
 }
 
 html, body {

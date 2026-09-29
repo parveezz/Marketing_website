@@ -1,193 +1,288 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaLinkedinIn, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import { FiArrowUpRight, FiMail, FiPhone } from "react-icons/fi";
 
 const Footer = () => {
-    const [email, setEmail] = useState("");
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [statusMessage, setStatusMessage] = useState(null);
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState(null);
 
-    const handleNewsletterSubmit = async (e) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-        setStatusMessage(null);
+  const handleNewsletterSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setStatusMessage(null);
 
-        try {
-            const response = await fetch('/api/newsletter.php', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email }),
-            });
-            const result = await response.json();
-            
-            if (response.ok) {
-                setStatusMessage({ type: 'success', text: result.message || 'Subscribed successfully!' });
-                setEmail('');
-            } else {
-                setStatusMessage({ type: 'error', text: result.message || 'Something went wrong.' });
-            }
-        } catch (error) {
-            setStatusMessage({ type: 'error', text: 'Network error. Please try again.' });
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
+    try {
+      const response = await fetch("/api/newsletter.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const result = await response.json();
 
-    return (
-        <footer className="w-full bg-surface-muted text-text-main border-t border-border">
+      if (response.ok) {
+        setStatusMessage({
+          type: "success",
+          text: result.message || "Subscribed successfully!",
+        });
+        setEmail("");
+      } else {
+        setStatusMessage({
+          type: "error",
+          text: result.message || "Something went wrong.",
+        });
+      }
+    } catch {
+      setStatusMessage({
+        type: "error",
+        text: "Network error. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
-            <div className="mx-auto w-full max-w-full px-4 md:px-8 lg:px-12 xl:px-16">
+  return (
+    <footer className="relative w-full border-t border-white/10 bg-[#0a0a0a] text-white overflow-hidden">
+      {/* Background Vertical Grid Guide Lines (12 Columns) */}
+      <div className="pointer-events-none absolute inset-0 grid grid-cols-6 md:grid-cols-12 z-0">
+        {Array.from({ length: 12 }).map((_, i) => (
+          <div key={i} className="border-r border-white/[0.04] h-full" />
+        ))}
+      </div>
 
-                {/* =========================
-                    MAIN FOOTER LINKS
-                ========================== */}
-                <div className="grid w-full grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-10 py-10 md:grid-cols-4 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr] lg:gap-12">
+      <div className="relative z-10 mx-auto w-full max-w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-12 md:py-16">
+        {/* =========================================================
+            TOP SECTION: LOGO + COLUMN LINKS
+        ========================================================== */}
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-[2fr_1fr_1fr_1fr] lg:gap-12">
+          {/* Brand Col */}
+          <div className="sm:col-span-2 md:col-span-4 lg:col-span-1 lg:pr-8">
+            <Link to="/" className="inline-flex items-center gap-3 group">
+              {/* Neon Green 3D Cube Badge (Identical to Navbar) */}
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#c4f82a] text-[#0a0a0a] transition-transform duration-300 group-hover:scale-105">
+                <svg
+                  className="h-5 w-5 fill-none stroke-current"
+                  viewBox="0 0 24 24"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                  <line x1="12" y1="22.08" x2="12" y2="12" />
+                </svg>
+              </div>
+              <span className="font-sans text-[20px] font-bold tracking-[1.5px] text-white">
+                ZIH
+              </span>
+            </Link>
 
-                    {/* Logo & Intro */}
-                    <div className="col-span-1 sm:col-span-2 w-full md:col-span-4 lg:col-span-1 lg:pr-10">
-                        <Link
-                            to="/"
-                            className="inline-flex flex-col items-start text-text-main"
-                        >
-                            <span className="font-sans text-[38px] font-light leading-[0.8] tracking-[10px]">
-                                ZIH
-                            </span>
-                            <span className="mt-3 whitespace-nowrap font-sans text-[8px] font-semibold leading-none tracking-[4px]">
-                                MARKETING CONSULTANCY
-                            </span>
-                        </Link>
-                        <p className="mt-7 font-sans text-[13px] leading-6 text-text-muted">
-                            We are a strategic marketing consultancy focused on helping ambitious businesses build stronger brands, reach the right audiences, and achieve sustainable, measurable growth.
-                        </p>
-                        
-                    </div>
+            <p className="mt-4 font-sans text-[13px] leading-relaxed text-[#a1a1aa] max-w-sm">
+              A digital marketing consultancy helping ambitious leaders scale through intentional strategy, brand systems, and performance creative.
+            </p>
 
-                    {/* Company */}
-                    <div className="w-full">
-                        <h3 className="mb-6 font-sans text-[11px] font-semibold uppercase tracking-[2px] text-text-main">
-                            Company
-                        </h3>
-                        <div className="flex flex-col gap-4">
-                            <Link to="/about" className="w-fit font-sans text-[14px] text-text-muted transition-colors hover:text-text-main">About Us</Link>
-                            <Link to="/contact" className="w-fit font-sans text-[14px] text-text-muted transition-colors hover:text-text-main">Contact</Link>
-                        </div>
-                    </div>
-
-                    {/* Services */}
-                    <div className="w-full">
-                        <h3 className="mb-6 font-sans text-[11px] font-semibold uppercase tracking-[2px] text-text-main">
-                            Services
-                        </h3>
-                        <div className="flex flex-col gap-4">
-                            <Link to="/services/strategic-marketing" className="w-fit font-sans text-[14px] text-text-muted transition-colors hover:text-text-main">Strategic Marketing</Link>
-                            <Link to="/services/branding" className="w-fit font-sans text-[14px] text-text-muted transition-colors hover:text-text-main">Branding</Link>
-                            <Link to="/services/advertising" className="w-fit font-sans text-[14px] text-text-muted transition-colors hover:text-text-main">Advertising</Link>
-                            <Link to="/services/social-media" className="w-fit font-sans text-[14px] text-text-muted transition-colors hover:text-text-main">Social Media</Link>
-                            <Link to="/services" className="w-fit font-sans text-[14px] text-text-muted transition-colors hover:text-text-main">View All</Link>
-                        </div>
-                    </div>
-
-                    {/* Resources */}
-                    <div className="w-full">
-                        <h3 className="mb-6 font-sans text-[11px] font-semibold uppercase tracking-[2px] text-text-main">
-                            Resources
-                        </h3>
-                        <div className="flex flex-col gap-4">
-                            <Link to="/blog" className="w-fit font-sans text-[14px] text-text-muted transition-colors hover:text-text-main">Journal / Blog</Link>
-                            <Link to="/case-studies" className="w-fit font-sans text-[14px] text-text-muted transition-colors hover:text-text-main">Case Studies</Link>
-                            <Link to="/whitepapers" className="w-fit font-sans text-[14px] text-text-muted transition-colors hover:text-text-main">Whitepapers</Link>
-                            <Link to="/faq" className="w-fit font-sans text-[14px] text-text-muted transition-colors hover:text-text-main">FAQ</Link>
-                        </div>
-                    </div>
-                    
-                    {/* Connect */}
-                    <div className="w-full">
-                        <h3 className="mb-6 font-sans text-[11px] font-semibold uppercase tracking-[2px] text-text-main">
-                            Connect
-                        </h3>
-                        <div className="flex flex-col gap-4">
-                            <a href="mailto:hello@zihconsultancy.com" className="w-fit font-sans text-[14px] text-text-muted transition-colors hover:text-text-main">hello@zihconsultancy.com</a>
-                            <a href="tel:+15551234567" className="w-fit font-sans text-[14px] text-text-muted transition-colors hover:text-text-main">+1 (555) 123-4567</a>
-                            
-                            {/* Social Links */}
-                            <div className="mt-4 flex gap-3">
-                                <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-border font-sans text-[13px] text-text-main transition-all hover:border-brand hover:bg-brand hover:text-surface">
-                                    <FaLinkedinIn size={14} />
-                                </a>
-                                <a href="https://instagram.com" target="_blank" rel="noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-border font-sans text-[13px] text-text-main transition-all hover:border-brand hover:bg-brand hover:text-surface">
-                                    <FaInstagram size={14} />
-                                </a>
-                                <a href="https://x.com" target="_blank" rel="noreferrer" className="flex h-9 w-9 items-center justify-center rounded-full border border-border font-sans text-[13px] text-text-main transition-all hover:border-brand hover:bg-brand hover:text-surface">
-                                    <FaXTwitter size={14} />
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                {/* =========================
-                    NEWSLETTER
-                ========================== */}
-                <div className="flex w-full flex-col gap-8 border-t border-border py-10 md:flex-row md:items-center md:justify-between lg:py-12">
-                    <div className="w-full md:max-w-[400px]">
-                        <h3 className="font-sans text-[20px] font-medium leading-tight text-text-main md:text-[24px]">
-                            Insights delivered to your inbox.
-                        </h3>
-                        <p className="mt-3 font-sans text-[13px] leading-6 text-text-muted">
-                            Subscribe to receive our latest thinking on marketing strategy, branding, and growth. No spam, just value.
-                        </p>
-                    </div>
-
-                    <form className="flex w-full flex-col gap-4 md:max-w-[450px]" onSubmit={handleNewsletterSubmit}>
-                        <div className="flex w-full flex-col gap-4 sm:flex-row">
-                            <input
-                                type="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                                required
-                                placeholder="Enter your email address"
-                                className="h-12 w-full flex-1 border-b border-[#777] bg-transparent px-1 font-sans text-[14px] text-text-main outline-none placeholder:text-[#888] focus:border-brand"
-                            />
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                className="h-12 w-full shrink-0 cursor-pointer border border-brand bg-brand px-8 font-sans text-[11px] font-semibold uppercase tracking-[1.5px] text-surface transition-all duration-300 hover:bg-transparent hover:text-text-main disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
-                            >
-                                Subscribe
-                            </button>
-                        </div>
-                        {statusMessage && (
-                            <p className={`font-sans text-[12px] ${statusMessage.type === 'error' ? 'text-red-500' : 'text-green-600'}`}>
-                                {statusMessage.text}
-                            </p>
-                        )}
-                    </form>
-                </div>
-
-                {/* =========================
-                    BOTTOM FOOTER
-                ========================== */}
-                <div className="flex w-full flex-col gap-5 border-t border-border py-8 md:flex-row md:items-center md:justify-between">
-                    <p className="font-sans text-[12px] text-text-muted">
-                        © {new Date().getFullYear()} ZIH Marketing Consultancy. All rights reserved.
-                    </p>
-                    <div className="flex w-full flex-wrap gap-6 md:w-auto">
-                        <Link to="/privacy-policy" className="font-sans text-[12px] text-text-muted transition-colors hover:text-text-main">
-                            Privacy Policy
-                        </Link>
-                        <Link to="/terms" className="font-sans text-[12px] text-text-muted transition-colors hover:text-text-main">
-                            Terms & Conditions
-                        </Link>
-                        <Link to="/cookies" className="font-sans text-[12px] text-text-muted transition-colors hover:text-text-main">
-                            Cookie Policy
-                        </Link>
-                    </div>
-                </div>
-
+            {/* Social Links */}
+            <div className="mt-6 flex items-center gap-2.5">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#a1a1aa] transition-all duration-200 hover:border-white/30 hover:bg-white/10 hover:text-[#c4f82a]"
+              >
+                <FaLinkedinIn size={13} />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#a1a1aa] transition-all duration-200 hover:border-white/30 hover:bg-white/10 hover:text-[#c4f82a]"
+              >
+                <FaInstagram size={13} />
+              </a>
+              <a
+                href="https://x.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Twitter / X"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#a1a1aa] transition-all duration-200 hover:border-white/30 hover:bg-white/10 hover:text-[#c4f82a]"
+              >
+                <FaXTwitter size={13} />
+              </a>
             </div>
-        </footer>
-    );
+          </div>
+
+          {/* Navigation */}
+          <div>
+            <h3 className="mb-4 font-sans text-[11px] font-semibold uppercase tracking-[2px] text-white">
+              Navigation
+            </h3>
+            <ul className="space-y-2.5">
+              <li>
+                <Link to="/" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/our-work" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                  Our Work
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className="mb-4 font-sans text-[11px] font-semibold uppercase tracking-[2px] text-white">
+              Services
+            </h3>
+            <ul className="space-y-2.5">
+              <li>
+                <Link to="/services/strategic-marketing" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                  Strategic Marketing
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/branding" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                  Branding
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/advertising" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                  Advertising
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/social-media" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                  Social Media
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact & Reach Out */}
+          <div>
+            <h3 className="mb-4 font-sans text-[11px] font-semibold uppercase tracking-[2px] text-white">
+              Get in Touch
+            </h3>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="mailto:hello@zihconsultancy.com"
+                  className="inline-flex items-center gap-2 font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white"
+                >
+                  <FiMail className="text-[#c4f82a] text-[14px]" />
+                  <span>hello@zihconsultancy.com</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+15551234567"
+                  className="inline-flex items-center gap-2 font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white"
+                >
+                  <FiPhone className="text-[#c4f82a] text-[14px]" />
+                  <span>+1 (555) 123-4567</span>
+                </a>
+              </li>
+              <li className="pt-1">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center gap-1.5 font-sans text-[12.5px] font-semibold text-[#c4f82a] transition-all hover:underline"
+                >
+                  <span>Book an Introduction</span>
+                  <FiArrowUpRight />
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* =========================================================
+            NEWSLETTER STRIP
+        ========================================================== */}
+        <div className="mt-12 rounded-2xl border border-white/10 bg-[#121114]/80 p-6 sm:p-8 backdrop-blur-md flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div className="max-w-md">
+            <h4 className="font-sans text-[18px] font-medium text-white">
+              Stay ahead with market insights
+            </h4>
+            <p className="mt-1 font-sans text-[13px] text-[#a1a1aa]">
+              Join leaders receiving our strategic perspectives on positioning, performance, and brand building.
+            </p>
+          </div>
+
+          <form onSubmit={handleNewsletterSubmit} className="flex w-full md:w-auto flex-col sm:flex-row gap-3">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              placeholder="Enter your email"
+              className="h-11 w-full sm:w-[260px] rounded-xl border border-white/10 bg-[#1a181d] px-4 font-sans text-[13.5px] text-white placeholder-[#71717a] outline-none transition-colors focus:border-[#c4f82a]"
+            />
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="h-11 shrink-0 rounded-xl bg-[#c4f82a] px-6 font-sans text-[13.5px] font-semibold text-black transition-all duration-200 hover:bg-[#b0f516] disabled:opacity-50 cursor-pointer"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+        {statusMessage && (
+          <p
+            className={`mt-2 font-sans text-[12px] text-right ${
+              statusMessage.type === "error" ? "text-red-400" : "text-[#c4f82a]"
+            }`}
+          >
+            {statusMessage.text}
+          </p>
+        )}
+
+        {/* =========================================================
+            BOTTOM LEGAL & COPYRIGHT
+        ========================================================== */}
+        <div className="mt-10 border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="font-sans text-[12px] text-[#71717a]">
+            &copy; {new Date().getFullYear()} ZIH Marketing Consultancy. All rights reserved.
+          </p>
+
+          <div className="flex items-center gap-6">
+            <Link
+              to="/privacy-policy"
+              className="font-sans text-[12px] text-[#71717a] transition-colors hover:text-white"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              to="/terms"
+              className="font-sans text-[12px] text-[#71717a] transition-colors hover:text-white"
+            >
+              Terms of Service
+            </Link>
+            <Link
+              to="/cookies"
+              className="font-sans text-[12px] text-[#71717a] transition-colors hover:text-white"
+            >
+              Cookie Policy
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

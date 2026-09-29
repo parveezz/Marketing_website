@@ -1,5 +1,6 @@
 import SEO from "../Components/SEO";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const About = () => {
   const values = [
@@ -29,152 +30,193 @@ const About = () => {
     },
   ];
 
-  const process = [
-    {
-      number: "01",
-      title: "Discover",
-      description:
-        "We begin by understanding your business, audience, market, competitors, and current challenges.",
-    },
-    {
-      number: "02",
-      title: "Define",
-      description:
-        "We identify the right positioning, priorities, and direction based on what your business needs.",
-    },
-    {
-      number: "03",
-      title: "Create",
-      description:
-        "We turn strategy into thoughtful campaigns, branding, content, and marketing experiences.",
-    },
-    {
-      number: "04",
-      title: "Grow",
-      description:
-        "We measure what matters, learn from the results, and continuously improve the approach.",
-    },
-  ];
-
   const team = [
-    { name: "Syed Zubair Hafeez", role: "CEO & Founder", image: "https://placehold.co/600x750/e0e0e0/202020?text=SZH" },
-    { name: "Elena Rostova", role: "Head of Strategy", image: "https://placehold.co/600x750/e0e0e0/202020?text=ER" },
-    { name: "Marcus Chen", role: "Creative Director", image: "https://placehold.co/600x750/e0e0e0/202020?text=MC" }
+    {
+      name: "Syed Zubair Hafeez",
+      role: "CEO & Founder",
+      image: "/images/ceo.jpg",
+    },
+    {
+      name: "Elena Rostova",
+      role: "Head of Strategy",
+      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&auto=format&fit=crop&q=80",
+    },
+    {
+      name: "Marcus Chen",
+      role: "Creative Director",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop&q=80",
+    },
   ];
 
   return (
-    <main className="w-full bg-surface-muted text-text-main">
-      <SEO title="About Us" description="Learn more about our Marketing Agency." />
-
+    <main className="w-full bg-[#0a0a0a] text-white overflow-hidden">
+      <SEO
+        title="About Us"
+        description="Learn more about ZIH Marketing Consultancy and our strategic philosophy."
+      />
 
       {/* =====================================================
-          HERO
+          1. TOP BANNER HEADER (MATCHING REFERENCE IMAGE)
       ====================================================== */}
-      <section className="w-full px-5 pb-10 pt-8 sm:px-8 md:px-10 md:pb-16 md:pt-10 lg:px-10">
-        <div className="mx-auto w-full max-w-full border-b border-border pb-8 md:pb-12">
+      <section className="relative w-full border-b border-white/10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-7 sm:py-9 md:py-11 overflow-hidden bg-[#0c0a09]">
+        {/* Background Vertical Grid Guide Lines (12 Columns) */}
+        <div className="pointer-events-none absolute inset-0 grid grid-cols-6 md:grid-cols-12 z-0">
+          {Array.from({ length: 12 }).map((_, i) => (
+            <div key={i} className="border-r border-white/[0.04] h-full" />
+          ))}
+        </div>
 
-          <p className="mb-6 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
-            About ZIH
-          </p>
+        {/* Subtle Ambient Waves Texture */}
+        <div className="pointer-events-none absolute inset-0 opacity-15 z-0 flex items-center justify-center">
+          <svg
+            className="w-full h-full object-cover"
+            viewBox="0 0 1440 300"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M0 150 C 360 60, 720 240, 1080 100 T 1440 170" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+            <path d="M0 180 C 360 90, 720 270, 1080 130 T 1440 200" stroke="rgba(255,255,255,0.15)" strokeWidth="1" />
+            <path d="M0 210 C 360 120, 720 300, 1080 160 T 1440 230" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
+          </svg>
+        </div>
 
-          <h1 className="max-w-[1100px] font-sans text-[46px] font-medium leading-[1.02] tracking-tight sm:text-[56px] md:text-[72px] lg:text-[88px]">
-            Marketing with
-            <br />
-            <span className="text-text-muted">meaning.</span>
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center text-center"
+        >
+          {/* Centered Heading */}
+          <h1 className="font-sans text-[32px] sm:text-[42px] md:text-[48px] font-semibold tracking-[-0.02em] text-[#fafafa] leading-tight">
+            About Us
           </h1>
 
-          <div className="mt-10 grid w-full grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-20">
-
-            <div />
-
-            <p className="max-w-[650px] font-sans text-[14px] leading-8 text-text-muted md:text-[16px] md:leading-8">
-              ZIH is a marketing consultancy built around a simple idea:
-              effective marketing starts with understanding. We combine
-              strategy, creativity, and purposeful execution to help
-              businesses build brands that connect with the people they
-              want to reach.
-            </p>
-
-          </div>
-          
-          {/* Hero Image */}
-          <div className="mt-16 aspect-[4/3] md:aspect-[21/9] w-full overflow-hidden bg-surface-muted">
-             <img src="/images/about-team.jpg" alt="About ZIH" className="h-full w-full object-cover" />
-          </div>
-        </div>
+          {/* Centered Subtitle */}
+          <p className="mt-2.5 max-w-2xl font-sans text-[13.5px] sm:text-[15px] leading-relaxed text-[#a1a1aa]">
+            Welcome to ZIH, where strategic clarity, creative precision, and client-centricity converge to shape the future of digital growth.
+          </p>
+        </motion.div>
       </section>
 
       {/* =====================================================
-          INTRODUCTION
+          2. ABOUT ZIH SECTION (MATCHING REFERENCE IMAGE 2-COL)
       ====================================================== */}
-      <section className="w-full px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
-        <div className="mx-auto grid w-full max-w-full grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24">
+      <section className="relative w-full border-b border-white/10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-7 sm:py-9 md:py-11 overflow-hidden bg-[#0c0a09]">
+        {/* Background Vertical Grid Guide Lines (12 Columns) */}
+        <div className="pointer-events-none absolute inset-0 grid grid-cols-6 md:grid-cols-12 z-0">
+          {Array.from({ length: 12 }).map((_, i) => (
+            <div key={i} className="border-r border-white/[0.04] h-full" />
+          ))}
+        </div>
 
-          <div>
-            <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
-              Who We Are
-            </p>
-
-            <h2 className="max-w-[600px] font-sans text-[26px] font-medium leading-tight md:text-[40px]">
-              We believe good marketing starts with a good understanding of
-              people.
+        <div className="relative z-10 mx-auto grid w-full max-w-full grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12">
+          {/* Left Column: Heading & Present Text */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="font-sans text-[28px] sm:text-[34px] md:text-[38px] font-semibold tracking-[-0.02em] text-white leading-tight">
+              About ZIH
             </h2>
-          </div>
 
-          <div className="space-y-6">
-            <p className="font-sans text-[15px] leading-8 text-text-muted md:text-[16px]">
-              Businesses don't need more noise. They need clarity. They need
-              to understand who they are speaking to, what makes them
-              different, and how to communicate that difference effectively.
-            </p>
+            <div className="mt-4 space-y-4 font-sans text-[13.5px] sm:text-[14.5px] leading-relaxed text-[#a1a1aa]">
+              <p>
+                ZIH is a marketing consultancy built around a simple idea:
+                effective marketing starts with understanding. We combine
+                strategy, creativity, and purposeful execution to help
+                businesses build brands that connect with the people they
+                want to reach.
+              </p>
 
-            <p className="font-sans text-[15px] leading-8 text-text-muted md:text-[16px]">
-              At ZIH, we work across strategy, branding, advertising, and
-              social media to create marketing that is intentional,
-              consistent, and connected to real business objectives.
-            </p>
+              <p>
+                Businesses don&apos;t need more noise. They need clarity. They need
+                to understand who they are speaking to, what makes them
+                different, and how to communicate that difference effectively.
+                At ZIH, we work across strategy, branding, advertising, and
+                social media to create marketing that is intentional,
+                consistent, and connected to real business objectives.
+              </p>
 
-            <p className="font-sans text-[15px] leading-8 text-text-muted md:text-[16px]">
-              Our approach is collaborative. We work closely with our
-              clients, understand their challenges, and build solutions
-              around where they want to go.
-            </p>
-          </div>
+              <p>
+                Our approach is collaborative. We work closely with our
+                clients, understand their challenges, and build solutions
+                around where they want to go.
+              </p>
+            </div>
+          </motion.div>
 
+          {/* Right Column: Previous About Us Image (/images/about-team.jpg) */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="flex items-center justify-center lg:justify-end"
+          >
+            <div className="relative w-full max-w-[500px] sm:max-w-[560px] lg:max-w-[620px] overflow-hidden rounded-2xl border border-white/10 bg-[#141215] shadow-2xl group">
+              <img
+                src="/images/about-team.jpg"
+                alt="About ZIH Team"
+                className="w-full aspect-[4/3] object-cover transition-all duration-500 group-hover:scale-105"
+              />
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* =====================================================
-          OUR STORY / TIMELINE (NEW)
+          3. OUR STORY / TIMELINE
       ====================================================== */}
-      <section className="w-full border-t border-border bg-surface px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
-        <div className="mx-auto w-full max-w-full">
-          <div className="mb-12">
-            <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
-              Our Story
-            </p>
-            <h2 className="max-w-[600px] font-sans text-[26px] font-medium leading-tight md:text-[40px]">
+      <section className="relative w-full border-b border-white/10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-7 sm:py-9 md:py-11 overflow-hidden bg-[#0c0a09]">
+        <div className="relative z-10 mx-auto w-full max-w-full">
+          <div className="mb-6 sm:mb-8">
+            <div className="mb-2.5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3 py-0.5 backdrop-blur-md">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+              <span className="font-sans text-[11px] font-medium tracking-wide text-[#fafafa]">
+                Our Story
+              </span>
+            </div>
+            <h2 className="font-sans text-[24px] sm:text-[30px] font-semibold text-white tracking-tight">
               Built on a foundation of clarity and purpose.
             </h2>
           </div>
-          
-          <div className="grid w-full grid-cols-1 gap-12 md:grid-cols-3">
-            <div className="border-t border-brand pt-6">
-              <h3 className="font-sans text-[20px] font-medium">The Beginning</h3>
-              <p className="mt-4 font-sans text-[14px] leading-7 text-text-muted">
-                Founded by Syed Zubair Hafeez, ZIH started with a singular vision: to strip away the vanity metrics and jargon from the marketing industry and replace it with genuine strategy.
+
+          <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-3">
+            <div className="rounded-xl border border-white/10 bg-[#141215]/80 p-5 sm:p-6 backdrop-blur-md">
+              <span className="font-sans text-[10.5px] font-bold uppercase tracking-[1.5px] text-[#c4f82a]">
+                01 • Genesis
+              </span>
+              <h3 className="mt-2 font-sans text-[17px] sm:text-[18px] font-semibold text-white">
+                The Beginning
+              </h3>
+              <p className="mt-2.5 font-sans text-[13px] leading-relaxed text-[#a1a1aa]">
+                Founded by Syed Zubair Hafeez, ZIH started with a singular vision: to strip away the vanity metrics and jargon from marketing and replace it with genuine strategy.
               </p>
             </div>
-            <div className="border-t border-brand pt-6">
-              <h3 className="font-sans text-[20px] font-medium">Our Evolution</h3>
-              <p className="mt-4 font-sans text-[14px] leading-7 text-text-muted">
-                Over the years, we expanded our capabilities across digital, branding, and traditional advertising, maintaining our commitment to strategy-first execution for a growing roster of global clients.
+
+            <div className="rounded-xl border border-white/10 bg-[#141215]/80 p-5 sm:p-6 backdrop-blur-md">
+              <span className="font-sans text-[10.5px] font-bold uppercase tracking-[1.5px] text-[#c4f82a]">
+                02 • Growth
+              </span>
+              <h3 className="mt-2 font-sans text-[17px] sm:text-[18px] font-semibold text-white">
+                Our Evolution
+              </h3>
+              <p className="mt-2.5 font-sans text-[13px] leading-relaxed text-[#a1a1aa]">
+                Over the years, we expanded capabilities across digital, branding, and performance campaigns, maintaining our strategy-first commitment for high-growth partners.
               </p>
             </div>
-            <div className="border-t border-brand pt-6">
-              <h3 className="font-sans text-[20px] font-medium">Looking Ahead</h3>
-              <p className="mt-4 font-sans text-[14px] leading-7 text-text-muted">
-                Today, ZIH acts as a growth partner for ambitious brands, continuously adapting to new technologies while staying true to the timeless principles of human psychology and clear communication.
+
+            <div className="rounded-xl border border-white/10 bg-[#141215]/80 p-5 sm:p-6 backdrop-blur-md">
+              <span className="font-sans text-[10.5px] font-bold uppercase tracking-[1.5px] text-[#c4f82a]">
+                03 • Vision
+              </span>
+              <h3 className="mt-2 font-sans text-[17px] sm:text-[18px] font-semibold text-white">
+                Looking Ahead
+              </h3>
+              <p className="mt-2.5 font-sans text-[13px] leading-relaxed text-[#a1a1aa]">
+                Today, ZIH acts as a trusted growth partner for ambitious brands, continuously adopting modern systems while staying grounded in psychological clarity.
               </p>
             </div>
           </div>
@@ -182,80 +224,105 @@ const About = () => {
       </section>
 
       {/* =====================================================
-          VALUES
+          4. VALUES ("WHAT GUIDES US")
       ====================================================== */}
-      <section className="w-full border-t border-border px-4 md:px-8 lg:px-12 xl:px-16">
+      <section className="relative w-full border-b border-white/10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-7 sm:py-9 md:py-11 overflow-hidden bg-[#0c0a09]">
+        <div className="relative z-10 mx-auto grid w-full max-w-full grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+          <div className="flex flex-col justify-between">
+            <div>
+              <div className="mb-2.5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3 py-0.5 backdrop-blur-md">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+                <span className="font-sans text-[11px] font-medium tracking-wide text-[#fafafa]">
+                  What Guides Us
+                </span>
+              </div>
+              <h2 className="font-sans text-[24px] sm:text-[32px] font-semibold text-white tracking-tight">
+                Principles behind the work.
+              </h2>
 
-        <div className="mx-auto grid w-full max-w-full grid-cols-1 lg:grid-cols-2">
+              <div className="mt-4 space-y-3.5 max-w-md font-sans text-[13.5px] sm:text-[14px] leading-relaxed text-[#a1a1aa]">
+                <p>
+                  At ZIH, our values aren&apos;t abstract slogans—they are the operational foundation of every strategy, campaign, and decision we execute.
+                </p>
+                <p>
+                  We believe meaningful brand equity isn&apos;t built on shortcuts or vanity metrics. It comes from disciplined strategy, honest alignment with human behavior, and the consistency to deliver measurable, sustainable results over time.
+                </p>
+              </div>
+            </div>
 
-          {/* Left */}
-          <div className="py-12 lg:border-r lg:border-border lg:py-10 lg:pr-20">
-
-            <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
-              What Guides Us
-            </p>
-
-            <h2 className="max-w-[500px] font-sans text-[26px] font-medium leading-tight md:text-[40px]">
-              Principles behind the work.
-            </h2>
-
+            <div className="mt-6 rounded-xl border border-white/10 bg-[#141215]/80 p-4 max-w-md">
+              <p className="font-sans text-[12.5px] italic text-[#d4d4d8] leading-relaxed">
+                &ldquo;Strategy without clarity is noise. Creativity without purpose is waste.&rdquo;
+              </p>
+              <div className="mt-2.5 flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+                <span className="font-sans text-[10.5px] font-semibold uppercase tracking-wider text-[#c4f82a]">
+                  The ZIH Creed
+                </span>
+              </div>
+            </div>
           </div>
 
-          {/* Right */}
-          <div>
+          <div className="grid grid-cols-1 gap-3.5">
             {values.map((value) => (
               <div
                 key={value.number}
-                className="border-b border-border py-8 lg:pl-16"
+                className="rounded-xl border border-white/10 bg-[#141215]/70 p-4.5 sm:p-5"
               >
-                <div className="mb-4 flex items-center justify-between">
-                  <h3 className="font-sans text-[18px] md:text-[20px] font-medium">
+                <div className="flex items-center justify-between mb-1.5">
+                  <h3 className="font-sans text-[16px] sm:text-[17px] font-semibold text-white">
                     {value.title}
                   </h3>
-
-                  <span className="font-sans text-[11px] text-text-muted">
+                  <span className="font-sans text-[11px] font-bold text-[#c4f82a]">
                     {value.number}
                   </span>
                 </div>
-
-                <p className="max-w-[600px] font-sans text-[14px] leading-7 text-text-muted">
+                <p className="font-sans text-[13px] leading-relaxed text-[#a1a1aa]">
                   {value.description}
                 </p>
               </div>
             ))}
           </div>
-
         </div>
-
       </section>
 
       {/* =====================================================
-          TEAM (NEW)
+          5. LEADERSHIP TEAM (FEATURING CEO)
       ====================================================== */}
-      <section className="w-full border-t border-border px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
-        <div className="mx-auto w-full max-w-full">
-          <div className="mb-12">
-            <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
-              Leadership
-            </p>
-            <h2 className="max-w-[600px] font-sans text-[26px] font-medium leading-tight md:text-[40px]">
+      <section className="relative w-full border-b border-white/10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-7 sm:py-9 md:py-11 overflow-hidden bg-[#0c0a09]">
+        <div className="relative z-10 mx-auto w-full max-w-full flex flex-col items-center">
+          <div className="mb-6 sm:mb-8 flex flex-col items-center text-center">
+            <div className="mb-2.5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3 py-0.5 backdrop-blur-md">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+              <span className="font-sans text-[11px] font-medium tracking-wide text-[#fafafa]">
+                Leadership
+              </span>
+            </div>
+            <h2 className="font-sans text-[24px] sm:text-[30px] font-semibold text-white tracking-tight">
               The minds behind the strategy.
             </h2>
           </div>
 
-          <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto grid w-full max-w-3xl grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
             {team.map((member, index) => (
-              <div key={index} className="flex flex-col group cursor-pointer">
-                <div className="overflow-hidden bg-[#e0e0e0] w-full aspect-[4/5]">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
+              <div
+                key={index}
+                className="group flex flex-col rounded-xl border border-white/10 bg-[#141215]/80 p-3 transition-all duration-300 hover:border-white/25 hover:-translate-y-1"
+              >
+                <div className="overflow-hidden bg-[#16141a] rounded-lg w-full aspect-[4/4.5] border border-white/10">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="h-full w-full object-cover transition-all duration-500 group-hover:scale-105"
                   />
                 </div>
-                <div className="mt-5">
-                  <h3 className="font-sans text-[18px] md:text-[20px] font-medium">{member.name}</h3>
-                  <p className="mt-1 font-sans text-[13px] font-semibold uppercase tracking-[1px] text-text-muted">{member.role}</p>
+                <div className="mt-2.5 text-center">
+                  <h3 className="font-sans text-[15px] font-semibold text-white">
+                    {member.name}
+                  </h3>
+                  <p className="mt-0.5 font-sans text-[10.5px] font-semibold uppercase tracking-[1px] text-[#c4f82a]">
+                    {member.role}
+                  </p>
                 </div>
               </div>
             ))}
@@ -264,114 +331,27 @@ const About = () => {
       </section>
 
       {/* =====================================================
-          GLOBAL REACH (NEW)
+          6. BOTTOM CTA
       ====================================================== */}
-      <section className="w-full border-t border-border bg-surface-muted px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
-        <div className="mx-auto flex w-full max-w-full flex-col gap-10 md:flex-row md:items-center md:justify-between">
-          <div className="max-w-[500px]">
-             <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
-              Global Reach
-            </p>
-            <h2 className="font-sans text-[26px] font-medium leading-tight md:text-[40px]">
-              Local expertise. Global perspective.
-            </h2>
-            <p className="mt-6 font-sans text-[15px] leading-8 text-text-muted">
-              While our roots are deep, our reach extends across borders. We have successfully partnered with clients in North America, Europe, and Asia, adapting our strategies to nuanced cultural and market dynamics.
-            </p>
-          </div>
-          <div className="flex gap-16 md:gap-24">
-            <div className="flex flex-col gap-6">
-              <p className="font-sans text-[18px] font-medium">Hyderabad</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* =====================================================
-          APPROACH
-      ====================================================== */}
-      <section className="w-full border-t border-border px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
-
-        <div className="mx-auto mb-12 grid w-full max-w-full grid-cols-1 gap-10 md:mb-16 lg:grid-cols-2">
-
+      <section className="relative w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-7 sm:py-9 overflow-hidden bg-[#0c0a09]">
+        <div className="relative z-10 mx-auto flex w-full max-w-full flex-col gap-5 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
-              Our Approach
-            </p>
-
-            <h2 className="font-sans text-[26px] font-medium leading-tight md:text-[40px]">
-              From understanding
-              <br />
-              to execution.
-            </h2>
-          </div>
-
-          <div className="flex items-end">
-            <p className="max-w-[600px] font-sans text-[15px] leading-8 text-text-muted">
-              We don't believe in one-size-fits-all marketing. Every
-              business has a different audience, challenge, opportunity,
-              and ambition. Our process is designed to uncover those
-              differences and turn them into a clear direction.
-            </p>
-          </div>
-
-        </div>
-
-        {/* Process */}
-        <div className="mx-auto max-w-full border-t border-border">
-          <div className="grid w-full grid-cols-1 gap-5">
-          {process.map((item) => (
-            <div
-              key={item.number}
-              className="grid w-full grid-cols-1 gap-5 border-b border-border py-6 md:grid-cols-[100px_1fr_1.5fr] md:items-start md:gap-10"
-            >
-              <span className="font-sans text-[11px] text-text-muted">
-                {item.number}
-              </span>
-
-              <h3 className="font-sans text-[24px] font-medium">
-                {item.title}
-              </h3>
-
-              <p className="max-w-[600px] font-sans text-[14px] leading-7 text-text-muted">
-                {item.description}
-              </p>
-            </div>
-          ))}
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* =====================================================
-          CTA
-      ====================================================== */}
-      <section className="w-full border-t border-border px-5 py-10 sm:px-8 md:px-10 md:py-10 lg:px-10">
-
-        <div className="mx-auto flex w-full max-w-full flex-col gap-8 md:flex-row md:items-end md:justify-between">
-
-          <div>
-            <p className="mb-5 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
-              Let's Work Together
-            </p>
-
-            <h2 className="max-w-[750px] font-sans text-[28px] font-medium leading-tight md:text-[42px]">
-              Have a business worth building?
+            <span className="font-sans text-[10px] font-bold uppercase tracking-[2px] text-[#c4f82a]">
+              Start Something Meaningful
+            </span>
+            <h2 className="mt-1.5 max-w-[700px] font-sans text-[24px] sm:text-[30px] font-semibold text-white leading-tight">
+              Ready to transform your ideas into digital masterpieces?
             </h2>
           </div>
 
           <Link
             to="/contact"
-            className="w-fit shrink-0 border border-brand bg-brand px-7 py-3 font-sans text-xs font-semibold uppercase tracking-[1px] text-surface transition-all duration-300 hover:bg-transparent hover:text-text-main"
+            className="w-fit shrink-0 rounded-xl bg-[#c4f82a] px-7 py-3 font-sans text-[13.5px] font-semibold text-black transition-all duration-200 hover:bg-[#b0f516] hover:scale-105"
           >
-            Let's Talk
+            Start Project
           </Link>
-
         </div>
-
       </section>
-
     </main>
   );
 };

@@ -88,24 +88,7 @@ const ImageCarousel = ({
                         type="button"
                         onClick={scrollPrev}
                         aria-label="Previous image"
-                        className="
-                            absolute
-                            left-3
-                            top-1/2
-                            -translate-y-1/2
-                            z-20
-                            flex
-                            items-center
-                            justify-center
-                            w-11
-                            h-11
-                            rounded-full
-                            bg-white/90
-                            text-black
-                            shadow-lg
-                            hover:bg-white
-                            transition
-                        "
+                        className="absolute left-3 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-11 h-11 rounded-full bg-[#161618]/90 border border-white/15 text-white hover:bg-[#c4f82a] hover:text-black hover:border-[#c4f82a] shadow-xl backdrop-blur-md transition-all duration-200"
                     >
                         <FiChevronLeft className="w-6 h-6" />
                     </button>
@@ -115,24 +98,7 @@ const ImageCarousel = ({
                         type="button"
                         onClick={scrollNext}
                         aria-label="Next image"
-                        className="
-                            absolute
-                            right-3
-                            top-1/2
-                            -translate-y-1/2
-                            z-20
-                            flex
-                            items-center
-                            justify-center
-                            w-11
-                            h-11
-                            rounded-full
-                            bg-white/90
-                            text-black
-                            shadow-lg
-                            hover:bg-white
-                            transition
-                        "
+                        className="absolute right-3 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-11 h-11 rounded-full bg-[#161618]/90 border border-white/15 text-white hover:bg-[#c4f82a] hover:text-black hover:border-[#c4f82a] shadow-xl backdrop-blur-md transition-all duration-200"
                     >
                         <FiChevronRight className="w-6 h-6" />
                     </button>

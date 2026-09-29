@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ProjectCard from '../../Components/ProjectCard';
 import SEO from '../../Components/SEO';
 import projectsData from '../../data/projects.json';
+import { motion } from 'framer-motion';
 
 const OurWork = () => {
     const [activeCategory, setActiveCategory] = useState("All");
@@ -15,36 +16,56 @@ const OurWork = () => {
         : projectsData.filter(project => project.category === activeCategory);
 
     return (
-        <div className="w-full bg-surface-muted min-h-screen">
+        <main className="relative w-full bg-[#0a0a0a] text-white min-h-screen overflow-hidden">
             <SEO
-                title="Our Work"
+                title="Our Work | ZIH Marketing Consultancy"
                 description="Explore our portfolio of marketing and digital solutions. View our past work and success stories."
             />
 
+            {/* Background Vertical Grid Guide Lines (12 Columns) */}
+            <div className="pointer-events-none absolute inset-0 grid grid-cols-6 md:grid-cols-12 z-0">
+                {Array.from({ length: 12 }).map((_, i) => (
+                    <div key={i} className="border-r border-white/[0.04] h-full" />
+                ))}
+            </div>
+
             {/* Hero Section */}
-            <section className="w-full px-4 md:px-8 lg:px-12 xl:px-16 pt-12 pb-8 text-center md:text-left">
-                <h2 className="text-sm font-bold text-brand mb-4 tracking-wider uppercase font-sans">
-                    Success Stories
-                </h2>
-                <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold text-text-main mb-6 tracking-tight font-sans">
-                    Our Work Speaks For Itself
-                </h1>
-                <p className="w-full text-text-muted text-base md:text-lg leading-relaxed font-sans max-w-4xl">
-                    Discover how we help organizations across industries transform operations, accelerate innovation, and achieve measurable business outcomes through technology, strategy, and intelligent digital solutions.
-                </p>
+            <section className="relative z-10 w-full border-b border-white/10 px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 2xl:px-36 py-8 sm:py-11 md:py-14 bg-[#0c0a09]">
+                <motion.div
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="max-w-4xl"
+                >
+                    <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3.5 py-1 backdrop-blur-md">
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+                        <span className="font-sans text-[11px] font-medium tracking-wide text-[#fafafa]">
+                            Selected Portfolio
+                        </span>
+                    </div>
+
+                    <h1 className="font-sans text-[32px] sm:text-[42px] md:text-[50px] font-semibold tracking-[-0.02em] text-[#fafafa] leading-tight mb-3">
+                        Our Work Speaks For Itself
+                    </h1>
+
+                    <p className="font-sans text-[13.5px] sm:text-[15px] leading-relaxed text-[#a1a1aa] max-w-3xl">
+                        Discover how we help organizations across industries transform operations, accelerate innovation, and achieve measurable business outcomes through technology, strategy, and intelligent digital solutions.
+                    </p>
+                </motion.div>
             </section>
 
             {/* Category Filter Section */}
-            <section className="w-full px-4 md:px-8 lg:px-12 xl:px-16 mb-10">
-                <div className="flex flex-wrap items-center gap-3 md:gap-4 justify-center md:justify-start">
+            <section className="relative z-10 w-full border-b border-white/10 px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 2xl:px-36 py-4 sm:py-5 bg-[#0e0c0b]/60 backdrop-blur-md">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                     {categories.map((category) => (
                         <button
                             key={category}
                             onClick={() => setActiveCategory(category)}
-                            className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 font-sans ${activeCategory === category
-                                ? 'bg-brand text-white shadow-lg shadow-brand/20 border border-brand'
-                                : 'bg-surface text-text-muted hover:bg-white/5 border border-border'
-                                }`}
+                            className={`px-4 sm:px-5 py-2 rounded-full text-[12.5px] sm:text-[13px] font-semibold transition-all duration-200 font-sans cursor-pointer ${
+                                activeCategory === category
+                                    ? 'bg-[#c4f82a] text-black shadow-sm'
+                                    : 'bg-[#141215]/80 text-[#a1a1aa] hover:text-white hover:bg-white/10 border border-white/10'
+                            }`}
                         >
                             {category}
                         </button>
@@ -53,28 +74,28 @@ const OurWork = () => {
             </section>
 
             {/* Projects Section */}
-            <section className="w-full h-full pb-24">
+            <section className="relative z-10 w-full pb-16">
                 {filteredProjects.length > 0 ? (
                     filteredProjects.map((project, index) => (
                         <ProjectCard
                             key={project.id}
                             title={project.title}
+                            category={project.category}
                             description={project.cardDescription}
                             image={project.mainImage || "https://images.unsplash.com/photo-1557838923-2985c318be48?w=1200&q=60"}
                             imagePosition={index % 2 === 0 ? 'right' : 'left'}
-                            buttonText="View Work"
+                            buttonText="View Case Study"
                             buttonLink={`/our-work/${project.id}`}
-                            buttonStyle={index % 2 === 0 ? 'blue' : 'black'}
                         />
                     ))
                 ) : (
-                    <div className="text-center py-20 text-text-muted text-lg font-sans">
+                    <div className="text-center py-20 text-[#a1a1aa] text-base font-sans">
                         No projects found in this category.
                     </div>
                 )}
             </section>
-        </div>
-    )
-}
+        </main>
+    );
+};
 
-export default OurWork;
+export default OurWork;
