@@ -56,9 +56,9 @@ const Footer = () => {
         {/* =========================================================
             TOP SECTION: LOGO + COLUMN LINKS
         ========================================================== */}
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-[2fr_1fr_1fr_1fr] lg:gap-12">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 lg:gap-8">
           {/* Brand Col */}
-          <div className="sm:col-span-2 md:col-span-4 lg:col-span-1 lg:pr-8">
+          <div className="sm:col-span-2 md:col-span-3 lg:col-span-1 lg:pr-4">
             <Link to="/" className="inline-flex items-center gap-3 group">
               {/* Neon Green 3D Cube Badge (Identical to Navbar) */}
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#c4f82a] text-[#0a0a0a] transition-transform duration-300 group-hover:scale-105">
@@ -127,13 +127,18 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/our-work" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
-                  Our Work
+                <Link to="/about" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                  About Us
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
-                  About Us
+                <Link to="/services" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/our-work" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                  Our Work
                 </Link>
               </li>
               <li>
@@ -168,6 +173,40 @@ const Footer = () => {
               <li>
                 <Link to="/services/social-media" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
                   Social Media
+                </Link>
+              </li>
+              <li>
+                <Link to="/services" className="font-sans text-[13.5px] text-[#c4f82a] transition-colors hover:underline">
+                  View All Services &rarr;
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h3 className="mb-4 font-sans text-[11px] font-semibold uppercase tracking-[2px] text-white">
+              Resources
+            </h3>
+            <ul className="space-y-2.5">
+              <li>
+                <Link to="/blog" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                  Journal / Blog
+                </Link>
+              </li>
+              <li>
+                <Link to="/case-studies" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                  Case Studies
+                </Link>
+              </li>
+              <li>
+                <Link to="/whitepapers" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                  Whitepapers
+                </Link>
+              </li>
+              <li>
+                <Link to="/faq" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                  FAQ
                 </Link>
               </li>
             </ul>
@@ -270,7 +309,7 @@ const Footer = () => {
               to="/terms"
               className="font-sans text-[12px] text-[#71717a] transition-colors hover:text-white"
             >
-              Terms of Service
+              Terms & Conditions
             </Link>
             <Link
               to="/cookies"
