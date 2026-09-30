@@ -1,6 +1,5 @@
 import SEO from "../Components/SEO";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 
 const About = () => {
   const values = [
@@ -27,24 +26,6 @@ const About = () => {
       title: "Growth",
       description:
         "We focus on building marketing systems that create opportunities for sustainable and long-term growth.",
-    },
-  ];
-
-  const team = [
-    {
-      name: "Syed Zubair Hafeez",
-      role: "CEO & Founder",
-      image: "/images/ceo.jpg",
-    },
-    {
-      name: "Elena Rostova",
-      role: "Head of Strategy",
-      image: "/images/team-elena-rostova.jpg",
-    },
-    {
-      name: "Marcus Chen",
-      role: "Creative Director",
-      image: "/images/team-marcus-chen.jpg",
     },
   ];
 
@@ -80,12 +61,7 @@ const About = () => {
           </svg>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center text-center"
-        >
+        <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center text-center">
           {/* Centered Heading */}
           <h1 className="font-sans text-[32px] sm:text-[42px] md:text-[48px] font-semibold tracking-[-0.02em] text-[#fafafa] leading-tight">
             About Us
@@ -95,7 +71,7 @@ const About = () => {
           <p className="mt-2.5 max-w-2xl font-sans text-[13.5px] sm:text-[15px] leading-relaxed text-[#a1a1aa]">
             Welcome to ZIH, where strategic clarity, creative precision, and client-centricity converge to shape the future of digital growth.
           </p>
-        </motion.div>
+        </div>
       </section>
 
       {/* =====================================================
@@ -111,12 +87,7 @@ const About = () => {
 
         <div className="relative z-10 mx-auto grid w-full max-w-full grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Left Column: Heading & Present Text */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <div>
             <h2 className="font-sans text-[28px] sm:text-[34px] md:text-[38px] font-semibold tracking-[-0.02em] text-white leading-tight">
               About ZIH
             </h2>
@@ -145,24 +116,22 @@ const About = () => {
                 around where they want to go.
               </p>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right Column: Previous About Us Image (/images/about-team.jpg) */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex items-center justify-center lg:justify-end"
-          >
+          <div className="flex items-center justify-center lg:justify-end">
             <div className="relative w-full max-w-[500px] sm:max-w-[560px] lg:max-w-[620px] overflow-hidden rounded-2xl border border-white/10 bg-[#141215] shadow-2xl group">
               <img
                 src="/images/about-team.jpg"
                 alt="About ZIH Team"
+                fetchPriority="high"
+                decoding="async"
+                width="800"
+                height="600"
                 className="w-full aspect-[4/3] object-cover transition-all duration-500 group-hover:scale-105"
               />
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -276,7 +245,7 @@ const About = () => {
 
               {/* Core Pillars Tags */}
               <div className="mt-5">
-                <p className="mb-2 font-sans text-[10.5px] font-semibold uppercase tracking-wider text-[#71717a]">
+                <p className="mb-2 font-sans text-[10.5px] font-semibold uppercase tracking-wider text-[#a1a1aa]">
                   Industries & Domains We Elevate
                 </p>
                 <div className="flex flex-wrap gap-1.5">
@@ -329,10 +298,10 @@ const About = () => {
       </section>
 
       {/* =====================================================
-          5. LEADERSHIP TEAM (FEATURING CEO)
+          5. LEADERSHIP & FOUNDER MESSAGE (FEATURING CEO)
       ====================================================== */}
-      <section className="relative w-full border-b border-white/10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-7 sm:py-9 md:py-11 overflow-hidden bg-[#0c0a09]">
-        <div className="relative z-10 mx-auto w-full max-w-full flex flex-col items-center">
+      <section className="relative w-full border-b border-white/10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-10 md:py-12 overflow-hidden bg-[#0c0a09]">
+        <div className="relative z-10 mx-auto w-full max-w-5xl flex flex-col items-center">
           <div className="mb-6 sm:mb-8 flex flex-col items-center text-center">
             <div className="mb-2.5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3 py-0.5 backdrop-blur-md">
               <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
@@ -341,33 +310,73 @@ const About = () => {
               </span>
             </div>
             <h2 className="font-sans text-[24px] sm:text-[30px] font-semibold text-white tracking-tight">
-              The minds behind the strategy.
+              The mind behind the strategy.
             </h2>
           </div>
 
-          <div className="mx-auto grid w-full max-w-3xl grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-            {team.map((member, index) => (
-              <div
-                key={index}
-                className="group flex flex-col rounded-xl border border-white/10 bg-[#141215]/80 p-3 transition-all duration-300 hover:border-white/25 hover:-translate-y-1"
-              >
-                <div className="overflow-hidden bg-[#16141a] rounded-lg w-full aspect-[4/4.5] border border-white/10">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="h-full w-full object-cover transition-all duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="mt-2.5 text-center">
-                  <h3 className="font-sans text-[15px] font-semibold text-white">
-                    {member.name}
-                  </h3>
-                  <p className="mt-0.5 font-sans text-[10.5px] font-semibold uppercase tracking-[1px] text-[#c4f82a]">
-                    {member.role}
+          <div className="mx-auto grid w-full grid-cols-1 items-stretch gap-6 md:grid-cols-12">
+            {/* Left Card: CEO Photo & Title */}
+            <div className="md:col-span-4 group flex flex-col justify-between rounded-xl border border-white/10 bg-[#141215]/80 p-3.5 transition-all duration-300 hover:border-white/25">
+              <div className="overflow-hidden bg-[#16141a] rounded-lg w-full aspect-[4/4.5] border border-white/10">
+                <img
+                  src="/images/ceo.jpg"
+                  alt="Syed Zubair Hafeez"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="450"
+                  className="h-full w-full object-cover transition-all duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="mt-3 text-center">
+                <h3 className="font-sans text-[16px] font-semibold text-white">
+                  Syed Zubair Hafeez
+                </h3>
+                <p className="mt-0.5 font-sans text-[11px] font-semibold uppercase tracking-[1.2px] text-[#c4f82a]">
+                  CEO &amp; Founder
+                </p>
+              </div>
+            </div>
+
+            {/* Right Card: Message About ZIH & Our Digital Presence */}
+            <div className="md:col-span-8 flex flex-col justify-between rounded-xl border border-white/10 bg-[#141215]/80 p-6 sm:p-8 backdrop-blur-md">
+              <div>
+                <span className="font-sans text-[11px] font-bold uppercase tracking-[1.8px] text-[#c4f82a]">
+                  Founder&apos;s Note • Our Digital Home
+                </span>
+
+                <h3 className="mt-2 font-sans text-[20px] sm:text-[24px] font-semibold text-white leading-snug">
+                  Where Strategic Clarity Meets Purposeful Execution.
+                </h3>
+
+                <div className="mt-4 space-y-3.5 font-sans text-[13.5px] sm:text-[14.5px] leading-relaxed text-[#a1a1aa]">
+                  <p>
+                    Welcome to the official digital home of <strong className="font-medium text-white">ZIH Marketing Consultancy</strong>. This platform is designed to give you a transparent look into how we think, how we build brands, and the measurable impact we deliver for our partners across education, enterprise conclaves, hospitality, and modern consumer businesses.
+                  </p>
+                  <p>
+                    Every case study, service blueprint, and campaign showcased on this website reflects our core belief: great marketing is not about making noise—it is about engineering trust, positioning your brand with unmistakable authority, and turning audience attention into sustainable long-term growth.
                   </p>
                 </div>
               </div>
-            ))}
+
+              <div className="mt-6 pt-4 border-t border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div>
+                  <p className="font-sans text-[13px] font-semibold text-white">
+                    Syed Zubair Hafeez
+                  </p>
+                  <p className="font-sans text-[11.5px] text-[#a1a1aa]">
+                    Founder &amp; Chief Executive Officer, ZIH Marketing Consultancy
+                  </p>
+                </div>
+
+                <Link
+                  to="/our-work"
+                  className="inline-flex items-center gap-1.5 font-sans text-[12.5px] font-semibold text-[#c4f82a] hover:underline"
+                >
+                  <span>Explore Our Work &rarr;</span>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
