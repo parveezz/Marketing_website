@@ -25,6 +25,7 @@ const Whitepapers = lazy(() => import("../Pages/Whitepapers"));
 const Faq = lazy(() => import("../Pages/Faq"));
 const OurWork = lazy(() => import("../Pages/Ourwork/ourWork"));
 const ProjectDetail = lazy(() => import("../Pages/Ourwork/ProjectDetail"));
+const NotFound = lazy(() => import("../Pages/NotFound"));
 
 const Routing = () => {
   return (
@@ -54,12 +55,16 @@ const Routing = () => {
 
           <Route path="faq" element={<Faq />} />
 
-          {/* Legal Pages */}
+          {/* Legal Pages & Variations */}
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="privacy" element={<PrivacyPolicy />} />
 
           <Route path="terms" element={<TermsConditions />} />
+          <Route path="terms-and-conditions" element={<TermsConditions />} />
+          <Route path="terms-conditions" element={<TermsConditions />} />
 
           <Route path="cookies" element={<CookiePolicy />} />
+          <Route path="cookie-policy" element={<CookiePolicy />} />
 
           {/* Service Pages */}
           <Route
@@ -81,6 +86,9 @@ const Routing = () => {
             path="services/social-media"
             element={<SocialMedia />}
           />
+
+          {/* 404 Catch-All Page for Any Unmatched URL */}
+          <Route path="*" element={<NotFound />} />
 
         </Route>
       </Routes>
