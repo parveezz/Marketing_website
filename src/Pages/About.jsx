@@ -228,7 +228,7 @@ const About = () => {
       ====================================================== */}
       <section className="relative w-full border-b border-white/10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-7 sm:py-9 md:py-11 overflow-hidden bg-[#0c0a09]">
         <div className="relative z-10 mx-auto grid w-full max-w-full grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
-          <div className="flex flex-col justify-between">
+          <div className="flex flex-col justify-between gap-6">
             <div>
               <div className="mb-2.5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3 py-0.5 backdrop-blur-md">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
@@ -240,19 +240,61 @@ const About = () => {
                 Principles behind the work.
               </h2>
 
-              <div className="mt-4 space-y-3.5 max-w-md font-sans text-[13.5px] sm:text-[14px] leading-relaxed text-[#a1a1aa]">
+              <div className="mt-4 space-y-3.5 font-sans text-[13.5px] sm:text-[14px] leading-relaxed text-[#a1a1aa]">
                 <p>
-                  At ZIH, our values aren&apos;t abstract slogans—they are the operational foundation of every strategy, campaign, and decision we execute.
+                  At ZIH, our values aren&apos;t abstract slogans—they are the operational foundation of every strategy, campaign, and decision we execute across digital, print, and experiential channels.
                 </p>
                 <p>
                   We believe meaningful brand equity isn&apos;t built on shortcuts or vanity metrics. It comes from disciplined strategy, honest alignment with human behavior, and the consistency to deliver measurable, sustainable results over time.
                 </p>
               </div>
+
+              {/* Operational Commitments Checklist */}
+              <div className="mt-6 rounded-xl border border-white/10 bg-[#141215]/60 p-4">
+                <p className="mb-2.5 font-sans text-[11px] font-semibold uppercase tracking-wider text-[#d4d4d8]">
+                  Our Operational Commitments:
+                </p>
+                <div className="space-y-2.5">
+                  <div className="flex items-center gap-2.5 text-[12.5px] text-[#d4d4d8]">
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c4f82a]" />
+                    <span>Senior-Led Strategy & Execution Without Junior Handoffs</span>
+                  </div>
+                  <div className="flex items-center gap-2.5 text-[12.5px] text-[#d4d4d8]">
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c4f82a]" />
+                    <span>100% Transparent Attribution, Reporting & Media Spend Clarity</span>
+                  </div>
+                  <div className="flex items-center gap-2.5 text-[12.5px] text-[#d4d4d8]">
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c4f82a]" />
+                    <span>Cross-Functional Integration With Your Internal Sales & Ops Teams</span>
+                  </div>
+                  <div className="flex items-center gap-2.5 text-[12.5px] text-[#d4d4d8]">
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c4f82a]" />
+                    <span>Continuous Weekly Creative Iteration & Funnel Optimization</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Core Pillars Tags */}
+              <div className="mt-5">
+                <p className="mb-2 font-sans text-[10.5px] font-semibold uppercase tracking-wider text-[#71717a]">
+                  Industries & Domains We Elevate
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {["Educational Institutions", "Global Conclaves & Events", "Healthcare & Wellness", "Retail & Hospitality", "B2B Enterprise", "Consumer Brands"].map((domain) => (
+                    <span
+                      key={domain}
+                      className="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-sans text-[11px] text-[#d4d4d8]"
+                    >
+                      {domain}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            <div className="mt-6 rounded-xl border border-white/10 bg-[#141215]/80 p-4 max-w-md">
+            <div className="rounded-xl border border-white/10 bg-[#141215]/80 p-4.5">
               <p className="font-sans text-[12.5px] italic text-[#d4d4d8] leading-relaxed">
-                &ldquo;Strategy without clarity is noise. Creativity without purpose is waste.&rdquo;
+                &ldquo;Strategy without clarity is noise. Creativity without purpose is waste. We build growth engines where every creative asset serves a measurable commercial objective.&rdquo;
               </p>
               <div className="mt-2.5 flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />

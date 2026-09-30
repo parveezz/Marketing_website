@@ -196,9 +196,8 @@ const Services = () => {
           return (
             <div
               key={index}
-              className={`w-full px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 2xl:px-36 py-12 sm:py-16 border-b border-white/10 flex flex-col ${
-                isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
-              } items-center gap-10 lg:gap-16`}
+              className={`w-full px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 2xl:px-36 py-12 sm:py-16 border-b border-white/10 flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                } items-center gap-10 lg:gap-16`}
             >
               {/* Image & Metric Side */}
               <div className="w-full lg:w-[48%]">
@@ -414,7 +413,7 @@ const Services = () => {
       ====================================================== */}
       <section className="relative z-10 w-full border-b border-white/10 px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 2xl:px-36 py-12 sm:py-16 bg-[#0c0a09]">
         <div className="mx-auto grid w-full max-w-full grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14">
-          <div className="lg:col-span-5 flex flex-col justify-between">
+          <div className="lg:col-span-5 flex flex-col justify-between gap-6">
             <div>
               <div className="mb-2.5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3 py-0.5 backdrop-blur-md">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
@@ -426,17 +425,27 @@ const Services = () => {
                 Frequently asked questions.
               </h2>
               <p className="mt-3 font-sans text-[13.5px] leading-relaxed text-[#a1a1aa]">
-                Everything you need to know about our engagement models, onboarding process, attribution methodologies, and team integration.
+                Everything you need to know about our engagement models, onboarding process, attribution methodologies, and cross-functional team integration.
               </p>
 
               {/* Consultation Assistance Card */}
               <div className="mt-6 rounded-xl border border-white/10 bg-[#141215]/60 p-5">
-                <p className="font-sans text-[13px] font-semibold text-white">
+                <p className="font-sans text-[13.5px] font-semibold text-white">
                   Need a tailored engagement scope?
                 </p>
                 <p className="mt-2 font-sans text-[12.5px] leading-relaxed text-[#a1a1aa]">
-                  Book a confidential 30-minute discovery consultation with our senior strategy partners to evaluate goals, timelines, and deliverables.
+                  Book a confidential 30-minute discovery consultation with our senior strategy partners to evaluate your current funnel, growth bottlenecks, timelines, and custom deliverables.
                 </p>
+                <div className="mt-4 grid grid-cols-2 gap-2.5 border-t border-white/10 pt-3.5">
+                  <div>
+                    <p className="font-sans text-[15px] font-bold text-[#c4f82a]">48 Hours</p>
+                    <p className="font-sans text-[11px] text-[#a1a1aa]">Custom Proposal Turnaround</p>
+                  </div>
+                  <div>
+                    <p className="font-sans text-[15px] font-bold text-white">14 Days</p>
+                    <p className="font-sans text-[11px] text-[#a1a1aa]">Full Technical Onboarding</p>
+                  </div>
+                </div>
                 <Link
                   to="/contact"
                   className="mt-4 inline-flex items-center gap-2 rounded-lg bg-white/10 hover:bg-[#c4f82a] hover:text-black px-4 py-2 font-sans text-[12px] font-semibold text-white transition-all duration-200"
@@ -447,9 +456,9 @@ const Services = () => {
               </div>
             </div>
 
-            <div className="mt-6 flex items-center gap-2.5 text-[11.5px] text-[#71717a]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
-              <span>Strict confidentiality guaranteed. NDA signed prior to any strategic audit.</span>
+            <div className="rounded-xl border border-white/10 bg-[#141215]/40 p-3.5 flex items-center gap-2.5 text-[11.5px] text-[#a1a1aa]">
+              <span className="h-2 w-2 shrink-0 rounded-full bg-[#c4f82a]" />
+              <span>Strict confidentiality guaranteed. Mutual NDA signed prior to any strategic or data audit.</span>
             </div>
           </div>
 
@@ -466,9 +475,8 @@ const Services = () => {
                       {faq.question}
                     </span>
                     <span
-                      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/10 bg-[#141215] text-[#d4d4d8] transition-transform duration-300 ${
-                        isOpen ? "rotate-180 text-[#c4f82a] border-[#c4f82a]/40" : ""
-                      }`}
+                      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/10 bg-[#141215] text-[#d4d4d8] transition-transform duration-300 ${isOpen ? "rotate-180 text-[#c4f82a] border-[#c4f82a]/40" : ""
+                        }`}
                     >
                       <FiChevronDown className="text-base" />
                     </span>

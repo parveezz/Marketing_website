@@ -129,7 +129,7 @@ const Advertising = () => {
             <section className="relative z-10 w-full border-b border-white/10 px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 2xl:px-36 py-10 sm:py-14">
                 <div className="mx-auto grid w-full max-w-full grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14">
                     {/* Left Column: Acquisition Narrative, Deliverables Checklist & Performance Mandate */}
-                    <div className="lg:col-span-5 flex flex-col justify-between">
+                    <div className="lg:col-span-5 flex flex-col justify-between gap-6">
                         <div>
                             <div className="mb-2.5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3 py-0.5 backdrop-blur-md">
                                 <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
@@ -145,7 +145,7 @@ const Advertising = () => {
                                     Modern paid acquisition is not about spending more; it is about engineering predictable customer acquisition costs (CAC) that scale profitably alongside lifetime customer value (LTV).
                                 </p>
                                 <p>
-                                    We operate at the nexus of quantitative bidding algorithms and rapid creative iteration—eliminating wasted spend across Google, Meta, TikTok, and programmatic networks through relentless attribution modeling.
+                                    We operate at the nexus of quantitative bidding algorithms and rapid creative iteration—eliminating wasted spend across Google, Meta, YouTube, LinkedIn, and programmatic networks through relentless attribution modeling.
                                 </p>
                             </div>
 
@@ -156,22 +156,63 @@ const Advertising = () => {
                                 </p>
                                 <div className="space-y-2.5">
                                     <div className="flex items-center gap-2.5 text-[12.5px] text-[#d4d4d8]">
-                                        <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+                                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c4f82a]" />
                                         <span>Full-Funnel Omnichannel Search & Paid Social Architecture</span>
                                     </div>
                                     <div className="flex items-center gap-2.5 text-[12.5px] text-[#d4d4d8]">
-                                        <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+                                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c4f82a]" />
                                         <span>High-Velocity Creative Sprint Pipeline (Static, Motion & UGC)</span>
                                     </div>
                                     <div className="flex items-center gap-2.5 text-[12.5px] text-[#d4d4d8]">
-                                        <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+                                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c4f82a]" />
                                         <span>Real-Time Blended MER & Attribution Intelligence Dashboards</span>
                                     </div>
+                                    <div className="flex items-center gap-2.5 text-[12.5px] text-[#d4d4d8]">
+                                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c4f82a]" />
+                                        <span>Conversion Rate Optimization (CRO) & Custom Landing Funnels</span>
+                                    </div>
+                                    <div className="flex items-center gap-2.5 text-[12.5px] text-[#d4d4d8]">
+                                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c4f82a]" />
+                                        <span>Server-Side Pixel Tracking, CAPI & First-Party Data Enrichment</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Performance Benchmarks & Ecosystems */}
+                            <div className="mt-5 grid grid-cols-3 gap-3">
+                                <div className="rounded-xl border border-white/10 bg-[#141215]/40 p-3.5">
+                                    <p className="font-sans text-[18px] sm:text-[20px] font-bold text-[#c4f82a]">4.2x</p>
+                                    <p className="mt-0.5 font-sans text-[11px] leading-snug text-[#a1a1aa]">Avg. Blended ROAS Target</p>
+                                </div>
+                                <div className="rounded-xl border border-white/10 bg-[#141215]/40 p-3.5">
+                                    <p className="font-sans text-[18px] sm:text-[20px] font-bold text-white">72 hrs</p>
+                                    <p className="mt-0.5 font-sans text-[11px] leading-snug text-[#a1a1aa]">Creative Testing Cadence</p>
+                                </div>
+                                <div className="rounded-xl border border-white/10 bg-[#141215]/40 p-3.5">
+                                    <p className="font-sans text-[18px] sm:text-[20px] font-bold text-white">-34%</p>
+                                    <p className="mt-0.5 font-sans text-[11px] leading-snug text-[#a1a1aa]">Avg. CAC Reduction</p>
+                                </div>
+                            </div>
+
+                            {/* Active Ad Ecosystems */}
+                            <div className="mt-5">
+                                <p className="mb-2 font-sans text-[10.5px] font-semibold uppercase tracking-wider text-[#71717a]">
+                                    Managed Ad Ecosystems
+                                </p>
+                                <div className="flex flex-wrap gap-1.5">
+                                    {["Google Search & PMax", "Meta Ads Manager", "YouTube Direct Response", "LinkedIn B2B ABM", "Programmatic DSP", "Retargeting Matrices"].map((platform) => (
+                                        <span
+                                            key={platform}
+                                            className="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-sans text-[11px] text-[#d4d4d8]"
+                                        >
+                                            {platform}
+                                        </span>
+                                    ))}
                                 </div>
                             </div>
                         </div>
 
-                        <div className="mt-8 rounded-xl border border-white/10 bg-[#141215]/80 p-4.5">
+                        <div className="rounded-xl border border-white/10 bg-[#141215]/80 p-4.5">
                             <p className="font-sans text-[12.5px] italic text-[#d4d4d8] leading-relaxed">
                                 &ldquo;Advertising is only an expense when you can&apos;t measure the return. When dialed in with mathematical precision, it becomes an infinite growth lever.&rdquo;
                             </p>

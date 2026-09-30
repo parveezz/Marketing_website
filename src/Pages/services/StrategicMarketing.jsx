@@ -129,7 +129,7 @@ const StrategicMarketing = () => {
             <section className="relative z-10 w-full border-b border-white/10 px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 2xl:px-36 py-10 sm:py-14">
                 <div className="mx-auto grid w-full max-w-full grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14">
                     {/* Left Column: Rich Methodology, Deliverables Checklist & Quote Card */}
-                    <div className="lg:col-span-5 flex flex-col justify-between">
+                    <div className="lg:col-span-5 flex flex-col justify-between gap-6">
                         <div>
                             <div className="mb-2.5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3 py-0.5 backdrop-blur-md">
                                 <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
@@ -156,22 +156,63 @@ const StrategicMarketing = () => {
                                 </p>
                                 <div className="space-y-2.5">
                                     <div className="flex items-center gap-2.5 text-[12.5px] text-[#d4d4d8]">
-                                        <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+                                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c4f82a]" />
                                         <span>Full-Funnel Opportunity & Bottleneck Map</span>
                                     </div>
                                     <div className="flex items-center gap-2.5 text-[12.5px] text-[#d4d4d8]">
-                                        <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+                                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c4f82a]" />
                                         <span>Unit Economics & Target CAC Sensitivity Model</span>
                                     </div>
                                     <div className="flex items-center gap-2.5 text-[12.5px] text-[#d4d4d8]">
-                                        <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+                                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c4f82a]" />
                                         <span>12-Month Channel Allocation & Milestone Roadmap</span>
                                     </div>
+                                    <div className="flex items-center gap-2.5 text-[12.5px] text-[#d4d4d8]">
+                                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c4f82a]" />
+                                        <span>Competitor Share-of-Voice & Pricing Intelligence Audit</span>
+                                    </div>
+                                    <div className="flex items-center gap-2.5 text-[12.5px] text-[#d4d4d8]">
+                                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c4f82a]" />
+                                        <span>ICP Buyer Persona Matrix & Value Proposition Hierarchy</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Strategic Impact Benchmarks */}
+                            <div className="mt-5 grid grid-cols-3 gap-3">
+                                <div className="rounded-xl border border-white/10 bg-[#141215]/40 p-3.5">
+                                    <p className="font-sans text-[18px] sm:text-[20px] font-bold text-[#c4f82a]">3.1x</p>
+                                    <p className="mt-0.5 font-sans text-[11px] leading-snug text-[#a1a1aa]">Pipeline Velocity Lift</p>
+                                </div>
+                                <div className="rounded-xl border border-white/10 bg-[#141215]/40 p-3.5">
+                                    <p className="font-sans text-[18px] sm:text-[20px] font-bold text-white">90 Days</p>
+                                    <p className="mt-0.5 font-sans text-[11px] leading-snug text-[#a1a1aa]">GTM Rollout Horizon</p>
+                                </div>
+                                <div className="rounded-xl border border-white/10 bg-[#141215]/40 p-3.5">
+                                    <p className="font-sans text-[18px] sm:text-[20px] font-bold text-white">100%</p>
+                                    <p className="mt-0.5 font-sans text-[11px] leading-snug text-[#a1a1aa]">Revenue Attribution Clarity</p>
+                                </div>
+                            </div>
+
+                            {/* Strategic Focus Areas */}
+                            <div className="mt-5">
+                                <p className="mb-2 font-sans text-[10.5px] font-semibold uppercase tracking-wider text-[#71717a]">
+                                    Strategic Pillars
+                                </p>
+                                <div className="flex flex-wrap gap-1.5">
+                                    {["Go-To-Market (GTM)", "Unit Economics", "Demand Architecture", "LTV:CAC Modeling", "Category Positioning", "RevOps Alignment"].map((pillar) => (
+                                        <span
+                                            key={pillar}
+                                            className="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-sans text-[11px] text-[#d4d4d8]"
+                                        >
+                                            {pillar}
+                                        </span>
+                                    ))}
                                 </div>
                             </div>
                         </div>
 
-                        <div className="mt-8 rounded-xl border border-white/10 bg-[#141215]/80 p-4.5">
+                        <div className="rounded-xl border border-white/10 bg-[#141215]/80 p-4.5">
                             <p className="font-sans text-[12.5px] italic text-[#d4d4d8] leading-relaxed">
                                 &ldquo;Tactics without strategy is the noise before defeat. Precision planning creates compound commercial momentum.&rdquo;
                             </p>

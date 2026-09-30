@@ -129,7 +129,7 @@ const SocialMedia = () => {
             <section className="relative z-10 w-full border-b border-white/10 px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 2xl:px-36 py-10 sm:py-14">
                 <div className="mx-auto grid w-full max-w-full grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14">
                     {/* Left Column: Community Narrative, Deliverables Checklist & Community Creed */}
-                    <div className="lg:col-span-5 flex flex-col justify-between">
+                    <div className="lg:col-span-5 flex flex-col justify-between gap-6">
                         <div>
                             <div className="mb-2.5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3 py-0.5 backdrop-blur-md">
                                 <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
@@ -156,22 +156,63 @@ const SocialMedia = () => {
                                 </p>
                                 <div className="space-y-2.5">
                                     <div className="flex items-center gap-2.5 text-[12.5px] text-[#d4d4d8]">
-                                        <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+                                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c4f82a]" />
                                         <span>30-Day Multi-Platform Editorial & Production Pipelines</span>
                                     </div>
                                     <div className="flex items-center gap-2.5 text-[12.5px] text-[#d4d4d8]">
-                                        <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
-                                        <span>High-Impact Short-Form Video (Reels, TikTok & Shorts)</span>
+                                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c4f82a]" />
+                                        <span>High-Impact Short-Form Video (Reels, YouTube Shorts & UGC)</span>
                                     </div>
                                     <div className="flex items-center gap-2.5 text-[12.5px] text-[#d4d4d8]">
-                                        <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+                                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c4f82a]" />
                                         <span>Executive Ghostwriting & Thought Leadership Architecture</span>
                                     </div>
+                                    <div className="flex items-center gap-2.5 text-[12.5px] text-[#d4d4d8]">
+                                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c4f82a]" />
+                                        <span>Creator & Micro-Influencer Seeding & Partnership Campaigns</span>
+                                    </div>
+                                    <div className="flex items-center gap-2.5 text-[12.5px] text-[#d4d4d8]">
+                                        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c4f82a]" />
+                                        <span>Active Community Moderation, DM Funnels & Sentiment Tracking</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Engagement Benchmarks */}
+                            <div className="mt-5 grid grid-cols-3 gap-3">
+                                <div className="rounded-xl border border-white/10 bg-[#141215]/40 p-3.5">
+                                    <p className="font-sans text-[18px] sm:text-[20px] font-bold text-[#c4f82a]">+240%</p>
+                                    <p className="mt-0.5 font-sans text-[11px] leading-snug text-[#a1a1aa]">Avg. Organic Engagement Lift</p>
+                                </div>
+                                <div className="rounded-xl border border-white/10 bg-[#141215]/40 p-3.5">
+                                    <p className="font-sans text-[18px] sm:text-[20px] font-bold text-white">20–30</p>
+                                    <p className="mt-0.5 font-sans text-[11px] leading-snug text-[#a1a1aa]">Monthly Custom Assets</p>
+                                </div>
+                                <div className="rounded-xl border border-white/10 bg-[#141215]/40 p-3.5">
+                                    <p className="font-sans text-[18px] sm:text-[20px] font-bold text-white">&lt; 2 hrs</p>
+                                    <p className="mt-0.5 font-sans text-[11px] leading-snug text-[#a1a1aa]">Community Response SLA</p>
+                                </div>
+                            </div>
+
+                            {/* Managed Social Channels */}
+                            <div className="mt-5">
+                                <p className="mb-2 font-sans text-[10.5px] font-semibold uppercase tracking-wider text-[#71717a]">
+                                    Primary Channels & Formats
+                                </p>
+                                <div className="flex flex-wrap gap-1.5">
+                                    {["Instagram Reels & Carousels", "LinkedIn Executive Brand", "YouTube Shorts & Long-Form", "X / Threads Cultural Pulse", "Creator Collaborations", "Social Commerce"].map((channel) => (
+                                        <span
+                                            key={channel}
+                                            className="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-sans text-[11px] text-[#d4d4d8]"
+                                        >
+                                            {channel}
+                                        </span>
+                                    ))}
                                 </div>
                             </div>
                         </div>
 
-                        <div className="mt-8 rounded-xl border border-white/10 bg-[#141215]/80 p-4.5">
+                        <div className="rounded-xl border border-white/10 bg-[#141215]/80 p-4.5">
                             <p className="font-sans text-[12.5px] italic text-[#d4d4d8] leading-relaxed">
                                 &ldquo;Attention is the new currency. If you aren&apos;t creating content that adds genuine value to your audience&apos;s daily feed, you simply don&apos;t exist.&rdquo;
                             </p>

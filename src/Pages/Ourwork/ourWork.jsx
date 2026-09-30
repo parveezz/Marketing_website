@@ -61,11 +61,10 @@ const OurWork = () => {
                         <button
                             key={category}
                             onClick={() => setActiveCategory(category)}
-                            className={`px-4 sm:px-5 py-2 rounded-full text-[12.5px] sm:text-[13px] font-semibold transition-all duration-200 font-sans cursor-pointer ${
-                                activeCategory === category
+                            className={`px-4 sm:px-5 py-2 rounded-full text-[12.5px] sm:text-[13px] font-semibold transition-all duration-200 font-sans cursor-pointer ${activeCategory === category
                                     ? 'bg-[#c4f82a] text-black shadow-sm'
                                     : 'bg-[#141215]/80 text-[#a1a1aa] hover:text-white hover:bg-white/10 border border-white/10'
-                            }`}
+                                }`}
                         >
                             {category}
                         </button>
@@ -80,8 +79,11 @@ const OurWork = () => {
                         <ProjectCard
                             key={project.id}
                             title={project.title}
+                            headline={project.headline}
                             category={project.category}
                             description={project.cardDescription}
+                            aboutText={project.aboutParagraphs?.[0]}
+                            highlights={project.challenges || []}
                             image={project.mainImage || "/images/project-fallback.jpg"}
                             imagePosition={index % 2 === 0 ? 'right' : 'left'}
                             buttonText="View Case Study"
@@ -98,4 +100,4 @@ const OurWork = () => {
     );
 };
 
-export default OurWork;
+export default OurWork;

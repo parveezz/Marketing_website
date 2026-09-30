@@ -162,25 +162,76 @@ const ProjectDetail = () => {
             </section>
 
             {/* =========================================================
-                2. ABOUT THE PROJECT (COLUMN STYLE WITH TIGHT PADDING)
+                2. ABOUT THE PROJECT (BALANCED 12-COLUMN LAYOUT)
             ========================================================== */}
             {project.aboutParagraphs && project.aboutParagraphs.length > 0 && (
-                <section className="relative z-10 w-full border-b border-white/10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-6 sm:py-8 bg-[#0a0a0a]">
-                    <div className="mx-auto w-full max-w-4xl flex flex-col items-start">
-                        <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-2.5 py-0.5 backdrop-blur-md">
-                            <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
-                            <span className="font-sans text-[10.5px] font-medium tracking-wide text-[#fafafa]">
-                                Context & Scope
-                            </span>
-                        </div>
-                        <h2 className="font-sans text-[20px] sm:text-[24px] md:text-[28px] font-semibold text-white tracking-tight leading-snug mb-3">
-                            {project.aboutTitle || "About the Project"}
-                        </h2>
+                <section className="relative z-10 w-full border-b border-white/10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-10 bg-[#0a0a0a]">
+                    <div className="mx-auto grid w-full max-w-full grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12 items-start">
+                        <div className="lg:col-span-7 flex flex-col items-start">
+                            <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-2.5 py-0.5 backdrop-blur-md">
+                                <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+                                <span className="font-sans text-[10.5px] font-medium tracking-wide text-[#fafafa]">
+                                    Context &amp; Scope
+                                </span>
+                            </div>
+                            <h2 className="font-sans text-[20px] sm:text-[24px] md:text-[28px] font-semibold text-white tracking-tight leading-snug mb-3">
+                                {project.aboutTitle || "About the Project"}
+                            </h2>
 
-                        <div className="space-y-2.5 font-sans text-[13.5px] sm:text-[14.5px] leading-relaxed text-[#a1a1aa] w-full">
-                            {project.aboutParagraphs.map((paragraph, index) => (
-                                <p key={index}>{paragraph}</p>
-                            ))}
+                            <div className="space-y-3 font-sans text-[13.5px] sm:text-[14.5px] leading-relaxed text-[#a1a1aa] w-full">
+                                {project.aboutParagraphs.map((paragraph, index) => (
+                                    <p key={index}>{paragraph}</p>
+                                ))}
+                                <p>
+                                    Our production and strategy teams collaborated closely with key stakeholders from pre-event planning through post-production delivery—ensuring every visual asset, promotional touchpoint, and digital deliverable reinforced a cohesive, high-impact brand narrative.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Right: Project Scope & Deliverables Summary Card */}
+                        <div className="lg:col-span-5 rounded-xl border border-white/10 bg-[#141215]/80 p-5 backdrop-blur-md">
+                            <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-3.5">
+                                <span className="font-sans text-[11px] font-bold uppercase tracking-wider text-[#c4f82a]">
+                                    Engagement Overview
+                                </span>
+                                <span className="rounded-full bg-white/5 border border-white/10 px-2.5 py-0.5 font-sans text-[10.5px] text-[#d4d4d8]">
+                                    {project.category || "Full-Scope"}
+                                </span>
+                            </div>
+                            <div className="grid grid-cols-2 gap-3 mb-4">
+                                <div className="rounded-lg border border-white/10 bg-[#0c0a09]/60 p-3">
+                                    <p className="font-sans text-[10.5px] uppercase tracking-wider text-[#71717a]">Media Deliverables</p>
+                                    <p className="mt-0.5 font-sans text-[15px] font-semibold text-white">
+                                        {(project.carouselImages?.length || 0) + (project.carouselVideos?.length || 0)}+ Curated Assets
+                                    </p>
+                                </div>
+                                <div className="rounded-lg border border-white/10 bg-[#0c0a09]/60 p-3">
+                                    <p className="font-sans text-[10.5px] uppercase tracking-wider text-[#71717a]">Execution Standard</p>
+                                    <p className="mt-0.5 font-sans text-[15px] font-semibold text-[#c4f82a]">
+                                        4K Broadcast &amp; Print
+                                    </p>
+                                </div>
+                            </div>
+                            <p className="mb-2 font-sans text-[11px] font-semibold uppercase tracking-wider text-[#d4d4d8]">
+                                Core Deliverables Executed:
+                            </p>
+                            <div className="flex flex-wrap gap-1.5">
+                                {[
+                                    "Creative Direction",
+                                    "Multi-Cam Coverage",
+                                    "Brand Collateral",
+                                    "Social Media Reels",
+                                    "Color Grading & Post",
+                                    "Audience Engagement"
+                                ].map((tag) => (
+                                    <span
+                                        key={tag}
+                                        className="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-sans text-[11px] text-[#a1a1aa]"
+                                    >
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -191,11 +242,11 @@ const ProjectDetail = () => {
             ========================================================== */}
             {(project.carouselImages?.length > 0 || project.challenges?.length > 0) && (
                 <section className="relative z-10 w-full border-b border-white/10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-10 md:py-12 bg-[#0c0a09]">
-                    <div className="mx-auto grid w-full max-w-full grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10 items-start">
+                    <div className="mx-auto grid w-full max-w-full grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10 items-stretch">
                         {/* Left: Image Carousel */}
                         <div className={`w-full ${project.challenges?.length > 0 ? 'lg:col-span-6' : 'lg:col-span-10 lg:col-start-2'}`}>
                             {project.carouselImages && project.carouselImages.length > 0 && (
-                                <div className="overflow-hidden rounded-xl border border-white/15 bg-[#141215] shadow-xl">
+                                <div className="overflow-hidden rounded-xl border border-white/15 bg-[#141215] shadow-xl h-full flex flex-col justify-between">
                                     <ImageCarousel items={project.carouselImages} />
                                 </div>
                             )}
@@ -203,46 +254,63 @@ const ProjectDetail = () => {
 
                         {/* Right: Key Challenges as Numbered Glass Cards */}
                         {project.challenges && project.challenges.length > 0 && (
-                            <div className="lg:col-span-6 flex flex-col">
-                                <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-2.5 py-0.5 backdrop-blur-md w-fit">
-                                    <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
-                                    <span className="font-sans text-[10.5px] font-medium tracking-wide text-[#fafafa]">
-                                        {project.challengesSubtitle || "Strategic Problem Solving"}
-                                    </span>
-                                </div>
+                            <div className="lg:col-span-6 flex flex-col justify-between gap-4">
+                                <div>
+                                    <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-2.5 py-0.5 backdrop-blur-md w-fit">
+                                        <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+                                        <span className="font-sans text-[10.5px] font-medium tracking-wide text-[#fafafa]">
+                                            {project.challengesSubtitle || "Strategic Problem Solving"}
+                                        </span>
+                                    </div>
 
-                                <h2 className="font-sans text-[20px] sm:text-[24px] md:text-[28px] font-semibold text-white tracking-tight leading-tight mb-2">
-                                    {project.challengesTitle || "Key Challenges & Solutions"}
-                                </h2>
+                                    <h2 className="font-sans text-[20px] sm:text-[24px] md:text-[28px] font-semibold text-white tracking-tight leading-tight mb-2">
+                                        {project.challengesTitle || "Key Challenges & Solutions"}
+                                    </h2>
 
-                                {project.challengesDescription && (
-                                    <p className="font-sans text-[13px] leading-relaxed text-[#a1a1aa] mb-4">
-                                        {project.challengesDescription}
-                                    </p>
-                                )}
+                                    {project.challengesDescription && (
+                                        <p className="font-sans text-[13px] leading-relaxed text-[#a1a1aa] mb-4">
+                                            {project.challengesDescription}
+                                        </p>
+                                    )}
 
-                                {/* Numbered Challenge Cards */}
-                                <div className="flex flex-col gap-2.5">
-                                    {project.challenges.map((challenge, index) => (
-                                        <div
-                                            key={index}
-                                            className="group rounded-xl border border-white/10 bg-[#141215]/80 p-3.5 backdrop-blur-md transition-all duration-200 hover:border-white/20 hover:bg-[#18151a]"
-                                        >
-                                            <div className="flex items-start gap-3">
-                                                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#c4f82a]/15 font-sans text-[10px] font-bold text-[#c4f82a] mt-0.5">
-                                                    0{index + 1}
-                                                </span>
-                                                <div>
-                                                    <h3 className="font-sans text-[13.5px] font-semibold text-white">
-                                                        {challenge.title}
-                                                    </h3>
-                                                    <p className="mt-0.5 font-sans text-[12px] leading-relaxed text-[#a1a1aa]">
-                                                        {challenge.description}
-                                                    </p>
+                                    {/* Numbered Challenge Cards */}
+                                    <div className="flex flex-col gap-2.5">
+                                        {project.challenges.map((challenge, index) => (
+                                            <div
+                                                key={index}
+                                                className="group rounded-xl border border-white/10 bg-[#141215]/80 p-3.5 backdrop-blur-md transition-all duration-200 hover:border-white/20 hover:bg-[#18151a]"
+                                            >
+                                                <div className="flex items-start gap-3">
+                                                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#c4f82a]/15 font-sans text-[10px] font-bold text-[#c4f82a] mt-0.5">
+                                                        0{index + 1}
+                                                    </span>
+                                                    <div>
+                                                        <h3 className="font-sans text-[13.5px] font-semibold text-white">
+                                                            {challenge.title}
+                                                        </h3>
+                                                        <p className="mt-0.5 font-sans text-[12px] leading-relaxed text-[#a1a1aa]">
+                                                            {challenge.description}
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    ))}
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Execution Outcome & Quality Assurance Card to balance column height */}
+                                <div className="rounded-xl border border-white/10 bg-[#141215]/60 p-4">
+                                    <div className="flex items-center justify-between mb-2">
+                                        <span className="font-sans text-[11px] font-semibold uppercase tracking-wider text-[#c4f82a]">
+                                            Production &amp; Delivery Impact
+                                        </span>
+                                        <span className="font-sans text-[11px] text-[#a1a1aa]">
+                                            100% On-Schedule Delivery
+                                        </span>
+                                    </div>
+                                    <p className="font-sans text-[12px] leading-relaxed text-[#a1a1aa]">
+                                        Every visual asset underwent multi-stage color grading, audio mastering, and format optimization for both high-resolution print archives and rapid social media distribution.
+                                    </p>
                                 </div>
                             </div>
                         )}

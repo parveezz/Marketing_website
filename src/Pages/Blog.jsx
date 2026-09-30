@@ -98,17 +98,30 @@ const Blog = () => {
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] }}
               >
-                <Link to={`/blog/${post.id}`} className="group block cursor-pointer">
-                  <div className="mb-3 aspect-[4/3] w-full overflow-hidden bg-surface-muted">
-                    <img src={post.image} alt={post.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <Link to={`/blog/${post.id}`} className="group flex h-full flex-col justify-between border border-border bg-surface p-5 transition-colors hover:border-brand cursor-pointer">
+                  <div>
+                    <div className="mb-4 aspect-[16/10] w-full overflow-hidden bg-surface-muted">
+                      <img src={post.image} alt={post.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    </div>
+                    <div className="mb-2 flex items-center justify-between">
+                      <span className="inline-block font-sans text-[10px] font-semibold uppercase tracking-[2px] text-brand">
+                        {post.category}
+                      </span>
+                      <span className="font-sans text-[11px] text-text-muted">
+                        {post.readTime}
+                      </span>
+                    </div>
+                    <h3 className="mb-2.5 font-sans text-[20px] font-medium leading-snug text-text-main transition-colors group-hover:text-text-muted">
+                      {post.title}
+                    </h3>
+                    <p className="mb-4 line-clamp-3 font-sans text-[13px] leading-relaxed text-text-muted">
+                      {post.content.split('\n\n')[0]}
+                    </p>
                   </div>
-                  <span className="mb-1 inline-block font-sans text-[10px] font-semibold uppercase tracking-[2px] text-text-muted">
-                    {post.category}
-                  </span>
-                  <h3 className="mb-1 font-sans text-[20px] font-medium leading-tight text-text-main transition-colors group-hover:text-text-muted">
-                    {post.title}
-                  </h3>
-                  <p className="font-sans text-[12px] text-[#888]">{post.date}</p>
+                  <div className="flex items-center justify-between border-t border-border pt-3 font-sans text-[11.5px] text-text-muted">
+                    <span className="font-medium text-text-main">{post.author}</span>
+                    <span>{post.date}</span>
+                  </div>
                 </Link>
               </motion.div>
             ))}

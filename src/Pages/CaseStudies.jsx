@@ -106,8 +106,8 @@ const CaseStudies = () => {
           </p>
         </motion.div>
         
-        <div className="py-16">
-          <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+        <div className="py-12">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {studies.map((study, idx) => (
               <motion.div
                 key={study.id}
@@ -115,24 +115,51 @@ const CaseStudies = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15 }}
                 transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="group overflow-hidden border border-border bg-surface transition-all hover:border-brand"
+                className="group flex flex-col justify-between overflow-hidden border border-border bg-surface transition-all hover:border-brand"
               >
-                {/* Image */}
-                <div className="aspect-[4/3] sm:aspect-[16/9] w-full overflow-hidden border-b border-border bg-surface-muted">
-                   <img src={study.image} alt={study.client} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div>
+                  {/* Image */}
+                  <div className="aspect-[4/3] sm:aspect-[16/9] w-full overflow-hidden border-b border-border bg-surface-muted">
+                    <img src={study.image} alt={study.client} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  </div>
+
+                  <div className="p-6 sm:p-8 pb-4">
+                    <span className="mb-2 block font-sans text-[11px] font-semibold uppercase tracking-[1.5px] text-text-muted">
+                      {study.client}
+                    </span>
+                    <h3 className="mb-3 font-sans text-[26px] sm:text-[28px] font-medium leading-tight text-text-main">
+                      {study.result}
+                    </h3>
+                    <p className="mb-5 font-sans text-[13.5px] leading-6 text-text-muted">
+                      {study.desc}
+                    </p>
+
+                    {/* Key Metrics Row */}
+                    {study.stats && (
+                      <div className="mb-5 grid grid-cols-3 gap-2 border-y border-border py-3">
+                        {study.stats.map((st, i) => (
+                          <div key={i}>
+                            <p className="font-sans text-[15px] font-bold text-text-main">{st.value}</p>
+                            <p className="font-sans text-[10.5px] text-text-muted">{st.label}</p>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Service Tags */}
+                    {study.services && (
+                      <div className="flex flex-wrap gap-1.5">
+                        {study.services.map((srv, i) => (
+                          <span key={i} className="border border-border bg-surface-muted px-2.5 py-0.5 font-sans text-[11px] text-text-muted">
+                            {srv}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
-                
-                <div className="p-8 sm:p-10">
-                  <span className="mb-2 block font-sans text-[12px] font-semibold uppercase tracking-[1px] text-text-muted">
-                    {study.client}
-                  </span>
-                  <h3 className="mb-4 font-sans text-[32px] font-medium leading-tight text-text-main">
-                    {study.result}
-                  </h3>
-                  <p className="mb-8 font-sans text-[14px] leading-6 text-text-muted">
-                    {study.desc}
-                  </p>
-                  
+
+                <div className="px-6 pb-6 sm:px-8 sm:pb-8 pt-2">
                   <Link to={`/case-studies/${study.id}`} className="inline-block cursor-pointer border-b border-brand pb-1 font-sans text-[12px] font-semibold uppercase tracking-[1px] text-text-main transition-all hover:text-text-muted hover:border-[#666]">
                     View Case Study
                   </Link>

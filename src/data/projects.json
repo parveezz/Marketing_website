@@ -76,12 +76,16 @@
     "challengesDescription": "Indoor auditorium lighting and fast-paced stage ceremonies present unique challenges for event coverage.",
     "challenges": [
       {
-        "title": "Low-Light Conditions",
-        "description": "Adjusting camera settings for dynamic stage lighting."
+        "title": "Low-Light Auditorium Calibration",
+        "description": "Adjusting camera exposure and lens apertures dynamically for shifting stage lighting without motion blur."
       },
       {
-        "title": "Candid Moments",
-        "description": "Capturing fleeting moments of pride without disrupting the ceremony."
+        "title": "Candid Leadership Moments",
+        "description": "Capturing fleeting moments of pride, oath-taking, and badge pinning without disrupting formal protocol."
+      },
+      {
+        "title": "Multi-Format Archival & Social Delivery",
+        "description": "Delivering curated high-resolution print galleries alongside vertical social reels within 24 hours."
       }
     ],
     "mainImage": "/videos/investiture/mainimage.png",
@@ -127,12 +131,16 @@
     "challengesDescription": "Standing out in a crowded local food and beverage market required a highly targeted local awareness campaign.",
     "challenges": [
       {
-        "title": "Local Awareness",
-        "description": "Reaching the immediate neighborhood through geo-targeted promotions."
+        "title": "Hyper-Local Geo-Targeted Awareness",
+        "description": "Reaching the immediate Mehdipatnam neighborhood through high-frequency social teasers and local promotions."
       },
       {
-        "title": "Crowd Management",
-        "description": "Capturing quality media while navigating a packed opening day crowd."
+        "title": "High-Density Crowd Coverage",
+        "description": "Capturing cinematic brand media and customer reactions while navigating a packed opening day venue."
+      },
+      {
+        "title": "Real-Time Launch Amplification",
+        "description": "Publishing live stories and opening-day reels to convert online curiosity into immediate foot traffic."
       }
     ],
     "mainImage": "/videos/hyderabadChai/mainImage.webp",
@@ -178,12 +186,16 @@
     "challengesDescription": "Communicating safety, education quality, and fun simultaneously is key to preschool marketing.",
     "challenges": [
       {
-        "title": "Capturing Authenticity",
-        "description": "Photographing young children naturally and safely."
+        "title": "Capturing Authentic Childhood Joy",
+        "description": "Photographing young children naturally, safely, and unobtrusively during interactive classroom sessions."
       },
       {
-        "title": "Conveying Trust",
-        "description": "Ensuring marketing materials reflected a highly secure and nurturing environment."
+        "title": "Conveying Institutional Trust",
+        "description": "Ensuring every visual asset reflected a highly secure, hygienic, and nurturing early-learning environment."
+      },
+      {
+        "title": "Parent-Centric Admissions Funnel",
+        "description": "Structuring event highlights and parent testimonials to drive immediate admissions inquiries."
       }
     ],
     "mainImage": "/videos/Aaksah/mainimage.png",
@@ -230,12 +242,16 @@
     "challengesDescription": "Chess tournaments require a subtle, focused approach to media coverage to avoid distracting the players.",
     "challenges": [
       {
-        "title": "Silent Coverage",
-        "description": "Capturing intense moments without making noise or using flash."
+        "title": "Zero-Distraction Silent Coverage",
+        "description": "Capturing intense competitive moments using silent electronic shutters without flash or player disruption."
       },
       {
-        "title": "Live Updates",
-        "description": "Managing real-time bracket updates across digital platforms."
+        "title": "Real-Time Bracket & Match Updates",
+        "description": "Managing live round-by-round updates and highlight reels across digital channels for parents and schools."
+      },
+      {
+        "title": "Cohesive Tournament Environmental Branding",
+        "description": "Designing and deploying championship backdrops, standees, and ceremonial stage graphics."
       }
     ],
     "mainImage": "/images/project-chess-main.jpg",
@@ -283,12 +299,16 @@
     "challengesDescription": "Working with VIPs and strict event schedules requires flawless execution and instant media delivery.",
     "challenges": [
       {
-        "title": "VIP Management",
-        "description": "Coordinating photo ops with high-profile business leaders."
+        "title": "VIP & Executive Protocol Management",
+        "description": "Coordinating red-carpet interviews and award portraits with high-profile industry leaders on tight schedules."
       },
       {
-        "title": "Instant Delivery",
-        "description": "Providing press-ready photos to PR teams within minutes of the awards."
+        "title": "Instant PR & Press Desk Delivery",
+        "description": "Providing color-graded, press-ready photographs to media teams within minutes of each keynote and award."
+      },
+      {
+        "title": "Multi-Camera Stage & Keynote Production",
+        "description": "Synchronizing wide-angle auditorium feeds with close-up podium audio and lighting."
       }
     ],
     "mainImage": "/images/project-conclave-main.jpg",
@@ -336,12 +356,16 @@
     "challengesDescription": "Managing large group photos and fast-moving stage ceremonies requires precision.",
     "challenges": [
       {
-        "title": "Group Coordination",
-        "description": "Organizing perfectly framed group photos of the student council."
+        "title": "Large-Scale Council Coordination",
+        "description": "Organizing and framing formal portraits for the entire newly elected student council with precision."
       },
       {
-        "title": "Lighting Adjustments",
-        "description": "Adapting to changing indoor and outdoor lighting conditions."
+        "title": "Dynamic Indoor & Outdoor Lighting",
+        "description": "Adapting camera rigs seamlessly between bright outdoor marches and stage spotlight environments."
+      },
+      {
+        "title": "Cinematic Ceremony Highlight Film",
+        "description": "Editing a cohesive multi-angle highlight film capturing the march-past, oath ceremony, and parent pride."
       }
     ],
     "mainImage": "/images/project-pallavi-pocharam-main.jpg",
@@ -388,27 +412,33 @@
     "challengesDescription": "With hundreds of attendees, capturing both the wide scale of the event and the intimate moments was key.",
     "challenges": [
       {
-        "title": "Wide Angle Coverage",
-        "description": "Showcasing the massive audience and grand stage setup."
+        "title": "Wide-Scale Auditorium Coverage",
+        "description": "Showcasing the full grandeur of the Bachupally campus audience alongside the ceremonial stage setup."
       },
       {
-        "title": "Detail Shots",
-        "description": "Focusing on the pinning of badges and individual expressions of pride."
+        "title": "Emotional Detail & Badge Pinning Shots",
+        "description": "Focusing telephoto lenses on badge-pinning moments and individual expressions of student achievement."
+      },
+      {
+        "title": "Editorial Yearbook & Social Package",
+        "description": "Curating a dual-purpose asset library optimized for both the annual school magazine and social media."
       }
     ],
-    "mainImage": "/images/project-pallavi-bachupally-main.jpg",
+    "mainImage": "/videos/bachupally-palavi/img3.jpg",
     "carouselImages": [
-      "/images/project-pallavi-bachupally-main.jpg",
-      "/images/project-carousel-event-1.jpg",
-      "/images/project-carousel-event-2.jpg"
+      "/videos/bachupally-palavi/img1.jpg",
+      "/videos/bachupally-palavi/img2.jpg",
+      "/videos/bachupally-palavi/img3.jpg",
+      "/videos/bachupally-palavi/img4.jpg"
     ],
     "aboutTitle": "About the Event",
     "videoHighlightsTitle": "Video Highlights",
     "videoHighlightsDescription": "Watch some of the key moments and final deliverables from our engagement.",
     "carouselVideos": [
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+      "/videos/bachupally-palavi/VID1.mp4",
+      "/videos/bachupally-palavi/VID2.mp4",
+      "/videos/bachupally-palavi/VID3.mp4",
+      "/videos/bachupally-palavi/VID4.mp4"
     ],
     "testimonial": {
       "quote": "An absolute pleasure to work with. The team brought unmatched creativity and professionalism to our project, delivering outstanding results.",
@@ -438,27 +468,33 @@
     "challengesDescription": "Toddlers in a play zone move fast! Our team had to be agile and responsive to get the perfect shots.",
     "challenges": [
       {
-        "title": "Fast-Moving Subjects",
-        "description": "Using high shutter speeds to freeze the action without losing quality."
+        "title": "High-Speed Action Photography",
+        "description": "Using fast shutter speeds and continuous autofocus to freeze energetic play-zone action with crystal clarity."
       },
       {
-        "title": "Safety First",
-        "description": "Navigating the play zone with heavy camera gear without getting in the children's way."
+        "title": "Child-Safe Equipment Navigation",
+        "description": "Operating stabilized camera gear safely around active toddlers without interrupting their play experience."
+      },
+      {
+        "title": "Parent-Ready Digital Gallery",
+        "description": "Delivering a vibrant, color-graded photo collection that parents could cherish and share immediately."
       }
     ],
-    "mainImage": "/images/project-smart-kids-main.jpg",
+    "mainImage": "/videos/smartkidPreschool/img2.jpg",
     "carouselImages": [
-      "/images/project-smart-kids-main.jpg",
-      "/images/project-carousel-event-1.jpg",
-      "/images/project-carousel-event-2.jpg"
+      "/videos/smartkidPreschool/img1.jpg",
+      "/videos/smartkidPreschool/img2.jpg",
+      "/videos/smartkidPreschool/img3.jpg",
+      "/videos/smartkidPreschool/img4.jpg",
+      "/videos/smartkidPreschool/img5.jpg"
     ],
     "aboutTitle": "About the Trip",
     "videoHighlightsTitle": "Video Highlights",
     "videoHighlightsDescription": "Watch some of the key moments and final deliverables from our engagement.",
     "carouselVideos": [
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+      "/videos/smartkidPreschool/vid1.mp4",
+      "/videos/smartkidPreschool/vid2.mp4",
+      "/videos/smartkidPreschool/vid3.mp4"
     ],
     "testimonial": {
       "quote": "An absolute pleasure to work with. The team brought unmatched creativity and professionalism to our project, delivering outstanding results.",
@@ -488,12 +524,16 @@
     "challengesDescription": "Ensuring high visibility while maintaining a reasonable budget required precise targeting and negotiation.",
     "challenges": [
       {
-        "title": "Budget Optimization",
-        "description": "Maximizing ad spend across expensive platforms."
+        "title": "Media Buying & Budget Optimization",
+        "description": "Negotiating premium print and digital inventory to maximize impressions and lower cost-per-acquisition."
       },
       {
-        "title": "Cross-Channel Strategy",
-        "description": "Balancing print and digital for maximum reach."
+        "title": "Integrated Cross-Channel Strategy",
+        "description": "Synchronizing high-visibility print placements with targeted digital retargeting for compound reach."
+      },
+      {
+        "title": "High-Converting Ad Creative Production",
+        "description": "Designing persuasive print layouts and thumb-stopping digital creatives tailored to local buyer intent."
       }
     ],
     "mainImage": "/images/project-promotions-main.jpg",
