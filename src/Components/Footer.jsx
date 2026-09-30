@@ -1,7 +1,28 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaLinkedinIn, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import { FiArrowUpRight, FiMail, FiPhone } from "react-icons/fi";
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+      delayChildren: 0.05,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 18 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+  },
+};
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -56,9 +77,15 @@ const Footer = () => {
         {/* =========================================================
             TOP SECTION: LOGO + COLUMN LINKS
         ========================================================== */}
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 lg:gap-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+          className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 lg:gap-8"
+        >
           {/* Brand Col */}
-          <div className="sm:col-span-2 md:col-span-3 lg:col-span-1 lg:pr-4">
+          <motion.div variants={itemVariants} className="sm:col-span-2 md:col-span-3 lg:col-span-1 lg:pr-4">
             <Link to="/" className="inline-flex items-center gap-3 group">
               {/* Neon Green 3D Cube Badge (Identical to Navbar) */}
               <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#c4f82a] text-[#0a0a0a] transition-transform duration-300 group-hover:scale-105">
@@ -85,135 +112,141 @@ const Footer = () => {
 
             {/* Social Links */}
             <div className="mt-6 flex items-center gap-2.5">
-              <a
+              <motion.a
+                whileHover={{ y: -2, scale: 1.05 }}
+                whileTap={{ scale: 0.96 }}
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#a1a1aa] transition-all duration-200 hover:border-white/30 hover:bg-white/10 hover:text-[#c4f82a]"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#a1a1aa] transition-colors duration-200 hover:border-white/30 hover:bg-white/10 hover:text-[#c4f82a]"
               >
                 <FaLinkedinIn size={13} />
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                whileHover={{ y: -2, scale: 1.05 }}
+                whileTap={{ scale: 0.96 }}
                 href="https://instagram.com"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#a1a1aa] transition-all duration-200 hover:border-white/30 hover:bg-white/10 hover:text-[#c4f82a]"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#a1a1aa] transition-colors duration-200 hover:border-white/30 hover:bg-white/10 hover:text-[#c4f82a]"
               >
                 <FaInstagram size={13} />
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                whileHover={{ y: -2, scale: 1.05 }}
+                whileTap={{ scale: 0.96 }}
                 href="https://x.com"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Twitter / X"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#a1a1aa] transition-all duration-200 hover:border-white/30 hover:bg-white/10 hover:text-[#c4f82a]"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#a1a1aa] transition-colors duration-200 hover:border-white/30 hover:bg-white/10 hover:text-[#c4f82a]"
               >
                 <FaXTwitter size={13} />
-              </a>
+              </motion.a>
             </div>
-          </div>
+          </motion.div>
 
           {/* Navigation */}
-          <div>
+          <motion.div variants={itemVariants}>
             <h3 className="mb-4 font-sans text-[11px] font-semibold uppercase tracking-[2px] text-white">
               Navigation
             </h3>
             <ul className="space-y-2.5">
               <li>
-                <Link to="/" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                <Link to="/" className="inline-block font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                <Link to="/about" className="inline-block font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                <Link to="/services" className="inline-block font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/our-work" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                <Link to="/our-work" className="inline-block font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
                   Our Work
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                <Link to="/contact" className="inline-block font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
                   Contact
                 </Link>
               </li>
             </ul>
-          </div>
+          </motion.div>
 
           {/* Services */}
-          <div>
+          <motion.div variants={itemVariants}>
             <h3 className="mb-4 font-sans text-[11px] font-semibold uppercase tracking-[2px] text-white">
               Services
             </h3>
             <ul className="space-y-2.5">
               <li>
-                <Link to="/services/strategic-marketing" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                <Link to="/services/strategic-marketing" className="inline-block font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
                   Strategic Marketing
                 </Link>
               </li>
               <li>
-                <Link to="/services/branding" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                <Link to="/services/branding" className="inline-block font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
                   Branding
                 </Link>
               </li>
               <li>
-                <Link to="/services/advertising" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                <Link to="/services/advertising" className="inline-block font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
                   Advertising
                 </Link>
               </li>
               <li>
-                <Link to="/services/social-media" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                <Link to="/services/social-media" className="inline-block font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
                   Social Media
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="font-sans text-[13.5px] text-[#c4f82a] transition-colors hover:underline">
+                <Link to="/services" className="inline-block font-sans text-[13.5px] text-[#c4f82a] transition-all duration-200 hover:translate-x-1 hover:underline">
                   View All Services &rarr;
                 </Link>
               </li>
             </ul>
-          </div>
+          </motion.div>
 
           {/* Resources */}
-          <div>
+          <motion.div variants={itemVariants}>
             <h3 className="mb-4 font-sans text-[11px] font-semibold uppercase tracking-[2px] text-white">
               Resources
             </h3>
             <ul className="space-y-2.5">
               <li>
-                <Link to="/blog" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                <Link to="/blog" className="inline-block font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
                   Journal / Blog
                 </Link>
               </li>
               <li>
-                <Link to="/case-studies" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                <Link to="/case-studies" className="inline-block font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
                   Case Studies
                 </Link>
               </li>
               <li>
-                <Link to="/whitepapers" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                <Link to="/whitepapers" className="inline-block font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
                   Whitepapers
                 </Link>
               </li>
               <li>
-                <Link to="/faq" className="font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white">
+                <Link to="/faq" className="inline-block font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
                   FAQ
                 </Link>
               </li>
             </ul>
-          </div>
+          </motion.div>
 
           {/* Contact & Reach Out */}
-          <div>
+          <motion.div variants={itemVariants}>
             <h3 className="mb-4 font-sans text-[11px] font-semibold uppercase tracking-[2px] text-white">
               Get in Touch
             </h3>
@@ -239,20 +272,26 @@ const Footer = () => {
               <li className="pt-1">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-1.5 font-sans text-[12.5px] font-semibold text-[#c4f82a] transition-all hover:underline"
+                  className="group inline-flex items-center gap-1.5 font-sans text-[12.5px] font-semibold text-[#c4f82a] transition-all hover:underline"
                 >
                   <span>Book an Introduction</span>
-                  <FiArrowUpRight />
+                  <FiArrowUpRight className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
               </li>
             </ul>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* =========================================================
             NEWSLETTER STRIP
         ========================================================== */}
-        <div className="mt-12 rounded-2xl border border-white/10 bg-[#121114]/80 p-6 sm:p-8 backdrop-blur-md flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.55, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-12 rounded-2xl border border-white/10 bg-[#121114]/80 p-6 sm:p-8 backdrop-blur-md flex flex-col md:flex-row md:items-center md:justify-between gap-6"
+        >
           <div className="max-w-md">
             <h4 className="font-sans text-[18px] font-medium text-white">
               Stay ahead with market insights
@@ -271,29 +310,45 @@ const Footer = () => {
               placeholder="Enter your email"
               className="h-11 w-full sm:w-[260px] rounded-xl border border-white/10 bg-[#1a181d] px-4 font-sans text-[13.5px] text-white placeholder-[#71717a] outline-none transition-colors focus:border-[#c4f82a]"
             />
-            <button
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={isSubmitting}
-              className="h-11 shrink-0 rounded-xl bg-[#c4f82a] px-6 font-sans text-[13.5px] font-semibold text-black transition-all duration-200 hover:bg-[#b0f516] disabled:opacity-50 cursor-pointer"
+              className="h-11 shrink-0 rounded-xl bg-[#c4f82a] px-6 font-sans text-[13.5px] font-semibold text-black transition-colors duration-200 hover:bg-[#b0f516] disabled:opacity-50 cursor-pointer"
             >
-              Subscribe
-            </button>
+              {isSubmitting ? "Subscribing..." : "Subscribe"}
+            </motion.button>
           </form>
-        </div>
-        {statusMessage && (
-          <p
-            className={`mt-2 font-sans text-[12px] text-right ${
-              statusMessage.type === "error" ? "text-red-400" : "text-[#c4f82a]"
-            }`}
-          >
-            {statusMessage.text}
-          </p>
-        )}
+        </motion.div>
+
+        <AnimatePresence mode="wait">
+          {statusMessage && (
+            <motion.p
+              key={statusMessage.text}
+              initial={{ opacity: 0, y: -6 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -6 }}
+              transition={{ duration: 0.25 }}
+              className={`mt-2 font-sans text-[12px] text-right ${
+                statusMessage.type === "error" ? "text-red-400" : "text-[#c4f82a]"
+              }`}
+            >
+              {statusMessage.text}
+            </motion.p>
+          )}
+        </AnimatePresence>
 
         {/* =========================================================
             BOTTOM LEGAL & COPYRIGHT
         ========================================================== */}
-        <div className="mt-10 border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-10 border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
           <p className="font-sans text-[12px] text-[#71717a]">
             &copy; {new Date().getFullYear()} ZIH Marketing Consultancy. All rights reserved.
           </p>
@@ -318,10 +373,10 @@ const Footer = () => {
               Cookie Policy
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );
 };
 
-export default Footer;
+export default Footer;

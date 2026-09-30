@@ -40,7 +40,7 @@ const Services = () => {
       deliverables: ["Multi-Channel Ad Architecture", "Rapid Creative Testing Sprints", "Dynamic Retargeting Funnels", "Weekly Cohort Attribution Reports"],
       metric: "-42% Average CAC Reduction",
       path: "/services/advertising",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1000&auto=format&fit=crop&q=85"
+      image: "/images/service-advertising-analytics.jpg"
     },
     {
       title: "Social Media",
@@ -50,7 +50,7 @@ const Services = () => {
       deliverables: ["Monthly Content Engine", "Executive Thought Leadership", "Influencer Partnership Sourcing", "Real-Time Community Engagement"],
       metric: "4.8x Organic Reach Growth",
       path: "/services/social-media",
-      image: "https://images.unsplash.com/photo-1534536281715-e28d76689b4d?w=1000&auto=format&fit=crop&q=85"
+      image: "/images/service-social-media-hero.jpg"
     }
   ];
 

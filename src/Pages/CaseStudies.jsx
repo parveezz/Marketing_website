@@ -1,5 +1,6 @@
 import SEO from "../Components/SEO";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export const studies = [
   { 
@@ -84,11 +85,16 @@ export const studies = [
 
 const CaseStudies = () => {
   return (
-    <section className="w-full min-h-[70vh] bg-surface-muted px-5 py-10 text-text-main md:px-8 lg:px-10 lg:py-16">
+    <section className="w-full min-h-[70vh] bg-surface-muted px-5 py-10 text-text-main md:px-8 lg:px-10 lg:py-16 overflow-hidden">
       <SEO title="Case Studies" description="See our proven impact." />
 
       <div className="mx-auto w-full max-w-full">
-        <div className="border-b border-border pb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="border-b border-border pb-12"
+        >
           <p className="mb-4 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
             CaseStudies
           </p>
@@ -96,14 +102,21 @@ const CaseStudies = () => {
             Case Studies
           </h1>
           <p className="mt-6 w-full max-w-[500px] font-sans text-[14px] leading-6 text-text-muted">
-            Deep dives into the results we've delivered.
+            Deep dives into the results we&apos;ve delivered.
           </p>
-        </div>
+        </motion.div>
         
         <div className="py-16">
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
             {studies.map((study, idx) => (
-              <div key={idx} className="group overflow-hidden border border-border bg-surface transition-all hover:border-brand">
+              <motion.div
+                key={study.id}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                className="group overflow-hidden border border-border bg-surface transition-all hover:border-brand"
+              >
                 {/* Image */}
                 <div className="aspect-[4/3] sm:aspect-[16/9] w-full overflow-hidden border-b border-border bg-surface-muted">
                    <img src={study.image} alt={study.client} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -124,7 +137,7 @@ const CaseStudies = () => {
                     View Case Study
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -134,3 +147,4 @@ const CaseStudies = () => {
 };
 
 export default CaseStudies;
+

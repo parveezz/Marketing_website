@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { studies } from "./CaseStudies";
 import SEO from "../Components/SEO";
 import { FiArrowLeft } from "react-icons/fi";
@@ -19,18 +20,29 @@ const CaseStudyDetail = () => {
   }
 
   return (
-    <section className="w-full min-h-[70vh] bg-surface-muted px-5 py-8 text-text-main md:px-8 lg:px-10 lg:py-12">
+    <section className="w-full min-h-[70vh] bg-surface-muted px-5 py-8 text-text-main md:px-8 lg:px-10 lg:py-12 overflow-hidden">
       <SEO title={`${study.client} Case Study`} description={study.desc} />
 
       <div className="mx-auto w-full max-w-[1100px]">
         {/* Back Link */}
-        <Link to="/case-studies" className="group mb-8 inline-flex items-center gap-2 font-sans text-[13px] font-semibold uppercase tracking-[1px] text-text-muted transition-colors hover:text-text-main">
-          <FiArrowLeft className="transition-transform group-hover:-translate-x-1" />
-          Back to Case Studies
-        </Link>
+        <motion.div
+          initial={{ opacity: 0, x: -12 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.4 }}
+        >
+          <Link to="/case-studies" className="group mb-8 inline-flex items-center gap-2 font-sans text-[13px] font-semibold uppercase tracking-[1px] text-text-muted transition-colors hover:text-text-main">
+            <FiArrowLeft className="transition-transform group-hover:-translate-x-1" />
+            Back to Case Studies
+          </Link>
+        </motion.div>
 
         {/* Header */}
-        <div className="border-b border-border pb-8">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+          className="border-b border-border pb-8"
+        >
           <p className="mb-3 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-brand">
             {study.client}
           </p>
@@ -40,27 +52,44 @@ const CaseStudyDetail = () => {
           <p className="mt-4 w-full max-w-[600px] font-sans text-[15px] leading-relaxed text-[#ccc]">
             {study.desc}
           </p>
-        </div>
+        </motion.div>
 
         {/* Stats Bar */}
         {study.stats && (
           <div className="mb-8 grid grid-cols-1 gap-6 border-b border-border py-6 sm:grid-cols-3">
             {study.stats.map((stat, idx) => (
-              <div key={idx} className="flex flex-col items-center justify-center text-center sm:items-start sm:justify-start sm:text-left">
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: 0.1 + idx * 0.08 }}
+                className="flex flex-col items-center justify-center text-center sm:items-start sm:justify-start sm:text-left"
+              >
                 <p className="font-sans text-[32px] font-medium text-brand lg:text-[40px]">{stat.value}</p>
                 <p className="mt-1 font-sans text-[11px] font-semibold uppercase tracking-[2px] text-text-muted">{stat.label}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         )}
 
         {/* Image */}
-        <div className="mb-10 aspect-[4/3] sm:aspect-[16/9] w-full overflow-hidden bg-surface">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-10 aspect-[4/3] sm:aspect-[16/9] w-full overflow-hidden bg-surface"
+        >
           <img src={study.image} alt={study.client} className="h-full w-full object-cover" />
-        </div>
+        </motion.div>
 
         {/* Content */}
-        <div className="mx-auto max-w-[900px]">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mx-auto max-w-[900px]"
+        >
           
           <div className="mb-8">
             <h2 className="mb-3 font-sans text-[20px] font-medium text-text-main">
@@ -83,7 +112,7 @@ const CaseStudyDetail = () => {
           {study.testimonial && (
             <blockquote className="my-10 border-l-2 border-brand bg-surface py-6 pl-6 pr-4 italic text-text-main">
               <p className="font-sans text-[16px] leading-relaxed md:text-[20px]">
-                "{study.testimonial}"
+                &ldquo;{study.testimonial}&rdquo;
               </p>
               <footer className="mt-4 font-sans text-[12px] font-semibold uppercase tracking-[1px] text-text-muted">
                 — {study.client}
@@ -113,10 +142,12 @@ const CaseStudyDetail = () => {
                 ))}
               </div>
             </div>
-          )}        </div>
+          )}
+        </motion.div>
       </div>
     </section>
   );
 };
 
 export default CaseStudyDetail;
+

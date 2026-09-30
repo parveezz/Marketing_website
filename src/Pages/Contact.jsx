@@ -1,5 +1,6 @@
 import SEO from "../Components/SEO";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa6";
 
 const Contact = () => {
@@ -73,7 +74,7 @@ const Contact = () => {
       } else {
         setStatusMessage({ type: 'error', text: result.message || 'Something went wrong. Please try again.' });
       }
-    } catch (error) {
+    } catch {
       setStatusMessage({ type: 'error', text: 'Network error. Please try again later.' });
     } finally {
       setIsSubmitting(false);
@@ -81,9 +82,8 @@ const Contact = () => {
   };
 
   return (
-    <section className="w-full min-h-screen bg-surface-muted px-4 py-10 text-text-main md:px-8 lg:px-12 xl:px-16">
+    <section className="w-full min-h-screen bg-surface-muted px-4 py-10 text-text-main md:px-8 lg:px-12 xl:px-16 overflow-hidden">
       <SEO title="Contact" description="Get in touch with us." />
-
 
       <div className="mx-auto w-full max-w-full">
 
@@ -95,19 +95,24 @@ const Contact = () => {
           {/* =========================
               LEFT CONTENT
           ========================== */}
-          <div className="w-full pt-2">
+          <motion.div
+            initial={{ opacity: 0, x: -24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="w-full pt-2"
+          >
 
             {/* Heading */}
             <h1 className="font-sans text-[52px] font-medium leading-[0.95] tracking-[-2px] text-text-main sm:text-[58px] md:text-[64px]">
-              Let's Talk
+              Let&apos;s Talk
               <br />
               Growth
             </h1>
 
             {/* Description */}
             <p className="mt-8 w-full max-w-[430px] font-sans text-[14px] leading-6 text-text-main">
-              Whether you're looking to boost conversions, cut CAC, or launch
-              something new—were here to help.
+              Whether you&apos;re looking to boost conversions, cut CAC, or launch
+              something new—we&apos;re here to help.
             </p>
 
             {/* Information */}
@@ -191,12 +196,17 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* =========================
               CONTACT FORM
           ========================== */}
-          <div className="w-full border border-brand bg-surface p-6 sm:p-8 lg:p-10">
+          <motion.div
+            initial={{ opacity: 0, x: 24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="w-full border border-brand bg-surface p-6 sm:p-8 lg:p-10"
+          >
 
             <h2 className="font-sans text-[34px] font-medium leading-tight tracking-[-1px] text-text-main sm:text-[38px] md:text-[42px]">
               Send Us a Message
@@ -204,7 +214,7 @@ const Contact = () => {
 
             <p className="mt-4 w-full max-w-[430px] font-sans text-[13px] leading-5 text-text-muted">
               Have a question or need more information? Fill out the form
-              below, and we'll get back to you as soon as possible.
+              below, and we&apos;ll get back to you as soon as possible.
             </p>
 
             <form className="mt-8 w-full" onSubmit={handleContactSubmit}>
@@ -222,7 +232,7 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   placeholder="Your Name"
-                  className="w-full border-b border-border bg-transparent px-0 py-3 font-sans text-[14px] text-text-main outline-none placeholder:text-text-muted focus:border-brand"
+                  className="w-full border-b border-border bg-transparent px-0 py-3 font-sans text-[14px] text-text-main outline-none placeholder:text-text-muted transition-colors focus:border-brand"
                 />
               </div>
 
@@ -239,7 +249,7 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   placeholder="Your Email Address"
-                  className="w-full border-b border-border bg-transparent px-0 py-3 font-sans text-[14px] text-text-main outline-none placeholder:text-text-muted focus:border-brand"
+                  className="w-full border-b border-border bg-transparent px-0 py-3 font-sans text-[14px] text-text-main outline-none placeholder:text-text-muted transition-colors focus:border-brand"
                 />
               </div>
 
@@ -256,33 +266,50 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   placeholder="Tell us about your project..."
-                  className="w-full resize-none border-b border-border bg-transparent px-0 py-3 font-sans text-[14px] text-text-main outline-none placeholder:text-text-muted focus:border-brand"
+                  className="w-full resize-none border-b border-border bg-transparent px-0 py-3 font-sans text-[14px] text-text-main outline-none placeholder:text-text-muted transition-colors focus:border-brand"
                 />
               </div>
 
-              {statusMessage && (
-                <p className={`mb-4 font-sans text-[13px] ${statusMessage.type === 'error' ? 'text-red-500' : 'text-green-600'}`}>
-                  {statusMessage.text}
-                </p>
-              )}
+              <AnimatePresence mode="wait">
+                {statusMessage && (
+                  <motion.p
+                    key={statusMessage.text}
+                    initial={{ opacity: 0, y: -6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.25 }}
+                    className={`mb-4 font-sans text-[13px] ${statusMessage.type === 'error' ? 'text-red-500' : 'text-green-600'}`}
+                  >
+                    {statusMessage.text}
+                  </motion.p>
+                )}
+              </AnimatePresence>
 
               {/* Submit */}
-              <button
+              <motion.button
+                whileHover={{ scale: 1.01 }}
+                whileTap={{ scale: 0.99 }}
                 type="submit"
                 disabled={isSubmitting}
                 className="w-full cursor-pointer border border-brand bg-brand py-3.5 font-sans text-[13px] font-semibold uppercase tracking-[1px] text-surface transition-all duration-300 hover:bg-surface hover:text-text-main disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {isSubmitting ? "Submitting..." : "Submit"}
-              </button>
+              </motion.button>
 
             </form>
-          </div>
+          </motion.div>
         </div>
 
         {/* =========================
             FAQ SECTION
         ========================== */}
-        <div className="mt-24 w-full">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-24 w-full"
+        >
 
           {/* FAQ Heading */}
           <h2 className="text-center font-sans text-[32px] font-medium tracking-[-1px] text-text-main sm:text-[42px] md:text-[48px]">
@@ -297,8 +324,12 @@ const Contact = () => {
           <div className="mx-auto mt-10 w-full max-w-[900px]">
 
             {faqs.map((faq, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
                 className="border-t border-border last:border-b"
               >
                 <button
@@ -310,31 +341,41 @@ const Contact = () => {
                     {faq.question}
                   </span>
 
-                  <span className={`flex h-6 w-6 shrink-0 items-center justify-center font-sans text-[18px] sm:text-[20px] font-normal transition-transform duration-300 ${openFaq === index ? 'rotate-180 text-brand' : 'text-text-muted'}`}>
+                  <motion.span
+                    animate={{ rotate: openFaq === index ? 180 : 0 }}
+                    transition={{ duration: 0.25 }}
+                    className={`flex h-6 w-6 shrink-0 items-center justify-center font-sans text-[18px] sm:text-[20px] font-normal ${openFaq === index ? 'text-brand' : 'text-text-muted'}`}
+                  >
                     {openFaq === index ? "−" : "+"}
-                  </span>
+                  </motion.span>
                 </button>
 
-                <div 
-                  className={`grid transition-all duration-300 ease-in-out ${openFaq === index ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
-                >
-                  <div className="overflow-hidden">
-                    <div className="w-full pb-4 sm:pb-5 pr-4 sm:pr-10">
-                      <p className="font-sans text-[12px] sm:text-[13px] leading-relaxed text-text-muted">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                <AnimatePresence initial={false}>
+                  {openFaq === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <div className="w-full pb-4 sm:pb-5 pr-4 sm:pr-10">
+                        <p className="font-sans text-[12px] sm:text-[13px] leading-relaxed text-text-muted">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             ))}
 
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>
   );
 };
 
-export default Contact;
+export default Contact;

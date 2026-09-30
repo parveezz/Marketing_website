@@ -82,7 +82,7 @@ const OurWork = () => {
                             title={project.title}
                             category={project.category}
                             description={project.cardDescription}
-                            image={project.mainImage || "https://images.unsplash.com/photo-1557838923-2985c318be48?w=1200&q=60"}
+                            image={project.mainImage || "/images/project-fallback.jpg"}
                             imagePosition={index % 2 === 0 ? 'right' : 'left'}
                             buttonText="View Case Study"
                             buttonLink={`/our-work/${project.id}`}

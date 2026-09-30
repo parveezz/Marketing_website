@@ -39,12 +39,12 @@ const About = () => {
     {
       name: "Elena Rostova",
       role: "Head of Strategy",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&auto=format&fit=crop&q=80",
+      image: "/images/team-elena-rostova.jpg",
     },
     {
       name: "Marcus Chen",
       role: "Creative Director",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop&q=80",
+      image: "/images/team-marcus-chen.jpg",
     },
   ];
 

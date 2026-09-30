@@ -1,11 +1,18 @@
 import SEO from "../Components/SEO";
+import { motion } from "framer-motion";
+
 const Whitepapers = () => {
   return (
-    <section className="w-full min-h-[70vh] bg-surface-muted px-5 py-16 text-text-main md:px-8 lg:px-10 lg:py-24">
+    <section className="w-full min-h-[70vh] bg-surface-muted px-5 py-16 text-text-main md:px-8 lg:px-10 lg:py-24 overflow-hidden">
       <SEO title="Whitepapers" description="Download our marketing whitepapers." />
 
       <div className="mx-auto w-full max-w-full">
-        <div className="border-b border-border pb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="border-b border-border pb-12"
+        >
           <p className="mb-4 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
             Whitepapers
           </p>
@@ -15,16 +22,23 @@ const Whitepapers = () => {
           <p className="mt-6 w-full max-w-[500px] font-sans text-[14px] leading-6 text-text-muted">
             Comprehensive research and marketing guides.
           </p>
-        </div>
+        </motion.div>
         
-<div className="py-16">
+        <div className="py-16">
           <div className="grid gap-6 sm:grid-cols-2">
             {[
               { title: 'The 2027 State of B2B Marketing', desc: 'A comprehensive 40-page report on emerging trends, budgeting benchmarks, and technology adoption.' },
               { title: 'The Ultimate Guide to Brand Positioning', desc: 'Actionable frameworks for defining your value proposition in crowded markets.' },
               { title: 'Conversion Rate Optimization Handbook', desc: '30 proven tactics to improve landing page performance and funnel velocity.' }
             ].map((paper, idx) => (
-              <div key={idx} className="flex flex-col justify-between border border-border bg-surface p-8">
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                className="flex flex-col justify-between border border-border bg-surface p-8 transition-colors hover:border-brand"
+              >
                 <div>
                   <div className="mb-6 h-12 w-12 border border-brand flex items-center justify-center font-sans text-[12px] font-bold">PDF</div>
                   <h3 className="mb-3 font-sans text-[22px] font-medium leading-tight text-text-main">{paper.title}</h3>
@@ -33,7 +47,7 @@ const Whitepapers = () => {
                 <a href={`/${paper.title.replace(/\s+/g, '-').toLowerCase()}.pdf`} download={`${paper.title.replace(/\s+/g, '-').toLowerCase()}.pdf`} className="mt-8 flex w-fit cursor-pointer items-center justify-center border border-brand bg-brand px-6 py-2.5 font-sans text-[11px] font-semibold uppercase tracking-[1px] text-surface transition-all hover:bg-transparent hover:text-text-main">
                   Download Free
                 </a>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -43,3 +57,4 @@ const Whitepapers = () => {
 };
 
 export default Whitepapers;
+

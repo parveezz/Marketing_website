@@ -59,7 +59,7 @@ const SocialMedia = () => {
                     >
                         <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[#141215] shadow-[0_20px_60px_rgba(0,0,0,0.85)] group">
                             <img
-                                src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?w=1000&auto=format&fit=crop&q=85"
+                                src="/images/service-social-media-hero.jpg"
                                 alt="Modern Social Media Content & Strategy"
                                 className="w-full aspect-[4/3] object-cover transition-all duration-700 brightness-[1.08] contrast-[1.06] saturate-[1.1] group-hover:scale-105"
                             />

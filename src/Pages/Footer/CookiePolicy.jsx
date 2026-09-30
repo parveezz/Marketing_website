@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const CookiePolicy = () => {
   const sections = [
     {
@@ -38,10 +40,15 @@ const CookiePolicy = () => {
   ];
 
   return (
-    <section className="w-full min-h-screen bg-[#0a0a0a] px-4 sm:px-6 py-8 sm:py-10 text-[#fafafa]">
+    <section className="w-full min-h-screen bg-[#0a0a0a] px-4 sm:px-6 py-8 sm:py-10 text-[#fafafa] overflow-hidden">
       <div className="mx-auto w-full max-w-5xl">
         {/* Header - Centered */}
-        <div className="border-b border-white/10 pb-6 sm:pb-8 text-center flex flex-col items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="border-b border-white/10 pb-6 sm:pb-8 text-center flex flex-col items-center justify-center"
+        >
           <p className="mb-2 font-sans text-[10.5px] font-semibold uppercase tracking-[3px] text-[#c4f82a]">
             ZIH Marketing Consultancy
           </p>
@@ -53,13 +60,17 @@ const CookiePolicy = () => {
           <p className="mt-2.5 font-sans text-[13px] text-[#71717a]">
             Last updated: September 2026
           </p>
-        </div>
+        </motion.div>
 
         {/* Content - Row Style for Title and Content */}
         <div className="mx-auto w-full max-w-4xl py-6 sm:py-8">
           {sections.map((section, index) => (
-            <div
+            <motion.div
               key={section.title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
               className={`grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-8 py-5 sm:py-6 ${
                 index !== 0 ? "border-t border-white/10" : ""
               }`}
@@ -75,7 +86,7 @@ const CookiePolicy = () => {
                   {section.content}
                 </p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
@@ -83,4 +94,4 @@ const CookiePolicy = () => {
   );
 };
 
-export default CookiePolicy;
+export default CookiePolicy;

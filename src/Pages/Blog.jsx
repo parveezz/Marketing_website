@@ -1,5 +1,6 @@
 import SEO from "../Components/SEO";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export const blogs = [
   { 
@@ -66,11 +67,16 @@ export const blogs = [
 
 const Blog = () => {
   return (
-    <section className="w-full min-h-[70vh] bg-surface-muted px-5 py-4 text-text-main md:px-8 lg:px-10 lg:py-6">
+    <section className="w-full min-h-[70vh] bg-surface-muted px-5 py-4 text-text-main md:px-8 lg:px-10 lg:py-6 overflow-hidden">
       <SEO title="Blog" description="Read our latest insights." />
 
       <div className="mx-auto w-full max-w-full">
-        <div className="border-b border-border pb-4">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="border-b border-border pb-4"
+        >
           <p className="mb-2 font-sans text-[10px] font-semibold uppercase tracking-[3px] text-text-muted">
             Blog
           </p>
@@ -80,23 +86,31 @@ const Blog = () => {
           <p className="mt-3 w-full max-w-[500px] font-sans text-[14px] leading-6 text-text-muted">
             Thoughts, insights, and strategies for growth.
           </p>
-        </div>
+        </motion.div>
         
         <div className="py-6">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {blogs.map((post, idx) => (
-              <Link to={`/blog/${post.id}`} key={idx} className="group block cursor-pointer">
-                <div className="mb-3 aspect-[4/3] w-full overflow-hidden bg-surface-muted">
-                  <img src={post.image} alt={post.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                </div>
-                <span className="mb-1 inline-block font-sans text-[10px] font-semibold uppercase tracking-[2px] text-text-muted">
-                  {post.category}
-                </span>
-                <h3 className="mb-1 font-sans text-[20px] font-medium leading-tight text-text-main transition-colors group-hover:text-text-muted">
-                  {post.title}
-                </h3>
-                <p className="font-sans text-[12px] text-[#888]">{post.date}</p>
-              </Link>
+              <motion.div
+                key={post.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <Link to={`/blog/${post.id}`} className="group block cursor-pointer">
+                  <div className="mb-3 aspect-[4/3] w-full overflow-hidden bg-surface-muted">
+                    <img src={post.image} alt={post.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  </div>
+                  <span className="mb-1 inline-block font-sans text-[10px] font-semibold uppercase tracking-[2px] text-text-muted">
+                    {post.category}
+                  </span>
+                  <h3 className="mb-1 font-sans text-[20px] font-medium leading-tight text-text-main transition-colors group-hover:text-text-muted">
+                    {post.title}
+                  </h3>
+                  <p className="font-sans text-[12px] text-[#888]">{post.date}</p>
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -106,3 +120,4 @@ const Blog = () => {
 };
 
 export default Blog;
+

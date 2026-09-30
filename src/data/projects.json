@@ -238,7 +238,7 @@
         "description": "Managing real-time bracket updates across digital platforms."
       }
     ],
-    "mainImage": "https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=1200&auto=format&fit=crop&q=60",
+    "mainImage": "/images/project-chess-main.jpg",
     "carouselImages": [
       "/videos/Chess/img1.jpg",
       "/videos/Chess/img2.jpg",
@@ -291,7 +291,7 @@
         "description": "Providing press-ready photos to PR teams within minutes of the awards."
       }
     ],
-    "mainImage": "https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200&auto=format&fit=crop&q=60",
+    "mainImage": "/images/project-conclave-main.jpg",
     "carouselImages": [
       "/videos/conclave/img1.jpg",
       "/videos/conclave/img2.jpg",
@@ -344,7 +344,7 @@
         "description": "Adapting to changing indoor and outdoor lighting conditions."
       }
     ],
-    "mainImage": "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=1200&auto=format&fit=crop&q=60",
+    "mainImage": "/images/project-pallavi-pocharam-main.jpg",
     "carouselImages": [
       "/videos/pocharam-palavi/img1.jpg",
       "/videos/pocharam-palavi/img2.jpg",
@@ -396,11 +396,11 @@
         "description": "Focusing on the pinning of badges and individual expressions of pride."
       }
     ],
-    "mainImage": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&auto=format&fit=crop&q=60",
+    "mainImage": "/images/project-pallavi-bachupally-main.jpg",
     "carouselImages": [
-      "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=800&auto=format&fit=crop&q=60"
+      "/images/project-pallavi-bachupally-main.jpg",
+      "/images/project-carousel-event-1.jpg",
+      "/images/project-carousel-event-2.jpg"
     ],
     "aboutTitle": "About the Event",
     "videoHighlightsTitle": "Video Highlights",
@@ -446,11 +446,11 @@
         "description": "Navigating the play zone with heavy camera gear without getting in the children's way."
       }
     ],
-    "mainImage": "https://images.unsplash.com/photo-1472162072942-cd5147eb3902?w=1200&auto=format&fit=crop&q=60",
+    "mainImage": "/images/project-smart-kids-main.jpg",
     "carouselImages": [
-      "https://images.unsplash.com/photo-1472162072942-cd5147eb3902?w=1200&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=800&auto=format&fit=crop&q=60"
+      "/images/project-smart-kids-main.jpg",
+      "/images/project-carousel-event-1.jpg",
+      "/images/project-carousel-event-2.jpg"
     ],
     "aboutTitle": "About the Trip",
     "videoHighlightsTitle": "Video Highlights",
@@ -496,11 +496,11 @@
         "description": "Balancing print and digital for maximum reach."
       }
     ],
-    "mainImage": "https://images.unsplash.com/photo-1557838923-2985c318be48?w=1200&auto=format&fit=crop&q=60",
+    "mainImage": "/images/project-promotions-main.jpg",
     "carouselImages": [
-      "https://images.unsplash.com/photo-1557838923-2985c318be48?w=1200&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&auto=format&fit=crop&q=60",
-      "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=800&auto=format&fit=crop&q=60"
+      "/images/project-promotions-main.jpg",
+      "/images/project-carousel-event-1.jpg",
+      "/images/project-carousel-event-2.jpg"
     ],
     "aboutTitle": "About the Campaign",
     "videoHighlightsTitle": "Video Highlights",

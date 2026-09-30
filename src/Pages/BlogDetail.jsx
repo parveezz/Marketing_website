@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { blogs } from "./Blog";
 import SEO from "../Components/SEO";
 import { FiArrowLeft } from "react-icons/fi";
@@ -19,18 +20,29 @@ const BlogDetail = () => {
   }
 
   return (
-    <section className="w-full min-h-[70vh] bg-surface-muted px-5 py-4 text-text-main md:px-8 lg:px-10 lg:py-6">
+    <section className="w-full min-h-[70vh] bg-surface-muted px-5 py-4 text-text-main md:px-8 lg:px-10 lg:py-6 overflow-hidden">
       <SEO title={`${post.title} - Journal`} description={post.category} />
 
       <div className="mx-auto w-full max-w-[900px]">
         {/* Back Link */}
-        <Link to="/blog" className="group mb-4 inline-flex items-center gap-2 font-sans text-[13px] font-semibold uppercase tracking-[1px] text-text-muted transition-colors hover:text-text-main">
-          <FiArrowLeft className="transition-transform group-hover:-translate-x-1" />
-          Back to Journal
-        </Link>
+        <motion.div
+          initial={{ opacity: 0, x: -12 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.4 }}
+        >
+          <Link to="/blog" className="group mb-4 inline-flex items-center gap-2 font-sans text-[13px] font-semibold uppercase tracking-[1px] text-text-muted transition-colors hover:text-text-main">
+            <FiArrowLeft className="transition-transform group-hover:-translate-x-1" />
+            Back to Journal
+          </Link>
+        </motion.div>
 
         {/* Header */}
-        <div className="border-b border-border pb-4">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+          className="border-b border-border pb-4"
+        >
           <div className="mb-2 flex items-center gap-3">
             <span className="font-sans text-[10px] font-semibold uppercase tracking-[2px] text-brand border border-brand/30 rounded-full px-3 py-1">
               {post.category}
@@ -52,15 +64,25 @@ const BlogDetail = () => {
               {post.date}
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Image */}
-        <div className="my-6 aspect-[4/3] sm:aspect-[16/9] w-full overflow-hidden bg-surface rounded-sm">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+          className="my-6 aspect-[4/3] sm:aspect-[16/9] w-full overflow-hidden bg-surface rounded-sm"
+        >
           <img src={post.image} alt={post.title} className="h-full w-full object-cover" />
-        </div>
+        </motion.div>
 
         {/* Article Body */}
-        <article className="mx-auto max-w-[700px] font-sans text-[16px] leading-8 text-[#ccc]">
+        <motion.article
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="mx-auto max-w-[700px] font-sans text-[16px] leading-8 text-[#ccc]"
+        >
           {post.content.split('\n\n').map((paragraph, index) => {
             // Handle mock markdown lists/bolding for realistic styling
             if (paragraph.startsWith('Here is our internal checklist') || paragraph.match(/^\d\./)) {
@@ -76,10 +98,11 @@ const BlogDetail = () => {
               </p>
             );
           })}
-        </article>
+        </motion.article>
       </div>
     </section>
   );
 };
 
 export default BlogDetail;
+

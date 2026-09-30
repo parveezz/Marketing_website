@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import ServicesDropdown from "./ServicesDropdown";
 
 const Navbar = () => {
@@ -58,7 +59,12 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`sticky top-0 z-50 border-b border-white/10 bg-[#0a0a0a]/95 backdrop-blur-md transition-colors duration-300 ${mobileMenuOpen ? "bg-[#0a0a0a]" : ""}`}>
+      <motion.nav
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+        className={`sticky top-0 z-50 border-b border-white/10 bg-[#0a0a0a]/95 backdrop-blur-md transition-colors duration-300 ${mobileMenuOpen ? "bg-[#0a0a0a]" : ""}`}
+      >
         <div className="mx-auto max-w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
           <div className="flex h-[76px] items-center justify-between">
 
@@ -119,9 +125,13 @@ const Navbar = () => {
                   }
                 >
                   Services
-                  <span className={`text-[8px] transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`}>
+                  <motion.span
+                    animate={{ rotate: servicesOpen ? 180 : 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="text-[8px] inline-block"
+                  >
                     ▼
-                  </span>
+                  </motion.span>
                 </NavLink>
 
                 {/* Dropdown Menu */}
@@ -143,12 +153,14 @@ const Navbar = () => {
                 RIGHT: NEON CTA BUTTON
             ========================================================== */}
             <div className="hidden md:flex items-center">
-              <Link
-                to="/contact"
-                className="rounded-xl bg-[#c4f82a] px-5 py-2.5 font-sans text-[14px] font-semibold text-black transition-all duration-200 hover:bg-[#b0f516] hover:scale-105 cursor-pointer"
-              >
-                Contact Us
-              </Link>
+              <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
+                <Link
+                  to="/contact"
+                  className="inline-block rounded-xl bg-[#c4f82a] px-5 py-2.5 font-sans text-[14px] font-semibold text-black transition-colors duration-200 hover:bg-[#b0f516] cursor-pointer"
+                >
+                  Contact Us
+                </Link>
+              </motion.div>
             </div>
 
             {/* =========================================================
@@ -175,104 +187,124 @@ const Navbar = () => {
 
           </div>
         </div>
-      </nav>
+      </motion.nav>
 
       {/* =========================================================
           MOBILE MENU OVERLAY
       ========================================================== */}
-      <div
-        className={`fixed inset-0 z-[40] bg-[#0a0a0a] transition-transform duration-300 ease-in-out md:hidden ${mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
-      >
-        <div className="flex h-full flex-col overflow-y-auto px-6 pb-20 pt-[100px]">
-          <NavLink to="/" onClick={() => setMobileMenuOpen(false)} className={mobileLinkClass} end>
-            Home
-          </NavLink>
-
-          <div className="w-full border-b border-white/10 py-3.5">
-            <button
-              onClick={() => setServicesOpen(!servicesOpen)}
-              className="flex w-full items-center justify-between font-sans text-lg font-medium text-[#a1a1aa]"
-            >
-              Services
-              <span className={`text-[12px] transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""}`}>
-                ▼
-              </span>
-            </button>
-
-            {/* Mobile Services Sub-menu */}
-            <div
-              className={`flex flex-col gap-3 overflow-hidden pl-4 transition-all duration-300 ${servicesOpen ? "mt-4 max-h-[500px]" : "max-h-0"
-                }`}
-            >
-              <NavLink
-                to="/services"
-                end
-                onClick={() => setMobileMenuOpen(false)}
-                className={({ isActive }) =>
-                  `font-sans text-[15px] ${isActive ? "text-white" : "text-[#a1a1aa] hover:text-white"}`
-                }
-              >
-                All Services
-              </NavLink>
-              <NavLink
-                to="/services/strategic-marketing"
-                onClick={() => setMobileMenuOpen(false)}
-                className={({ isActive }) =>
-                  `font-sans text-[15px] ${isActive ? "text-white" : "text-[#a1a1aa] hover:text-white"}`
-                }
-              >
-                Strategic Marketing
-              </NavLink>
-              <NavLink
-                to="/services/branding"
-                onClick={() => setMobileMenuOpen(false)}
-                className={({ isActive }) =>
-                  `font-sans text-[15px] ${isActive ? "text-white" : "text-[#a1a1aa] hover:text-white"}`
-                }
-              >
-                Branding
-              </NavLink>
-              <NavLink
-                to="/services/advertising"
-                onClick={() => setMobileMenuOpen(false)}
-                className={({ isActive }) =>
-                  `font-sans text-[15px] ${isActive ? "text-white" : "text-[#a1a1aa] hover:text-white"}`
-                }
-              >
-                Advertising
-              </NavLink>
-              <NavLink
-                to="/services/social-media"
-                onClick={() => setMobileMenuOpen(false)}
-                className={({ isActive }) =>
-                  `font-sans text-[15px] ${isActive ? "text-white" : "text-[#a1a1aa] hover:text-white"}`
-                }
-              >
-                Social Media
-              </NavLink>
-            </div>
-          </div>
-
-          <NavLink to="/our-work" onClick={() => setMobileMenuOpen(false)} className={mobileLinkClass}>
-            Work
-          </NavLink>
-
-          <NavLink to="/about" onClick={() => setMobileMenuOpen(false)} className={mobileLinkClass}>
-            About
-          </NavLink>
-
-          <Link
-            to="/contact"
-            onClick={() => setMobileMenuOpen(false)}
-            className="mt-8 block w-full rounded-xl bg-[#c4f82a] py-3.5 text-center font-sans text-sm font-semibold text-black transition-all hover:bg-[#b0f516]"
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ x: "100%", opacity: 0.5 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: "100%", opacity: 0.5 }}
+            transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-0 z-[40] bg-[#0a0a0a] md:hidden"
           >
-            Contact Us
-          </Link>
-        </div>
-      </div>
+            <div className="flex h-full flex-col overflow-y-auto px-6 pb-20 pt-[100px]">
+              <NavLink to="/" onClick={() => setMobileMenuOpen(false)} className={mobileLinkClass} end>
+                Home
+              </NavLink>
+
+              <div className="w-full border-b border-white/10 py-3.5">
+                <button
+                  onClick={() => setServicesOpen(!servicesOpen)}
+                  className="flex w-full items-center justify-between font-sans text-lg font-medium text-[#a1a1aa]"
+                >
+                  Services
+                  <motion.span
+                    animate={{ rotate: servicesOpen ? 180 : 0 }}
+                    transition={{ duration: 0.25 }}
+                    className="text-[12px] inline-block"
+                  >
+                    ▼
+                  </motion.span>
+                </button>
+
+                {/* Mobile Services Sub-menu */}
+                <AnimatePresence initial={false}>
+                  {servicesOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.25, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="mt-4 flex flex-col gap-3 pl-4">
+                        <NavLink
+                          to="/services"
+                          end
+                          onClick={() => setMobileMenuOpen(false)}
+                          className={({ isActive }) =>
+                            `font-sans text-[15px] ${isActive ? "text-white" : "text-[#a1a1aa] hover:text-white"}`
+                          }
+                        >
+                          All Services
+                        </NavLink>
+                        <NavLink
+                          to="/services/strategic-marketing"
+                          onClick={() => setMobileMenuOpen(false)}
+                          className={({ isActive }) =>
+                            `font-sans text-[15px] ${isActive ? "text-white" : "text-[#a1a1aa] hover:text-white"}`
+                          }
+                        >
+                          Strategic Marketing
+                        </NavLink>
+                        <NavLink
+                          to="/services/branding"
+                          onClick={() => setMobileMenuOpen(false)}
+                          className={({ isActive }) =>
+                            `font-sans text-[15px] ${isActive ? "text-white" : "text-[#a1a1aa] hover:text-white"}`
+                          }
+                        >
+                          Branding
+                        </NavLink>
+                        <NavLink
+                          to="/services/advertising"
+                          onClick={() => setMobileMenuOpen(false)}
+                          className={({ isActive }) =>
+                            `font-sans text-[15px] ${isActive ? "text-white" : "text-[#a1a1aa] hover:text-white"}`
+                          }
+                        >
+                          Advertising
+                        </NavLink>
+                        <NavLink
+                          to="/services/social-media"
+                          onClick={() => setMobileMenuOpen(false)}
+                          className={({ isActive }) =>
+                            `font-sans text-[15px] ${isActive ? "text-white" : "text-[#a1a1aa] hover:text-white"}`
+                          }
+                        >
+                          Social Media
+                        </NavLink>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              <NavLink to="/our-work" onClick={() => setMobileMenuOpen(false)} className={mobileLinkClass}>
+                Work
+              </NavLink>
+
+              <NavLink to="/about" onClick={() => setMobileMenuOpen(false)} className={mobileLinkClass}>
+                About
+              </NavLink>
+
+              <Link
+                to="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="mt-8 block w-full rounded-xl bg-[#c4f82a] py-3.5 text-center font-sans text-sm font-semibold text-black transition-all hover:bg-[#b0f516]"
+              >
+                Contact Us
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
 
-export default Navbar;
+export default Navbar;

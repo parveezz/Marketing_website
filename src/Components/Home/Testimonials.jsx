@@ -10,7 +10,7 @@ const Testimonials = () => {
       name: "Sarah Jenkins",
       role: "VP of Growth, TechFlow",
       tag: "B2B SaaS",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      avatar: "/images/avatar-sarah-jenkins.jpg",
       metric: "-42% CAC",
       before:
         "We were burning through $45k/month on paid ads with zero attribution. Our internal team was exhausted and acquisition costs kept compounding without scalable returns.",
@@ -21,7 +21,7 @@ const Testimonials = () => {
       name: "Rahul Mehta",
       role: "Founder, Elevate Direct",
       tag: "E-Commerce",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+      avatar: "/images/avatar-rahul-mehta.jpg",
       metric: "3.8x ROAS",
       before:
         "Our brand messaging was fragmented across three disconnected agencies. We had strong incoming traffic, but our conversion rate was stagnant at 0.9%.",
@@ -32,7 +32,7 @@ const Testimonials = () => {
       name: "Meera Patel",
       role: "Head of Marketing, Lumina Health",
       tag: "Consumer Tech",
-      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80",
+      avatar: "/images/avatar-meera-patel.jpg",
       metric: "+185% Retention",
       before:
         "Every new launch felt like starting from ground zero. We lacked market differentiation and couldn't retain customers beyond their initial purchase.",
