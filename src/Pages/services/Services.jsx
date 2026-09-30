@@ -51,6 +51,16 @@ const Services = () => {
       metric: "4.8x Organic Reach Growth",
       path: "/services/social-media",
       image: "/images/service-social-media-hero.jpg"
+    },
+    {
+      title: "Event Management & Production",
+      tagline: "Experiential Impact & Live Operations",
+      description: "From massive stadium sports meets and prestigious corporate conclaves to school ceremonies and brand activations, we manage end-to-end event production, stagecraft, audio-visual architecture, and live media broadcast.",
+      features: ["Corporate Conclaves", "Sports Tournaments", "Stage & AV Production", "Real-Time Media", "VIP & Protocol Logistics"],
+      deliverables: ["360° Stage & LED Architecture", "Acoustic Rigging & Sound Direction", "Multi-Cam Photo & Fast Video Delivery", "Turnkey On-Ground Crowd Operations"],
+      metric: "50,000+ Attendees Executed",
+      path: "/services/event-management",
+      image: "/images/project-conclave-main.jpg"
     }
   ];
 
@@ -150,7 +160,7 @@ const Services = () => {
     <main className="relative w-full bg-[#0a0a0a] text-white min-h-screen overflow-hidden">
       <SEO
         title="Services & Capabilities | ZIH Marketing Consultancy"
-        description="Comprehensive marketing capabilities for growing brands: Strategic Marketing, Branding, Advertising, and Social Media systems."
+        description="Comprehensive marketing and event capabilities: Strategic Marketing, Branding, Advertising, Social Media, and Event Management & Production."
       />
 
       {/* Background Vertical Grid Guide Lines (12 Columns) */}
@@ -182,7 +192,7 @@ const Services = () => {
           </h1>
 
           <p className="font-sans text-[13.5px] sm:text-[15px] leading-relaxed text-[#a1a1aa] max-w-3xl">
-            We don&apos;t try to do everything. We focus on the core pillars of modern brand velocity: clear strategy, distinctive branding, high-intent advertising, and community-driven social systems. Engineered to work individually or combine into an integrated growth engine.
+            We focus on the core pillars of modern brand velocity: clear strategy, distinctive branding, high-intent advertising, social systems, and grand-scale event management &amp; live production. Engineered to work individually or combine into an integrated growth engine.
           </p>
         </motion.div>
       </section>

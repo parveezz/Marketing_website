@@ -9,6 +9,7 @@ import StrategicMarketing from "../Pages/services/StrategicMarketing";
 import Branding from "../Pages/services/Branding";
 import Advertising from "../Pages/services/Advertising";
 import SocialMedia from "../Pages/services/SocialMedia";
+import EventManagement from "../Pages/services/EventManagement";
 
 // Secondary & interactive pages code-split with React.lazy
 const About = lazy(() => import("../Pages/About"));
@@ -85,6 +86,15 @@ const Routing = () => {
           <Route
             path="services/social-media"
             element={<SocialMedia />}
+          />
+
+          <Route
+            path="services/event-management"
+            element={<EventManagement />}
+          />
+          <Route
+            path="services/events"
+            element={<EventManagement />}
           />
 
           {/* 404 Catch-All Page for Any Unmatched URL */}

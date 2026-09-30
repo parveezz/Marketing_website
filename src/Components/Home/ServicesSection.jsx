@@ -54,6 +54,18 @@ const ServicesSection = () => {
         </svg>
       ),
     },
+    {
+      title: "Event Management",
+      description:
+        "We engineer end-to-end event production, sports tournaments, corporate conclaves, and live media broadcasts that leave lasting impressions.",
+      path: "/services/event-management",
+      // Star / Stage / Event Icon
+      icon: (
+        <svg className="h-6 w-6 stroke-current" fill="none" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+      ),
+    },
   ];
 
   return (
@@ -96,18 +108,18 @@ const ServicesSection = () => {
           </div>
 
           <h2 className="font-sans text-[28px] sm:text-[34px] md:text-[38px] font-semibold tracking-[-0.02em] text-[#fafafa]">
-            High-Impact Digital Solutions
+            High-Impact Brand &amp; Event Solutions
           </h2>
 
           <p className="mt-2.5 max-w-2xl font-sans text-[13.5px] sm:text-[14.5px] leading-relaxed text-[#a1a1aa]">
-            Transform your brand with innovative marketing, design, and growth systems that engage and convert.
+            Transform your brand with innovative marketing, distinctive design, and turnkey event production that engage and convert.
           </p>
         </div>
 
         {/* =========================================================
             SERVICES CARDS GRID
         ========================================================== */}
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {services.map((service) => (
             <div
               key={service.title}

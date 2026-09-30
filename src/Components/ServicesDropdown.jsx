@@ -27,6 +27,11 @@ const ServicesDropdown = ({
             desc: "Content creation, community & brand authority",
             path: "/services/social-media",
         },
+        {
+            name: "Event Management",
+            desc: "Conclaves, sports tournaments & live stage production",
+            path: "/services/event-management",
+        },
     ];
 
     if (!servicesOpen) return null;
@@ -47,7 +52,7 @@ const ServicesDropdown = ({
                         Capabilities
                     </span>
                     <span className="font-sans text-[10.5px] font-medium text-[#a1a1aa]">
-                        4 Practice Areas
+                        5 Practice Areas
                     </span>
                 </div>
 

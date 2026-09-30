@@ -174,6 +174,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/services/event-management" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
+                  Event Management
+                </Link>
+              </li>
+              <li>
                 <Link to="/services" className="inline-block py-1 font-sans text-[13.5px] text-[#c4f82a] transition-all duration-200 hover:translate-x-1 hover:underline">
                   View All Services &rarr;
                 </Link>

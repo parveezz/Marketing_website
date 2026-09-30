@@ -254,6 +254,15 @@ const Navbar = () => {
                     >
                       Social Media
                     </NavLink>
+                    <NavLink
+                      to="/services/event-management"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={({ isActive }) =>
+                        `py-1 font-sans text-[15px] ${isActive ? "text-white" : "text-[#a1a1aa] hover:text-white"}`
+                      }
+                    >
+                      Event Management
+                    </NavLink>
                   </div>
                 </div>
               )}
