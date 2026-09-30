@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 const TrustedBy = () => {
   const clients = [
     "Indus International School",
@@ -26,7 +24,7 @@ const TrustedBy = () => {
 
       {/* 2. Top Centered Label */}
       <div className="relative z-10 mb-4 px-4 text-center">
-        <p className="font-sans text-[10.5px] font-semibold uppercase tracking-[2.5px] text-[#71717a]">
+        <p className="font-sans text-[10.5px] font-semibold uppercase tracking-[2.5px] text-[#a1a1aa]">
           Trusted by Leading Institutions &amp; Modern Brands
         </p>
       </div>
@@ -37,15 +35,7 @@ const TrustedBy = () => {
         <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#0a0a0a] to-transparent z-20" />
         <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-[#0a0a0a] to-transparent z-20" />
 
-        <motion.div
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            duration: 25,
-            ease: "linear",
-            repeat: Infinity,
-          }}
-          className="flex items-center gap-8 sm:gap-14 shrink-0 whitespace-nowrap"
-        >
+        <div className="animate-marquee flex items-center gap-8 sm:gap-14 shrink-0 whitespace-nowrap">
           {marqueeItems.map((client, index) => (
             <div
               key={index}
@@ -60,7 +50,7 @@ const TrustedBy = () => {
               </span>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 const ProcessSection = () => {
   const steps = [
     {
@@ -45,13 +43,7 @@ const ProcessSection = () => {
         {/* =========================================================
             CENTERED HEADER
         ========================================================== */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-10 sm:mb-14 flex flex-col items-center text-center"
-        >
+        <div className="mb-10 sm:mb-14 flex flex-col items-center text-center">
           {/* Top Pill Badge */}
           <div className="mb-3.5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3.5 py-1 backdrop-blur-md">
             <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
@@ -69,24 +61,15 @@ const ProcessSection = () => {
           <p className="mt-3 max-w-xl font-sans text-[13.5px] sm:text-[14.5px] leading-relaxed text-[#a1a1aa]">
             We keep the workflow transparent and disciplined, moving seamlessly from diagnostic clarity to compounding market execution.
           </p>
-        </motion.div>
+        </div>
 
         {/* =========================================================
             VERTICAL SEQUENCE (1, 2, 3, 4)
-            Width 1/2, centered, sliding from left to right on scroll,
-            with inner content laid out in a ROW.
         ========================================================== */}
         <div className="mx-auto flex w-full flex-col items-center gap-6 sm:gap-7">
           {steps.map((step) => (
-            <motion.div
+            <div
               key={step.number}
-              initial={{ opacity: 0, x: -90 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.25 }}
-              transition={{
-                duration: 0.65,
-                ease: [0.22, 1, 0.36, 1],
-              }}
               className="w-full md:w-4/5 lg:w-[62%] max-w-3xl rounded-xl border border-white/10 bg-[#141215]/90 px-4 py-3.5 sm:px-6 sm:py-4.5 backdrop-blur-md transition-all duration-300 hover:border-white/25 hover:bg-[#18151a]/95 shadow-[0_15px_40px_rgba(0,0,0,0.6)] group"
             >
               {/* Inner content in a ROW */}
@@ -98,7 +81,7 @@ const ProcessSection = () => {
 
                 {/* 2. Step Title & Subtitle */}
                 <div className="sm:w-[130px] shrink-0 text-center sm:text-left">
-                  <span className="font-sans text-[10px] font-semibold uppercase tracking-[1.5px] text-[#71717a]">
+                  <span className="font-sans text-[10px] font-semibold uppercase tracking-[1.5px] text-[#a1a1aa]">
                     {step.subtitle}
                   </span>
                   <h3 className="font-sans text-[18px] sm:text-[19px] font-semibold text-white transition-colors group-hover:text-[#c4f82a]">
@@ -113,7 +96,7 @@ const ProcessSection = () => {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

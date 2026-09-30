@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 
 const HomeCTA = () => {
   return (
@@ -27,13 +26,7 @@ const HomeCTA = () => {
 
       {/* 3. Centered Content Container */}
       <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col items-center"
-        >
+        <div className="flex flex-col items-center">
           {/* Main Headline */}
           <h2 className="font-sans text-[26px] sm:text-[32px] md:text-[38px] font-semibold tracking-[-0.02em] text-[#fafafa] leading-tight max-w-2xl">
             Let&apos;s Build Something Extraordinary Together.
@@ -53,7 +46,7 @@ const HomeCTA = () => {
               Start Project
             </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
-import projectsData from "../../data/projects.json";
 
 const FeaturedWork = () => {
   // Pull real project items from the actual Work page data
@@ -63,13 +61,7 @@ const FeaturedWork = () => {
         {/* =========================================================
             HEADER (MATCHING REFERENCE IMAGE)
         ========================================================== */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 pb-4"
-        >
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 pb-4">
           {/* Big Featured Work Heading */}
           <div>
             <h2 className="font-sans text-[34px] sm:text-[44px] md:text-[52px] font-bold tracking-tight text-white uppercase leading-none">
@@ -83,7 +75,7 @@ const FeaturedWork = () => {
               A curated selection of our work across brand positioning, full-funnel acquisition, and digital experiences for high-growth partners.
             </p>
           </div>
-        </motion.div>
+        </div>
 
         {/* Horizontal Divider Line */}
         <div className="w-full border-b border-white/10 mb-6 sm:mb-7" />
@@ -92,14 +84,8 @@ const FeaturedWork = () => {
             7-COLUMN VERTICAL STRIP IMAGES (PULLED FROM WORK PAGE)
         ========================================================== */}
         <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-3 sm:gap-3.5">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: index * 0.06 }}
-            >
+          {projects.map((project) => (
+            <div key={project.id}>
               <Link
                 to={`/our-work/${project.id}`}
                 className="group relative block aspect-[3/5] h-[190px] sm:h-[220px] md:h-[240px] w-full overflow-hidden rounded-xl border border-white/10 bg-[#16141a] transition-all duration-300 hover:border-[#c4f82a] hover:-translate-y-1"
@@ -107,6 +93,10 @@ const FeaturedWork = () => {
                 <img
                   src={project.image}
                   alt={project.title}
+                  loading="lazy"
+                  decoding="async"
+                  width="240"
+                  height="400"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
 
@@ -120,7 +110,7 @@ const FeaturedWork = () => {
                   </span>
                 </div>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
 
@@ -128,7 +118,7 @@ const FeaturedWork = () => {
         <div className="mt-6 flex items-center justify-between">
           <Link
             to="/our-work"
-            className="inline-flex items-center gap-1.5 font-sans text-[12.5px] font-semibold text-[#a1a1aa] transition-colors hover:text-[#c4f82a]"
+            className="inline-flex items-center gap-1.5 py-1 font-sans text-[12.5px] font-semibold text-[#a1a1aa] transition-colors hover:text-[#c4f82a]"
           >
             <span>Explore all case studies on our Work page</span>
             <FiArrowRight size={13} />

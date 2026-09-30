@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { FiArrowUpRight, FiCheck } from "react-icons/fi";
 import SEO from "../../Components/SEO";
-import { motion } from "framer-motion";
 import Testimonials from "../../Components/Home/Testimonials";
 import HomeCTA from "../../Components/Home/HomeCTA";
 
@@ -51,16 +50,15 @@ const Advertising = () => {
             <section className="relative z-10 w-full border-b border-white/10 px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 2xl:px-36 py-12 sm:py-16 md:py-20 bg-[#0c0a09]">
                 <div className="mx-auto grid w-full max-w-full grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-16">
                     {/* Left Column: High-Clarity, Enhanced Brightness Framed Image */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -25 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="lg:col-span-6 w-full"
-                    >
+                    <div className="lg:col-span-6 w-full">
                         <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[#141215] shadow-[0_20px_60px_rgba(0,0,0,0.85)] group">
                             <img
                                 src="/images/service-advertising-analytics.jpg"
                                 alt="High-Performance Paid Media Analytics"
+                                fetchPriority="high"
+                                decoding="async"
+                                width="800"
+                                height="600"
                                 className="w-full aspect-[4/3] object-cover transition-all duration-700 brightness-[1.08] contrast-[1.06] saturate-[1.1] group-hover:scale-105"
                             />
                             {/* Depth Gradient Overlay */}
@@ -79,15 +77,10 @@ const Advertising = () => {
                                 </span>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* Right Column: Acquisition Narrative, Pillars & CTA */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 25 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
-                        className="lg:col-span-6 flex flex-col items-start"
-                    >
+                    <div className="lg:col-span-6 flex flex-col items-start">
                         <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3.5 py-1 backdrop-blur-md">
                             <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
                             <span className="font-sans text-[11px] font-medium tracking-wide text-[#fafafa]">
@@ -121,7 +114,7 @@ const Advertising = () => {
                             <span>Discuss Campaign Scope</span>
                             <FiArrowUpRight className="text-base" />
                         </Link>
-                    </motion.div>
+                    </div>
                 </div>
             </section>
 
@@ -196,7 +189,7 @@ const Advertising = () => {
 
                             {/* Active Ad Ecosystems */}
                             <div className="mt-5">
-                                <p className="mb-2 font-sans text-[10.5px] font-semibold uppercase tracking-wider text-[#71717a]">
+                                <p className="mb-2 font-sans text-[10.5px] font-semibold uppercase tracking-wider text-[#a1a1aa]">
                                     Managed Ad Ecosystems
                                 </p>
                                 <div className="flex flex-wrap gap-1.5">

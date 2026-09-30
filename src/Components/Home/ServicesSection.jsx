@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 
 const ServicesSection = () => {
   const services = [
@@ -87,13 +86,7 @@ const ServicesSection = () => {
         {/* =========================================================
             HEADER (MATCHING REFERENCE IMAGE)
         ========================================================== */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-8 sm:mb-9 flex flex-col items-center text-center"
-        >
+        <div className="mb-8 sm:mb-9 flex flex-col items-center text-center">
           {/* Top Pill Badge */}
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3.5 py-1 backdrop-blur-md">
             <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
@@ -109,18 +102,14 @@ const ServicesSection = () => {
           <p className="mt-2.5 max-w-2xl font-sans text-[13.5px] sm:text-[14.5px] leading-relaxed text-[#a1a1aa]">
             Transform your brand with innovative marketing, design, and growth systems that engage and convert.
           </p>
-        </motion.div>
+        </div>
 
         {/* =========================================================
             SERVICES CARDS GRID
         ========================================================== */}
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((service, index) => (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.45, delay: index * 0.08 }}
+          {services.map((service) => (
+            <div
               key={service.title}
               className="group flex flex-col justify-between rounded-xl border border-white/10 bg-[#141215]/85 backdrop-blur-md p-5 sm:p-5.5 transition-all duration-300 hover:border-white/25 hover:bg-[#18151a]/95 hover:-translate-y-1 shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
             >
@@ -151,7 +140,7 @@ const ServicesSection = () => {
                   Learn More
                 </Link>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 

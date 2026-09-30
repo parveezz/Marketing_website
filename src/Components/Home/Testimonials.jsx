@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { FiCheckCircle, FiStar } from "react-icons/fi";
+import { FiCheckCircle } from "react-icons/fi";
 
 const Testimonials = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -54,13 +53,7 @@ const Testimonials = () => {
         {/* =========================================================
             HEADER (TRANSFORMATION STORIES)
         ========================================================== */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-8 sm:mb-10 flex flex-col items-center text-center"
-        >
+        <div className="mb-8 sm:mb-10 flex flex-col items-center text-center">
           {/* Top Pill Badge */}
           <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3.5 py-1 backdrop-blur-md">
             <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
@@ -77,18 +70,14 @@ const Testimonials = () => {
           <p className="mt-2.5 max-w-xl font-sans text-[13.5px] sm:text-[14.5px] leading-relaxed text-[#a1a1aa]">
             See how intentional strategy and sharp execution turn marketing bottlenecks into predictable momentum.
           </p>
-        </motion.div>
+        </div>
 
         {/* =========================================================
             TRANSFORMATION CARDS (BEFORE / AFTER COMPARISON)
         ========================================================== */}
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-          {stories.map((story, index) => (
-            <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+          {stories.map((story) => (
+            <div
               key={story.name}
               className="group flex flex-col justify-between rounded-xl border border-white/10 bg-[#141215]/85 p-4 sm:p-5 backdrop-blur-md transition-all duration-300 hover:border-white/25 hover:bg-[#18151a]/95 hover:-translate-y-1 shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
             >
@@ -99,6 +88,10 @@ const Testimonials = () => {
                     <img
                       src={story.avatar}
                       alt={story.name}
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                      decoding="async"
                       className="h-10 w-10 rounded-lg object-cover border border-white/15"
                     />
                     <div>
@@ -119,7 +112,7 @@ const Testimonials = () => {
                 {/* BEFORE SECTION */}
                 <div className="mt-3.5">
                   <div className="flex items-center gap-1.5 mb-1.5">
-                    <span className="font-sans text-[10px] font-bold uppercase tracking-[1.5px] text-[#71717a]">
+                    <span className="font-sans text-[10px] font-bold uppercase tracking-[1.5px] text-[#a1a1aa]">
                       BEFORE
                     </span>
                   </div>
@@ -146,26 +139,30 @@ const Testimonials = () => {
                   &ldquo;{story.after}&rdquo;
                 </p>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* =========================================================
             BOTTOM PAGINATION PILLS / INDICATOR
         ========================================================== */}
-        <div className="mt-6 sm:mt-8 flex items-center justify-center gap-2">
+        <div className="mt-6 sm:mt-8 flex items-center justify-center gap-1">
           {stories.map((_, idx) => (
             <button
               key={idx}
               type="button"
               onClick={() => setActiveSlide(idx)}
               aria-label={`Go to slide ${idx + 1}`}
-              className={`h-1.5 transition-all duration-300 rounded-full cursor-pointer ${
-                activeSlide === idx
-                  ? "w-8 bg-[#c4f82a]"
-                  : "w-2 bg-white/20 hover:bg-white/40"
-              }`}
-            />
+              className="flex h-7 min-w-7 items-center justify-center px-1 cursor-pointer"
+            >
+              <span
+                className={`block h-1.5 transition-all duration-300 rounded-full ${
+                  activeSlide === idx
+                    ? "w-8 bg-[#c4f82a]"
+                    : "w-2 bg-white/20 hover:bg-white/40"
+                }`}
+              />
+            </button>
           ))}
         </div>
       </div>

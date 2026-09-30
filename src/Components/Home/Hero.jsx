@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
@@ -56,12 +55,7 @@ const Hero = () => {
       </div>
 
       {/* 3. Centered Content Container */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-        className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center text-center"
-      >
+      <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center text-center">
 
         {/* Main Headline */}
         <h1 className="font-sans text-[32px] sm:text-[46px] md:text-[62px] lg:text-[74px] font-semibold leading-[1.1] tracking-[-0.03em] text-[#fafafa]">
@@ -76,11 +70,11 @@ const Hero = () => {
           <span className="rounded-md sm:rounded-lg border border-white/10 bg-[#212124] px-2.5 py-0.5 sm:px-3 sm:py-1 font-medium text-white shadow-sm">
             Startups
           </span>
-          <span className="text-[#71717a]">,</span>
+          <span className="text-[#a1a1aa]">,</span>
           <span className="rounded-md sm:rounded-lg border border-white/10 bg-[#212124] px-2.5 py-0.5 sm:px-3 sm:py-1 font-medium text-white shadow-sm">
             Enterprise leaders
           </span>
-          <span className="text-[#71717a]">,</span>
+          <span className="text-[#a1a1aa]">,</span>
           <span className="rounded-md sm:rounded-lg border border-white/10 bg-[#212124] px-2.5 py-0.5 sm:px-3 sm:py-1 font-medium text-white shadow-sm">
             Media &amp; Publishers
           </span>
@@ -107,7 +101,7 @@ const Hero = () => {
           </Link>
         </div>
 
-      </motion.div>
+      </div>
     </section>
   );
 };

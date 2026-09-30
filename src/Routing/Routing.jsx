@@ -1,86 +1,90 @@
+import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Layout from "../Layout/Layout";
 
+// Core landing & service pages (zero framer-motion dependency, instant LCP)
 import Home from "../Pages/Home";
-import About from "../Pages/About";
-import Services from "../Pages/services/Services";
-import Contact from "../Pages/Contact";
-
-import PrivacyPolicy from "../Pages/Footer/PrivacyPolicy";
-import TermsConditions from "../Pages/Footer/TermsConditions";
-import CookiePolicy from "../Pages/Footer/CookiePolicy";
-
 import StrategicMarketing from "../Pages/services/StrategicMarketing";
 import Branding from "../Pages/services/Branding";
 import Advertising from "../Pages/services/Advertising";
 import SocialMedia from "../Pages/services/SocialMedia";
-import Blog from "../Pages/Blog";
-import BlogDetail from "../Pages/BlogDetail";
-import CaseStudies from "../Pages/CaseStudies";
-import CaseStudyDetail from "../Pages/CaseStudyDetail";
-import Whitepapers from "../Pages/Whitepapers";
-import Faq from "../Pages/Faq";
-import OurWork from "../Pages/Ourwork/ourWork";
-import ProjectDetail from "../Pages/Ourwork/ProjectDetail";
+
+// Secondary & interactive pages code-split with React.lazy
+const About = lazy(() => import("../Pages/About"));
+const Services = lazy(() => import("../Pages/services/Services"));
+const Contact = lazy(() => import("../Pages/Contact"));
+const PrivacyPolicy = lazy(() => import("../Pages/Footer/PrivacyPolicy"));
+const TermsConditions = lazy(() => import("../Pages/Footer/TermsConditions"));
+const CookiePolicy = lazy(() => import("../Pages/Footer/CookiePolicy"));
+const Blog = lazy(() => import("../Pages/Blog"));
+const BlogDetail = lazy(() => import("../Pages/BlogDetail"));
+const CaseStudies = lazy(() => import("../Pages/CaseStudies"));
+const CaseStudyDetail = lazy(() => import("../Pages/CaseStudyDetail"));
+const Whitepapers = lazy(() => import("../Pages/Whitepapers"));
+const Faq = lazy(() => import("../Pages/Faq"));
+const OurWork = lazy(() => import("../Pages/Ourwork/ourWork"));
+const ProjectDetail = lazy(() => import("../Pages/Ourwork/ProjectDetail"));
 
 const Routing = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
+    <Suspense fallback={<div className="min-h-screen w-full bg-[#0a0a0a]" />}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
 
-        {/* Main Pages */}
-        <Route index element={<Home />} />
+          {/* Main Pages */}
+          <Route index element={<Home />} />
 
-        <Route path="about" element={<About />} />
+          <Route path="about" element={<About />} />
 
-        <Route path="services" element={<Services />} />
+          <Route path="services" element={<Services />} />
 
-        <Route path="our-work" element={<OurWork />} />
-        <Route path="our-work/:id" element={<ProjectDetail />} />
+          <Route path="our-work" element={<OurWork />} />
+          <Route path="our-work/:id" element={<ProjectDetail />} />
 
-        <Route path="contact" element={<Contact />} />
+          <Route path="contact" element={<Contact />} />
 
-        <Route path="blog" element={<Blog />} />
-        <Route path="blog/:id" element={<BlogDetail />} />
+          <Route path="blog" element={<Blog />} />
+          <Route path="blog/:id" element={<BlogDetail />} />
 
-        <Route path="case-studies" element={<CaseStudies />} />
-        <Route path="case-studies/:id" element={<CaseStudyDetail />} />
+          <Route path="case-studies" element={<CaseStudies />} />
+          <Route path="case-studies/:id" element={<CaseStudyDetail />} />
 
-        <Route path="whitepapers" element={<Whitepapers />} />
+          <Route path="whitepapers" element={<Whitepapers />} />
 
-        <Route path="faq" element={<Faq />} />
+          <Route path="faq" element={<Faq />} />
 
-        {/* Legal Pages */}
-        <Route path="privacy-policy" element={<PrivacyPolicy />} />
+          {/* Legal Pages */}
+          <Route path="privacy-policy" element={<PrivacyPolicy />} />
 
-        <Route path="terms" element={<TermsConditions />} />
+          <Route path="terms" element={<TermsConditions />} />
 
-        <Route path="cookies" element={<CookiePolicy />} />
+          <Route path="cookies" element={<CookiePolicy />} />
 
-        {/* Service Pages */}
-        <Route
-          path="services/strategic-marketing"
-          element={<StrategicMarketing />}
-        />
+          {/* Service Pages */}
+          <Route
+            path="services/strategic-marketing"
+            element={<StrategicMarketing />}
+          />
 
-        <Route
-          path="services/branding"
-          element={<Branding />}
-        />
+          <Route
+            path="services/branding"
+            element={<Branding />}
+          />
 
-        <Route
-          path="services/advertising"
-          element={<Advertising />}
-        />
+          <Route
+            path="services/advertising"
+            element={<Advertising />}
+          />
 
-        <Route
-          path="services/social-media"
-          element={<SocialMedia />}
-        />
+          <Route
+            path="services/social-media"
+            element={<SocialMedia />}
+          />
 
-      </Route>
-    </Routes>
+        </Route>
+      </Routes>
+    </Suspense>
   );
 };
 

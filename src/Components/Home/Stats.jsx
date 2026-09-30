@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 const Stats = () => {
   const stats = [
     { label: "Years Experience", value: "10+" },
@@ -19,21 +17,17 @@ const Stats = () => {
 
       <div className="relative z-10 mx-auto grid w-full max-w-5xl grid-cols-2 sm:grid-cols-4 items-center justify-center gap-6 sm:gap-8 text-center">
         {stats.map((stat, index) => (
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: index * 0.08 }}
+          <div
             key={index}
             className="flex flex-col items-center justify-center text-center"
           >
             <h3 className="font-sans text-[24px] sm:text-[28px] md:text-[32px] font-bold text-white tracking-tight leading-none">
               {stat.value}
             </h3>
-            <p className="mt-1.5 font-sans text-[10px] sm:text-[10.5px] font-semibold uppercase tracking-[1.5px] text-[#71717a]">
+            <p className="mt-1.5 font-sans text-[10px] sm:text-[10.5px] font-semibold uppercase tracking-[1.5px] text-[#a1a1aa]">
               {stat.label}
             </p>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>
