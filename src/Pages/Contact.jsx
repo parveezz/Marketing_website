@@ -66,16 +66,14 @@ const Contact = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-      const result = await response.json();
-
       if (response.ok) {
-        setStatusMessage({ type: 'success', text: result.message || 'Message sent successfully!' });
+        setStatusMessage({ type: 'success', text: 'Message sent successfully!' });
         setFormData({ name: '', email: '', message: '' });
       } else {
-        setStatusMessage({ type: 'error', text: result.message || 'Something went wrong. Please try again.' });
+        setStatusMessage({ type: 'error', text: 'Failed to send message. Please try again.' });
       }
     } catch {
-      setStatusMessage({ type: 'error', text: 'Network error. Please try again later.' });
+      setStatusMessage({ type: 'error', text: 'Failed to send message. Please try again.' });
     } finally {
       setIsSubmitting(false);
     }
@@ -118,6 +116,17 @@ const Contact = () => {
             {/* Information */}
             <div className="mt-9 w-full max-w-[450px]">
 
+              {/* Leadership */}
+              <div className="border-t border-border py-4">
+                <p className="font-sans text-[12px] font-semibold uppercase tracking-[1px]">
+                  Leadership
+                </p>
+
+                <p className="mt-1 font-sans text-[12px] text-text-muted">
+                  Syed Zubair Hafeez &mdash; CEO, ZIH Marketing Consultancy
+                </p>
+              </div>
+
               {/* Phone */}
               <div className="border-t border-border py-4">
                 <p className="font-sans text-[12px] font-semibold uppercase tracking-[1px]">
@@ -125,7 +134,7 @@ const Contact = () => {
                 </p>
 
                 <p className="mt-1 font-sans text-[12px] text-text-muted">
-                  +1 (555) 123-4567
+                  <a href="tel:+919177482247" className="hover:underline">+91 91774 82247</a>
                 </p>
               </div>
 
@@ -135,9 +144,10 @@ const Contact = () => {
                   Email
                 </p>
 
-                <p className="mt-1 font-sans text-[12px] text-text-muted">
-                  hello@growth.com
-                </p>
+                <div className="mt-1 flex flex-col gap-1 font-sans text-[12px] text-text-muted">
+                  <a href="mailto:info@zhmktg.com" className="hover:underline">info@zhmktg.com</a>
+                  <a href="mailto:marketingconsultant796@gmail.com" className="hover:underline">marketingconsultant796@gmail.com</a>
+                </div>
               </div>
 
               {/* Office Hours */}
@@ -147,7 +157,7 @@ const Contact = () => {
                 </p>
 
                 <p className="mt-1 font-sans text-[12px] text-text-muted">
-                  Monday - Friday, 9:00 AM - 6:00 PM
+                  Monday - Saturday, 9:00 AM - 6:00 PM
                 </p>
               </div>
 
@@ -158,11 +168,11 @@ const Contact = () => {
                 </p>
 
                 <p className="mt-1 w-full max-w-[280px] font-sans text-[12px] leading-5 text-text-muted">
-                  123 Growth Marketing Services
+                  ZIH Marketing Consultancy
                   <br />
-                  123 Growth Avenue, Suite 400
+                  Flat No. 112, Avalon Apartments,
                   <br />
-                  Hyderabad, Telangana 500001
+                  Nanalnagar, Hyderabad - 500028
                 </p>
               </div>
 
@@ -217,7 +227,22 @@ const Contact = () => {
               below, and we&apos;ll get back to you as soon as possible.
             </p>
 
-            <form className="mt-8 w-full" onSubmit={handleContactSubmit}>
+            <AnimatePresence mode="wait">
+              {statusMessage && (
+                <motion.p
+                  key={statusMessage.text}
+                  initial={{ opacity: 0, y: -6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -6 }}
+                  transition={{ duration: 0.25 }}
+                  className={`mt-5 font-sans text-[13px] font-medium ${statusMessage.type === 'error' ? 'text-red-500' : 'text-green-600'}`}
+                >
+                  {statusMessage.text}
+                </motion.p>
+              )}
+            </AnimatePresence>
+
+            <form className="mt-6 w-full" onSubmit={handleContactSubmit}>
 
               {/* Name */}
               <div className="mb-5 w-full">
@@ -269,21 +294,6 @@ const Contact = () => {
                   className="w-full resize-none border-b border-border bg-transparent px-0 py-3 font-sans text-[14px] text-text-main outline-none placeholder:text-text-muted transition-colors focus:border-brand"
                 />
               </div>
-
-              <AnimatePresence mode="wait">
-                {statusMessage && (
-                  <motion.p
-                    key={statusMessage.text}
-                    initial={{ opacity: 0, y: -6 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -6 }}
-                    transition={{ duration: 0.25 }}
-                    className={`mb-4 font-sans text-[13px] ${statusMessage.type === 'error' ? 'text-red-500' : 'text-green-600'}`}
-                  >
-                    {statusMessage.text}
-                  </motion.p>
-                )}
-              </AnimatePresence>
 
               {/* Submit */}
               <motion.button

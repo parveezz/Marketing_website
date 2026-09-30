@@ -40,24 +40,22 @@ const Footer = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
       });
-      const result = await response.json();
-
       if (response.ok) {
         setStatusMessage({
           type: "success",
-          text: result.message || "Subscribed successfully!",
+          text: "Subscribed successfully!",
         });
         setEmail("");
       } else {
         setStatusMessage({
           type: "error",
-          text: result.message || "Something went wrong.",
+          text: "Subscription failed. Please try again.",
         });
       }
     } catch {
       setStatusMessage({
         type: "error",
-        text: "Network error. Please try again.",
+        text: "Subscription failed. Please try again.",
       });
     } finally {
       setIsSubmitting(false);
@@ -250,24 +248,28 @@ const Footer = () => {
             <h3 className="mb-4 font-sans text-[11px] font-semibold uppercase tracking-[2px] text-white">
               Get in Touch
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               <li>
                 <a
-                  href="mailto:hello@zihconsultancy.com"
+                  href="mailto:info@zhmktg.com"
                   className="inline-flex items-center gap-2 font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white"
                 >
-                  <FiMail className="text-[#c4f82a] text-[14px]" />
-                  <span>hello@zihconsultancy.com</span>
+                  <FiMail className="text-[#c4f82a] text-[14px] shrink-0" />
+                  <span>info@zhmktg.com</span>
                 </a>
               </li>
               <li>
                 <a
-                  href="tel:+15551234567"
+                  href="tel:+919177482247"
                   className="inline-flex items-center gap-2 font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white"
                 >
-                  <FiPhone className="text-[#c4f82a] text-[14px]" />
-                  <span>+1 (555) 123-4567</span>
+                  <FiPhone className="text-[#c4f82a] text-[14px] shrink-0" />
+                  <span>+91 91774 82247</span>
                 </a>
+              </li>
+              <li className="font-sans text-[12.5px] leading-relaxed text-[#71717a]">
+                Flat No. 112, Avalon Apartments,<br />
+                Nanalnagar, Hyderabad - 28
               </li>
               <li className="pt-1">
                 <Link
@@ -301,43 +303,45 @@ const Footer = () => {
             </p>
           </div>
 
-          <form onSubmit={handleNewsletterSubmit} className="flex w-full md:w-auto flex-col sm:flex-row gap-3">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              placeholder="Enter your email"
-              className="h-11 w-full sm:w-[260px] rounded-xl border border-white/10 bg-[#1a181d] px-4 font-sans text-[13.5px] text-white placeholder-[#71717a] outline-none transition-colors focus:border-[#c4f82a]"
-            />
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              type="submit"
-              disabled={isSubmitting}
-              className="h-11 shrink-0 rounded-xl bg-[#c4f82a] px-6 font-sans text-[13.5px] font-semibold text-black transition-colors duration-200 hover:bg-[#b0f516] disabled:opacity-50 cursor-pointer"
-            >
-              {isSubmitting ? "Subscribing..." : "Subscribe"}
-            </motion.button>
-          </form>
-        </motion.div>
+          <div className="flex w-full md:w-auto flex-col">
+            <form onSubmit={handleNewsletterSubmit} className="flex w-full md:w-auto flex-col sm:flex-row gap-3">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                placeholder="Enter your email"
+                className="h-11 w-full sm:w-[260px] rounded-xl border border-white/10 bg-[#1a181d] px-4 font-sans text-[13.5px] text-white placeholder-[#71717a] outline-none transition-colors focus:border-[#c4f82a]"
+              />
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                type="submit"
+                disabled={isSubmitting}
+                className="h-11 shrink-0 rounded-xl bg-[#c4f82a] px-6 font-sans text-[13.5px] font-semibold text-black transition-colors duration-200 hover:bg-[#b0f516] disabled:opacity-50 cursor-pointer"
+              >
+                {isSubmitting ? "Subscribing..." : "Subscribe"}
+              </motion.button>
+            </form>
 
-        <AnimatePresence mode="wait">
-          {statusMessage && (
-            <motion.p
-              key={statusMessage.text}
-              initial={{ opacity: 0, y: -6 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -6 }}
-              transition={{ duration: 0.25 }}
-              className={`mt-2 font-sans text-[12px] text-right ${
-                statusMessage.type === "error" ? "text-red-400" : "text-[#c4f82a]"
-              }`}
-            >
-              {statusMessage.text}
-            </motion.p>
-          )}
-        </AnimatePresence>
+            <AnimatePresence mode="wait">
+              {statusMessage && (
+                <motion.p
+                  key={statusMessage.text}
+                  initial={{ opacity: 0, y: -4 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -4 }}
+                  transition={{ duration: 0.2 }}
+                  className={`mt-2 font-sans text-[12px] ${
+                    statusMessage.type === "error" ? "text-red-400" : "text-[#c4f82a]"
+                  }`}
+                >
+                  {statusMessage.text}
+                </motion.p>
+              )}
+            </AnimatePresence>
+          </div>
+        </motion.div>
 
         {/* =========================================================
             BOTTOM LEGAL & COPYRIGHT
