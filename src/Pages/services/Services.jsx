@@ -61,6 +61,16 @@ const Services = () => {
       metric: "50,000+ Attendees Executed",
       path: "/services/event-management",
       image: "/images/project-conclave-main.jpg"
+    },
+    {
+      title: "Public Relations (PR)",
+      tagline: "Brand Authority & Targeted Channels",
+      description: "Coverage yourself in the right channels and brand yourself right. ZH Marketing Consultancy offers a comprehensive package of P.R. activities including podcasts, specialized news articles, executive interviews, and media distribution.",
+      features: ["Executive Podcasts", "Specialized News Articles", "High-Profile Interviews", "Channel Placement", "Reputation Strategy"],
+      deliverables: ["Full Podcast Production & Micro-Clips", "Tier-1 Editorial & News Placements", "Targeted Media Channel Penetration", "Founder Thought Leadership Profiles"],
+      metric: "100+ Media Placements",
+      path: "/services/public-relations",
+      image: "/images/service-planning.jpg"
     }
   ];
 
@@ -180,8 +190,7 @@ const Services = () => {
           transition={{ duration: 0.6 }}
           className="max-w-4xl"
         >
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3.5 py-1 backdrop-blur-md">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+          <div className="mb-3 inline-flex items-center rounded-full border border-white/10 bg-[#161618]/80 px-3.5 py-1 backdrop-blur-md">
             <span className="font-sans text-[11px] font-medium tracking-wide text-[#fafafa]">
               Comprehensive Capabilities
             </span>
@@ -213,22 +222,13 @@ const Services = () => {
               <div className="w-full lg:w-[48%]">
                 <Link
                   to={service.path}
-                  className="block relative overflow-hidden rounded-2xl border border-white/10 bg-[#141215] shadow-2xl group"
+                  className="block relative overflow-hidden rounded-2xl border border-white/10 bg-[#141215] group"
                 >
                   <img
                     src={service.image}
                     alt={service.title}
                     className="w-full aspect-[16/11] object-cover transition-all duration-500 group-hover:scale-105 brightness-[1.08] contrast-[1.06] saturate-[1.08]"
                   />
-                  {/* Floating Metric Badge */}
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-xl border border-white/15 bg-[#0e0f11]/85 p-3 backdrop-blur-md">
-                    <span className="font-sans text-[11px] font-medium text-[#d4d4d8] uppercase tracking-wider">
-                      Target Outcome
-                    </span>
-                    <span className="font-sans text-[12.5px] font-bold text-[#c4f82a]">
-                      {service.metric}
-                    </span>
-                  </div>
                 </Link>
               </div>
 
@@ -302,8 +302,7 @@ const Services = () => {
       <section className="relative z-10 w-full border-b border-white/10 px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 2xl:px-36 py-12 sm:py-16 bg-[#0c0a09]">
         <div className="mx-auto w-full max-w-full">
           <div className="mb-10 max-w-2xl">
-            <div className="mb-2.5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3 py-0.5 backdrop-blur-md">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+            <div className="mb-2.5 inline-flex items-center rounded-full border border-white/10 bg-[#161618]/80 px-3 py-0.5 backdrop-blur-md">
               <span className="font-sans text-[11px] font-medium tracking-wide text-[#fafafa]">
                 Execution Methodology
               </span>
@@ -350,8 +349,7 @@ const Services = () => {
       <section className="relative z-10 w-full border-b border-white/10 px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 2xl:px-36 py-12 sm:py-16 bg-[#0a0a0a]">
         <div className="mx-auto w-full max-w-full">
           <div className="mb-10 max-w-2xl">
-            <div className="mb-2.5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3 py-0.5 backdrop-blur-md">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+            <div className="mb-2.5 inline-flex items-center rounded-full border border-white/10 bg-[#161618]/80 px-3 py-0.5 backdrop-blur-md">
               <span className="font-sans text-[11px] font-medium tracking-wide text-[#fafafa]">
                 Flexible Collaboration
               </span>
@@ -425,8 +423,7 @@ const Services = () => {
         <div className="mx-auto grid w-full max-w-full grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-5 flex flex-col justify-between gap-6">
             <div>
-              <div className="mb-2.5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3 py-0.5 backdrop-blur-md">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+              <div className="mb-2.5 inline-flex items-center rounded-full border border-white/10 bg-[#161618]/80 px-3 py-0.5 backdrop-blur-md">
                 <span className="font-sans text-[11px] font-medium tracking-wide text-[#fafafa]">
                   Common Inquiries
                 </span>
@@ -466,8 +463,7 @@ const Services = () => {
               </div>
             </div>
 
-            <div className="rounded-xl border border-white/10 bg-[#141215]/40 p-3.5 flex items-center gap-2.5 text-[11.5px] text-[#a1a1aa]">
-              <span className="h-2 w-2 shrink-0 rounded-full bg-[#c4f82a]" />
+            <div className="rounded-xl border border-white/10 bg-[#141215]/40 p-3.5 flex items-center text-[11.5px] text-[#a1a1aa]">
               <span>Strict confidentiality guaranteed. Mutual NDA signed prior to any strategic or data audit.</span>
             </div>
           </div>

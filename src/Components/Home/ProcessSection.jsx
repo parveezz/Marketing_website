@@ -70,7 +70,7 @@ const ProcessSection = () => {
           {steps.map((step) => (
             <div
               key={step.number}
-              className="w-full md:w-4/5 lg:w-[62%] max-w-3xl rounded-xl border border-white/10 bg-[#141215]/90 px-4 py-3.5 sm:px-6 sm:py-4.5 backdrop-blur-md transition-all duration-300 hover:border-white/25 hover:bg-[#18151a]/95 shadow-[0_15px_40px_rgba(0,0,0,0.6)] group"
+              className="w-full md:w-4/5 lg:w-[62%] max-w-3xl rounded-xl border border-white/10 bg-[#141215]/90 px-4 py-3.5 sm:px-6 sm:py-4.5 backdrop-blur-md transition-all duration-300 hover:border-white/25 hover:bg-[#18151a]/95 group"
             >
               {/* Inner content in a ROW */}
               <div className="flex flex-col sm:flex-row items-center sm:items-center gap-3.5 sm:gap-5 w-full">

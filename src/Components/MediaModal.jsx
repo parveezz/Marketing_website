@@ -40,13 +40,13 @@ const MediaModal = ({ selectedMedia, onClose }) => {
                                 src={selectedMedia}
                                 controls
                                 autoPlay
-                                className="max-w-full max-h-full object-contain rounded-xl shadow-2xl pointer-events-auto"
+                                className="max-w-full max-h-full object-contain rounded-xl pointer-events-auto shadow-none"
                             />
                         ) : (
                             <img
                                 src={selectedMedia}
                                 alt="Expanded media"
-                                className="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl pointer-events-auto"
+                                className="max-w-full max-h-[90vh] object-contain rounded-xl pointer-events-auto shadow-none"
                             />
                         )}
                     </motion.div>

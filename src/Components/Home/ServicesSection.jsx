@@ -123,12 +123,12 @@ const ServicesSection = () => {
           {services.map((service) => (
             <div
               key={service.title}
-              className="group flex flex-col justify-between rounded-xl border border-white/10 bg-[#141215]/85 backdrop-blur-md p-5 sm:p-5.5 transition-all duration-300 hover:border-white/25 hover:bg-[#18151a]/95 hover:-translate-y-1 shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
+              className="group flex flex-col justify-between rounded-xl border border-white/10 bg-[#141215]/85 backdrop-blur-md p-5 sm:p-5.5 transition-all duration-300 hover:border-white/25 hover:bg-[#18151a]/95 hover:-translate-y-1"
             >
               <div>
                 {/* Heading Beside Icon (Horizontal Row) */}
                 <div className="flex items-center gap-3.5 mb-3">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-[#1e1c20]/90 text-[#c4f82a] shadow-inner transition-transform duration-300 group-hover:scale-105">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-[#1e1c20]/90 text-[#c4f82a] transition-transform duration-300 group-hover:scale-105">
                     {service.icon}
                   </div>
 

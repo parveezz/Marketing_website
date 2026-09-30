@@ -1,5 +1,6 @@
 import SEO from "../Components/SEO";
 import { Link } from "react-router-dom";
+import IndustriesElevate from "../Components/About/IndustriesElevate";
 
 const About = () => {
   const values = [
@@ -120,7 +121,7 @@ const About = () => {
 
           {/* Right Column: Previous About Us Image (/images/about-team.jpg) */}
           <div className="flex items-center justify-center lg:justify-end">
-            <div className="relative w-full max-w-[500px] sm:max-w-[560px] lg:max-w-[620px] overflow-hidden rounded-2xl border border-white/10 bg-[#141215] shadow-2xl group">
+            <div className="relative w-full max-w-[500px] sm:max-w-[560px] lg:max-w-[620px] overflow-hidden rounded-2xl border border-white/10 bg-[#141215] group">
               <img
                 src="/images/about-team.jpg"
                 alt="About ZIH Team"
@@ -141,8 +142,7 @@ const About = () => {
       <section className="relative w-full border-b border-white/10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-7 sm:py-9 md:py-11 overflow-hidden bg-[#0c0a09]">
         <div className="relative z-10 mx-auto w-full max-w-full">
           <div className="mb-6 sm:mb-8">
-            <div className="mb-2.5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3 py-0.5 backdrop-blur-md">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+            <div className="mb-2.5 inline-flex items-center rounded-full border border-white/10 bg-[#161618]/80 px-3 py-0.5 backdrop-blur-md">
               <span className="font-sans text-[11px] font-medium tracking-wide text-[#fafafa]">
                 Our Story
               </span>
@@ -199,8 +199,7 @@ const About = () => {
         <div className="relative z-10 mx-auto grid w-full max-w-full grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
           <div className="flex flex-col justify-between gap-6">
             <div>
-              <div className="mb-2.5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3 py-0.5 backdrop-blur-md">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+              <div className="mb-2.5 inline-flex items-center rounded-full border border-white/10 bg-[#161618]/80 px-3 py-0.5 backdrop-blur-md">
                 <span className="font-sans text-[11px] font-medium tracking-wide text-[#fafafa]">
                   What Guides Us
                 </span>
@@ -224,39 +223,18 @@ const About = () => {
                   Our Operational Commitments:
                 </p>
                 <div className="space-y-2.5">
-                  <div className="flex items-center gap-2.5 text-[12.5px] text-[#d4d4d8]">
-                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c4f82a]" />
+                  <div className="text-[12.5px] text-[#d4d4d8]">
                     <span>Senior-Led Strategy & Execution Without Junior Handoffs</span>
                   </div>
-                  <div className="flex items-center gap-2.5 text-[12.5px] text-[#d4d4d8]">
-                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c4f82a]" />
+                  <div className="text-[12.5px] text-[#d4d4d8]">
                     <span>100% Transparent Attribution, Reporting & Media Spend Clarity</span>
                   </div>
-                  <div className="flex items-center gap-2.5 text-[12.5px] text-[#d4d4d8]">
-                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c4f82a]" />
+                  <div className="text-[12.5px] text-[#d4d4d8]">
                     <span>Cross-Functional Integration With Your Internal Sales & Ops Teams</span>
                   </div>
-                  <div className="flex items-center gap-2.5 text-[12.5px] text-[#d4d4d8]">
-                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#c4f82a]" />
+                  <div className="text-[12.5px] text-[#d4d4d8]">
                     <span>Continuous Weekly Creative Iteration & Funnel Optimization</span>
                   </div>
-                </div>
-              </div>
-
-              {/* Core Pillars Tags */}
-              <div className="mt-5">
-                <p className="mb-2 font-sans text-[10.5px] font-semibold uppercase tracking-wider text-[#a1a1aa]">
-                  Industries & Domains We Elevate
-                </p>
-                <div className="flex flex-wrap gap-1.5">
-                  {["Educational Institutions", "Global Conclaves & Events", "Healthcare & Wellness", "Retail & Hospitality", "B2B Enterprise", "Consumer Brands"].map((domain) => (
-                    <span
-                      key={domain}
-                      className="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-sans text-[11px] text-[#d4d4d8]"
-                    >
-                      {domain}
-                    </span>
-                  ))}
                 </div>
               </div>
             </div>
@@ -265,8 +243,7 @@ const About = () => {
               <p className="font-sans text-[12.5px] italic text-[#d4d4d8] leading-relaxed">
                 &ldquo;Strategy without clarity is noise. Creativity without purpose is waste. We build growth engines where every creative asset serves a measurable commercial objective.&rdquo;
               </p>
-              <div className="mt-2.5 flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+              <div className="mt-2.5 flex items-center">
                 <span className="font-sans text-[10.5px] font-semibold uppercase tracking-wider text-[#c4f82a]">
                   The ZIH Creed
                 </span>
@@ -298,13 +275,17 @@ const About = () => {
       </section>
 
       {/* =====================================================
-          5. LEADERSHIP & FOUNDER MESSAGE (FEATURING CEO)
+          5. INDUSTRIES WE ELEVATE (DOMAINS & CASE WORK)
+      ====================================================== */}
+      <IndustriesElevate />
+
+      {/* =====================================================
+          6. LEADERSHIP & FOUNDER MESSAGE (FEATURING CEO)
       ====================================================== */}
       <section className="relative w-full border-b border-white/10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-10 md:py-12 overflow-hidden bg-[#0c0a09]">
         <div className="relative z-10 mx-auto w-full max-w-5xl flex flex-col items-center">
           <div className="mb-6 sm:mb-8 flex flex-col items-center text-center">
-            <div className="mb-2.5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3 py-0.5 backdrop-blur-md">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+            <div className="mb-2.5 inline-flex items-center rounded-full border border-white/10 bg-[#161618]/80 px-3 py-0.5 backdrop-blur-md">
               <span className="font-sans text-[11px] font-medium tracking-wide text-[#fafafa]">
                 Leadership
               </span>

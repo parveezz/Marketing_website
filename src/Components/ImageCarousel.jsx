@@ -52,7 +52,7 @@ const ImageCarousel = ({
                         e.currentTarget.onerror = null;
                         e.currentTarget.src = "/images/project-fallback.jpg";
                     }}
-                    className={`w-full ${heightClass} object-cover rounded-xl shadow-xl`}
+                    className={`w-full ${heightClass} object-cover rounded-xl`}
                 />
             </div>
         );
@@ -68,7 +68,7 @@ const ImageCarousel = ({
                     {/* Carousel */}
                     <div
                         ref={emblaRef}
-                        className="overflow-hidden w-full rounded-xl shadow-xl"
+                        className="overflow-hidden w-full rounded-xl"
                     >
                         <div className="flex">
                             {items.map((src, index) => (
@@ -96,9 +96,9 @@ const ImageCarousel = ({
                         type="button"
                         onClick={scrollPrev}
                         aria-label="Previous image"
-                        className="absolute left-3 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-11 h-11 rounded-full bg-[#161618]/90 border border-white/15 text-white hover:bg-[#c4f82a] hover:text-black hover:border-[#c4f82a] shadow-xl backdrop-blur-md transition-all duration-200"
+                        className="absolute left-3 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 rounded-full bg-white text-black border border-white/20 hover:bg-[#c4f82a] hover:border-[#c4f82a] transition-all duration-200 cursor-pointer shadow-none"
                     >
-                        <FiChevronLeft className="w-6 h-6" />
+                        <FiChevronLeft className="w-5 h-5" />
                     </button>
 
                     {/* RIGHT ARROW */}
@@ -106,9 +106,9 @@ const ImageCarousel = ({
                         type="button"
                         onClick={scrollNext}
                         aria-label="Next image"
-                        className="absolute right-3 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-11 h-11 rounded-full bg-[#161618]/90 border border-white/15 text-white hover:bg-[#c4f82a] hover:text-black hover:border-[#c4f82a] shadow-xl backdrop-blur-md transition-all duration-200"
+                        className="absolute right-3 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 rounded-full bg-white text-black border border-white/20 hover:bg-[#c4f82a] hover:border-[#c4f82a] transition-all duration-200 cursor-pointer shadow-none"
                     >
-                        <FiChevronRight className="w-6 h-6" />
+                        <FiChevronRight className="w-5 h-5" />
                     </button>
 
                 </div>

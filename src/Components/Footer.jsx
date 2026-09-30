@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaLinkedinIn, FaInstagram, FaXTwitter } from "react-icons/fa6";
 import { FiArrowUpRight, FiMail, FiPhone } from "react-icons/fi";
+import ZihLogo from "./Common/ZihLogo";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -54,27 +55,11 @@ const Footer = () => {
         {/* =========================================================
             TOP SECTION: LOGO + COLUMN LINKS
         ========================================================== */}
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 lg:gap-8">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-6 xl:gap-8">
           {/* Brand Col */}
-          <div className="sm:col-span-2 md:col-span-3 lg:col-span-1 lg:pr-4">
-            <Link to="/" className="inline-flex items-center gap-3 group">
-              {/* Neon Green 3D Cube Badge (Identical to Navbar) */}
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#c4f82a] text-[#0a0a0a] transition-transform duration-300 group-hover:scale-105">
-                <svg
-                  className="h-5 w-5 fill-none stroke-current"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                  <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-                  <line x1="12" y1="22.08" x2="12" y2="12" />
-                </svg>
-              </div>
-              <span className="font-sans text-[20px] font-bold tracking-[1.5px] text-white">
-                ZIH
-              </span>
+          <div className="sm:col-span-2 md:col-span-3 lg:col-span-1 lg:pr-2">
+            <Link to="/" className="inline-flex items-center" aria-label="ZIH Home">
+              <ZihLogo size="text-[24px] sm:text-[28px]" className="text-white transition-opacity hover:opacity-85" />
             </Link>
 
             <p className="mt-4 font-sans text-[13px] leading-relaxed text-[#a1a1aa] max-w-sm">
@@ -179,8 +164,47 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/services/public-relations" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
+                  Public Relations (PR)
+                </Link>
+              </li>
+              <li>
                 <Link to="/services" className="inline-block py-1 font-sans text-[13.5px] text-[#c4f82a] transition-all duration-200 hover:translate-x-1 hover:underline">
                   View All Services &rarr;
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Industries */}
+          <div>
+            <h3 className="mb-4 font-sans text-[11px] font-semibold uppercase tracking-[2px] text-white">
+              Industries
+            </h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/industries/education" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
+                  Education
+                </Link>
+              </li>
+              <li>
+                <Link to="/industries/automobiles" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
+                  Automobiles
+                </Link>
+              </li>
+              <li>
+                <Link to="/industries/real-estate" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
+                  Real Estate
+                </Link>
+              </li>
+              <li>
+                <Link to="/industries/sports" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
+                  Sports
+                </Link>
+              </li>
+              <li>
+                <Link to="/industries/food" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
+                  Food &amp; Hospitality
                 </Link>
               </li>
             </ul>

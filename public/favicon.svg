@@ -1,4 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
-  <rect width="120" height="120" rx="20" fill="#F4ECD8" />
-  <text x="60" y="66" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="44" font-weight="900" letter-spacing="1" fill="#030712" text-anchor="middle" dominant-baseline="middle">ZIH</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- Black Background -->
+  <rect width="120" height="120" rx="28" fill="#000000" />
+  <rect x="2" y="2" width="116" height="116" rx="26" stroke="#ffffff" stroke-opacity="0.15" stroke-width="2" />
+  
+  <!-- Times New Roman 'Z' in White -->
+  <text
+    x="22"
+    y="78"
+    font-family="'Times New Roman', Times, serif"
+    font-size="64"
+    font-weight="normal"
+    fill="#ffffff"
+  >
+    Z
+  </text>
+
+  <!-- Pencil 'I' in center in White -->
+  <path
+    d="M 58 28 H 63 V 72 L 60.5 86 L 58 72 Z"
+    fill="#ffffff"
+  />
+
+  <!-- Times New Roman 'H' in White -->
+  <text
+    x="72"
+    y="78"
+    font-family="'Times New Roman', Times, serif"
+    font-size="64"
+    font-weight="normal"
+    fill="#ffffff"
+  >
+    H
+  </text>
 </svg>

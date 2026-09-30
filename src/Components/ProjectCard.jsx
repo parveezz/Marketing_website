@@ -13,11 +13,11 @@ const ProjectCard = ({
     const isImageLeft = imagePosition === 'left';
 
     return (
-        <div className={`w-full px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 2xl:px-36 py-10 sm:py-14 border-b border-white/10 last:border-b-0 flex flex-col ${isImageLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-8 lg:gap-14`}>
+        <div className={`w-full px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 2xl:px-36 py-10 sm:py-14 flex flex-col ${isImageLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-8 lg:gap-14`}>
 
             {/* Image Content */}
             <div className="w-full lg:w-[52%]">
-                <Link to={buttonLink} className="block overflow-hidden rounded-2xl border border-white/10 bg-[#141215] shadow-2xl group">
+                <Link to={buttonLink} className="block overflow-hidden rounded-2xl border border-white/10 bg-[#141215] group">
                     <img
                         src={image}
                         alt={title}

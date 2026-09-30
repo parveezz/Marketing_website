@@ -65,21 +65,21 @@ const Hero = () => {
         </h1>
 
         {/* Audience Glassmorphic Pill Container */}
-        <div className="mt-5 sm:mt-7 rounded-xl sm:rounded-2xl border border-white/10 bg-[#161618]/70 backdrop-blur-md px-3 py-2 sm:px-5 sm:py-3 inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 text-[12px] sm:text-[13.5px] text-[#a1a1aa] shadow-lg">
+        <div className="mt-5 sm:mt-7 rounded-xl sm:rounded-2xl border border-white/10 bg-[#161618]/70 backdrop-blur-md px-3 py-2 sm:px-5 sm:py-3 inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 text-[12px] sm:text-[13.5px] text-[#a1a1aa]">
           <span>For</span>
-          <span className="rounded-md sm:rounded-lg border border-white/10 bg-[#212124] px-2.5 py-0.5 sm:px-3 sm:py-1 font-medium text-white shadow-sm">
+          <span className="rounded-md sm:rounded-lg border border-white/10 bg-[#212124] px-2.5 py-0.5 sm:px-3 sm:py-1 font-medium text-white">
             Startups
           </span>
           <span className="text-[#a1a1aa]">,</span>
-          <span className="rounded-md sm:rounded-lg border border-white/10 bg-[#212124] px-2.5 py-0.5 sm:px-3 sm:py-1 font-medium text-white shadow-sm">
+          <span className="rounded-md sm:rounded-lg border border-white/10 bg-[#212124] px-2.5 py-0.5 sm:px-3 sm:py-1 font-medium text-white">
             Enterprise leaders
           </span>
           <span className="text-[#a1a1aa]">,</span>
-          <span className="rounded-md sm:rounded-lg border border-white/10 bg-[#212124] px-2.5 py-0.5 sm:px-3 sm:py-1 font-medium text-white shadow-sm">
+          <span className="rounded-md sm:rounded-lg border border-white/10 bg-[#212124] px-2.5 py-0.5 sm:px-3 sm:py-1 font-medium text-white">
             Media &amp; Publishers
           </span>
           <span>and</span>
-          <span className="rounded-md sm:rounded-lg border border-white/10 bg-[#212124] px-2.5 py-0.5 sm:px-3 sm:py-1 font-medium text-white shadow-sm">
+          <span className="rounded-md sm:rounded-lg border border-white/10 bg-[#212124] px-2.5 py-0.5 sm:px-3 sm:py-1 font-medium text-white">
             Social Good
           </span>
         </div>

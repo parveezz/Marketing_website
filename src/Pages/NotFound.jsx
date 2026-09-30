@@ -48,7 +48,7 @@ const NotFound = () => {
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto">
           <Link
             to="/"
-            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto rounded-xl bg-[#c4f82a] px-6 py-3 font-sans text-[13.5px] font-semibold text-black transition-all duration-200 hover:bg-[#b0f516] hover:scale-105 cursor-pointer shadow-lg"
+            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto rounded-xl bg-[#c4f82a] px-6 py-3 font-sans text-[13.5px] font-semibold text-black transition-all duration-200 hover:bg-[#b0f516] hover:scale-105 cursor-pointer"
           >
             <FiHome className="text-base" />
             <span>Back to Home</span>

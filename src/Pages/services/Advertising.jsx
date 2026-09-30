@@ -51,7 +51,7 @@ const Advertising = () => {
                 <div className="mx-auto grid w-full max-w-full grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-16">
                     {/* Left Column: High-Clarity, Enhanced Brightness Framed Image */}
                     <div className="lg:col-span-6 w-full">
-                        <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[#141215] shadow-[0_20px_60px_rgba(0,0,0,0.85)] group">
+                        <div className="relative overflow-hidden rounded-2xl border border-white/15 bg-[#141215] group">
                             <img
                                 src="/images/service-advertising-analytics.jpg"
                                 alt="High-Performance Paid Media Analytics"
@@ -61,28 +61,12 @@ const Advertising = () => {
                                 height="600"
                                 className="w-full aspect-[4/3] object-cover transition-all duration-700 brightness-[1.08] contrast-[1.06] saturate-[1.1] group-hover:scale-105"
                             />
-                            {/* Depth Gradient Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none" />
-
-                            {/* Floating Target Outcome Chip */}
-                            <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-xl border border-white/15 bg-[#0e0f11]/90 p-3.5 backdrop-blur-md">
-                                <div className="flex items-center gap-2.5">
-                                    <span className="h-2 w-2 rounded-full bg-[#c4f82a]" />
-                                    <span className="font-sans text-[11.5px] font-medium text-[#d4d4d8]">
-                                        Performance Yield
-                                    </span>
-                                </div>
-                                <span className="font-sans text-[12px] font-bold text-[#c4f82a]">
-                                    -42% Target CAC
-                                </span>
-                            </div>
                         </div>
                     </div>
 
                     {/* Right Column: Acquisition Narrative, Pillars & CTA */}
                     <div className="lg:col-span-6 flex flex-col items-start">
-                        <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3.5 py-1 backdrop-blur-md">
-                            <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+                        <div className="mb-3 inline-flex items-center rounded-full border border-white/10 bg-[#161618]/80 px-3.5 py-1 backdrop-blur-md">
                             <span className="font-sans text-[11px] font-medium tracking-wide text-[#fafafa]">
                                 Performance Media • Paid Acquisition
                             </span>
@@ -187,18 +171,25 @@ const Advertising = () => {
                                 </div>
                             </div>
 
-                            {/* Active Ad Ecosystems */}
+                            {/* Active Ad Ecosystems & Types */}
                             <div className="mt-5">
                                 <p className="mb-2 font-sans text-[10.5px] font-semibold uppercase tracking-wider text-[#a1a1aa]">
-                                    Managed Ad Ecosystems
+                                    Advertising Types & Formats
                                 </p>
                                 <div className="flex flex-wrap gap-1.5">
-                                    {["Google Search & PMax", "Meta Ads Manager", "YouTube Direct Response", "LinkedIn B2B ABM", "Programmatic DSP", "Retargeting Matrices"].map((platform) => (
+                                    {[
+                                        "Newspaper Advt",
+                                        "Digital Advt",
+                                        "Pamphlets & Flyers",
+                                        "Corporate Brochures",
+                                        "Electronic & LED Advt",
+                                        "Outdoor Hoardings"
+                                    ].map((format) => (
                                         <span
-                                            key={platform}
+                                            key={format}
                                             className="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 font-sans text-[11px] text-[#d4d4d8]"
                                         >
-                                            {platform}
+                                            {format}
                                         </span>
                                     ))}
                                 </div>

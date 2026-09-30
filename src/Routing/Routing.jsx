@@ -10,6 +10,7 @@ import Branding from "../Pages/services/Branding";
 import Advertising from "../Pages/services/Advertising";
 import SocialMedia from "../Pages/services/SocialMedia";
 import EventManagement from "../Pages/services/EventManagement";
+import PublicRelations from "../Pages/services/PublicRelations";
 
 // Secondary & interactive pages code-split with React.lazy
 const About = lazy(() => import("../Pages/About"));
@@ -26,6 +27,7 @@ const Whitepapers = lazy(() => import("../Pages/Whitepapers"));
 const Faq = lazy(() => import("../Pages/Faq"));
 const OurWork = lazy(() => import("../Pages/Ourwork/ourWork"));
 const ProjectDetail = lazy(() => import("../Pages/Ourwork/ProjectDetail"));
+const IndustryDetail = lazy(() => import("../Pages/IndustryDetail"));
 const NotFound = lazy(() => import("../Pages/NotFound"));
 
 const Routing = () => {
@@ -96,6 +98,19 @@ const Routing = () => {
             path="services/events"
             element={<EventManagement />}
           />
+
+          <Route
+            path="services/public-relations"
+            element={<PublicRelations />}
+          />
+          <Route
+            path="services/pr"
+            element={<PublicRelations />}
+          />
+
+          {/* Dynamic Industry Practice Routes */}
+          <Route path="industries/:slug" element={<IndustryDetail />} />
+          <Route path="industry/:slug" element={<IndustryDetail />} />
 
           {/* 404 Catch-All Page for Any Unmatched URL */}
           <Route path="*" element={<NotFound />} />

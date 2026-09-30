@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import ServicesDropdown from "./ServicesDropdown";
+import ZihLogo from "./Common/ZihLogo";
 
 const Navbar = () => {
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -48,7 +49,7 @@ const Navbar = () => {
 
   const navLinkClass = ({ isActive }) =>
     `rounded-full font-sans text-[13.5px] font-medium transition-all duration-200 px-6 py-1.5 ${isActive
-      ? "bg-white/10 text-white shadow-sm"
+      ? "bg-white/10 text-white"
       : "text-[#a1a1aa] hover:text-white hover:bg-white/5"
     }`;
 
@@ -65,38 +66,21 @@ const Navbar = () => {
           <div className="flex h-[76px] items-center justify-between">
 
             {/* =========================================================
-                LEFT: LOGO WITH NEON ISOMETRIC CUBE
+                LEFT: BRAND LOGO (TIMES NEW ROMAN Z|H WITH WHITE BG)
             ========================================================== */}
             <Link
               to="/"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center gap-3.5 group cursor-pointer z-[60]"
+              className="flex items-center cursor-pointer z-[60] py-1"
+              aria-label="ZIH Home"
             >
-              {/* Neon Green 3D Cube Badge */}
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#c4f82a] text-[#0a0a0a] transition-transform duration-300 group-hover:scale-105">
-                <svg
-                  className="h-6 w-6 fill-none stroke-current"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                  <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-                  <line x1="12" y1="22.08" x2="12" y2="12" />
-                </svg>
-              </div>
-
-              {/* Brand Name */}
-              <span className="font-sans text-[20px] font-bold tracking-tight text-white transition-colors group-hover:text-white/90">
-                ZIH
-              </span>
+              <ZihLogo size="text-[26px] sm:text-[30px]" className="text-white transition-opacity hover:opacity-85" />
             </Link>
 
             {/* =========================================================
                 CENTER: NAVIGATION LINKS (ENCLOSED PILL BACKGROUND)
             ========================================================== */}
-            <div className="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-[#141215]/90 p-1.5 backdrop-blur-md shadow-inner">
+            <div className="hidden md:flex items-center gap-1 rounded-full border border-white/10 bg-[#141215]/90 p-1.5 backdrop-blur-md">
               <NavLink to="/" className={navLinkClass} end>
                 Home
               </NavLink>
@@ -115,7 +99,7 @@ const Navbar = () => {
                   to="/services"
                   className={({ isActive }) =>
                     `flex items-center gap-1.5 rounded-full font-sans text-[13.5px] font-medium transition-all duration-200 px-6 py-1.5 ${isActive || servicesOpen
-                      ? "bg-white/10 text-white shadow-sm"
+                      ? "bg-white/10 text-white"
                       : "text-[#a1a1aa] hover:text-white hover:bg-white/5"
                     }`
                   }
@@ -262,6 +246,15 @@ const Navbar = () => {
                       }
                     >
                       Event Management
+                    </NavLink>
+                    <NavLink
+                      to="/services/public-relations"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={({ isActive }) =>
+                        `py-1 font-sans text-[15px] ${isActive ? "text-white" : "text-[#a1a1aa] hover:text-white"}`
+                      }
+                    >
+                      Public Relations (PR)
                     </NavLink>
                   </div>
                 </div>

@@ -79,7 +79,7 @@ const Testimonials = () => {
           {stories.map((story) => (
             <div
               key={story.name}
-              className="group flex flex-col justify-between rounded-xl border border-white/10 bg-[#141215]/85 p-4 sm:p-5 backdrop-blur-md transition-all duration-300 hover:border-white/25 hover:bg-[#18151a]/95 hover:-translate-y-1 shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
+              className="group flex flex-col justify-between rounded-xl border border-white/10 bg-[#141215]/85 p-4 sm:p-5 backdrop-blur-md transition-all duration-300 hover:border-white/25 hover:bg-[#18151a]/95 hover:-translate-y-1"
             >
               <div>
                 {/* Top Profile Header */}

@@ -22,23 +22,15 @@ const OurWork = () => {
                 description="Explore our portfolio of marketing and digital solutions. View our past work and success stories."
             />
 
-            {/* Background Vertical Grid Guide Lines (12 Columns) */}
-            <div className="pointer-events-none absolute inset-0 grid grid-cols-6 md:grid-cols-12 z-0">
-                {Array.from({ length: 12 }).map((_, i) => (
-                    <div key={i} className="border-r border-white/[0.04] h-full" />
-                ))}
-            </div>
-
             {/* Hero Section */}
-            <section className="relative z-10 w-full border-b border-white/10 px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 2xl:px-36 py-8 sm:py-11 md:py-14 bg-[#0c0a09]">
+            <section className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 2xl:px-36 py-8 sm:py-11 md:py-14 bg-[#0c0a09]">
                 <motion.div
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     className="max-w-4xl"
                 >
-                    <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3.5 py-1 backdrop-blur-md">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+                    <div className="mb-3 inline-flex items-center rounded-full border border-white/10 bg-[#161618]/80 px-3.5 py-1 backdrop-blur-md">
                         <span className="font-sans text-[11px] font-medium tracking-wide text-[#fafafa]">
                             Selected Portfolio
                         </span>
@@ -55,14 +47,14 @@ const OurWork = () => {
             </section>
 
             {/* Category Filter Section */}
-            <section className="relative z-10 w-full border-b border-white/10 px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 2xl:px-36 py-4 sm:py-5 bg-[#0e0c0b]/60 backdrop-blur-md">
+            <section className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 2xl:px-36 py-4 sm:py-5 bg-[#0e0c0b]/60 backdrop-blur-md">
                 <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                     {categories.map((category) => (
                         <button
                             key={category}
                             onClick={() => setActiveCategory(category)}
                             className={`px-4 sm:px-5 py-2 rounded-full text-[12.5px] sm:text-[13px] font-semibold transition-all duration-200 font-sans cursor-pointer ${activeCategory === category
-                                    ? 'bg-[#c4f82a] text-black shadow-sm'
+                                    ? 'bg-[#c4f82a] text-black'
                                     : 'bg-[#141215]/80 text-[#a1a1aa] hover:text-white hover:bg-white/10 border border-white/10'
                                 }`}
                         >

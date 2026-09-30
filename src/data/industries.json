@@ -1,0 +1,256 @@
+[
+  {
+    "id": "education",
+    "slug": "education",
+    "title": "Education & Academic Institutions",
+    "badge": "Academic Excellence",
+    "tagline": "Student Enrollment, Reputation Architecture & Campus Spectacles",
+    "heroDescription": "From premier K-12 international academies to universities and pre-schools, we build high-converting admissions funnels, institutional brand prestige, and unforgettable annual events.",
+    "overview": "Educational institutions require a delicate balance of academic gravitas, parental trust, and student excitement. We partner with school leadership to manage digital admissions campaigns, campus investiture ceremonies, sports days, and executive PR.",
+    "stats": [
+      { "label": "Admissions Pipeline Lift", "value": "+38%" },
+      { "label": "Campus Event Attendees", "value": "25,000+" },
+      { "label": "Cost Per Qualified Lead", "value": "-45%" }
+    ],
+    "solutions": [
+      {
+        "title": "Admissions Demand Funnels",
+        "description": "Hyper-targeted Google Search, Meta Ads, and local SEO campaigns targeting high-intent parents during critical enrollment windows."
+      },
+      {
+        "title": "School Ceremony & Annual Day Staging",
+        "description": "Grand auditorium and ground productions including Investiture ceremonies, sports days, and cultural galas with synchronized lighting, acoustics, and live streaming."
+      },
+      {
+        "title": "Prospectus, Pamphlet & Print Collateral",
+        "description": "Premium print design for admissions brochures, curriculum guides, open-house banners, and local neighborhood distribution."
+      },
+      {
+        "title": "Executive Podcasts & Principal PR",
+        "description": "Positioning school founders and principals as education thought leaders through specialized news articles and video interviews."
+      }
+    ],
+    "keyDeliverables": [
+      "Full-Year Digital Admissions Funnel Architecture",
+      "Turnkey Annual Day & Sports Meet Staging",
+      "High-Res Ceremony Photography & 24hr Reel Delivery",
+      "Prospectus, Pamphlets & Newspaper Advertisements",
+      "Parent Community Engagement & Social Management"
+    ],
+    "clientProjects": [
+      {
+        "name": "Pallavi International School",
+        "detail": "Investiture Ceremony & Annual Day production with high-fidelity stagecraft."
+      },
+      {
+        "name": "Indus International School",
+        "detail": "Host partner for ISSO Athletics Games at G.M.C Balayogi Stadium."
+      },
+      {
+        "name": "Smart Kids Play Zone & Preschool",
+        "detail": "Annual day, sports day orchestration & neighborhood admissions campaigns."
+      }
+    ],
+    "quote": "Education branding isn't about marketing a service; it's about earning a family's sacred trust for their child's future."
+  },
+  {
+    "id": "automobiles",
+    "slug": "automobiles",
+    "title": "Automobiles & Dealership Networks",
+    "badge": "Automotive Growth",
+    "tagline": "Test Drive Velocity, Showroom Footfall & High-Impact Model Launches",
+    "heroDescription": "Engineering customer acquisition engines and high-prestige reveal events for automotive dealerships, EV manufacturers, and luxury auto brands.",
+    "overview": "In the automotive sector, customer conversion hinges on high-intent lead generation, rapid test drive scheduling, and memorable experiential launch events that turn automotive enthusiasts into proud owners.",
+    "stats": [
+      { "label": "Qualified Test Drive Leads", "value": "15,000+" },
+      { "label": "Launch Event Footfall", "value": "5,000+" },
+      { "label": "Dealership ROAS Target", "value": "5.2x" }
+    ],
+    "solutions": [
+      {
+        "title": "Hyper-Local Test Drive Acquisition",
+        "description": "Pinpoint Google Search, Performance Max, and Meta social ads driving instant WhatsApp and CRM test drive bookings."
+      },
+      {
+        "title": "New Vehicle Launch & Showroom Reveals",
+        "description": "Turnkey opening events, theatrical car unveilings with synchronized LED visuals, smoke, lighting, and VIP customer receptions."
+      },
+      {
+        "title": "Auto Expo & Mall Activations",
+        "description": "High-footfall pop-up display booths and test drive simulators deployed in premier shopping malls and trade expos."
+      },
+      {
+        "title": "Electronic & Outdoor Hoarding Blitz",
+        "description": "High-visibility arterial road billboards, electronic LED screen placements, and regional newspaper print features."
+      }
+    ],
+    "keyDeliverables": [
+      "Omnichannel Paid Search & Meta Test-Drive Campaigns",
+      "VIP Launch Event Staging & Live Unveiling Production",
+      "Automotive Walkaround Videos & Dynamic Ad Creative",
+      "Electronic LED Billboards & Newspaper Full-Page Features",
+      "Showroom Collateral, Brochures & Vehicle Spec Sheets"
+    ],
+    "clientProjects": [
+      {
+        "name": "Dealership Showroom Launches",
+        "detail": "Curated launch events with VIP invitees, dynamic lighting, and red-carpet media."
+      },
+      {
+        "name": "High-Visibility Hoarding & Print Blitz",
+        "detail": "Strategic citywide placement across high-traffic transit corridors."
+      }
+    ],
+    "quote": "In automotive marketing, the feeling of acceleration begins long before the customer touches the steering wheel."
+  },
+  {
+    "id": "real-estate",
+    "slug": "real-estate",
+    "title": "Real Estate & Luxury Developments",
+    "badge": "Property Velocity",
+    "tagline": "Property Sales Velocity, Gated Community Galas & Investor Conclaves",
+    "heroDescription": "Accelerating sales velocity for premium residential towers, gated communities, commercial parks, and plotting developments across prime metros.",
+    "overview": "High-ticket real estate requires immense credibility, aspirational lifestyle storytelling, and seamless on-ground property events that build buyer urgency and trust.",
+    "stats": [
+      { "label": "Inventory Velocity Lift", "value": "3.2x" },
+      { "label": "Site Visit Footfall", "value": "12,000+" },
+      { "label": "Verified Buyer CAC", "value": "-40%" }
+    ],
+    "solutions": [
+      {
+        "title": "HNW & NRI High-Intent Acquisition",
+        "description": "Targeted digital advertising across Google, LinkedIn, and Meta focusing on affluent investors and NRI buyers looking for premium assets."
+      },
+      {
+        "title": "Gated Community & Clubhouse Events",
+        "description": "Exclusive lifestyle events, anniversary galas, and weekend property festivals inside gated communities to spur referrals and phase launches."
+      },
+      {
+        "title": "Property Expos & Channel Partner Meets",
+        "description": "Grand builder summits, channel partner award nights, and interactive expo booths with 3D walkthrough models and stage fabrication."
+      },
+      {
+        "title": "Luxury Brochures & Electronic Signage",
+        "description": "Architectural coffee table brochures, site hoarding design, digital walkthrough reels, and drone fly-through cinematography."
+      }
+    ],
+    "keyDeliverables": [
+      "Full-Funnel Real Estate Lead Generation & CRM Handoff",
+      "Groundbreaking, Phase Launch & Handover Event Staging",
+      "Luxury Project Brochures, Floor Plan Books & Leaflets",
+      "Gated Community Resident Galas & Weekend Activations",
+      "Drone Aerial Cinematography & Architectural Video Tours"
+    ],
+    "clientProjects": [
+      {
+        "name": "World Business Conclave",
+        "detail": "High-level summit orchestration bringing together premier developers and institutional investors."
+      },
+      {
+        "name": "Gated Community Lifestyle Ceremonies",
+        "detail": "Curated resident events, stage productions, and phase launch celebrations."
+      }
+    ],
+    "quote": "Real estate is the biggest purchase of a person's life. We engineer the prestige and trust that makes their decision effortless."
+  },
+  {
+    "id": "sports",
+    "slug": "sports",
+    "title": "Sports Tournaments & Athletics",
+    "badge": "Sports Management",
+    "tagline": "Stadium Branding, Multi-Cam Broadcasts & High-Adrenaline Spectacles",
+    "heroDescription": "Delivering world-class sports management, stadium fabrication, dynamic perimeter branding, and live broadcast coverage for national tournaments and athletic meets.",
+    "overview": "Live sports demand split-second precision, massive physical crowd orchestration, and electric atmosphere. We bridge sports management with high-octane branding and real-time social reels.",
+    "stats": [
+      { "label": "Athletes & Attendees Managed", "value": "50,000+" },
+      { "label": "Real-Time Content Delivery", "value": "< 4 hrs" },
+      { "label": "Live Stadium Screens Uptime", "value": "100%" }
+    ],
+    "solutions": [
+      {
+        "title": "Stadium Branding & Perimeter Signage",
+        "description": "Transforming massive sports arenas with bold trackside banners, podium backdrops, athlete holding pens, and sponsor activation booths."
+      },
+      {
+        "title": "Multi-Camera Live Broadcast & Sports Media",
+        "description": "High-speed sports photography, multi-camera live streaming, instant replay systems, and action highlight reels delivered during the tournament."
+      },
+      {
+        "title": "Opening Ceremonies & Medal Presentations",
+        "description": "March-past choreography, dignitary protocol, torchlighting staging, national anthems, and prestigious medal podium presentations."
+      },
+      {
+        "title": "Sponsor Integration & Brand Amplification",
+        "description": "Maximizing ROI for tournament sponsors through strategic logo placement, jersey branding, and branded digital scorecards."
+      }
+    ],
+    "keyDeliverables": [
+      "360° Stadium & Arena Visual Identity Deployment",
+      "High-Speed Sports Cinematography & Drone Tracking",
+      "Live LED Scoreboard & Digital Display Engineering",
+      "VIP Athlete & Dignitary Protocol Management",
+      "Tournament Social Media Engine & Press Syndication"
+    ],
+    "clientProjects": [
+      {
+        "name": "ISSO Games Athletics 2025-26",
+        "detail": "Branding, media coverage, and live operations at G.M.C Balayogi Stadium, powered by Adani."
+      },
+      {
+        "name": "South Zone State Chess Championship",
+        "detail": "End-to-end tournament staging, digital registration, and live media documentation."
+      }
+    ],
+    "quote": "In sports, energy is everything. We capture every drop of sweat, triumph, and glory and turn it into lasting brand legacy."
+  },
+  {
+    "id": "food",
+    "slug": "food",
+    "title": "Food, Beverages & Hospitality",
+    "badge": "Culinary & QSR",
+    "tagline": "Footfall Ignition, Franchise Branding & Experiential Taste Activations",
+    "heroDescription": "Building crave-worthy culinary brands, viral food marketing, opening launch events, and franchise scaling systems for restaurants, cafes, and QSR chains.",
+    "overview": "In the F&B industry, appetite begins with the eyes. We combine mouth-watering visual production with hyper-local geo-targeted footfall advertising, opening launch festivals, and packaging systems.",
+    "stats": [
+      { "label": "Footfall Increase at Launch", "value": "+210%" },
+      { "label": "Social Video Views Generated", "value": "2.5M+" },
+      { "label": "Franchise Inquiries", "value": "500+" }
+    ],
+    "solutions": [
+      {
+        "title": "Hyper-Local Geo-Fenced Campaigns",
+        "description": "Targeting hungry customers within a 5km radius across Instagram, Google Maps, and Meta to pack dining rooms during lunch and dinner rushes."
+      },
+      {
+        "title": "Grand Opening & Food Festival Staging",
+        "description": "High-energy opening parties, ribbon-cutting ceremonies, influencer tasting tables, live acoustic sets, and pop-up street food stalls."
+      },
+      {
+        "title": "Visual Menus, Pamphlets & Packaging",
+        "description": "Appetizing food photography, menu engineering for high average check sizes, direct-mail pamphlets, and takeout packaging systems."
+      },
+      {
+        "title": "Franchise Expansion PR & Podcasts",
+        "description": "Attracting multi-unit franchisees through business podcasts, specialized F&B trade articles, and founder journey features."
+      }
+    ],
+    "keyDeliverables": [
+      "Hyper-Local Footfall Acquisition Campaigns",
+      "Grand Opening Event Staging & Food Tasting Logistics",
+      "High-End Food & Beverage Cinematography (4K Macro)",
+      "Menu Engineering, Pamphlets & Table Collateral",
+      "Franchise Lead Generation & Investor Pitch Decks"
+    ],
+    "clientProjects": [
+      {
+        "name": "Hyderabad Chai",
+        "detail": "Visual branding, outlet launch marketing, and viral social content creation."
+      },
+      {
+        "name": "F&B Conclave & Hospitality Catering",
+        "detail": "Curated food stalls and hospitality lounges at high-profile business summits."
+      }
+    ],
+    "quote": "Great food feeds the body. Great food branding creates a cultural ritual that people crave daily."
+  }
+]
