@@ -48,6 +48,10 @@ const ImageCarousel = ({
                 <img
                     src={src}
                     alt="Project media"
+                    onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = "/images/project-fallback.jpg";
+                    }}
                     className={`w-full ${heightClass} object-cover rounded-xl shadow-xl`}
                 />
             </div>
@@ -76,6 +80,10 @@ const ImageCarousel = ({
                                     <img
                                         src={src}
                                         alt={`Slide ${index + 1}`}
+                                        onError={(e) => {
+                                            e.currentTarget.onerror = null;
+                                            e.currentTarget.src = "/images/project-fallback.jpg";
+                                        }}
                                         className={`w-full ${heightClass} object-cover`}
                                     />
                                 </div>

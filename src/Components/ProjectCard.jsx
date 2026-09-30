@@ -21,6 +21,10 @@ const ProjectCard = ({
                     <img
                         src={image}
                         alt={title}
+                        onError={(e) => {
+                            e.currentTarget.onerror = null;
+                            e.currentTarget.src = "/images/project-fallback.jpg";
+                        }}
                         className="w-full aspect-[16/10] object-cover transition-all duration-500 group-hover:scale-105"
                     />
                 </Link>

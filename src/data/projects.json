@@ -98,11 +98,7 @@
     "aboutTitle": "About the Coverage",
     "videoHighlightsTitle": "Video Highlights",
     "videoHighlightsDescription": "Watch some of the key moments and final deliverables from our engagement.",
-    "carouselVideos": [
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-    ],
+    "carouselVideos": [],
     "testimonial": {
       "quote": "The photography and video coverage of our ceremony was elegant and professional. They preserved memories that will last a lifetime.",
       "author": "Event Coordinator",
@@ -153,11 +149,7 @@
     "aboutTitle": "About the Launch",
     "videoHighlightsTitle": "Video Highlights",
     "videoHighlightsDescription": "Watch some of the key moments and final deliverables from our engagement.",
-    "carouselVideos": [
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-    ],
+    "carouselVideos": [],
     "testimonial": {
       "quote": "An absolute pleasure to work with. The team brought unmatched creativity and professionalism to our project, delivering outstanding results.",
       "author": "Satisfied Client",
@@ -254,12 +246,13 @@
         "description": "Designing and deploying championship backdrops, standees, and ceremonial stage graphics."
       }
     ],
-    "mainImage": "/images/project-chess-main.jpg",
+    "mainImage": "/videos/Chess/img3.jpg",
     "carouselImages": [
       "/videos/Chess/img1.jpg",
       "/videos/Chess/img2.jpg",
       "/videos/Chess/img3.jpg",
-      "/videos/Chess/img4.jpg"
+      "/videos/Chess/img4.jpg",
+      "/videos/Chess/img5.jpg"
     ],
     "aboutTitle": "About the Tournament",
     "videoHighlightsTitle": "Video Highlights",
@@ -311,7 +304,7 @@
         "description": "Synchronizing wide-angle auditorium feeds with close-up podium audio and lighting."
       }
     ],
-    "mainImage": "/images/project-conclave-main.jpg",
+    "mainImage": "/videos/conclave/img3.jpg",
     "carouselImages": [
       "/videos/conclave/img1.jpg",
       "/videos/conclave/img2.jpg",
@@ -368,7 +361,7 @@
         "description": "Editing a cohesive multi-angle highlight film capturing the march-past, oath ceremony, and parent pride."
       }
     ],
-    "mainImage": "/images/project-pallavi-pocharam-main.jpg",
+    "mainImage": "/videos/pocharam-palavi/img3.jpg",
     "carouselImages": [
       "/videos/pocharam-palavi/img1.jpg",
       "/videos/pocharam-palavi/img2.jpg",
@@ -545,11 +538,7 @@
     "aboutTitle": "About the Campaign",
     "videoHighlightsTitle": "Video Highlights",
     "videoHighlightsDescription": "Watch some of the key moments and final deliverables from our engagement.",
-    "carouselVideos": [
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-    ],
+    "carouselVideos": [],
     "testimonial": {
       "quote": "Our ROI skyrocketed after deploying their targeted multi-channel ad strategy. They truly understand our audience.",
       "author": "Marketing Head",
