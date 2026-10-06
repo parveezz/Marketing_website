@@ -1,9 +1,12 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
+Allow: /images/
+Allow: /videos/
 
 # Block backend scripts and mailers from indexing
 Disallow: /api/
+Disallow: /*.php$
 
 # Sitemap location
 Sitemap: https://www.zhmktg.com/sitemap.xml

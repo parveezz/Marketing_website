@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Navbar Main Links -->
+  <!-- Core Main Pages -->
   <url>
     <loc>https://www.zhmktg.com/</loc>
     <priority>1.0</priority>
@@ -8,14 +8,51 @@
   </url>
   <url>
     <loc>https://www.zhmktg.com/about</loc>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.zhmktg.com/services</loc>
     <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/our-work</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/case-studies</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/blog</loc>
+    <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/whitepapers</loc>
+    <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://www.zhmktg.com/faq</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/contact</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/feedback</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Service Practice Pages -->
   <url>
     <loc>https://www.zhmktg.com/services/strategic-marketing</loc>
     <priority>0.8</priority>
@@ -37,13 +74,151 @@
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>https://www.zhmktg.com/our-work</loc>
-    <priority>0.9</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://www.zhmktg.com/contact</loc>
+    <loc>https://www.zhmktg.com/services/event-management</loc>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/services/public-relations</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/services/consultation-services</loc>
+    <priority>0.85</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Portfolio / Our Work Projects -->
+  <url>
+    <loc>https://www.zhmktg.com/our-work/isso-games</loc>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/our-work/investiture-ceremony</loc>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/our-work/hcc-mehdipatnam</loc>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/our-work/aekaksh-preschool</loc>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/our-work/chess-tournament-2026</loc>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/our-work/world-business-conclave-2026</loc>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/our-work/pallavi-school-pocharam-2026</loc>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/our-work/pallavi-school-bachupally-2026</loc>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/our-work/smart-kids-play-school</loc>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/our-work/advertisements-promotions</loc>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Case Studies -->
+  <url>
+    <loc>https://www.zhmktg.com/case-studies/fintech-innovators</loc>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/case-studies/ecoretail</loc>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/case-studies/saas-platform-x</loc>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/case-studies/local-services-co</loc>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/case-studies/healthtech-innovations</loc>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/case-studies/global-logistics-corp</loc>
+    <priority>0.75</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Blog Articles -->
+  <url>
+    <loc>https://www.zhmktg.com/blog/fallacy-of-quick-wins</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/blog/brand-identity-losing-money</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/blog/mastering-paid-social-cookieless</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/blog/technical-seo-checklist</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/blog/power-of-ugc</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/blog/b2b-podcasting</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
+  <!-- Legal & Compliance -->
+  <url>
+    <loc>https://www.zhmktg.com/privacy-policy</loc>
+    <priority>0.4</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/terms-conditions</loc>
+    <priority>0.4</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.zhmktg.com/cookie-policy</loc>
+    <priority>0.4</priority>
+    <changefreq>yearly</changefreq>
   </url>
 </urlset>
