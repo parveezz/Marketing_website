@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaLinkedinIn, FaInstagram, FaXTwitter } from "react-icons/fa6";
+import { FaLinkedinIn, FaInstagram, FaFacebookF, FaThreads, FaXTwitter } from "react-icons/fa6";
 import { FiArrowUpRight, FiMail, FiPhone, FiStar } from "react-icons/fi";
 import ZihLogo from "./Common/ZihLogo";
 
@@ -78,13 +78,31 @@ const Footer = () => {
                 <FaLinkedinIn size={13} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/zh_marketing_consultancy?stkn=MTh0aG9iOHZ1MjhlbQ=="
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
                 className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#a1a1aa] transition-all duration-200 hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/10 hover:text-[#c4f82a]"
               >
                 <FaInstagram size={13} />
+              </a>
+              <a
+                href="https://www.facebook.com/share/1GnAU8YwcU/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#a1a1aa] transition-all duration-200 hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/10 hover:text-[#c4f82a]"
+              >
+                <FaFacebookF size={13} />
+              </a>
+              <a
+                href="https://www.threads.com/@zh_marketing_consultancy"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Threads"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#a1a1aa] transition-all duration-200 hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/10 hover:text-[#c4f82a]"
+              >
+                <FaThreads size={13} />
               </a>
               <a
                 href="https://x.com"
