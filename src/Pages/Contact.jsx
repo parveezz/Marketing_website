@@ -134,7 +134,7 @@ const Contact = () => {
                 </p>
 
                 <p className="mt-1 font-sans text-[12px] text-text-muted">
-                  <a href="tel:+919177482247" className="hover:underline">+91 91774 82247</a>
+                  <a href="tel:+919177482247" className="hover:underline">+91 9177482247</a>
                 </p>
               </div>
 
@@ -145,8 +145,8 @@ const Contact = () => {
                 </p>
 
                 <div className="mt-1 flex flex-col gap-1 font-sans text-[12px] text-text-muted">
+                  <a href="mailto:zhmktg.in@gmail.com" className="hover:underline">zhmktg.in@gmail.com</a>
                   <a href="mailto:info@zhmktg.com" className="hover:underline">info@zhmktg.com</a>
-                  <a href="mailto:marketingconsultant796@gmail.com" className="hover:underline">marketingconsultant796@gmail.com</a>
                 </div>
               </div>
 
@@ -388,4 +388,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Contact;

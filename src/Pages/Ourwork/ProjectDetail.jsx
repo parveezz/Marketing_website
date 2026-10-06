@@ -16,7 +16,10 @@ const ProjectDetail = () => {
     if (!project) {
         return (
             <main className="relative w-full flex flex-col items-center justify-center min-h-[75vh] bg-[#0a0a0a] text-white px-6">
-                <SEO title="Project Not Found | Our Work" description="The project you are looking for does not exist." />
+                <SEO
+                    title="Project Not Found | Our Work"
+                    description="The project you are looking for does not exist."
+                />
                 <div className="mb-3 inline-flex items-center rounded-full border border-white/10 bg-[#161618] px-3.5 py-1">
                     <span className="font-sans text-[11px] font-medium tracking-wide text-[#fafafa]">
                         Case Study Archive
@@ -38,6 +41,15 @@ const ProjectDetail = () => {
             </main>
         );
     }
+
+    // Safe derived values (fix: null-safe checks used consistently below)
+    const carouselImages = Array.isArray(project.carouselImages) ? project.carouselImages : [];
+    const carouselVideos = Array.isArray(project.carouselVideos) ? project.carouselVideos : [];
+    const challenges = Array.isArray(project.challenges) ? project.challenges : [];
+    const aboutParagraphs = Array.isArray(project.aboutParagraphs) ? project.aboutParagraphs : [];
+    const topSectionParagraphs = Array.isArray(project.topSectionParagraphs) ? project.topSectionParagraphs : [];
+
+    const totalAssets = carouselImages.length + carouselVideos.length;
 
     return (
         <main className="relative w-full bg-[#0a0a0a] text-white min-h-screen overflow-hidden">
@@ -92,11 +104,13 @@ const ProjectDetail = () => {
                                 {project.headline || project.title}
                             </h1>
 
-                            <div className="space-y-3 font-sans text-[14px] sm:text-[15px] leading-relaxed text-[#a1a1aa] max-w-2xl">
-                                {project.topSectionParagraphs && project.topSectionParagraphs.map((paragraph, index) => (
-                                    <p key={index}>{paragraph}</p>
-                                ))}
-                            </div>
+                            {topSectionParagraphs.length > 0 && (
+                                <div className="space-y-3 font-sans text-[14px] sm:text-[15px] leading-relaxed text-[#a1a1aa] max-w-2xl">
+                                    {topSectionParagraphs.map((paragraph, index) => (
+                                        <p key={index}>{paragraph}</p>
+                                    ))}
+                                </div>
+                            )}
                         </motion.div>
 
                         {/* Right: Project Specifications (Clean List, Zero Shadow Boxes) */}
@@ -120,7 +134,7 @@ const ProjectDetail = () => {
                                     Core Practice
                                 </span>
                                 <span className="font-sans text-[13px] font-medium text-[#d4d4d8] mt-1 block">
-                                    {project.category || "Strategic Execution"}
+                                    {project.category || 'Strategic Execution'}
                                 </span>
                             </div>
 
@@ -146,7 +160,7 @@ const ProjectDetail = () => {
             {/* =========================================================
                 2. ABOUT THE PROJECT (BALANCED 12-COLUMN LAYOUT)
             ========================================================== */}
-            {project.aboutParagraphs && project.aboutParagraphs.length > 0 && (
+            {aboutParagraphs.length > 0 && (
                 <section className="relative z-10 w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-10 bg-[#0a0a0a]">
                     <div className="mx-auto grid w-full max-w-full grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12 items-start">
                         <div className="lg:col-span-7 flex flex-col items-start">
@@ -154,11 +168,11 @@ const ProjectDetail = () => {
                                 Context &amp; Scope
                             </span>
                             <h2 className="font-sans text-[22px] sm:text-[26px] md:text-[30px] font-semibold text-white tracking-tight leading-snug mb-3">
-                                {project.aboutTitle || "About the Project"}
+                                {project.aboutTitle || 'About the Project'}
                             </h2>
 
                             <div className="space-y-3.5 font-sans text-[13.5px] sm:text-[14.5px] leading-relaxed text-[#a1a1aa] w-full">
-                                {project.aboutParagraphs.map((paragraph, index) => (
+                                {aboutParagraphs.map((paragraph, index) => (
                                     <p key={index}>{paragraph}</p>
                                 ))}
                                 <p>
@@ -175,13 +189,17 @@ const ProjectDetail = () => {
 
                             <div className="grid grid-cols-2 gap-4 pb-4 border-b border-white/10">
                                 <div>
-                                    <p className="font-sans text-[10.5px] uppercase tracking-wider text-[#71717a]">Media Deliverables</p>
+                                    <p className="font-sans text-[10.5px] uppercase tracking-wider text-[#71717a]">
+                                        Media Deliverables
+                                    </p>
                                     <p className="mt-1 font-sans text-[16px] font-semibold text-white">
-                                        {(project.carouselImages?.length || 0) + (project.carouselVideos?.length || 0)}+ Curated Assets
+                                        {totalAssets > 0 ? `${totalAssets}+ Curated Assets` : 'Curated Assets'}
                                     </p>
                                 </div>
                                 <div>
-                                    <p className="font-sans text-[10.5px] uppercase tracking-wider text-[#71717a]">Execution Standard</p>
+                                    <p className="font-sans text-[10.5px] uppercase tracking-wider text-[#71717a]">
+                                        Execution Standard
+                                    </p>
                                     <p className="mt-1 font-sans text-[16px] font-semibold text-[#c4f82a]">
                                         4K Broadcast &amp; Print
                                     </p>
@@ -193,12 +211,12 @@ const ProjectDetail = () => {
                             </p>
                             <div className="flex flex-wrap gap-1.5">
                                 {[
-                                    "Creative Direction",
-                                    "Multi-Cam Coverage",
-                                    "Brand Collateral",
-                                    "Social Media Reels",
-                                    "Color Grading & Post",
-                                    "Audience Engagement"
+                                    'Creative Direction',
+                                    'Multi-Cam Coverage',
+                                    'Brand Collateral',
+                                    'Social Media Reels',
+                                    'Color Grading & Post',
+                                    'Audience Engagement'
                                 ].map((tag) => (
                                     <span
                                         key={tag}
@@ -216,28 +234,31 @@ const ProjectDetail = () => {
             {/* =========================================================
                 3. MEDIA CAROUSEL & CHALLENGES (THE SHOWCASE)
             ========================================================== */}
-            {(project.carouselImages?.length > 0 || project.challenges?.length > 0) && (
+            {(carouselImages.length > 0 || challenges.length > 0) && (
                 <section className="relative z-10 w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-10 md:py-12 bg-[#0a0a0a]">
                     <div className="mx-auto grid w-full max-w-full grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-10 items-stretch">
                         {/* Left: Image Carousel (Clean Photo Frame, No Shadows) */}
-                        <div className={`w-full ${project.challenges?.length > 0 ? 'lg:col-span-6' : 'lg:col-span-10 lg:col-start-2'}`}>
-                            {project.carouselImages && project.carouselImages.length > 0 && (
+                        <div
+                            className={`w-full ${challenges.length > 0 ? 'lg:col-span-6' : 'lg:col-span-10 lg:col-start-2'
+                                }`}
+                        >
+                            {carouselImages.length > 0 && (
                                 <div className="overflow-hidden rounded-xl border border-white/10 bg-transparent h-full flex flex-col justify-between">
-                                    <ImageCarousel items={project.carouselImages} />
+                                    <ImageCarousel items={carouselImages} />
                                 </div>
                             )}
                         </div>
 
                         {/* Right: Key Challenges (Clean Numbered List, Zero Shadow Boxes) */}
-                        {project.challenges && project.challenges.length > 0 && (
+                        {challenges.length > 0 && (
                             <div className="lg:col-span-6 flex flex-col justify-between gap-4">
                                 <div>
                                     <span className="font-sans text-[11px] font-bold uppercase tracking-[1.5px] text-[#c4f82a]">
-                                        {project.challengesSubtitle || "Strategic Problem Solving"}
+                                        {project.challengesSubtitle || 'Strategic Problem Solving'}
                                     </span>
 
                                     <h2 className="font-sans text-[22px] sm:text-[26px] md:text-[30px] font-semibold text-white tracking-tight leading-tight mt-1 mb-2">
-                                        {project.challengesTitle || "Key Challenges & Solutions"}
+                                        {project.challengesTitle || 'Key Challenges & Solutions'}
                                     </h2>
 
                                     {project.challengesDescription && (
@@ -248,13 +269,13 @@ const ProjectDetail = () => {
 
                                     {/* Numbered Challenge Items (Clean Dividing Lines, Zero Floating Boxes) */}
                                     <div className="flex flex-col divide-y divide-white/10 border-t border-white/10">
-                                        {project.challenges.map((challenge, index) => (
+                                        {challenges.map((challenge, index) => (
                                             <div
                                                 key={index}
                                                 className="py-3.5 flex items-start gap-3.5"
                                             >
                                                 <span className="font-mono text-[13px] font-bold text-[#c4f82a] mt-0.5 shrink-0">
-                                                    0{index + 1}
+                                                    {String(index + 1).padStart(2, '0')}
                                                 </span>
                                                 <div>
                                                     <h3 className="font-sans text-[14px] font-semibold text-white">
@@ -293,7 +314,7 @@ const ProjectDetail = () => {
                         <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between">
                             <div>
                                 <h4 className="font-sans text-[14px] font-semibold text-white">
-                                    {project.testimonial.author}
+                                    {project.testimonial.author || 'Client Partner'}
                                 </h4>
                                 {project.testimonial.position && (
                                     <p className="font-sans text-[12px] text-[#a1a1aa] mt-0.5">
@@ -313,7 +334,7 @@ const ProjectDetail = () => {
             {/* =========================================================
                 5. VIDEO HIGHLIGHTS CAROUSEL
             ========================================================== */}
-            {project.carouselVideos && project.carouselVideos.length > 0 && (
+            {carouselVideos.length > 0 && (
                 <section className="relative z-10 w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-10 bg-[#0a0a0a]">
                     <div className="mx-auto w-full max-w-full">
                         <div className="mb-6 text-center max-w-2xl mx-auto">
@@ -322,7 +343,7 @@ const ProjectDetail = () => {
                             </span>
 
                             <h2 className="mt-1 font-sans text-[24px] sm:text-[30px] font-semibold text-white tracking-tight">
-                                {project.videoHighlightsTitle || "Video Highlights"}
+                                {project.videoHighlightsTitle || 'Video Highlights'}
                             </h2>
 
                             {project.videoHighlightsDescription && (
@@ -333,7 +354,7 @@ const ProjectDetail = () => {
                         </div>
 
                         <div className="overflow-hidden">
-                            <VideoCarousel items={project.carouselVideos} />
+                            <VideoCarousel items={carouselVideos} />
                         </div>
                     </div>
                 </section>

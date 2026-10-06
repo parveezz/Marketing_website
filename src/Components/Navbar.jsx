@@ -74,7 +74,10 @@ const Navbar = () => {
               className="flex items-center cursor-pointer z-[60] py-1"
               aria-label="ZIH Home"
             >
-              <ZihLogo size="text-[26px] sm:text-[30px]" className="text-white transition-opacity hover:opacity-85" />
+              <ZihLogo
+                size="text-[26px] sm:text-[30px] md:text-[34px] lg:text-[38px]"
+                className="text-white transition-opacity hover:opacity-85"
+              />
             </Link>
 
             {/* =========================================================
@@ -256,6 +259,15 @@ const Navbar = () => {
                     >
                       Public Relations (PR)
                     </NavLink>
+                    <NavLink
+                      to="/services/consultation-services"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={({ isActive }) =>
+                        `py-1 font-sans text-[15px] ${isActive ? "text-white" : "text-[#a1a1aa] hover:text-white"}`
+                      }
+                    >
+                      Consultation Services
+                    </NavLink>
                   </div>
                 </div>
               )}
@@ -283,4 +295,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar;

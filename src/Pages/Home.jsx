@@ -8,12 +8,13 @@ import FeaturedWork from "../Components/Home/FeaturedWork";
 import Testimonials from "../Components/Home/Testimonials";
 import ProcessSection from "../Components/Home/ProcessSection";
 import PhilosophySection from "../Components/Home/PhilosophySection";
+import AwardsAchievements from "../Components/Home/AwardsAchievements";
 import HomeCTA from "../Components/Home/HomeCTA";
 
 const Home = () => {
   return (
     <main className="relative w-full bg-[#0a0a0a] text-white overflow-hidden">
-      <SEO title="Home" description="A Digital Marketing Studio that will Work." />
+      <SEO title="Home" description="A Marketing Consultancy that will Work." />
 
       <Hero />
       <ShowcaseBanner />
@@ -22,6 +23,7 @@ const Home = () => {
       <ServicesSection />
       <PhilosophySection />
       <FeaturedWork />
+      <AwardsAchievements />
       <ProcessSection />
       <Testimonials />
       <HomeCTA />

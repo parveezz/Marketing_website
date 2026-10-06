@@ -1,0 +1,57 @@
+[
+  {
+    "id": "update-1",
+    "title": "ISSO Games 2026: Live Athletics Media Coverage & Broadcast Complete",
+    "category": "Live Event",
+    "tag": "Live Coverage",
+    "date": "October 2026",
+    "description": "Completed multi-camera stadium coverage, live social highlight reels, and real-time medal ceremony media dispatches at G.M.C Balayogi Stadium.",
+    "image": "/videos/isso-games/img3.jpg",
+    "link": "/our-work/isso-games",
+    "client": "Indus International & Adani Sportsline"
+  },
+  {
+    "id": "update-2",
+    "title": "Pallavi International: 2026 Leadership & Investiture Media Delivered",
+    "category": "Media Production",
+    "tag": "Delivery Drop",
+    "date": "September 2026",
+    "description": "Curated full commemorative photo archives, cinematic recap film, and executive leadership portraits delivered within 24 hours.",
+    "image": "/videos/investiture/mainimage.png",
+    "link": "/our-work/investiture-ceremony",
+    "client": "Pallavi International School"
+  },
+  {
+    "id": "update-3",
+    "title": "Hyderabad Chai Company: Brand Activation & Outlet Launch Campaign",
+    "category": "Branding & Social",
+    "tag": "New Campaign",
+    "date": "September 2026",
+    "description": "Rolled out high-energy brand launch content, artisanal beverage photography, and viral reels driving 100k+ organic regional impressions.",
+    "image": "/videos/hyderabadChai/mainImage.webp",
+    "link": "/our-work/hcc-mehdipatnam",
+    "client": "Hyderabad Chai Company"
+  },
+  {
+    "id": "update-4",
+    "title": "World Business Conclave 2026: Executive Awards Gala Media Suite",
+    "category": "Corporate Event",
+    "tag": "Milestone",
+    "date": "August 2026",
+    "description": "Executed stage coverage, keynote recordings, and real-time speaker photo dispatches for 500+ global business leaders.",
+    "image": "/videos/conclave/img3.jpg",
+    "link": "/our-work/world-business-conclave-2026",
+    "client": "World Business Conclave"
+  },
+  {
+    "id": "update-5",
+    "title": "South Zone Boys Chess Championship: Real-Time Tournament Dispatches",
+    "category": "Sports Media",
+    "tag": "Championship",
+    "date": "August 2026",
+    "description": "Real-time bracket updates, player focus highlights, and award ceremony live coverage across digital channels.",
+    "image": "/videos/Chess/img3.jpg",
+    "link": "/our-work/chess-tournament-2026",
+    "client": "South Zone Chess Federation"
+  }
+]

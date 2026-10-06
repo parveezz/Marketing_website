@@ -11,6 +11,7 @@ import Advertising from "../Pages/services/Advertising";
 import SocialMedia from "../Pages/services/SocialMedia";
 import EventManagement from "../Pages/services/EventManagement";
 import PublicRelations from "../Pages/services/PublicRelations";
+import ConsultationServices from "../Pages/services/ConsultationServices";
 
 // Secondary & interactive pages code-split with React.lazy
 const About = lazy(() => import("../Pages/About"));
@@ -28,6 +29,7 @@ const Faq = lazy(() => import("../Pages/Faq"));
 const OurWork = lazy(() => import("../Pages/Ourwork/ourWork"));
 const ProjectDetail = lazy(() => import("../Pages/Ourwork/ProjectDetail"));
 const IndustryDetail = lazy(() => import("../Pages/IndustryDetail"));
+const Feedback = lazy(() => import("../Pages/Feedback"));
 const NotFound = lazy(() => import("../Pages/NotFound"));
 
 const Routing = () => {
@@ -57,6 +59,8 @@ const Routing = () => {
           <Route path="whitepapers" element={<Whitepapers />} />
 
           <Route path="faq" element={<Faq />} />
+          <Route path="feedback" element={<Feedback />} />
+          <Route path="client-feedback" element={<Feedback />} />
 
           {/* Legal Pages & Variations */}
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
@@ -106,6 +110,15 @@ const Routing = () => {
           <Route
             path="services/pr"
             element={<PublicRelations />}
+          />
+
+          <Route
+            path="services/consultation-services"
+            element={<ConsultationServices />}
+          />
+          <Route
+            path="services/consultation"
+            element={<ConsultationServices />}
           />
 
           {/* Dynamic Industry Practice Routes */}

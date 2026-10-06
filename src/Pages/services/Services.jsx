@@ -71,6 +71,16 @@ const Services = () => {
       metric: "100+ Media Placements",
       path: "/services/public-relations",
       image: "/images/service-planning.jpg"
+    },
+    {
+      title: "Consultation Services",
+      tagline: "Executive Strategy & Advisory",
+      description: "High-level strategic counsel, full infrastructure audits, fractional CMO advisory, and step-by-step operating playbooks tailored to eliminate growth uncertainty and accelerate revenue.",
+      features: ["Strategic Growth Audits", "Fractional CMO Advisory", "Market Positioning & Whitespace", "Capital & Media Allocation", "Execution Playbooks"],
+      deliverables: ["Comprehensive Infrastructure Audit", "Quarterly Growth Architecture Blueprint", "Attribution & Unit Economics Model", "Custom Operating & Team Playbooks"],
+      metric: "1-on-1 Executive Guidance",
+      path: "/services/consultation-services",
+      image: "/images/service-strategic.jpg"
     }
   ];
 

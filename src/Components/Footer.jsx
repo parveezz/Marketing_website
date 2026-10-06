@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaLinkedinIn, FaInstagram, FaXTwitter } from "react-icons/fa6";
-import { FiArrowUpRight, FiMail, FiPhone } from "react-icons/fi";
+import { FiArrowUpRight, FiMail, FiPhone, FiStar } from "react-icons/fi";
 import ZihLogo from "./Common/ZihLogo";
 
 const Footer = () => {
@@ -63,7 +63,7 @@ const Footer = () => {
             </Link>
 
             <p className="mt-4 font-sans text-[13px] leading-relaxed text-[#a1a1aa] max-w-sm">
-              A digital marketing consultancy helping ambitious leaders scale through intentional strategy, brand systems, and performance creative.
+              A marketing consultancy helping ambitious leaders scale through intentional strategy, brand systems, and performance creative.
             </p>
 
             {/* Social Links */}
@@ -169,6 +169,11 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/services/consultation-services" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
+                  Consultation Services
+                </Link>
+              </li>
+              <li>
                 <Link to="/services" className="inline-block py-1 font-sans text-[13.5px] text-[#c4f82a] transition-all duration-200 hover:translate-x-1 hover:underline">
                   View All Services &rarr;
                 </Link>
@@ -223,7 +228,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/case-studies" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
-                  Case Studies
+                  Case Studies &amp; Testimonials
                 </Link>
               </li>
               <li>
@@ -276,6 +281,14 @@ const Footer = () => {
                   <FiArrowUpRight className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
               </li>
+              <li className="pt-2">
+                <Link
+                  to="/feedback"
+                  className="group inline-flex items-center gap-2 rounded-xl border border-white/15 bg-[#161618] px-3.5 py-2 font-sans text-[12.5px] font-medium text-white transition-all duration-200 hover:border-[#c4f82a]/50 hover:bg-[#c4f82a]/10 hover:text-[#c4f82a]"
+                ><span> Customer Feedback</span>
+                  <FiArrowUpRight className="text-[12px] opacity-70 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -315,9 +328,8 @@ const Footer = () => {
 
             {statusMessage && (
               <p
-                className={`mt-2 font-sans text-[12px] ${
-                  statusMessage.type === "error" ? "text-red-400" : "text-[#c4f82a]"
-                }`}
+                className={`mt-2 font-sans text-[12px] ${statusMessage.type === "error" ? "text-red-400" : "text-[#c4f82a]"
+                  }`}
               >
                 {statusMessage.text}
               </p>
@@ -359,4 +371,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Footer;

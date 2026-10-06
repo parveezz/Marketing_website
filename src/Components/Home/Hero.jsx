@@ -57,9 +57,17 @@ const Hero = () => {
       {/* 3. Centered Content Container */}
       <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center text-center">
 
+        {/* Top Eyebrow Badge */}
+        <div className="mb-4 sm:mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#161618]/80 px-3.5 py-1 backdrop-blur-md">
+          <span className="h-1.5 w-1.5 rounded-full bg-[#c4f82a]" />
+          <span className="font-sans text-[11.5px] font-medium tracking-wide text-[#fafafa]">
+            Full-Service Marketing Consultancy &bull; Strategic, Creative &amp; Experiential
+          </span>
+        </div>
+
         {/* Main Headline */}
         <h1 className="font-sans text-[32px] sm:text-[46px] md:text-[62px] lg:text-[74px] font-semibold leading-[1.1] tracking-[-0.03em] text-[#fafafa]">
-          A Digital Marketing Studio
+          A Marketing Consultancy
           <br />
           that will Work
         </h1>

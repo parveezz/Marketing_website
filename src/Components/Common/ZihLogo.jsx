@@ -5,7 +5,7 @@
  */
 export const ZihLogo = ({
   className = "text-white",
-  size = "text-[22px] sm:text-[24px]",
+  size = "text-[44px] sm:text-[56px] md:text-[64px]",
   ...props
 }) => {
   return (
@@ -19,10 +19,10 @@ export const ZihLogo = ({
       <span className={`${size} font-normal leading-none`}>Z</span>
 
       {/* Center Pencil / Stylus Icon */}
-      <span className="inline-flex items-center justify-center px-1 sm:px-1.5">
+      <span className="inline-flex items-center justify-center px-2 sm:px-3 md:px-4">
         <svg
           viewBox="0 0 10 40"
-          className="h-[1.12em] w-auto overflow-visible"
+          className="h-[2.24em] w-auto overflow-visible"
           fill="currentColor"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -41,7 +41,7 @@ export const ZihLogo = ({
  * SVG-only standalone vector for favicon / export
  */
 export const ZihLogoSvg = ({
-  className = "h-8 w-auto text-black",
+  className = "h-16 md:h-20 lg:h-24 w-auto text-black",
   ...props
 }) => {
   return (
