@@ -81,6 +81,16 @@ const Services = () => {
       metric: "1-on-1 Executive Guidance",
       path: "/services/consultation-services",
       image: "/images/service-strategic.jpg"
+    },
+    {
+      title: "IT & Digital Services",
+      tagline: "High-Performance Digital Infrastructure",
+      description: "From custom web and mobile applications to enterprise cloud infrastructure, software engineering, and MarTech integrations, we build scalable digital solutions engineered for growth.",
+      features: ["Web & App Development", "Custom Software", "Cloud Infrastructure", "Cybersecurity", "MarTech Integrations"],
+      deliverables: ["Full-Stack Web & Mobile Architecture", "Enterprise Cloud Infrastructure & CI/CD", "CRM & Marketing Data Pipelines", "End-to-End Application Security"],
+      metric: "99.99% Uptime & Scale",
+      path: "/services/it-services",
+      image: "/images/service-advertising-analytics.jpg"
     }
   ];
 

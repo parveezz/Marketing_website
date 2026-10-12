@@ -14,7 +14,7 @@ const TrustedBy = () => {
   const marqueeItems = [...clients, ...clients];
 
   return (
-    <section className="relative w-full border-t border-white/10 bg-[#0a0a0a] py-5 sm:py-6 overflow-hidden">
+    <section className="relative w-full border-t border-white/10 bg-[#0a0a0a] py-16 sm:py-20 overflow-hidden">
       {/* 1. Background Vertical Grid Guide Lines (12 Columns) */}
       <div className="pointer-events-none absolute inset-0 grid grid-cols-6 md:grid-cols-12 z-0">
         {Array.from({ length: 12 }).map((_, i) => (
@@ -23,7 +23,7 @@ const TrustedBy = () => {
       </div>
 
       {/* 2. Top Centered Label */}
-      <div className="relative z-10 mb-4 px-4 text-center">
+      <div className="relative z-10 mb-8 px-4 text-center">
         <p className="font-sans text-[10.5px] font-semibold uppercase tracking-[2.5px] text-[#a1a1aa]">
           Trusted by Leading Institutions &amp; Modern Brands
         </p>

@@ -23,13 +23,55 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // ============================================================
+// RATE LIMITING (Max 5 submissions per IP per 15 minutes)
+// ============================================================
+$client_ip = $_SERVER['HTTP_CF_CONNECTING_IP'] ?? $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'] ?? 'unknown';
+$rate_dir = sys_get_temp_dir() . '/zhmktg_rate_limit';
+if (!is_dir($rate_dir)) {
+  @mkdir($rate_dir, 0755, true);
+}
+$rate_file = $rate_dir . '/' . md5($client_ip) . '.json';
+$current_time = time();
+$requests = [];
+
+if (file_exists($rate_file)) {
+  $raw_rate = @file_get_contents($rate_file);
+  $requests = json_decode($raw_rate, true) ?: [];
+  // Filter requests within the last 15 minutes (900 seconds)
+  $requests = array_filter($requests, function($timestamp) use ($current_time) {
+    return ($current_time - $timestamp) < 900;
+  });
+}
+
+if (count($requests) >= 5) {
+  http_response_code(429);
+  echo json_encode([
+    "status" => "error",
+    "message" => "Too many submissions. Please wait a few minutes before trying again."
+  ]);
+  exit;
+}
+
+// ============================================================
 // READ & VALIDATE JSON INPUT
 // ============================================================
 $data = json_decode(file_get_contents("php://input"), true);
 
-$name = trim($data['name'] ?? '');
+// HONEYPOT TRAP: if bot filled hidden honeypot fields, drop silently
+if (!empty($data['hp_company']) || !empty($data['website'])) {
+  // Return fake success so bots don't adapt
+  http_response_code(200);
+  echo json_encode([
+    "status" => "success",
+    "message" => "Message sent successfully!"
+  ]);
+  exit;
+}
+
+// Sanitize inputs
+$name = htmlspecialchars(trim($data['name'] ?? ''), ENT_QUOTES, 'UTF-8');
 $email = trim($data['email'] ?? '');
-$message = trim($data['message'] ?? '');
+$message = htmlspecialchars(trim($data['message'] ?? ''), ENT_QUOTES, 'UTF-8');
 
 if (empty($name) || empty($email) || empty($message)) {
   http_response_code(400);
@@ -48,6 +90,10 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
   ]);
   exit;
 }
+
+// Record this successful request timestamp
+$requests[] = $current_time;
+@file_put_contents($rate_file, json_encode($requests));
 
 // ============================================================
 // HOSTINGER SMTP CONFIGURATION

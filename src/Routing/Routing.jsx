@@ -32,6 +32,7 @@ const PostWork = lazy(() => import("../Pages/Ourwork/PostWork"));
 const IndustryDetail = lazy(() => import("../Pages/IndustryDetail"));
 const Feedback = lazy(() => import("../Pages/Feedback"));
 const NotFound = lazy(() => import("../Pages/NotFound"));
+const ITServices = lazy(() => import("../Pages/services/ITServices"));
 
 const Routing = () => {
   return (
@@ -123,6 +124,15 @@ const Routing = () => {
           <Route
             path="services/consultation"
             element={<ConsultationServices />}
+          />
+
+          <Route
+            path="services/it-services"
+            element={<ITServices />}
+          />
+          <Route
+            path="services/it"
+            element={<ITServices />}
           />
 
           {/* Dynamic Industry Practice Routes */}

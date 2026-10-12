@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   FaFacebookF,
+  FaInstagram,
   FaThreads,
   FaXTwitter,
 } from "react-icons/fa6";
@@ -9,6 +10,11 @@ import { FiArrowUpRight, FiMail, FiPhone } from "react-icons/fi";
 import ZihLogo from "./Common/ZihLogo";
 
 const socialLinks = [
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/zh_marketing_consultancy?stkn=MTh0aG9iOHZ1MjhlbQ==",
+    icon: FaInstagram,
+  },
   {
     name: "Facebook",
     href: "https://www.facebook.com/share/1GnAU8YwcU/",
@@ -43,6 +49,7 @@ const footerColumns = [
       { label: "Event Management", to: "/services/event-management" },
       { label: "Public Relations (PR)", to: "/services/public-relations" },
       { label: "Consultation Services", to: "/services/consultation-services" },
+      { label: "IT Services", to: "/services/it-services" },
       { label: "View All Services →", to: "/services", accent: true },
     ],
   },
@@ -150,7 +157,7 @@ const Footer = () => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={name}
-                  className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#a1a1aa] transition-all duration-200 hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/10 hover:text-[#c4f82a]"
+                  className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-white transition-all duration-200 hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/10 hover:text-[#c4f82a]"
                 >
                   <Icon size={13} />
                 </a>
@@ -171,7 +178,7 @@ const Footer = () => {
                       to={link.to}
                       className={`inline-block py-1 font-sans text-[13.5px] transition-all duration-200 hover:translate-x-1 ${link.accent
                         ? "text-[#c4f82a] hover:underline"
-                        : "text-[#a1a1aa] hover:text-white"
+                        : "text-white hover:text-[#c4f82a]"
                         }`}
                     >
                       {link.label}
@@ -189,17 +196,17 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2">
               {contactItems.map((item, idx) => (
-                <li key={idx} className="font-sans text-[13.5px] text-[#a1a1aa]">
+                <li key={idx} className="font-sans text-[13.5px] text-white">
                   {item.type === "link" ? (
                     <a
                       href={item.href}
-                      className="inline-flex items-center gap-2 py-1 transition-colors hover:text-white"
+                      className="inline-flex items-center gap-2 py-1 transition-colors hover:text-[#c4f82a]"
                     >
                       <item.icon className="text-[#c4f82a] text-[14px] shrink-0" />
                       <span>{item.text}</span>
                     </a>
                   ) : (
-                    <span className="block text-[12.5px] leading-relaxed">{item.text}</span>
+                    <span className="block text-[12.5px] leading-relaxed text-[#e4e4e7]">{item.text}</span>
                   )}
                 </li>
               ))}
@@ -283,7 +290,7 @@ const Footer = () => {
               <Link
                 key={link.label}
                 to={link.to}
-                className="py-1 font-sans text-[12px] text-[#a1a1aa] transition-colors hover:text-white"
+                className="py-1 font-sans text-[12px] text-white transition-colors hover:text-[#c4f82a]"
               >
                 {link.label}
               </Link>

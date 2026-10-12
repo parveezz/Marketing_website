@@ -8,42 +8,49 @@ const FeaturedWork = () => {
       id: "isso-games",
       title: "ISSO Games Athletics",
       category: "Sports & Event Branding",
+      metric: "50k+ Live",
       image: "/videos/isso-games/img3.jpg",
     },
     {
       id: "investiture-ceremony",
       title: "Investiture Ceremony",
       category: "Leadership & Media",
+      metric: "24h SLA",
       image: "/videos/investiture/mainimage.png",
     },
     {
       id: "hcc-mehdipatnam",
       title: "Hyderabad Chai Co.",
       category: "Launch & Promotion",
+      metric: "100k+ Reach",
       image: "/videos/hyderabadChai/mainImage.webp",
     },
     {
       id: "aekaksh-preschool",
       title: "Aekaksh Pre School",
       category: "Education Marketing",
+      metric: "+38% Growth",
       image: "/videos/Aaksah/mainimage.png",
     },
     {
       id: "chess-tournament-2026",
       title: "South Zone Chess",
       category: "Tournament Coverage",
+      metric: "Live Event",
       image: "/videos/Chess/img3.jpg",
     },
     {
       id: "world-business-conclave-2026",
       title: "Business Conclave Awards",
       category: "Corporate Media",
+      metric: "500+ CXOs",
       image: "/videos/conclave/img3.jpg",
     },
     {
       id: "pallavi-school-pocharam-2026",
       title: "Pallavi International",
       category: "Event Production",
+      metric: "360° Staging",
       image: "/videos/pocharam-palavi/img3.jpg",
     },
   ];
@@ -90,6 +97,13 @@ const FeaturedWork = () => {
                 to={`/our-work/${project.id}`}
                 className="group relative block aspect-[3/5] h-[190px] sm:h-[220px] md:h-[240px] w-full overflow-hidden rounded-xl border border-white/10 bg-[#16141a] transition-all duration-300 hover:border-[#c4f82a] hover:-translate-y-1"
               >
+                {/* Quantifiable Metric ROI Badge */}
+                <div className="absolute top-2 right-2 z-10">
+                  <span className="font-mono text-[8.5px] sm:text-[9px] font-bold tracking-tight rounded-md bg-black/80 backdrop-blur-md border border-white/20 text-[#c4f82a] px-1.5 py-0.5 shadow-sm">
+                    {project.metric}
+                  </span>
+                </div>
+
                 <img
                   src={project.image}
                   alt={project.title}

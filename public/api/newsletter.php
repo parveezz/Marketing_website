@@ -23,9 +23,49 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // ============================================================
-// GET EMAIL FROM REQUEST
+// RATE LIMITING (Max 5 submissions per IP per 15 minutes)
+// ============================================================
+$client_ip = $_SERVER['HTTP_CF_CONNECTING_IP'] ?? $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'] ?? 'unknown';
+$rate_dir = sys_get_temp_dir() . '/zhmktg_rate_limit';
+if (!is_dir($rate_dir)) {
+  @mkdir($rate_dir, 0755, true);
+}
+$rate_file = $rate_dir . '/nl_' . md5($client_ip) . '.json';
+$current_time = time();
+$requests = [];
+
+if (file_exists($rate_file)) {
+  $raw_rate = @file_get_contents($rate_file);
+  $requests = json_decode($raw_rate, true) ?: [];
+  $requests = array_filter($requests, function($timestamp) use ($current_time) {
+    return ($current_time - $timestamp) < 900;
+  });
+}
+
+if (count($requests) >= 5) {
+  http_response_code(429);
+  echo json_encode([
+    "status" => "error",
+    "message" => "Too many attempts. Please try again later."
+  ]);
+  exit;
+}
+
+// ============================================================
+// GET EMAIL FROM REQUEST & HONEYPOT
 // ============================================================
 $data = json_decode(file_get_contents("php://input"), true);
+
+// Honeypot check
+if (!empty($data['hp_company']) || !empty($data['website'])) {
+  http_response_code(200);
+  echo json_encode([
+    "status" => "success",
+    "message" => "Subscribed successfully!"
+  ]);
+  exit;
+}
+
 $email = strtolower(trim($data['email'] ?? ''));
 
 if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -36,6 +76,10 @@ if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
   ]);
   exit;
 }
+
+// Record timestamp
+$requests[] = $current_time;
+@file_put_contents($rate_file, json_encode($requests));
 
 // ============================================================
 // SAVE SUBSCRIBER & CHECK DUPLICATES

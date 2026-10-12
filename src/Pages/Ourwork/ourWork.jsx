@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProjectCard from '../../Components/ProjectCard';
 import SEO from '../../Components/SEO';
-import WorkUpdatesBanner from '../../Components/WorkUpdatesBanner';
 import projectsData from '../../data/projects.json';
 import { motion } from 'framer-motion';
 
@@ -52,42 +51,36 @@ const OurWork = () => {
             />
 
             {/* =========================================================
-                HERO: SLIDER BACKGROUND + TEXT OVERLAY
+                HERO SECTION
             ========================================================= */}
-            <section className="relative w-full h-screen overflow-hidden bg-[#0a0a0a]">
-                {/* SLIDER — fills the entire hero */}
-                <div className="absolute inset-0 z-0">
-                    <WorkUpdatesBanner />
+            <section className="relative z-10 w-full px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 2xl:px-36 py-12 sm:py-16 md:py-20 bg-[#0c0a09] border-b border-white/5 overflow-hidden">
+                {/* Background Vertical Grid Guide Lines (12 Columns) */}
+                <div className="pointer-events-none absolute inset-0 grid grid-cols-6 md:grid-cols-12 z-0">
+                    {Array.from({ length: 12 }).map((_, i) => (
+                        <div key={i} className="border-r border-white/[0.04] h-full" />
+                    ))}
                 </div>
 
-                {/* Bottom-left gradient for text readability */}
-                <div className="absolute inset-x-0 bottom-0 h-[70%] bg-gradient-to-t from-black/90 via-black/60 to-transparent pointer-events-none z-10" />
-
-                {/* TEXT OVERLAY — bottom-left, aligned to site padding */}
-                <div className="absolute inset-0 z-20 flex items-end pointer-events-none">
-                    <div className="w-full px-6 sm:px-10 md:px-16 lg:px-20 xl:px-28 2xl:px-36 pb-16 sm:pb-20 md:pb-24">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            className="max-w-3xl pointer-events-auto"
-                        >
-                            <div className="mb-3 inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3.5 py-1 backdrop-blur-md">
-                                <span className="font-sans text-[11px] font-medium tracking-wide text-[#fafafa]">
-                                    Selected Portfolio
-                                </span>
-                            </div>
-
-                            <h1 className="font-sans text-[32px] sm:text-[42px] md:text-[52px] lg:text-[58px] font-semibold tracking-[-0.02em] text-white leading-[1.1] mb-4">
-                                Our Work Speaks For Itself
-                            </h1>
-
-                            <p className="font-sans text-[13.5px] sm:text-[15px] md:text-[16px] leading-relaxed text-[#e4e4e7] max-w-2xl">
-                                Discover how we help organizations across industries transform operations, accelerate innovation, and achieve measurable business outcomes through technology, strategy, and intelligent digital solutions.
-                            </p>
-                        </motion.div>
+                <motion.div
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="relative z-10 max-w-3xl"
+                >
+                    <div className="mb-3 inline-flex items-center rounded-full border border-white/10 bg-[#161618]/80 px-3.5 py-1 backdrop-blur-md">
+                        <span className="font-sans text-[11px] font-medium tracking-wide text-[#fafafa]">
+                            Selected Portfolio
+                        </span>
                     </div>
-                </div>
+
+                    <h1 className="font-sans text-[32px] sm:text-[42px] md:text-[52px] lg:text-[58px] font-semibold tracking-[-0.02em] text-[#fafafa] leading-[1.1] mb-4">
+                        Our Work Speaks For Itself
+                    </h1>
+
+                    <p className="font-sans text-[13.5px] sm:text-[15px] md:text-[16px] leading-relaxed text-[#a1a1aa] max-w-2xl">
+                        Discover how we help organizations across industries transform operations, accelerate innovation, and achieve measurable business outcomes through technology, strategy, and intelligent digital solutions.
+                    </p>
+                </motion.div>
             </section>
 
             {/* =========================================================

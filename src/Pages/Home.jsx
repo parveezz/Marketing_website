@@ -4,6 +4,7 @@ import ShowcaseBanner from "../Components/Home/ShowcaseBanner";
 import TrustedBy from "../Components/Home/TrustedBy";
 import Stats from "../Components/Home/Stats";
 import ServicesSection from "../Components/Home/ServicesSection";
+import SolutionsByIndustry from "../Components/Home/SolutionsByIndustry";
 import FeaturedWork from "../Components/Home/FeaturedWork";
 import Testimonials from "../Components/Home/Testimonials";
 import ProcessSection from "../Components/Home/ProcessSection";
@@ -17,10 +18,11 @@ const Home = () => {
       <SEO title="Home" description="A Marketing Consultancy that will Work." />
 
       <Hero />
-      <ShowcaseBanner />
       <TrustedBy />
       <Stats />
       <ServicesSection />
+      <SolutionsByIndustry />
+      <ShowcaseBanner />
       <PhilosophySection />
       <FeaturedWork />
       <AwardsAchievements />

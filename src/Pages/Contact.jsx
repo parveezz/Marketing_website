@@ -5,7 +5,7 @@ import { FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa6";
 
 const Contact = () => {
   const [openFaq, setOpenFaq] = useState(null);
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '', hp_company: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [statusMessage, setStatusMessage] = useState(null);
 
@@ -68,7 +68,7 @@ const Contact = () => {
       });
       if (response.ok) {
         setStatusMessage({ type: 'success', text: 'Message sent successfully!' });
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: '', email: '', message: '', hp_company: '' });
       } else {
         setStatusMessage({ type: 'error', text: 'Failed to send message. Please try again.' });
       }
@@ -108,66 +108,66 @@ const Contact = () => {
             </h1>
 
             {/* Description */}
-            <p className="mt-8 w-full max-w-[430px] font-sans text-[14px] leading-6 text-text-main">
+            <p className="mt-8 w-full max-w-[480px] font-sans text-[16px] sm:text-[18px] leading-relaxed text-text-main">
               Whether you&apos;re looking to boost conversions, cut CAC, or launch
               something new—we&apos;re here to help.
             </p>
 
             {/* Information */}
-            <div className="mt-9 w-full max-w-[450px]">
+            <div className="mt-10 w-full max-w-[480px]">
 
               {/* Leadership */}
-              <div className="border-t border-border py-4">
-                <p className="font-sans text-[12px] font-semibold uppercase tracking-[1px]">
+              <div className="border-t border-border py-5">
+                <p className="font-sans text-[13px] font-semibold uppercase tracking-[1.5px] text-[#c4f82a]">
                   Leadership
                 </p>
 
-                <p className="mt-1 font-sans text-[12px] text-text-muted">
+                <p className="mt-1.5 font-sans text-[15px] sm:text-[16px] text-text-main">
                   Syed Zubair Hafeez &mdash; CEO, ZIH Marketing Consultancy
                 </p>
               </div>
 
               {/* Phone */}
-              <div className="border-t border-border py-4">
-                <p className="font-sans text-[12px] font-semibold uppercase tracking-[1px]">
+              <div className="border-t border-border py-5">
+                <p className="font-sans text-[13px] font-semibold uppercase tracking-[1.5px] text-[#c4f82a]">
                   Phone
                 </p>
 
-                <p className="mt-1 font-sans text-[12px] text-text-muted">
-                  <a href="tel:+919177482247" className="hover:underline">+91 9177482247</a>
+                <p className="mt-1.5 font-sans text-[15px] sm:text-[16px] text-text-main">
+                  <a href="tel:+919177482247" className="hover:underline hover:text-[#c4f82a] transition-colors">+91 91774 82247</a>
                 </p>
               </div>
 
               {/* Email */}
-              <div className="border-t border-border py-4">
-                <p className="font-sans text-[12px] font-semibold uppercase tracking-[1px]">
+              <div className="border-t border-border py-5">
+                <p className="font-sans text-[13px] font-semibold uppercase tracking-[1.5px] text-[#c4f82a]">
                   Email
                 </p>
 
-                <div className="mt-1 flex flex-col gap-1 font-sans text-[12px] text-text-muted">
-                  <a href="mailto:zhmktg.in@gmail.com" className="hover:underline">zhmktg.in@gmail.com</a>
-                  <a href="mailto:info@zhmktg.com" className="hover:underline">info@zhmktg.com</a>
+                <div className="mt-1.5 flex flex-col gap-1.5 font-sans text-[15px] sm:text-[16px] text-text-main">
+                  <a href="mailto:info@zhmktg.com" className="hover:underline hover:text-[#c4f82a] transition-colors">info@zhmktg.com</a>
+                  <a href="mailto:zhmktg.in@gmail.com" className="hover:underline hover:text-[#c4f82a] transition-colors">zhmktg.in@gmail.com</a>
                 </div>
               </div>
 
               {/* Office Hours */}
-              <div className="border-t border-border py-4">
-                <p className="font-sans text-[12px] font-semibold uppercase tracking-[1px]">
+              <div className="border-t border-border py-5">
+                <p className="font-sans text-[13px] font-semibold uppercase tracking-[1.5px] text-[#c4f82a]">
                   Office Hours
                 </p>
 
-                <p className="mt-1 font-sans text-[12px] text-text-muted">
+                <p className="mt-1.5 font-sans text-[15px] sm:text-[16px] text-text-main">
                   Monday - Saturday, 9:00 AM - 6:00 PM
                 </p>
               </div>
 
               {/* Visit Us */}
-              <div className="border-t border-border py-4">
-                <p className="font-sans text-[12px] font-semibold uppercase tracking-[1px]">
+              <div className="border-t border-border py-5">
+                <p className="font-sans text-[13px] font-semibold uppercase tracking-[1.5px] text-[#c4f82a]">
                   Visit Us
                 </p>
 
-                <p className="mt-1 w-full max-w-[280px] font-sans text-[12px] leading-5 text-text-muted">
+                <p className="mt-1.5 w-full font-sans text-[15px] sm:text-[16px] leading-relaxed text-text-main">
                   ZIH Marketing Consultancy
                   <br />
                   Flat No. 112, Avalon Apartments,
@@ -177,31 +177,40 @@ const Contact = () => {
               </div>
 
               {/* Social */}
-              <div className="border-y border-border py-4">
-                <p className="font-sans text-[12px] font-semibold uppercase tracking-[1px]">
+              <div className="border-y border-border py-5">
+                <p className="font-sans text-[13px] font-semibold uppercase tracking-[1.5px] text-[#c4f82a]">
                   Connect With Us
                 </p>
 
-                <div className="mt-3 flex gap-3">
+                <div className="mt-3.5 flex gap-3">
                   <a
-                    href="#" onClick={(e) => { e.preventDefault(); alert("Redirecting to social profile!"); }}
-                    className="flex h-8 w-8 items-center justify-center rounded-full border border-brand font-sans text-[15px] transition hover:bg-brand hover:text-surface"
+                    href="https://www.instagram.com/zh_marketing_consultancy?stkn=MTh0aG9iOHZ1MjhlbQ=="
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Instagram"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-white text-base transition-all duration-200 hover:border-[#c4f82a] hover:bg-[#c4f82a] hover:text-black"
                   >
-                    f
+                    <FaInstagram />
                   </a>
 
                   <a
-                    href="#" onClick={(e) => { e.preventDefault(); alert("Redirecting to social profile!"); }}
-                    className="flex h-8 w-8 items-center justify-center rounded-full border border-brand font-sans text-[15px] transition hover:bg-brand hover:text-surface"
+                    href="https://www.facebook.com/share/1GnAU8YwcU/"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Facebook"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-white text-base transition-all duration-200 hover:border-[#c4f82a] hover:bg-[#c4f82a] hover:text-black"
                   >
-                    ◎
+                    <FaFacebookF />
                   </a>
 
                   <a
-                    href="#" onClick={(e) => { e.preventDefault(); alert("Redirecting to social profile!"); }}
-                    className="flex h-8 w-8 items-center justify-center rounded-full border border-brand font-sans text-[15px] transition hover:bg-brand hover:text-surface"
+                    href="https://www.linkedin.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="LinkedIn"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-border text-white text-base transition-all duration-200 hover:border-[#c4f82a] hover:bg-[#c4f82a] hover:text-black"
                   >
-                    in
+                    <FaLinkedinIn />
                   </a>
                 </div>
               </div>
@@ -222,7 +231,7 @@ const Contact = () => {
               Send Us a Message
             </h2>
 
-            <p className="mt-4 w-full max-w-[430px] font-sans text-[13px] leading-5 text-text-muted">
+            <p className="mt-4 w-full max-w-[480px] font-sans text-[15px] sm:text-[16px] leading-relaxed text-text-muted">
               Have a question or need more information? Fill out the form
               below, and we&apos;ll get back to you as soon as possible.
             </p>
@@ -235,7 +244,7 @@ const Contact = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -6 }}
                   transition={{ duration: 0.25 }}
-                  className={`mt-5 font-sans text-[13px] font-medium ${statusMessage.type === 'error' ? 'text-red-500' : 'text-green-600'}`}
+                  className={`mt-5 font-sans text-[14px] font-medium ${statusMessage.type === 'error' ? 'text-red-500' : 'text-green-600'}`}
                 >
                   {statusMessage.text}
                 </motion.p>
@@ -244,9 +253,21 @@ const Contact = () => {
 
             <form className="mt-6 w-full" onSubmit={handleContactSubmit}>
 
+              {/* Anti-Bot Honeypot Field (Invisible to human users) */}
+              <div style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, width: 0, overflow: 'hidden' }} aria-hidden="true">
+                <input
+                  type="text"
+                  name="hp_company"
+                  value={formData.hp_company || ''}
+                  onChange={handleInputChange}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
               {/* Name */}
               <div className="mb-5 w-full">
-                <label className="mb-2 block font-sans text-[12px] font-semibold uppercase tracking-[1px]">
+                <label className="mb-2 block font-sans text-[13px] sm:text-[14px] font-semibold uppercase tracking-[1.5px]">
                   Name
                 </label>
 
@@ -257,13 +278,13 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   placeholder="Your Name"
-                  className="w-full border-b border-border bg-transparent px-0 py-3 font-sans text-[14px] text-text-main outline-none placeholder:text-text-muted transition-colors focus:border-brand"
+                  className="w-full border-b border-border bg-transparent px-0 py-3 font-sans text-[15px] sm:text-[16px] text-text-main outline-none placeholder:text-text-muted transition-colors focus:border-brand"
                 />
               </div>
 
               {/* Email */}
               <div className="mb-5 w-full">
-                <label className="mb-2 block font-sans text-[12px] font-semibold uppercase tracking-[1px]">
+                <label className="mb-2 block font-sans text-[13px] sm:text-[14px] font-semibold uppercase tracking-[1.5px]">
                   Email Address
                 </label>
 
@@ -274,13 +295,13 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   placeholder="Your Email Address"
-                  className="w-full border-b border-border bg-transparent px-0 py-3 font-sans text-[14px] text-text-main outline-none placeholder:text-text-muted transition-colors focus:border-brand"
+                  className="w-full border-b border-border bg-transparent px-0 py-3 font-sans text-[15px] sm:text-[16px] text-text-main outline-none placeholder:text-text-muted transition-colors focus:border-brand"
                 />
               </div>
 
               {/* Message */}
               <div className="mb-7 w-full">
-                <label className="mb-2 block font-sans text-[12px] font-semibold uppercase tracking-[1px]">
+                <label className="mb-2 block font-sans text-[13px] sm:text-[14px] font-semibold uppercase tracking-[1.5px]">
                   Message
                 </label>
 
@@ -291,7 +312,7 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   placeholder="Tell us about your project..."
-                  className="w-full resize-none border-b border-border bg-transparent px-0 py-3 font-sans text-[14px] text-text-main outline-none placeholder:text-text-muted transition-colors focus:border-brand"
+                  className="w-full resize-none border-b border-border bg-transparent px-0 py-3 font-sans text-[15px] sm:text-[16px] text-text-main outline-none placeholder:text-text-muted transition-colors focus:border-brand"
                 />
               </div>
 
@@ -301,7 +322,7 @@ const Contact = () => {
                 whileTap={{ scale: 0.99 }}
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full cursor-pointer border border-brand bg-brand py-3.5 font-sans text-[13px] font-semibold uppercase tracking-[1px] text-surface transition-all duration-300 hover:bg-surface hover:text-text-main disabled:cursor-not-allowed disabled:opacity-50"
+                className="w-full cursor-pointer border border-brand bg-brand py-3.5 font-sans text-[14px] sm:text-[15px] font-semibold uppercase tracking-[1.5px] text-surface transition-all duration-300 hover:bg-surface hover:text-text-main disabled:cursor-not-allowed disabled:opacity-50"
               >
                 {isSubmitting ? "Submitting..." : "Submit"}
               </motion.button>
@@ -326,7 +347,7 @@ const Contact = () => {
             FAQs
           </h2>
 
-          <p className="mx-auto mt-3 w-full max-w-[550px] text-center font-sans text-[12px] leading-5 text-text-muted">
+          <p className="mx-auto mt-3 w-full max-w-[600px] text-center font-sans text-[15px] sm:text-[16px] leading-relaxed text-text-muted">
             Frequently asked questions about our services, processes, and pricing.
           </p>
 
@@ -347,14 +368,14 @@ const Contact = () => {
                   onClick={() => toggleFaq(index)}
                   className="flex w-full cursor-pointer items-center justify-between gap-4 sm:gap-5 py-4 sm:py-5 text-left"
                 >
-                  <span className={`font-sans text-[13px] sm:text-[14px] font-semibold transition-colors duration-300 ${openFaq === index ? 'text-brand' : 'text-text-main'}`}>
+                  <span className={`font-sans text-[16px] sm:text-[18px] font-semibold transition-colors duration-300 ${openFaq === index ? 'text-brand' : 'text-text-main'}`}>
                     {faq.question}
                   </span>
 
                   <motion.span
                     animate={{ rotate: openFaq === index ? 180 : 0 }}
                     transition={{ duration: 0.25 }}
-                    className={`flex h-6 w-6 shrink-0 items-center justify-center font-sans text-[18px] sm:text-[20px] font-normal ${openFaq === index ? 'text-brand' : 'text-text-muted'}`}
+                    className={`flex h-6 w-6 shrink-0 items-center justify-center font-sans text-[20px] font-normal ${openFaq === index ? 'text-brand' : 'text-text-muted'}`}
                   >
                     {openFaq === index ? "−" : "+"}
                   </motion.span>
@@ -369,8 +390,8 @@ const Contact = () => {
                       transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
-                      <div className="w-full pb-4 sm:pb-5 pr-4 sm:pr-10">
-                        <p className="font-sans text-[12px] sm:text-[13px] leading-relaxed text-text-muted">
+                      <div className="w-full pb-5 pr-4 sm:pr-10">
+                        <p className="font-sans text-[14px] sm:text-[15px] leading-relaxed text-text-muted">
                           {faq.answer}
                         </p>
                       </div>

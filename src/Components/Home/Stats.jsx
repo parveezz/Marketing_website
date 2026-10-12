@@ -7,7 +7,7 @@ const Stats = () => {
   ];
 
   return (
-    <section className="relative w-full border-t border-white/10 bg-[#0a0a0a] px-4 sm:px-6 md:px-8 lg:px-12 py-5 sm:py-6 overflow-hidden">
+    <section className="relative w-full border-t border-white/10 bg-[#0a0a0a] px-4 sm:px-6 md:px-8 lg:px-12 py-10 sm:py-14 overflow-hidden">
       {/* Background Vertical Grid Guide Lines (12 Columns) */}
       <div className="pointer-events-none absolute inset-0 grid grid-cols-6 md:grid-cols-12 z-0">
         {Array.from({ length: 12 }).map((_, i) => (
