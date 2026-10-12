@@ -1,16 +1,75 @@
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import SEO from '../../Components/SEO';
 import ImageCarousel from '../../Components/ImageCarousel';
 import VideoCarousel from '../../Components/VideoCarousel';
-import { FiArrowLeft, FiArrowUpRight } from 'react-icons/fi';
+import { FiArrowLeft, FiArrowUpRight, FiEdit2 } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 import projectsData from '../../data/projects.json';
 
 const ProjectDetail = () => {
     const { id } = useParams();
+    const [project, setProject] = useState(() => projectsData.find((p) => p.id === id) || null);
+    const [loading, setLoading] = useState(() => !projectsData.find((p) => p.id === id));
 
-    // Find the project matching the ID in the URL
-    const project = projectsData.find((p) => p.id === id);
+    useEffect(() => {
+        let isMounted = true;
+        const fetchProject = async () => {
+            try {
+                // Try API endpoint for specific project
+                const res = await fetch(`/api/post-work.php?id=${encodeURIComponent(id)}`).catch(() => null);
+                if (res && res.ok) {
+                    const data = await res.json();
+                    if (data?.project && isMounted) {
+                        setProject(data.project);
+                        setLoading(false);
+                        return;
+                    }
+                }
+                // Try fetching all from API
+                const allApiRes = await fetch('/api/post-work.php').catch(() => null);
+                if (allApiRes && allApiRes.ok) {
+                    const list = await allApiRes.json();
+                    if (Array.isArray(list)) {
+                        const found = list.find((p) => p.id === id);
+                        if (found && isMounted) {
+                            setProject(found);
+                            setLoading(false);
+                            return;
+                        }
+                    }
+                }
+                // Try static fallback
+                const fallbackRes = await fetch('/data/projects.json').catch(() => null);
+                if (fallbackRes && fallbackRes.ok) {
+                    const list = await fallbackRes.json();
+                    if (Array.isArray(list)) {
+                        const found = list.find((p) => p.id === id);
+                        if (found && isMounted) {
+                            setProject(found);
+                            setLoading(false);
+                            return;
+                        }
+                    }
+                }
+            } catch (err) {
+                console.error("Failed to load project details:", err);
+            } finally {
+                if (isMounted) setLoading(false);
+            }
+        };
+
+        fetchProject();
+        return () => { isMounted = false; };
+    }, [id]);
+
+    if (loading) {
+        return (
+            <main className="relative w-full flex items-center justify-center min-h-[75vh] bg-[#0a0a0a] text-white">
+                <div className="w-8 h-8 border-2 border-white/20 border-t-[#c4f82a] rounded-full animate-spin" />
+            </main>
+        );
+    }
 
     // Show a 404 / Project Not Found state if the ID doesn't exist in our JSON
     if (!project) {

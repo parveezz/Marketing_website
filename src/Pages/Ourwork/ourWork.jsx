@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ProjectCard from '../../Components/ProjectCard';
 import SEO from '../../Components/SEO';
 import WorkUpdatesBanner from '../../Components/WorkUpdatesBanner';
@@ -6,15 +6,43 @@ import projectsData from '../../data/projects.json';
 import { motion } from 'framer-motion';
 
 const OurWork = () => {
+    const [projects, setProjects] = useState(projectsData);
     const [activeCategory, setActiveCategory] = useState("All");
 
+    useEffect(() => {
+        let isMounted = true;
+        const fetchProjects = async () => {
+            try {
+                const res = await fetch('/api/post-work.php').catch(() => null);
+                if (res && res.ok) {
+                    const data = await res.json();
+                    if (Array.isArray(data) && data.length > 0 && isMounted) {
+                        setProjects(data);
+                        return;
+                    }
+                }
+                const fallbackRes = await fetch('/data/projects.json').catch(() => null);
+                if (fallbackRes && fallbackRes.ok) {
+                    const data = await fallbackRes.json();
+                    if (Array.isArray(data) && data.length > 0 && isMounted) {
+                        setProjects(data);
+                    }
+                }
+            } catch (err) {
+                console.error("Failed to fetch live projects:", err);
+            }
+        };
+        fetchProjects();
+        return () => { isMounted = false; };
+    }, []);
+
     // Extract unique categories from the JSON data dynamically
-    const categories = ["All", ...new Set(projectsData.map(project => project.category).filter(Boolean))];
+    const categories = ["All", ...new Set(projects.map(project => project.category).filter(Boolean))];
 
     // Filter projects based on selected category
     const filteredProjects = activeCategory === "All"
-        ? projectsData
-        : projectsData.filter(project => project.category === activeCategory);
+        ? projects
+        : projects.filter(project => project.category === activeCategory);
 
     return (
         <main className="relative w-full bg-[#0a0a0a] text-white min-h-screen">
@@ -26,7 +54,7 @@ const OurWork = () => {
             {/* =========================================================
                 HERO: SLIDER BACKGROUND + TEXT OVERLAY
             ========================================================= */}
-            <section className="relative w-full h-[520px] sm:h-[600px] md:h-[640px] lg:h-[700px] overflow-hidden bg-[#0a0a0a]">
+            <section className="relative w-full h-screen overflow-hidden bg-[#0a0a0a]">
                 {/* SLIDER — fills the entire hero */}
                 <div className="absolute inset-0 z-0">
                     <WorkUpdatesBanner />

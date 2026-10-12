@@ -81,7 +81,7 @@ $smtp_passwords = [
   "ZHm@123$"
 ];
 
-$admin_email = "info@zhmktg.com";
+$admin_email = "zhmktg.in@gmail.com";
 
 // ============================================================
 // LOAD PHPMAILER

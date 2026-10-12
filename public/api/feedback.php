@@ -65,7 +65,7 @@ $smtp_passwords = [
   "ZHm@123$"
 ];
 
-$recipient_email = "info@zhmktg.com";
+$recipient_email = "zhmktg.in@gmail.com";
 $cc_email = "zhmktg.in@gmail.com";
 
 // ============================================================

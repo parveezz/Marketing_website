@@ -28,6 +28,7 @@ const Whitepapers = lazy(() => import("../Pages/Whitepapers"));
 const Faq = lazy(() => import("../Pages/Faq"));
 const OurWork = lazy(() => import("../Pages/Ourwork/ourWork"));
 const ProjectDetail = lazy(() => import("../Pages/Ourwork/ProjectDetail"));
+const PostWork = lazy(() => import("../Pages/Ourwork/PostWork"));
 const IndustryDetail = lazy(() => import("../Pages/IndustryDetail"));
 const Feedback = lazy(() => import("../Pages/Feedback"));
 const NotFound = lazy(() => import("../Pages/NotFound"));
@@ -47,6 +48,9 @@ const Routing = () => {
 
           <Route path="our-work" element={<OurWork />} />
           <Route path="our-work/:id" element={<ProjectDetail />} />
+          <Route path="post-work" element={<PostWork />} />
+          <Route path="post-work/:id" element={<PostWork />} />
+          <Route path="edit-work/:id" element={<PostWork />} />
 
           <Route path="contact" element={<Contact />} />
 

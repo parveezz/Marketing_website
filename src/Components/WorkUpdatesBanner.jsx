@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
@@ -25,11 +25,9 @@ const WorkUpdatesBanner = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState([]);
 
-  const autoplay = useRef(Autoplay({ delay: 5000, stopOnInteraction: false }));
-
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: 'start' },
-    [autoplay.current]
+    [Autoplay({ delay: 2000, stopOnInteraction: false })]
   );
 
   /* ---------- Carousel plumbing ---------- */
@@ -50,9 +48,23 @@ const WorkUpdatesBanner = () => {
     };
   }, [emblaApi, onSelect]);
 
-  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
-  const scrollTo = useCallback((i) => emblaApi && emblaApi.scrollTo(i), [emblaApi]);
+  const scrollPrev = useCallback(() => {
+    if (!emblaApi) return;
+    emblaApi.scrollPrev();
+    emblaApi.plugins()?.autoplay?.reset();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (!emblaApi) return;
+    emblaApi.scrollNext();
+    emblaApi.plugins()?.autoplay?.reset();
+  }, [emblaApi]);
+
+  const scrollTo = useCallback((i) => {
+    if (!emblaApi) return;
+    emblaApi.scrollTo(i);
+    emblaApi.plugins()?.autoplay?.reset();
+  }, [emblaApi]);
 
   /* ---------- Render ---------- */
   return (

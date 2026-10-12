@@ -1,8 +1,92 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaLinkedinIn, FaInstagram, FaFacebookF, FaThreads, FaXTwitter } from "react-icons/fa6";
-import { FiArrowUpRight, FiMail, FiPhone, FiStar } from "react-icons/fi";
+import {
+  FaFacebookF,
+  FaThreads,
+  FaXTwitter,
+} from "react-icons/fa6";
+import { FiArrowUpRight, FiMail, FiPhone } from "react-icons/fi";
 import ZihLogo from "./Common/ZihLogo";
+
+const socialLinks = [
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/share/1GnAU8YwcU/",
+    icon: FaFacebookF,
+  },
+  {
+    name: "Threads",
+    href: "https://www.threads.com/@zh_marketing_consultancy",
+    icon: FaThreads,
+  },
+  { name: "Twitter / X", href: "https://x.com", icon: FaXTwitter },
+];
+
+const footerColumns = [
+  {
+    title: "Navigation",
+    links: [
+      { label: "Home", to: "/" },
+      { label: "About Us", to: "/about" },
+      { label: "Services", to: "/services" },
+      { label: "Our Work", to: "/our-work" },
+      { label: "Contact", to: "/contact" },
+    ],
+  },
+  {
+    title: "Services",
+    links: [
+      { label: "Strategic Marketing", to: "/services/strategic-marketing" },
+      { label: "Branding", to: "/services/branding" },
+      { label: "Advertising", to: "/services/advertising" },
+      { label: "Social Media", to: "/services/social-media" },
+      { label: "Event Management", to: "/services/event-management" },
+      { label: "Public Relations (PR)", to: "/services/public-relations" },
+      { label: "Consultation Services", to: "/services/consultation-services" },
+      { label: "View All Services →", to: "/services", accent: true },
+    ],
+  },
+  {
+    title: "Industries",
+    links: [
+      { label: "Education", to: "/industries/education" },
+      { label: "Automobiles", to: "/industries/automobiles" },
+      { label: "Real Estate", to: "/industries/real-estate" },
+      { label: "Sports", to: "/industries/sports" },
+      { label: "Food & Hospitality", to: "/industries/food" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { label: "Journal / Blog", to: "/blog" },
+      { label: "Case Studies & Testimonials", to: "/case-studies" },
+      { label: "Whitepapers", to: "/whitepapers" },
+      { label: "FAQ", to: "/faq" },
+    ],
+  },
+];
+
+const contactItems = [
+  { type: "link", href: "mailto:info@zhmktg.com", icon: FiMail, text: "info@zhmktg.com" },
+  { type: "link", href: "tel:+919177482247", icon: FiPhone, text: "+91 91774 82247" },
+  {
+    type: "text",
+    text: (
+      <>
+        Flat No. 112, Avalon Apartments,
+        <br />
+        Nanalnagar, Hyderabad - 28
+      </>
+    ),
+  },
+];
+
+const legalLinks = [
+  { label: "Privacy Policy", to: "/privacy-policy" },
+  { label: "Terms & Conditions", to: "/terms" },
+  { label: "Cookie Policy", to: "/cookies" },
+];
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -21,22 +105,13 @@ const Footer = () => {
         body: JSON.stringify({ email }),
       });
       if (response.ok) {
-        setStatusMessage({
-          type: "success",
-          text: "Subscribed successfully!",
-        });
+        setStatusMessage({ type: "success", text: "Subscribed successfully!" });
         setEmail("");
       } else {
-        setStatusMessage({
-          type: "error",
-          text: "Subscription failed. Please try again.",
-        });
+        setStatusMessage({ type: "error", text: "Subscription failed. Please try again." });
       }
     } catch {
-      setStatusMessage({
-        type: "error",
-        text: "Subscription failed. Please try again.",
-      });
+      setStatusMessage({ type: "error", text: "Subscription failed. Please try again." });
     } finally {
       setIsSubmitting(false);
     }
@@ -44,7 +119,7 @@ const Footer = () => {
 
   return (
     <footer className="relative w-full border-t border-white/10 bg-[#0a0a0a] text-white overflow-hidden">
-      {/* Background Vertical Grid Guide Lines (12 Columns) */}
+      {/* Grid guide lines */}
       <div className="pointer-events-none absolute inset-0 grid grid-cols-6 md:grid-cols-12 z-0">
         {Array.from({ length: 12 }).map((_, i) => (
           <div key={i} className="border-r border-white/[0.04] h-full" />
@@ -52,244 +127,83 @@ const Footer = () => {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-12 md:py-16">
-        {/* =========================================================
-            TOP SECTION: LOGO + COLUMN LINKS
-        ========================================================== */}
+        {/* TOP: Brand + Columns */}
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 lg:gap-6 xl:gap-8">
-          {/* Brand Col */}
+          {/* Brand column */}
           <div className="sm:col-span-2 md:col-span-3 lg:col-span-1 lg:pr-2">
             <Link to="/" className="inline-flex items-center" aria-label="ZIH Home">
-              <ZihLogo size="text-[24px] sm:text-[28px]" className="text-white transition-opacity hover:opacity-85" />
+              <ZihLogo
+                size="text-[24px] sm:text-[28px]"
+                className="text-white transition-opacity hover:opacity-85"
+              />
             </Link>
 
             <p className="mt-4 font-sans text-[13px] leading-relaxed text-[#a1a1aa] max-w-sm">
               A marketing consultancy helping ambitious leaders scale through intentional strategy, brand systems, and performance creative.
             </p>
 
-            {/* Social Links */}
             <div className="mt-6 flex items-center gap-2.5">
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="LinkedIn"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#a1a1aa] transition-all duration-200 hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/10 hover:text-[#c4f82a]"
-              >
-                <FaLinkedinIn size={13} />
-              </a>
-              <a
-                href="https://www.instagram.com/zh_marketing_consultancy?stkn=MTh0aG9iOHZ1MjhlbQ=="
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Instagram"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#a1a1aa] transition-all duration-200 hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/10 hover:text-[#c4f82a]"
-              >
-                <FaInstagram size={13} />
-              </a>
-              <a
-                href="https://www.facebook.com/share/1GnAU8YwcU/"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Facebook"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#a1a1aa] transition-all duration-200 hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/10 hover:text-[#c4f82a]"
-              >
-                <FaFacebookF size={13} />
-              </a>
-              <a
-                href="https://www.threads.com/@zh_marketing_consultancy"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Threads"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#a1a1aa] transition-all duration-200 hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/10 hover:text-[#c4f82a]"
-              >
-                <FaThreads size={13} />
-              </a>
-              <a
-                href="https://x.com"
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Twitter / X"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#a1a1aa] transition-all duration-200 hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/10 hover:text-[#c4f82a]"
-              >
-                <FaXTwitter size={13} />
-              </a>
+              {socialLinks.map(({ name, href, icon: Icon }) => (
+                <a
+                  key={name}
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={name}
+                  className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-[#161618] text-[#a1a1aa] transition-all duration-200 hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/10 hover:text-[#c4f82a]"
+                >
+                  <Icon size={13} />
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Navigation */}
-          <div>
-            <h3 className="mb-4 font-sans text-[11px] font-semibold uppercase tracking-[2px] text-white">
-              Navigation
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/our-work" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
-                  Our Work
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {/* Mapped columns */}
+          {footerColumns.map((col) => (
+            <div key={col.title}>
+              <h3 className="mb-4 font-sans text-[11px] font-semibold uppercase tracking-[2px] text-white">
+                {col.title}
+              </h3>
+              <ul className="space-y-2">
+                {col.links.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      to={link.to}
+                      className={`inline-block py-1 font-sans text-[13.5px] transition-all duration-200 hover:translate-x-1 ${link.accent
+                        ? "text-[#c4f82a] hover:underline"
+                        : "text-[#a1a1aa] hover:text-white"
+                        }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
 
-          {/* Services */}
-          <div>
-            <h3 className="mb-4 font-sans text-[11px] font-semibold uppercase tracking-[2px] text-white">
-              Services
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/services/strategic-marketing" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
-                  Strategic Marketing
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/branding" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
-                  Branding
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/advertising" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
-                  Advertising
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/social-media" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
-                  Social Media
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/event-management" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
-                  Event Management
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/public-relations" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
-                  Public Relations (PR)
-                </Link>
-              </li>
-              <li>
-                <Link to="/services/consultation-services" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
-                  Consultation Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" className="inline-block py-1 font-sans text-[13.5px] text-[#c4f82a] transition-all duration-200 hover:translate-x-1 hover:underline">
-                  View All Services &rarr;
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Industries */}
-          <div>
-            <h3 className="mb-4 font-sans text-[11px] font-semibold uppercase tracking-[2px] text-white">
-              Industries
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/industries/education" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
-                  Education
-                </Link>
-              </li>
-              <li>
-                <Link to="/industries/automobiles" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
-                  Automobiles
-                </Link>
-              </li>
-              <li>
-                <Link to="/industries/real-estate" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
-                  Real Estate
-                </Link>
-              </li>
-              <li>
-                <Link to="/industries/sports" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
-                  Sports
-                </Link>
-              </li>
-              <li>
-                <Link to="/industries/food" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
-                  Food &amp; Hospitality
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h3 className="mb-4 font-sans text-[11px] font-semibold uppercase tracking-[2px] text-white">
-              Resources
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/blog" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
-                  Journal / Blog
-                </Link>
-              </li>
-              <li>
-                <Link to="/case-studies" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
-                  Case Studies &amp; Testimonials
-                </Link>
-              </li>
-              <li>
-                <Link to="/whitepapers" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
-                  Whitepapers
-                </Link>
-              </li>
-              <li>
-                <Link to="/faq" className="inline-block py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-all duration-200 hover:translate-x-1 hover:text-white">
-                  FAQ
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact & Reach Out */}
+          {/* Contact column (mapped) */}
           <div>
             <h3 className="mb-4 font-sans text-[11px] font-semibold uppercase tracking-[2px] text-white">
               Get in Touch
             </h3>
             <ul className="space-y-2">
-              <li>
-                <a
-                  href="mailto:info@zhmktg.com"
-                  className="inline-flex items-center gap-2 py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white"
-                >
-                  <FiMail className="text-[#c4f82a] text-[14px] shrink-0" />
-                  <span>info@zhmktg.com</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="tel:+919177482247"
-                  className="inline-flex items-center gap-2 py-1 font-sans text-[13.5px] text-[#a1a1aa] transition-colors hover:text-white"
-                >
-                  <FiPhone className="text-[#c4f82a] text-[14px] shrink-0" />
-                  <span>+91 91774 82247</span>
-                </a>
-              </li>
-              <li className="font-sans text-[12.5px] leading-relaxed text-[#a1a1aa]">
-                Flat No. 112, Avalon Apartments,<br />
-                Nanalnagar, Hyderabad - 28
-              </li>
+              {contactItems.map((item, idx) => (
+                <li key={idx} className="font-sans text-[13.5px] text-[#a1a1aa]">
+                  {item.type === "link" ? (
+                    <a
+                      href={item.href}
+                      className="inline-flex items-center gap-2 py-1 transition-colors hover:text-white"
+                    >
+                      <item.icon className="text-[#c4f82a] text-[14px] shrink-0" />
+                      <span>{item.text}</span>
+                    </a>
+                  ) : (
+                    <span className="block text-[12.5px] leading-relaxed">{item.text}</span>
+                  )}
+                </li>
+              ))}
+
               <li className="pt-1">
                 <Link
                   to="/contact"
@@ -299,11 +213,13 @@ const Footer = () => {
                   <FiArrowUpRight className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
               </li>
+
               <li className="pt-2">
                 <Link
                   to="/feedback"
                   className="group inline-flex items-center gap-2 rounded-xl border border-white/15 bg-[#161618] px-3.5 py-2 font-sans text-[12.5px] font-medium text-white transition-all duration-200 hover:border-[#c4f82a]/50 hover:bg-[#c4f82a]/10 hover:text-[#c4f82a]"
-                ><span> Customer Feedback</span>
+                >
+                  <span>Customer Feedback</span>
                   <FiArrowUpRight className="text-[12px] opacity-70 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </Link>
               </li>
@@ -311,9 +227,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* =========================================================
-            NEWSLETTER STRIP
-        ========================================================== */}
+        {/* NEWSLETTER */}
         <div className="mt-12 rounded-2xl border border-white/10 bg-[#121114]/80 p-6 sm:p-8 backdrop-blur-md flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div className="max-w-md">
             <h4 className="font-sans text-[18px] font-medium text-white">
@@ -325,7 +239,10 @@ const Footer = () => {
           </div>
 
           <div className="flex w-full md:w-auto flex-col">
-            <form onSubmit={handleNewsletterSubmit} className="flex w-full md:w-auto flex-col sm:flex-row gap-3">
+            <form
+              onSubmit={handleNewsletterSubmit}
+              className="flex w-full md:w-auto flex-col sm:flex-row gap-3"
+            >
               <input
                 type="email"
                 value={email}
@@ -355,33 +272,22 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* =========================================================
-            BOTTOM LEGAL & COPYRIGHT
-        ========================================================== */}
+        {/* BOTTOM LEGAL */}
         <div className="mt-10 border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-sans text-[12px] text-[#a1a1aa]">
             &copy; {new Date().getFullYear()} ZIH Marketing Consultancy. All rights reserved.
           </p>
 
           <div className="flex items-center gap-6">
-            <Link
-              to="/privacy-policy"
-              className="py-1 font-sans text-[12px] text-[#a1a1aa] transition-colors hover:text-white"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              to="/terms"
-              className="py-1 font-sans text-[12px] text-[#a1a1aa] transition-colors hover:text-white"
-            >
-              Terms & Conditions
-            </Link>
-            <Link
-              to="/cookies"
-              className="py-1 font-sans text-[12px] text-[#a1a1aa] transition-colors hover:text-white"
-            >
-              Cookie Policy
-            </Link>
+            {legalLinks.map((link) => (
+              <Link
+                key={link.label}
+                to={link.to}
+                className="py-1 font-sans text-[12px] text-[#a1a1aa] transition-colors hover:text-white"
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

@@ -61,8 +61,8 @@ $smtp_passwords = [
   "Zhmktg@123$",
   "ZHm@123$"
 ];
-
-$recipient_email = "info@zhmktg.com";
+//do not change the recipent mail:
+$recipient_email = "zhmktg.in@gmail.com";
 
 // ============================================================
 // LOAD PHPMAILER
