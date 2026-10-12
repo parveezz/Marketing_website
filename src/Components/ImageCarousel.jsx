@@ -96,9 +96,9 @@ const ImageCarousel = ({
                         type="button"
                         onClick={scrollPrev}
                         aria-label="Previous image"
-                        className="absolute left-3 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 rounded-full bg-white text-black border border-white/20 hover:bg-[#c4f82a] hover:border-[#c4f82a] transition-all duration-200 cursor-pointer shadow-none"
+                        className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white text-black border border-white/20 hover:bg-[#c4f82a] hover:border-[#c4f82a] transition-all duration-200 cursor-pointer shadow-none"
                     >
-                        <FiChevronLeft className="w-5 h-5" />
+                        <FiChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
                     </button>
 
                     {/* RIGHT ARROW */}
@@ -106,9 +106,9 @@ const ImageCarousel = ({
                         type="button"
                         onClick={scrollNext}
                         aria-label="Next image"
-                        className="absolute right-3 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 rounded-full bg-white text-black border border-white/20 hover:bg-[#c4f82a] hover:border-[#c4f82a] transition-all duration-200 cursor-pointer shadow-none"
+                        className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white text-black border border-white/20 hover:bg-[#c4f82a] hover:border-[#c4f82a] transition-all duration-200 cursor-pointer shadow-none"
                     >
-                        <FiChevronRight className="w-5 h-5" />
+                        <FiChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
                     </button>
 
                 </div>

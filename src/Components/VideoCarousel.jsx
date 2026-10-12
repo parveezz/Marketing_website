@@ -25,7 +25,7 @@ const VideoCarousel = ({ items = [] }) => {
     if (!items || items.length === 0) return null;
 
     return (
-        <div className="w-full relative px-12">
+        <div className="w-full relative px-7 sm:px-12">
             <div className="overflow-hidden w-full" ref={emblaRef}>
                 <div className="flex -ml-4">
                     {items.map((src, index) => (
@@ -34,7 +34,7 @@ const VideoCarousel = ({ items = [] }) => {
                             key={index} 
                         >
                             <div 
-                                className="relative group cursor-pointer w-full h-[250px] md:h-[320px] rounded-2xl overflow-hidden border border-white/10 bg-[#141215]"
+                                className="relative group cursor-pointer w-full h-[220px] sm:h-[250px] md:h-[320px] rounded-2xl overflow-hidden border border-white/10 bg-[#141215]"
                                 onClick={() => setSelectedMedia(src)}
                             >
                                 <video
@@ -46,7 +46,7 @@ const VideoCarousel = ({ items = [] }) => {
                                     className="w-full h-full object-cover"
                                 />
                                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
-                                    <FiPlayCircle className="text-[#c4f82a] text-5xl opacity-0 group-hover:opacity-100 transition-all transform group-hover:scale-110" />
+                                    <FiPlayCircle className="text-[#c4f82a] text-4xl sm:text-5xl opacity-80 sm:opacity-0 sm:group-hover:opacity-100 transition-all transform group-hover:scale-110" />
                                 </div>
                             </div>
                         </div>
@@ -57,18 +57,18 @@ const VideoCarousel = ({ items = [] }) => {
             <button
                 type="button"
                 onClick={scrollPrev}
-                className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 bg-white text-black border border-white/20 hover:bg-[#c4f82a] hover:border-[#c4f82a] rounded-full flex items-center justify-center transition-all z-10 cursor-pointer shadow-none"
+                className="absolute left-0 top-1/2 -translate-y-1/2 w-7 h-7 sm:w-10 sm:h-10 bg-white text-black border border-white/20 hover:bg-[#c4f82a] hover:border-[#c4f82a] rounded-full flex items-center justify-center transition-all z-10 cursor-pointer shadow-none"
                 aria-label="Previous video"
             >
-                <FiChevronLeft className="text-xl" />
+                <FiChevronLeft className="text-base sm:text-xl" />
             </button>
             <button
                 type="button"
                 onClick={scrollNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 bg-white text-black border border-white/20 hover:bg-[#c4f82a] hover:border-[#c4f82a] rounded-full flex items-center justify-center transition-all z-10 cursor-pointer shadow-none"
+                className="absolute right-0 top-1/2 -translate-y-1/2 w-7 h-7 sm:w-10 sm:h-10 bg-white text-black border border-white/20 hover:bg-[#c4f82a] hover:border-[#c4f82a] rounded-full flex items-center justify-center transition-all z-10 cursor-pointer shadow-none"
                 aria-label="Next video"
             >
-                <FiChevronRight className="text-xl" />
+                <FiChevronRight className="text-base sm:text-xl" />
             </button>
 
             <MediaModal 

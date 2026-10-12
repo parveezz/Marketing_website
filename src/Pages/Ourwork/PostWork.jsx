@@ -576,11 +576,10 @@ const PostWork = () => {
                         <button
                             type="button"
                             onClick={() => setPreviewMode(!previewMode)}
-                            className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold border transition cursor-pointer ${
-                                previewMode 
+                            className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold border transition cursor-pointer ${previewMode
                                     ? 'bg-[#c4f82a] text-black border-[#c4f82a] shadow-[0_0_15px_-3px_rgba(196,248,42,0.4)]'
                                     : 'bg-white/5 border-white/10 hover:bg-white/10 text-white'
-                            }`}
+                                }`}
                         >
                             <FiEye className="text-sm" /> {previewMode ? 'Return to Form Editor' : 'Live Previews (Card & Page)'}
                         </button>
@@ -593,11 +592,10 @@ const PostWork = () => {
                         <button
                             type="button"
                             onClick={handleSwitchToCreateNew}
-                            className={`flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-xs font-semibold transition cursor-pointer ${
-                                !isEditMode
+                            className={`flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-xs font-semibold transition cursor-pointer ${!isEditMode
                                     ? 'bg-[#c4f82a] text-black shadow-[0_0_15px_-3px_rgba(196,248,42,0.4)]'
                                     : 'text-[#a1a1aa] hover:text-white hover:bg-white/5'
-                            }`}
+                                }`}
                         >
                             <FiPlus className="text-sm" />
                             <span>Upload New Case Study</span>
@@ -610,11 +608,10 @@ const PostWork = () => {
                                     navigate(`/post-work?edit=${encodeURIComponent(allProjectsList[0].id)}`);
                                 }
                             }}
-                            className={`flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-xs font-semibold transition cursor-pointer ${
-                                isEditMode
+                            className={`flex-1 sm:flex-initial inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-xs font-semibold transition cursor-pointer ${isEditMode
                                     ? 'bg-[#c4f82a] text-black shadow-[0_0_15px_-3px_rgba(196,248,42,0.4)]'
                                     : 'text-[#a1a1aa] hover:text-white hover:bg-white/5'
-                            }`}
+                                }`}
                         >
                             <FiEdit3 className="text-sm" />
                             <span>Edit Existing Project</span>
@@ -730,27 +727,24 @@ const PostWork = () => {
                                     <button
                                         type="button"
                                         onClick={() => setPreviewTab('both')}
-                                        className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer flex items-center gap-1.5 ${
-                                            previewTab === 'both' ? 'bg-[#c4f82a] text-black' : 'text-[#a1a1aa] hover:text-white'
-                                        }`}
+                                        className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer flex items-center gap-1.5 ${previewTab === 'both' ? 'bg-[#c4f82a] text-black' : 'text-[#a1a1aa] hover:text-white'
+                                            }`}
                                     >
                                         <FiLayers /> Both Previews
                                     </button>
                                     <button
                                         type="button"
                                         onClick={() => setPreviewTab('card')}
-                                        className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer flex items-center gap-1.5 ${
-                                            previewTab === 'card' ? 'bg-[#c4f82a] text-black' : 'text-[#a1a1aa] hover:text-white'
-                                        }`}
+                                        className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer flex items-center gap-1.5 ${previewTab === 'card' ? 'bg-[#c4f82a] text-black' : 'text-[#a1a1aa] hover:text-white'
+                                            }`}
                                     >
                                         <FiImage /> Catalog Card (/our-work)
                                     </button>
                                     <button
                                         type="button"
                                         onClick={() => setPreviewTab('detail')}
-                                        className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer flex items-center gap-1.5 ${
-                                            previewTab === 'detail' ? 'bg-[#c4f82a] text-black' : 'text-[#a1a1aa] hover:text-white'
-                                        }`}
+                                        className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer flex items-center gap-1.5 ${previewTab === 'detail' ? 'bg-[#c4f82a] text-black' : 'text-[#a1a1aa] hover:text-white'
+                                            }`}
                                     >
                                         <FiFileText /> Dedicated Case Study (/our-work/:id)
                                     </button>
