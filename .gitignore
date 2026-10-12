@@ -13,3 +13,7 @@ dist-ssr
 *.local
 deploy.js
 
+# Generated manuals & documents
+ZH-Marketing-Post-Work-Manual.pdf
+public/ZH-Marketing-Post-Work-Manual.pdf
+public/post-work-guide.html
